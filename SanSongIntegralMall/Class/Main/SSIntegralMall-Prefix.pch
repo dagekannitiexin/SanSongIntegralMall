@@ -1,0 +1,15 @@
+//
+//  SSIntegralMall-Prefix.pch
+//  SanSongIntegralMall
+//
+//  Created by apple on 2017/12/12.
+//  Copyright © 2017年 apple. All rights reserved.
+//
+
+#ifndef SSIntegralMall_Prefix_pch
+#define SSIntegralMall_Prefix_pch
+
+#import "Define.h"
+#import "UIImage+MRExtension.h"
+#import "UIView+YYAdd.h"
+#endif /* SSIntegralMall_Prefix_pch */
