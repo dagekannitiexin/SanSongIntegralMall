@@ -12,4 +12,5 @@
 #import "Define.h"
 #import "UIImage+MRExtension.h"
 #import "UIView+YYAdd.h"
+#import "UIView+Frame.h"
 #endif /* SSIntegralMall_Prefix_pch */
