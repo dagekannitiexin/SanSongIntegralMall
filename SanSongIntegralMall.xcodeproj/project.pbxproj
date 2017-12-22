@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */; };
+		1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */; };
+		183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */; };
+		183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */ = {isa = PBXBuildFile; fileRef = 183501721FED09130019AD62 /* SSJFMineIntegralList.m */; };
+		183501751FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */; };
+		183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */; };
 		1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */; };
 		1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */; };
 		1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD51FE220E60034C4B8 /* UIView+YYAdd.m */; };
@@ -89,6 +95,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		183501691FECA17B0019AD62 /* SSJFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFMineViewController.h; sourceTree = "<group>"; };
+		1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFMineViewController.m; sourceTree = "<group>"; };
+		1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeadCell.h; sourceTree = "<group>"; };
+		1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonHeadCell.m; sourceTree = "<group>"; };
+		1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonHeadCell.xib; sourceTree = "<group>"; };
+		183501711FED09130019AD62 /* SSJFMineIntegralList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFMineIntegralList.h; sourceTree = "<group>"; };
+		183501721FED09130019AD62 /* SSJFMineIntegralList.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFMineIntegralList.m; sourceTree = "<group>"; };
+		183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFMineIntegralListHeadView.xib; sourceTree = "<group>"; };
+		183501761FED0A420019AD62 /* SSJFMineIntegralListHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFMineIntegralListHeadView.h; sourceTree = "<group>"; };
+		183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFMineIntegralListHeadView.m; sourceTree = "<group>"; };
 		1838CFD01FE214F20034C4B8 /* SSJFUserInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFUserInfoView.h; sourceTree = "<group>"; };
 		1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFUserInfoView.m; sourceTree = "<group>"; };
 		1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFUserInfoView.xib; sourceTree = "<group>"; };
@@ -236,6 +252,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		183501611FECA11A0019AD62 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				183501681FECA17B0019AD62 /* 父控制器 */,
+				183501621FECA11A0019AD62 /* Controller */,
+				183501631FECA11A0019AD62 /* Model */,
+				183501641FECA11A0019AD62 /* View */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		183501621FECA11A0019AD62 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		183501631FECA11A0019AD62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		183501641FECA11A0019AD62 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */,
+				1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */,
+				1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */,
+				183501761FED0A420019AD62 /* SSJFMineIntegralListHeadView.h */,
+				183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */,
+				183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		183501681FECA17B0019AD62 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				183501691FECA17B0019AD62 /* SSJFMineViewController.h */,
+				1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */,
+				183501711FED09130019AD62 /* SSJFMineIntegralList.h */,
+				183501721FED09130019AD62 /* SSJFMineIntegralList.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
 		1838CFDB1FE25C130034C4B8 /* SDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -363,6 +428,7 @@
 		183A1E341FDFA47F0054547E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				183501611FECA11A0019AD62 /* 我的 */,
 				183A1E541FDFA7EC0054547E /* Category */,
 				183A1E351FDFA47F0054547E /* Main */,
 				183A1E411FDFA47F0054547E /* 首页 */,
@@ -634,6 +700,7 @@
 				18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */,
 				186EA6981FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib in Resources */,
 				1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */,
+				183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */,
 				186EA6BF1FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.xib in Resources */,
 				186EA6CA1FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib in Resources */,
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
@@ -641,6 +708,7 @@
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
 				183A1DF41FDF66030054547E /* Assets.xcassets in Resources */,
 				186EA6A61FE3745E00E796B9 /* XMIntegralHeadView.xib in Resources */,
+				183501751FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib in Resources */,
 				186EA6AB1FE375AA00E796B9 /* XMGoodsTitleStyleView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -733,6 +801,7 @@
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
+				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */,
 				1838D0201FE26D410034C4B8 /* UIButton+WebCache.m in Sources */,
@@ -740,6 +809,7 @@
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
 				1838CFED1FE25C130034C4B8 /* TADotView.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
+				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
 				1838D0181FE26D410034C4B8 /* SDImageCache.m in Sources */,
 				1838CFDA1FE256790034C4B8 /* HeadButton.m in Sources */,
 				1838D0211FE26D410034C4B8 /* UIImage+GIF.m in Sources */,
@@ -762,11 +832,13 @@
 				186EA6B11FE3A52700E796B9 /* goodsViewStyleOne.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
+				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,
 				1838CFEE1FE25C130034C4B8 /* TAPageControl.m in Sources */,
 				186EA69D1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m in Sources */,
 				183A1E531FDFA5510054547E /* SignPresentingAnimator.m in Sources */,
 				183A1E4B1FDFA47F0054547E /* SSJFHomeViewController.m in Sources */,
 				186EA6A41FE3745E00E796B9 /* XMIntegralHeadView.m in Sources */,
+				183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */,
 				1838CFF11FE25C130034C4B8 /* UIView+SDExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

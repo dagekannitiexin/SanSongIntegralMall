@@ -16,6 +16,8 @@
 #import "goodsViewStyleOne.h"
 #import "XMGoodsViewStyleThreeView.h"
 #import "SSJFGoodsMostNumView.h"
+#import "SSJFMineViewController.h"
+#import "SSJFMineIntegralList.h"
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
     UIView *_headView;
@@ -106,6 +108,18 @@
     [_headView addSubview:bgView];
     
     _infoView = [[[NSBundle mainBundle]loadNibNamed:@"SSJFUserInfoView" owner:nil options:nil]lastObject];
+    
+    __block SSJFHomeViewController *blockSelf = self;
+    _infoView.touchViewBlock = ^(NSString *str) {
+        if ([str isEqualToString:@"Icon"]){ //跳转到个人页面
+            SSJFMineViewController *mine = [[SSJFMineViewController alloc]init];
+            [blockSelf.navigationController pushViewController:mine animated:YES];
+            
+        }else if ([str isEqualToString:@"Integral"]){//跳转到积分页面
+            SSJFMineIntegralList *integral = [[SSJFMineIntegralList alloc]init];
+            [blockSelf.navigationController pushViewController:integral animated:YES];
+        }
+    };
     [bgView addSubview:_infoView];
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, bgView.height, SCREEN_WIDTH, 12)];

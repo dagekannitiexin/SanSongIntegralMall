@@ -18,9 +18,11 @@
     //设置控件属性
     self.IconImg.layer.cornerRadius = self.IconImg.width/2;
     self.IconImg.clipsToBounds = YES;
+    self.IconImg.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapIcon = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapIconClick)];
     [self.IconImg addGestureRecognizer:tapIcon];
     
+    self.Integral.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapIntegral = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapIntegralClick)];
     [self.Integral addGestureRecognizer:tapIntegral];
     

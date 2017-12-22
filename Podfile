@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+platform :ios, '9.3'
 target 'SanSongIntegralMall' do
 pod 'MJRefresh'
 pod 'pop'
