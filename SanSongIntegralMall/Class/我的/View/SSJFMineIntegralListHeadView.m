@@ -31,6 +31,17 @@
     self.orderBtn.layer.borderWidth = 1.0;
     self.orderBtn.layer.borderColor = RGBACOLOR(133, 133, 133, 0.6).CGColor;
     self.orderBtn.layer.cornerRadius = 5.0;
+    [self.orderBtn addTarget:self action:@selector(orderClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
+
+/*
+ 点击订单的方法
+ */
+- (void)orderClick
+{
+    if (self.btnMineOrderBlock){
+        self.btnMineOrderBlock();
+    }
+}
 @end

@@ -18,6 +18,7 @@
 #import "SSJFGoodsMostNumView.h"
 #import "SSJFMineViewController.h"
 #import "SSJFMineIntegralList.h"
+#import "SSJFShopDetailViewController.h"
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
     UIView *_headView;
@@ -199,6 +200,7 @@
     CGFloat shopViewHeight = 115.0;
     CGFloat spaceWith = 10;
     CGFloat shopViewWith = (SCREEN_WIDTH - spaceWithCenter - 2*spaceWith)/2;
+    
     for (int i =0; i<4; i++) {
         goodsViewStyleOne *shopView = [[[NSBundle mainBundle]loadNibNamed:@"goodsViewStyleOne" owner:nil options:nil]lastObject];
         shopView.width = shopViewWith;
@@ -211,6 +213,9 @@
         }
         shopView.x =viewPoint.x;
         shopView.y =viewPoint.y+titleView.bottom;
+        //添加手势到商品详细
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shopDetail)];
+        [shopView addGestureRecognizer:tap];
     }
     [_headView addSubview:viewTwo];
     // 加10原因是因为存在边线_totleHeight+10 过了
@@ -396,6 +401,13 @@
     //    NSLog(@"%@",msg);
 }
 
-
+/*
+ 点击事件 1.商品详细
+ */
+- (void)shopDetail
+{
+    SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
+    [self.navigationController pushViewController:shopVC animated:YES];
+}
 
 @end

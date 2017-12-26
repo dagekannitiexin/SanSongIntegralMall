@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1829C9D71FF1EAD100E289A9 /* MineIntegralLisetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9D51FF1EAD100E289A9 /* MineIntegralLisetCell.m */; };
+		1829C9D81FF1EAD100E289A9 /* MineIntegralLisetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829C9D61FF1EAD100E289A9 /* MineIntegralLisetCell.xib */; };
+		1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9DA1FF1F88700E289A9 /* SSJFMineOrderViewController.m */; };
+		1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */; };
+		1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */; };
+		1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */; };
 		1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */; };
 		1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */; };
 		183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */; };
@@ -95,6 +101,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1829C9D41FF1EAD100E289A9 /* MineIntegralLisetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineIntegralLisetCell.h; sourceTree = "<group>"; };
+		1829C9D51FF1EAD100E289A9 /* MineIntegralLisetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineIntegralLisetCell.m; sourceTree = "<group>"; };
+		1829C9D61FF1EAD100E289A9 /* MineIntegralLisetCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineIntegralLisetCell.xib; sourceTree = "<group>"; };
+		1829C9D91FF1F88700E289A9 /* SSJFMineOrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFMineOrderViewController.h; sourceTree = "<group>"; };
+		1829C9DA1FF1F88700E289A9 /* SSJFMineOrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFMineOrderViewController.m; sourceTree = "<group>"; };
+		1829C9DC1FF213CB00E289A9 /* MineIntegrallOrderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineIntegrallOrderCell.h; sourceTree = "<group>"; };
+		1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineIntegrallOrderCell.m; sourceTree = "<group>"; };
+		1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineIntegrallOrderCell.xib; sourceTree = "<group>"; };
+		1829C9E61FF2444500E289A9 /* SSJFShopDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFShopDetailViewController.h; sourceTree = "<group>"; };
+		1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFShopDetailViewController.m; sourceTree = "<group>"; };
 		183501691FECA17B0019AD62 /* SSJFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFMineViewController.h; sourceTree = "<group>"; };
 		1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFMineViewController.m; sourceTree = "<group>"; };
 		1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeadCell.h; sourceTree = "<group>"; };
@@ -252,6 +268,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1829C9E11FF2441B00E289A9 /* 商品 */ = {
+			isa = PBXGroup;
+			children = (
+				1829C9E51FF2441B00E289A9 /* 父控制器 */,
+				1829C9E21FF2441B00E289A9 /* Controller */,
+				1829C9E31FF2441B00E289A9 /* Model */,
+				1829C9E41FF2441B00E289A9 /* View */,
+			);
+			path = "商品";
+			sourceTree = "<group>";
+		};
+		1829C9E21FF2441B00E289A9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1829C9E31FF2441B00E289A9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1829C9E41FF2441B00E289A9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1829C9E51FF2441B00E289A9 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				1829C9E61FF2444500E289A9 /* SSJFShopDetailViewController.h */,
+				1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
 		183501611FECA11A0019AD62 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +323,8 @@
 		183501621FECA11A0019AD62 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1829C9D91FF1F88700E289A9 /* SSJFMineOrderViewController.h */,
+				1829C9DA1FF1F88700E289A9 /* SSJFMineOrderViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -286,6 +345,12 @@
 				183501761FED0A420019AD62 /* SSJFMineIntegralListHeadView.h */,
 				183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */,
 				183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */,
+				1829C9D41FF1EAD100E289A9 /* MineIntegralLisetCell.h */,
+				1829C9D51FF1EAD100E289A9 /* MineIntegralLisetCell.m */,
+				1829C9D61FF1EAD100E289A9 /* MineIntegralLisetCell.xib */,
+				1829C9DC1FF213CB00E289A9 /* MineIntegrallOrderCell.h */,
+				1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */,
+				1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -428,6 +493,7 @@
 		183A1E341FDFA47F0054547E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				1829C9E11FF2441B00E289A9 /* 商品 */,
 				183501611FECA11A0019AD62 /* 我的 */,
 				183A1E541FDFA7EC0054547E /* Category */,
 				183A1E351FDFA47F0054547E /* Main */,
@@ -698,11 +764,13 @@
 			files = (
 				186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */,
 				18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */,
+				1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */,
 				186EA6981FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib in Resources */,
 				1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */,
 				183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */,
 				186EA6BF1FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.xib in Resources */,
 				186EA6CA1FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib in Resources */,
+				1829C9D81FF1EAD100E289A9 /* MineIntegralLisetCell.xib in Resources */,
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
@@ -791,10 +859,13 @@
 			files = (
 				183A1E491FDFA47F0054547E /* XMNavigationController.m in Sources */,
 				186EA6AC1FE375AA00E796B9 /* XMGoodsTitleStyleView.m in Sources */,
+				1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */,
 				186EA6C01FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m in Sources */,
 				1838D01E1FE26D410034C4B8 /* SDWebImageManager.m in Sources */,
 				186EA6BB1FE3B65200E796B9 /* UIView+Frame.m in Sources */,
 				186EA6BA1FE3B65200E796B9 /* NJKWebViewProgressView.m in Sources */,
+				1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */,
+				1829C9D71FF1EAD100E289A9 /* MineIntegralLisetCell.m in Sources */,
 				1838D01A1FE26D410034C4B8 /* SDWebImageCompat.m in Sources */,
 				1838D01F1FE26D410034C4B8 /* SDWebImagePrefetcher.m in Sources */,
 				1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */,
@@ -830,6 +901,7 @@
 				1838CFF01FE25C130034C4B8 /* SDCycleScrollView.m in Sources */,
 				1838D01C1FE26D410034C4B8 /* SDWebImageDownloader.m in Sources */,
 				186EA6B11FE3A52700E796B9 /* goodsViewStyleOne.m in Sources */,
+				1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,

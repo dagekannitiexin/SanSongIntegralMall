@@ -51,7 +51,7 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-Sh-h83">
-                    <rect key="frame" x="30" y="130" width="95" height="30"/>
+                    <rect key="frame" x="50" y="130" width="95" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="95" id="H2W-VA-xCX"/>
                         <constraint firstAttribute="height" constant="30" id="qNC-IH-v0v"/>
@@ -62,7 +62,7 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xfI-0L-EyM">
-                    <rect key="frame" x="250" y="130" width="95" height="30"/>
+                    <rect key="frame" x="230" y="130" width="95" height="30"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="95" id="1TH-k1-GgS"/>
                         <constraint firstAttribute="height" constant="30" id="Oft-qg-dmi"/>
@@ -96,12 +96,12 @@
                 <constraint firstItem="4V4-xJ-6ob" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4hY-vd-JJd"/>
                 <constraint firstItem="4V4-xJ-6ob" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="JIB-UX-ljD"/>
                 <constraint firstItem="xfI-0L-EyM" firstAttribute="top" secondItem="4V4-xJ-6ob" secondAttribute="bottom" constant="10" id="KsF-iI-v1P"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xfI-0L-EyM" secondAttribute="trailing" constant="30" id="Om0-Ww-Spi"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xfI-0L-EyM" secondAttribute="trailing" constant="50" id="Om0-Ww-Spi"/>
                 <constraint firstItem="eiU-Vy-cAo" firstAttribute="centerX" secondItem="4V4-xJ-6ob" secondAttribute="centerX" id="Ynj-X3-hoo"/>
                 <constraint firstItem="eiU-Vy-cAo" firstAttribute="top" secondItem="4V4-xJ-6ob" secondAttribute="bottom" constant="53" id="alV-Xt-GPc"/>
                 <constraint firstItem="Kdh-Sh-h83" firstAttribute="top" secondItem="4V4-xJ-6ob" secondAttribute="bottom" constant="10" id="bYg-fK-aAC"/>
                 <constraint firstAttribute="trailing" secondItem="u2E-sS-1IE" secondAttribute="trailing" constant="15" id="crQ-0C-Nou"/>
-                <constraint firstItem="Kdh-Sh-h83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="l6s-Pu-wNB"/>
+                <constraint firstItem="Kdh-Sh-h83" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="l6s-Pu-wNB"/>
                 <constraint firstItem="u2E-sS-1IE" firstAttribute="centerY" secondItem="eiU-Vy-cAo" secondAttribute="centerY" id="npK-F6-JWs"/>
                 <constraint firstItem="u2E-sS-1IE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="rjv-te-0pQ"/>
             </constraints>

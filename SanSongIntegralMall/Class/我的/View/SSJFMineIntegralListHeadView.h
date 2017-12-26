@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface SSJFMineIntegralListHeadView : UIView
+typedef void (^btnMineOrder)(void);
 
+@property (nonatomic, copy)btnMineOrder btnMineOrderBlock;
 @end
