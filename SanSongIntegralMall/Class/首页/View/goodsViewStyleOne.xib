@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="9ZB-Au-OUV" customClass="goodsViewStyleOne">
+            <rect key="frame" x="0.0" y="0.0" width="178" height="115"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="新秀丽制造商" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6a-yO-tLR">
+                    <rect key="frame" x="10" y="10" width="92" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="nOR-Yd-Ec9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="59元起" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lRE-Nl-BMr">
+                    <rect key="frame" x="10" y="35" width="49" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="w3D-8S-i00"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="ZM4-05-qtb">
+                    <rect key="frame" x="10" y="60" width="30" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="1ZI-sy-3hh"/>
+                        <constraint firstAttribute="height" constant="15" id="ukW-pE-fka"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="SPx-Lu-jpx">
+                    <rect key="frame" x="93" y="30" width="75" height="75"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="0YK-dF-JFx"/>
+                        <constraint firstAttribute="width" constant="75" id="zTA-KD-EjH"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ZM4-05-qtb" firstAttribute="leading" secondItem="9ZB-Au-OUV" secondAttribute="leading" constant="10" id="4dq-lU-agg"/>
+                <constraint firstItem="lRE-Nl-BMr" firstAttribute="leading" secondItem="9ZB-Au-OUV" secondAttribute="leading" constant="10" id="5K4-1u-U6i"/>
+                <constraint firstItem="lRE-Nl-BMr" firstAttribute="top" secondItem="N6a-yO-tLR" secondAttribute="bottom" constant="10" id="9fD-ca-968"/>
+                <constraint firstItem="N6a-yO-tLR" firstAttribute="top" secondItem="9ZB-Au-OUV" secondAttribute="top" constant="10" id="BUS-aQ-vCh"/>
+                <constraint firstAttribute="bottom" secondItem="SPx-Lu-jpx" secondAttribute="bottom" constant="10" id="DyE-iT-xmC"/>
+                <constraint firstAttribute="trailing" secondItem="SPx-Lu-jpx" secondAttribute="trailing" constant="10" id="SR8-Tc-1wQ"/>
+                <constraint firstItem="ZM4-05-qtb" firstAttribute="top" secondItem="lRE-Nl-BMr" secondAttribute="bottom" constant="10" id="XfR-3r-JRp"/>
+                <constraint firstItem="N6a-yO-tLR" firstAttribute="leading" secondItem="9ZB-Au-OUV" secondAttribute="leading" constant="10" id="kPI-wy-QwR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="22" y="62"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Img_default" width="640" height="360"/>
+    </resources>
+</document>

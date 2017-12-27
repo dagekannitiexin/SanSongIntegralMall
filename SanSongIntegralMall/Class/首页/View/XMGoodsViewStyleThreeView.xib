@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="wba-WJ-CBe" customClass="XMGoodsViewStyleThreeView">
+            <rect key="frame" x="0.0" y="0.0" width="345" height="140"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="LII-Do-GJU">
+                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="140" id="Prm-4O-edf"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日式和风声波式电动牙刷" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3W-XZ-2Wj">
+                    <rect key="frame" x="155" y="50" width="170" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="6Do-co-9uc"/>
+                        <constraint firstAttribute="height" constant="13" id="Q7l-Ua-Dta"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="进口刷毛，专利技术" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDj-A9-Vn1">
+                    <rect key="frame" x="155" y="68" width="170" height="11"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="3hs-9l-d1V"/>
+                        <constraint firstAttribute="height" constant="11" id="yb5-bc-lTz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <color key="textColor" red="0.52941176470588236" green="0.52941176470588236" blue="0.52941176470588236" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥119" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mmh-VS-jpt">
+                    <rect key="frame" x="155" y="94" width="60" height="13"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="13" id="MBA-Fm-Qap"/>
+                        <constraint firstAttribute="width" constant="60" id="rGG-kp-2cC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" red="0.65098039215686276" green="0.20784313725490194" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="LII-Do-GJU" firstAttribute="leading" secondItem="wba-WJ-CBe" secondAttribute="leading" id="9u4-UI-UDB"/>
+                <constraint firstItem="mmh-VS-jpt" firstAttribute="top" secondItem="PDj-A9-Vn1" secondAttribute="bottom" constant="15" id="SmA-gg-ODr"/>
+                <constraint firstItem="LII-Do-GJU" firstAttribute="top" secondItem="wba-WJ-CBe" secondAttribute="top" id="XgM-PR-yDd"/>
+                <constraint firstItem="i3W-XZ-2Wj" firstAttribute="top" secondItem="wba-WJ-CBe" secondAttribute="top" constant="50" id="blT-dL-yax"/>
+                <constraint firstAttribute="bottom" secondItem="LII-Do-GJU" secondAttribute="bottom" id="dIp-ww-1MQ"/>
+                <constraint firstItem="PDj-A9-Vn1" firstAttribute="top" secondItem="i3W-XZ-2Wj" secondAttribute="bottom" constant="5" id="p4b-JM-THj"/>
+                <constraint firstItem="PDj-A9-Vn1" firstAttribute="leading" secondItem="LII-Do-GJU" secondAttribute="trailing" constant="15" id="r97-kK-JSe"/>
+                <constraint firstItem="mmh-VS-jpt" firstAttribute="leading" secondItem="LII-Do-GJU" secondAttribute="trailing" constant="15" id="vcJ-on-ewj"/>
+                <constraint firstItem="i3W-XZ-2Wj" firstAttribute="leading" secondItem="LII-Do-GJU" secondAttribute="trailing" constant="15" id="zgq-sq-Hfl"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="53.5" y="47"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Img_default" width="640" height="360"/>
+    </resources>
+</document>
