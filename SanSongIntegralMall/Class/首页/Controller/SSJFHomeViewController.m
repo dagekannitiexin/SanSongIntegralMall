@@ -20,7 +20,7 @@
 #import "SSJFMineIntegralList.h"
 #import "SSJFShopDetailViewController.h"
 
-@interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
+@interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
     CGFloat _totleHeight;
     UITableView *_tableView;
@@ -97,7 +97,21 @@
     [_tableView setTableHeaderView:_headView];
     _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.alwaysBounceVertical=NO;
+    _tableView.bounces=NO;
+    _tableView.delegate = self;
     [_tableView setTableHeaderView:_headView];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (_tableView.contentOffset.y <= 0) {
+        _tableView.bounces = NO;
+    }
+    else
+        if (_tableView.contentOffset.y >= 0){
+            _tableView.bounces = YES;
+        }
 }
 
 /*

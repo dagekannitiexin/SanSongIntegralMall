@@ -10,12 +10,13 @@
 #import "SDCycleScrollView.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
-    UITableView *_tableView;
-    UIView      *_homeView;
-    CGFloat      _totleHeight;
     SDCycleScrollView *_lunzhuanView;
+    UITableView       *_tableView;
+    UIView            *_homeView;
+    UITextView        *_text;
+    CGFloat            _totleHeight;
 }
-
+@property(nonatomic,strong)NSString * string;
 @end
 
 @implementation SSJFShopDetailViewController
@@ -26,6 +27,9 @@
     self.title = @"商品详细";
     //创建主视图 并且将其嵌入tableView内
     [self createView];
+    [self initTableView];
+    //创建底部兑换界面
+    [self exchangeView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,11 +37,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initTableView
+{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [self.view addSubview:_tableView];
+    _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    _tableView.showsVerticalScrollIndicator = YES;
+    [_tableView setTableHeaderView:_homeView];
+}
+
 #pragma mark - init
 - (void)createView
 {
     _homeView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, 0, 0)];
-    [self.view addSubview:_homeView];
+//    [self.view addSubview:_homeView];
     //初始化总高
     _totleHeight = 0;
     //商品详细第一部分 轮转图
@@ -46,9 +59,9 @@
     [self createDetailView];
     //创建底部责任条款
     [self createResponsibility];
-    
     //最后重设_homeView的大小
     _homeView.size = CGSizeMake(SCREEN_WIDTH, _totleHeight);
+    
 }
 
 - (void)createBannerView
@@ -70,14 +83,86 @@
 
  - (void)createDetailView
 {
-    UILabel *introduceLabel = [[UILabel alloc]initWithFrame:CGRectZero];
-    introduceLabel.origin = CGPointMake(0, _totleHeight);
+    _text = [[UITextView alloc]initWithFrame:CGRectMake(10, _totleHeight, SCREEN_WIDTH -20, SCREEN_HEIGHT -_totleHeight)];
+    [_homeView addSubview:_text];
+    _text.editable = NO;
+    if(self.string)
+    {
+        _text.text = self.string;
+    }
+    else
+    {
+        _text.text = @"一.活动时间 \n     每周一到周一: 18:45-19:45 \n     每周六:18:45-19:20 \n     锁定宁波电视台都市文体频道《讲大道》、《宁波老话》栏目。  \n二.参与方式 \n     1.屏幕右上方出现“摇一摇”提示，摇动手机即可参与。 \n     2.摇动即有奖，进入积分商城将积分独欢礼品。 \n三.得分规则 \n     每成功摇动1次可获得随机数额积分,最高可获得500个积分。  \n四.兑换奖品 \n     积分可在商城兑换奖品，由快递发送。 \n     部分奖品需上门自取。 \n五.活动说明 \n     活动细则详询“点看宁波”客服，苹果公司不是该游戏的发起者，也没有任何方式参与该活动，“点看宁波”保留对本次活动的最终解释权。";
+    }
     
-    [_homeView addSubview:introduceLabel];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_text.text];
+    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+    [paragraphStyle setLineSpacing:3];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, _text.text.length)];
+    
+    _text.attributedText = attributedString;
+    _text.textColor = RGBCOLOR(150, 150, 150);
+    [_text setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
+    [_text sizeToFit];
+    _totleHeight = _totleHeight +_text.height;
 }
 
 - (void)createResponsibility
 {
+    //这里创建免责条款等
+    UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 300)];
+    textView.backgroundColor = [UIColor grayColor];
+    [_homeView addSubview:textView];
     
+}
+
+/*
+ 兑换
+ */
+- (void)exchangeView
+{
+    UIView *buy = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
+    buy.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:buy];
+    
+    UIView * line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 1)];
+    line.backgroundColor =RGBCOLOR(220, 220, 220);
+    [buy addSubview:line];
+    
+    // 单价
+    UILabel *priceLabel = [[UILabel alloc]initWithFrame:CGRectZero];
+    priceLabel.x = 15;
+    priceLabel.size = CGSizeMake(200, 20);
+    priceLabel.font = [UIFont systemFontOfSize:14];
+    priceLabel.numberOfLines = 1;
+    priceLabel.centerY = buy.height/2;
+    [buy addSubview:priceLabel];
+    
+    NSString *priceStr = @"单价:188 积分";
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:priceStr];
+    [attrStr addAttribute:NSForegroundColorAttributeName
+                    value:RGBCOLOR(255, 128, 0)
+                    range:NSMakeRange(3, 4)];
+    priceLabel.attributedText = attrStr;
+    
+    //购买按钮
+    UIButton *buyBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 110, 30)];
+    buyBtn.centerY = buy.height/2;
+    buyBtn.right = SCREEN_WIDTH - 13;
+    [buy addSubview:buyBtn];
+    buyBtn.layer.cornerRadius = 3.0;
+    buyBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
+    [buyBtn setTitle:@"立即兑换" forState:UIControlStateNormal];
+    [buyBtn setBackgroundColor:RGBACOLOR(238, 149, 96, 1)];
+    [buyBtn addTarget:self action:@selector(exchangeNow) forControlEvents:UIControlEventTouchUpInside];
+}
+
+/*
+ 兑换按钮
+ */
+- (void)exchangeNow
+{
+    NSLog(@"立即兑换成功");
 }
 @end
