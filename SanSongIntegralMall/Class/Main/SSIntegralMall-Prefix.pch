@@ -13,4 +13,8 @@
 #import "UIImage+MRExtension.h"
 #import "UIView+YYAdd.h"
 #import "UIView+Frame.h"
+#import "AppDelegate.h"
+#import <SVProgressHUD.h>
+#import "SSJFLoginViewController.h"
+#import <UINavigationController+FDFullscreenPopGesture.h>
 #endif /* SSIntegralMall_Prefix_pch */

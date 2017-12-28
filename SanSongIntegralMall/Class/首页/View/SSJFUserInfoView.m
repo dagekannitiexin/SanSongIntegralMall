@@ -26,7 +26,20 @@
     UITapGestureRecognizer *tapIntegral = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapIntegralClick)];
     [self.Integral addGestureRecognizer:tapIntegral];
     
+    self.Name.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapLogin = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginBtn)];
+    [self.Name addGestureRecognizer:tapLogin];
     
+}
+/*
+ 点击登录
+ */
+- (void)loginBtn
+{
+    if (self.touchViewBlock)
+    {
+        self.touchViewBlock(@"Login");
+    }
 }
 
 /*

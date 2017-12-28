@@ -19,6 +19,9 @@
 		183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */ = {isa = PBXBuildFile; fileRef = 183501721FED09130019AD62 /* SSJFMineIntegralList.m */; };
 		183501751FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */; };
 		183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */; };
+		183585991FF4816A004BA12E /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585981FF48169004BA12E /* WLUnitField.m */; };
+		183585AC1FF48811004BA12E /* XMLoginPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585A71FF48811004BA12E /* XMLoginPhone.m */; };
+		183585AD1FF48811004BA12E /* XMLoginVerificationCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585A91FF48811004BA12E /* XMLoginVerificationCode.m */; };
 		1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */; };
 		1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */; };
 		1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD51FE220E60034C4B8 /* UIView+YYAdd.m */; };
@@ -79,6 +82,9 @@
 		186EA6C01FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6BE1FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m */; };
 		186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6C71FE3D44F00E796B9 /* SSJFGoodsMostNumView.m */; };
 		186EA6CA1FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6C81FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib */; };
+		1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE3A1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m */; };
+		1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */; };
+		1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */; };
 		18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F4FFA11FDFA9C700A258CE /* Main.storyboard */; };
 		E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */; };
 /* End PBXBuildFile section */
@@ -121,6 +127,12 @@
 		183501741FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFMineIntegralListHeadView.xib; sourceTree = "<group>"; };
 		183501761FED0A420019AD62 /* SSJFMineIntegralListHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFMineIntegralListHeadView.h; sourceTree = "<group>"; };
 		183501771FED0A420019AD62 /* SSJFMineIntegralListHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFMineIntegralListHeadView.m; sourceTree = "<group>"; };
+		183585971FF48169004BA12E /* WLUnitField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WLUnitField.h; sourceTree = "<group>"; };
+		183585981FF48169004BA12E /* WLUnitField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WLUnitField.m; sourceTree = "<group>"; };
+		183585A61FF48811004BA12E /* XMLoginPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoginPhone.h; sourceTree = "<group>"; };
+		183585A71FF48811004BA12E /* XMLoginPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoginPhone.m; sourceTree = "<group>"; };
+		183585A81FF48811004BA12E /* XMLoginVerificationCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoginVerificationCode.h; sourceTree = "<group>"; };
+		183585A91FF48811004BA12E /* XMLoginVerificationCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoginVerificationCode.m; sourceTree = "<group>"; };
 		1838CFD01FE214F20034C4B8 /* SSJFUserInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFUserInfoView.h; sourceTree = "<group>"; };
 		1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFUserInfoView.m; sourceTree = "<group>"; };
 		1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFUserInfoView.xib; sourceTree = "<group>"; };
@@ -236,6 +248,11 @@
 		186EA6C61FE3D44F00E796B9 /* SSJFGoodsMostNumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFGoodsMostNumView.h; sourceTree = "<group>"; };
 		186EA6C71FE3D44F00E796B9 /* SSJFGoodsMostNumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFGoodsMostNumView.m; sourceTree = "<group>"; };
 		186EA6C81FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFGoodsMostNumView.xib; sourceTree = "<group>"; };
+		1877AE391FF4C9DA00FC9BA5 /* SSJFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLoginViewController.h; sourceTree = "<group>"; };
+		1877AE3A1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLoginViewController.m; sourceTree = "<group>"; };
+		1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaunchTour.mp4; sourceTree = "<group>"; };
+		1877AE3F1FF4D2B700FC9BA5 /* SSJFLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLoginView.h; sourceTree = "<group>"; };
+		1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLoginView.m; sourceTree = "<group>"; };
 		18F4FFA21FDFA9C700A258CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		64894BAED3ED6A9A60A68C78 /* Pods-SanSongIntegralMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.release.xcconfig"; sourceTree = "<group>"; };
 		8A0AB8935F760AEED625732D /* Pods-SanSongIntegralMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.debug.xcconfig"; sourceTree = "<group>"; };
@@ -366,6 +383,55 @@
 			path = "父控制器";
 			sourceTree = "<group>";
 		};
+		183585961FF48169004BA12E /* 验证码 */ = {
+			isa = PBXGroup;
+			children = (
+				183585971FF48169004BA12E /* WLUnitField.h */,
+				183585981FF48169004BA12E /* WLUnitField.m */,
+			);
+			path = "验证码";
+			sourceTree = "<group>";
+		};
+		183585A41FF48811004BA12E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				183585A51FF48811004BA12E /* Controller */,
+				183585AA1FF48811004BA12E /* Model */,
+				183585AB1FF48811004BA12E /* View */,
+			);
+			name = Login;
+			path = SanSongIntegralMall/Class/Login;
+			sourceTree = SOURCE_ROOT;
+		};
+		183585A51FF48811004BA12E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				183585A61FF48811004BA12E /* XMLoginPhone.h */,
+				183585A71FF48811004BA12E /* XMLoginPhone.m */,
+				183585A81FF48811004BA12E /* XMLoginVerificationCode.h */,
+				183585A91FF48811004BA12E /* XMLoginVerificationCode.m */,
+				1877AE391FF4C9DA00FC9BA5 /* SSJFLoginViewController.h */,
+				1877AE3A1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		183585AA1FF48811004BA12E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		183585AB1FF48811004BA12E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1877AE3F1FF4D2B700FC9BA5 /* SSJFLoginView.h */,
+				1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		1838CFDB1FE25C130034C4B8 /* SDCycleScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +534,7 @@
 				183A1DF51FDF66030054547E /* LaunchScreen.storyboard */,
 				183A1DF81FDF66030054547E /* Info.plist */,
 				183A1DF91FDF66030054547E /* main.m */,
+				1877AE3C1FF4CD0700FC9BA5 /* 资源 */,
 			);
 			path = SanSongIntegralMall;
 			sourceTree = "<group>";
@@ -493,6 +560,7 @@
 		183A1E341FDFA47F0054547E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				183585A41FF48811004BA12E /* Login */,
 				1829C9E11FF2441B00E289A9 /* 商品 */,
 				183501611FECA11A0019AD62 /* 我的 */,
 				183A1E541FDFA7EC0054547E /* Category */,
@@ -593,6 +661,7 @@
 		183A1E4C1FDFA5510054547E /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
+				183585961FF48169004BA12E /* 验证码 */,
 				186EA6B21FE3B65100E796B9 /* NJKWebViewProgress */,
 				1838CFF21FE26D410034C4B8 /* SDWebImage */,
 				1838CFDB1FE25C130034C4B8 /* SDCycleScrollView */,
@@ -634,6 +703,14 @@
 				186EA6B81FE3B65100E796B9 /* UIView+Frame.m */,
 			);
 			path = NJKWebViewProgress;
+			sourceTree = "<group>";
+		};
+		1877AE3C1FF4CD0700FC9BA5 /* 资源 */ = {
+			isa = PBXGroup;
+			children = (
+				1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */,
+			);
+			path = "资源";
 			sourceTree = "<group>";
 		};
 		ABF2306CF92E2E4F16FBA9FF /* Pods */ = {
@@ -774,6 +851,7 @@
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
+				1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */,
 				183A1DF41FDF66030054547E /* Assets.xcassets in Resources */,
 				186EA6A61FE3745E00E796B9 /* XMIntegralHeadView.xib in Resources */,
 				183501751FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib in Resources */,
@@ -871,6 +949,7 @@
 				1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
+				1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -883,6 +962,7 @@
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
 				1838D0181FE26D410034C4B8 /* SDImageCache.m in Sources */,
 				1838CFDA1FE256790034C4B8 /* HeadButton.m in Sources */,
+				183585991FF4816A004BA12E /* WLUnitField.m in Sources */,
 				1838D0211FE26D410034C4B8 /* UIImage+GIF.m in Sources */,
 				1838D0261FE26D410034C4B8 /* UIView+WebCacheOperation.m in Sources */,
 				1838D0251FE26D410034C4B8 /* UIView+WebCache.m in Sources */,
@@ -891,11 +971,13 @@
 				1838D0221FE26D410034C4B8 /* UIImage+MultiFormat.m in Sources */,
 				1838D01B1FE26D410034C4B8 /* SDWebImageDecoder.m in Sources */,
 				1838CFEB1FE25C130034C4B8 /* TAAbstractDotView.m in Sources */,
+				1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */,
 				1838D0161FE26D410034C4B8 /* NSData+ImageContentType.m in Sources */,
 				1838D01D1FE26D410034C4B8 /* SDWebImageDownloaderOperation.m in Sources */,
 				1838CFEC1FE25C130034C4B8 /* TAAnimatedDotView.m in Sources */,
 				186EA6A71FE3745E00E796B9 /* XMintegralCollectionViewCell.m in Sources */,
 				1838D0191FE26D410034C4B8 /* SDImageCacheConfig.m in Sources */,
+				183585AD1FF48811004BA12E /* XMLoginVerificationCode.m in Sources */,
 				1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */,
 				183A1E521FDFA5510054547E /* SignDismissingAnimator.m in Sources */,
 				1838CFF01FE25C130034C4B8 /* SDCycleScrollView.m in Sources */,
@@ -909,6 +991,7 @@
 				186EA69D1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m in Sources */,
 				183A1E531FDFA5510054547E /* SignPresentingAnimator.m in Sources */,
 				183A1E4B1FDFA47F0054547E /* SSJFHomeViewController.m in Sources */,
+				183585AC1FF48811004BA12E /* XMLoginPhone.m in Sources */,
 				186EA6A41FE3745E00E796B9 /* XMIntegralHeadView.m in Sources */,
 				183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */,
 				1838CFF11FE25C130034C4B8 /* UIView+SDExtension.m in Sources */,
@@ -1081,7 +1164,7 @@
 				DEVELOPMENT_TEAM = X9KZX2DWJL;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1098,7 +1181,7 @@
 				DEVELOPMENT_TEAM = X9KZX2DWJL;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";

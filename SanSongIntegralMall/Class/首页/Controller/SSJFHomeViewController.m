@@ -38,12 +38,17 @@
 @implementation SSJFHomeViewController
 
 #pragma mark - init
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     //隐藏设置 底部tabBar
     self.view.backgroundColor= [UIColor whiteColor];
-    self.tabBarController.tabBar.hidden = YES;
     
     //建设
     self.title = @"积分商城";
@@ -133,6 +138,9 @@
         }else if ([str isEqualToString:@"Integral"]){//跳转到积分页面
             SSJFMineIntegralList *integral = [[SSJFMineIntegralList alloc]init];
             [blockSelf.navigationController pushViewController:integral animated:YES];
+        }else if ([str isEqualToString:@"Login"]){//跳转到登录页面
+            SSJFLoginViewController *login = [[SSJFLoginViewController alloc]init];
+            [blockSelf.navigationController pushViewController:login animated:YES];
         }
     };
     [bgView addSubview:_infoView];

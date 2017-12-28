@@ -3,4 +3,5 @@ target 'SanSongIntegralMall' do
 pod 'MJRefresh'
 pod 'pop'
 pod 'SVProgressHUD'
+pod 'FDFullscreenPopGesture'
 end
