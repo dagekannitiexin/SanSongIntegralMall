@@ -23,8 +23,9 @@
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES :NO)
 #define IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0 ? YES :NO)
 #define NavigationBar_HEIGHT  self.navigationController.navigationBar.frame.size.height
-
-
+//********功能********
+#define LBXScan_Define_Native  //包含native库
+#define LBXScan_Define_UI     //包含界面库
 
 #define App_Frame_Height  [[UIScreen mainScreen] applicationFrame].size.height
 #define App_Frame_Width   [[UIScreen mainScreen] applicationFrame].size.width

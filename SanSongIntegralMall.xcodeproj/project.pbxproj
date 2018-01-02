@@ -13,6 +13,11 @@
 		1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */; };
 		1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */; };
 		1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */; };
+		182F546F1FF641BE00552572 /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */; };
+		182F54701FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54681FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m */; };
+		182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */; };
+		182F54721FF641BE00552572 /* UIWindow+LBXHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546C1FF641BE00552572 /* UIWindow+LBXHierarchy.m */; };
+		182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546E1FF641BE00552572 /* LBXAlertAction.m */; };
 		1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */; };
 		1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */; };
 		183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */; };
@@ -50,6 +55,24 @@
 		1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838D0111FE26D410034C4B8 /* UIImageView+WebCache.m */; };
 		1838D0251FE26D410034C4B8 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838D0131FE26D410034C4B8 /* UIView+WebCache.m */; };
 		1838D0261FE26D410034C4B8 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838D0151FE26D410034C4B8 /* UIView+WebCacheOperation.m */; };
+		183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960A21FFB57AC0076FE5D /* QQLBXScanViewController.m */; };
+		183960BC1FFB58540076FE5D /* LBXPermission.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960A71FFB58540076FE5D /* LBXPermission.m */; };
+		183960BD1FFB58540076FE5D /* LBXPermissionCalendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960A91FFB58540076FE5D /* LBXPermissionCalendar.m */; };
+		183960BE1FFB58540076FE5D /* LBXPermissionCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960AB1FFB58540076FE5D /* LBXPermissionCamera.m */; };
+		183960BF1FFB58540076FE5D /* LBXPermissionContacts.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960AD1FFB58540076FE5D /* LBXPermissionContacts.m */; };
+		183960C01FFB58540076FE5D /* LBXPermissionHealth.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960AF1FFB58540076FE5D /* LBXPermissionHealth.m */; };
+		183960C11FFB58540076FE5D /* LBXPermissionLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960B11FFB58540076FE5D /* LBXPermissionLocation.m */; };
+		183960C21FFB58540076FE5D /* LBXPermissionMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960B31FFB58540076FE5D /* LBXPermissionMicrophone.m */; };
+		183960C31FFB58540076FE5D /* LBXPermissionNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960B51FFB58540076FE5D /* LBXPermissionNetwork.m */; };
+		183960C41FFB58540076FE5D /* LBXPermissionPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960B71FFB58540076FE5D /* LBXPermissionPhotos.m */; };
+		183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960B91FFB58540076FE5D /* LBXPermissionReminders.m */; };
+		183960C61FFB58540076FE5D /* LBXPermissionSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960BB1FFB58540076FE5D /* LBXPermissionSetting.m */; };
+		183960C91FFB58750076FE5D /* CreateBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960C81FFB58740076FE5D /* CreateBarCodeViewController.m */; };
+		183960CD1FFB58970076FE5D /* ScanResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 183960CB1FFB58960076FE5D /* ScanResultViewController.xib */; };
+		183960CE1FFB58970076FE5D /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960CC1FFB58970076FE5D /* ScanResultViewController.m */; };
+		183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960D11FFB599A0076FE5D /* UIImageView+CornerRadius.m */; };
+		183960D51FFB59BA0076FE5D /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960D41FFB59BA0076FE5D /* Global.m */; };
+		183960DB1FFB5B140076FE5D /* StyleDIY.m in Sources */ = {isa = PBXBuildFile; fileRef = 183960D91FFB5B140076FE5D /* StyleDIY.m */; };
 		183A1DF41FDF66030054547E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 183A1DF31FDF66030054547E /* Assets.xcassets */; };
 		183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 183A1DF51FDF66030054547E /* LaunchScreen.storyboard */; };
 		183A1DFA1FDF66030054547E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A1DF91FDF66030054547E /* main.m */; };
@@ -117,6 +140,16 @@
 		1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineIntegrallOrderCell.xib; sourceTree = "<group>"; };
 		1829C9E61FF2444500E289A9 /* SSJFShopDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFShopDetailViewController.h; sourceTree = "<group>"; };
 		1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFShopDetailViewController.m; sourceTree = "<group>"; };
+		182F54651FF641BE00552572 /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
+		182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
+		182F54671FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
+		182F54681FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertController+supportedInterfaceOrientations.m"; sourceTree = "<group>"; };
+		182F54691FF641BE00552572 /* UIAlertView+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+LBXAlertAction.h"; sourceTree = "<group>"; };
+		182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+LBXAlertAction.m"; sourceTree = "<group>"; };
+		182F546B1FF641BE00552572 /* UIWindow+LBXHierarchy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+LBXHierarchy.h"; sourceTree = "<group>"; };
+		182F546C1FF641BE00552572 /* UIWindow+LBXHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LBXHierarchy.m"; sourceTree = "<group>"; };
+		182F546D1FF641BE00552572 /* LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXAlertAction.h; sourceTree = "<group>"; };
+		182F546E1FF641BE00552572 /* LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXAlertAction.m; sourceTree = "<group>"; };
 		183501691FECA17B0019AD62 /* SSJFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFMineViewController.h; sourceTree = "<group>"; };
 		1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFMineViewController.m; sourceTree = "<group>"; };
 		1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeadCell.h; sourceTree = "<group>"; };
@@ -189,6 +222,41 @@
 		1838D0131FE26D410034C4B8 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		1838D0141FE26D410034C4B8 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		1838D0151FE26D410034C4B8 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		183960A21FFB57AC0076FE5D /* QQLBXScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QQLBXScanViewController.m; sourceTree = "<group>"; };
+		183960A31FFB57AC0076FE5D /* QQLBXScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QQLBXScanViewController.h; sourceTree = "<group>"; };
+		183960A61FFB58540076FE5D /* LBXPermission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermission.h; sourceTree = "<group>"; };
+		183960A71FFB58540076FE5D /* LBXPermission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermission.m; sourceTree = "<group>"; };
+		183960A81FFB58540076FE5D /* LBXPermissionCalendar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionCalendar.h; sourceTree = "<group>"; };
+		183960A91FFB58540076FE5D /* LBXPermissionCalendar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionCalendar.m; sourceTree = "<group>"; };
+		183960AA1FFB58540076FE5D /* LBXPermissionCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionCamera.h; sourceTree = "<group>"; };
+		183960AB1FFB58540076FE5D /* LBXPermissionCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionCamera.m; sourceTree = "<group>"; };
+		183960AC1FFB58540076FE5D /* LBXPermissionContacts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionContacts.h; sourceTree = "<group>"; };
+		183960AD1FFB58540076FE5D /* LBXPermissionContacts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionContacts.m; sourceTree = "<group>"; };
+		183960AE1FFB58540076FE5D /* LBXPermissionHealth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionHealth.h; sourceTree = "<group>"; };
+		183960AF1FFB58540076FE5D /* LBXPermissionHealth.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionHealth.m; sourceTree = "<group>"; };
+		183960B01FFB58540076FE5D /* LBXPermissionLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionLocation.h; sourceTree = "<group>"; };
+		183960B11FFB58540076FE5D /* LBXPermissionLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionLocation.m; sourceTree = "<group>"; };
+		183960B21FFB58540076FE5D /* LBXPermissionMicrophone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionMicrophone.h; sourceTree = "<group>"; };
+		183960B31FFB58540076FE5D /* LBXPermissionMicrophone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionMicrophone.m; sourceTree = "<group>"; };
+		183960B41FFB58540076FE5D /* LBXPermissionNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionNetwork.h; sourceTree = "<group>"; };
+		183960B51FFB58540076FE5D /* LBXPermissionNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionNetwork.m; sourceTree = "<group>"; };
+		183960B61FFB58540076FE5D /* LBXPermissionPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionPhotos.h; sourceTree = "<group>"; };
+		183960B71FFB58540076FE5D /* LBXPermissionPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionPhotos.m; sourceTree = "<group>"; };
+		183960B81FFB58540076FE5D /* LBXPermissionReminders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionReminders.h; sourceTree = "<group>"; };
+		183960B91FFB58540076FE5D /* LBXPermissionReminders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionReminders.m; sourceTree = "<group>"; };
+		183960BA1FFB58540076FE5D /* LBXPermissionSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXPermissionSetting.h; sourceTree = "<group>"; };
+		183960BB1FFB58540076FE5D /* LBXPermissionSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXPermissionSetting.m; sourceTree = "<group>"; };
+		183960C71FFB58740076FE5D /* CreateBarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateBarCodeViewController.h; sourceTree = "<group>"; };
+		183960C81FFB58740076FE5D /* CreateBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateBarCodeViewController.m; sourceTree = "<group>"; };
+		183960CA1FFB58960076FE5D /* ScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultViewController.h; sourceTree = "<group>"; };
+		183960CB1FFB58960076FE5D /* ScanResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ScanResultViewController.xib; sourceTree = "<group>"; };
+		183960CC1FFB58970076FE5D /* ScanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
+		183960D01FFB599A0076FE5D /* UIImageView+CornerRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CornerRadius.h"; sourceTree = "<group>"; };
+		183960D11FFB599A0076FE5D /* UIImageView+CornerRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CornerRadius.m"; sourceTree = "<group>"; };
+		183960D31FFB59BA0076FE5D /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		183960D41FFB59BA0076FE5D /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
+		183960D91FFB5B140076FE5D /* StyleDIY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleDIY.m; sourceTree = "<group>"; };
+		183960DA1FFB5B140076FE5D /* StyleDIY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleDIY.h; sourceTree = "<group>"; };
 		183A1DE71FDF66030054547E /* SanSongIntegralMall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanSongIntegralMall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		183A1DF31FDF66030054547E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		183A1DF61FDF66030054547E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -324,6 +392,59 @@
 				1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */,
 			);
 			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		182F545E1FF6415200552572 /* 功能 */ = {
+			isa = PBXGroup;
+			children = (
+				182F545F1FF6415200552572 /* 二维码扫描 */,
+			);
+			path = "功能";
+			sourceTree = "<group>";
+		};
+		182F545F1FF6415200552572 /* 二维码扫描 */ = {
+			isa = PBXGroup;
+			children = (
+				183960CF1FFB599A0076FE5D /* CornerRadiusCategory */,
+				183960A51FFB58540076FE5D /* LBXPermissions */,
+				183960A31FFB57AC0076FE5D /* QQLBXScanViewController.h */,
+				183960A21FFB57AC0076FE5D /* QQLBXScanViewController.m */,
+				183960C71FFB58740076FE5D /* CreateBarCodeViewController.h */,
+				183960C81FFB58740076FE5D /* CreateBarCodeViewController.m */,
+				183960CA1FFB58960076FE5D /* ScanResultViewController.h */,
+				183960CC1FFB58970076FE5D /* ScanResultViewController.m */,
+				183960CB1FFB58960076FE5D /* ScanResultViewController.xib */,
+				183960D31FFB59BA0076FE5D /* Global.h */,
+				183960D41FFB59BA0076FE5D /* Global.m */,
+				183960DA1FFB5B140076FE5D /* StyleDIY.h */,
+				183960D91FFB5B140076FE5D /* StyleDIY.m */,
+			);
+			path = "二维码扫描";
+			sourceTree = "<group>";
+		};
+		182F54631FF641BE00552572 /* LBXAlertAction */ = {
+			isa = PBXGroup;
+			children = (
+				182F54641FF641BE00552572 /* Class */,
+				182F546D1FF641BE00552572 /* LBXAlertAction.h */,
+				182F546E1FF641BE00552572 /* LBXAlertAction.m */,
+			);
+			path = LBXAlertAction;
+			sourceTree = "<group>";
+		};
+		182F54641FF641BE00552572 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				182F54651FF641BE00552572 /* UIActionSheet+LBXAlertAction.h */,
+				182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */,
+				182F54671FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.h */,
+				182F54681FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m */,
+				182F54691FF641BE00552572 /* UIAlertView+LBXAlertAction.h */,
+				182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */,
+				182F546B1FF641BE00552572 /* UIWindow+LBXHierarchy.h */,
+				182F546C1FF641BE00552572 /* UIWindow+LBXHierarchy.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		183501611FECA11A0019AD62 /* 我的 */ = {
@@ -503,6 +624,44 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		183960A51FFB58540076FE5D /* LBXPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				183960A61FFB58540076FE5D /* LBXPermission.h */,
+				183960A71FFB58540076FE5D /* LBXPermission.m */,
+				183960A81FFB58540076FE5D /* LBXPermissionCalendar.h */,
+				183960A91FFB58540076FE5D /* LBXPermissionCalendar.m */,
+				183960AA1FFB58540076FE5D /* LBXPermissionCamera.h */,
+				183960AB1FFB58540076FE5D /* LBXPermissionCamera.m */,
+				183960AC1FFB58540076FE5D /* LBXPermissionContacts.h */,
+				183960AD1FFB58540076FE5D /* LBXPermissionContacts.m */,
+				183960AE1FFB58540076FE5D /* LBXPermissionHealth.h */,
+				183960AF1FFB58540076FE5D /* LBXPermissionHealth.m */,
+				183960B01FFB58540076FE5D /* LBXPermissionLocation.h */,
+				183960B11FFB58540076FE5D /* LBXPermissionLocation.m */,
+				183960B21FFB58540076FE5D /* LBXPermissionMicrophone.h */,
+				183960B31FFB58540076FE5D /* LBXPermissionMicrophone.m */,
+				183960B41FFB58540076FE5D /* LBXPermissionNetwork.h */,
+				183960B51FFB58540076FE5D /* LBXPermissionNetwork.m */,
+				183960B61FFB58540076FE5D /* LBXPermissionPhotos.h */,
+				183960B71FFB58540076FE5D /* LBXPermissionPhotos.m */,
+				183960B81FFB58540076FE5D /* LBXPermissionReminders.h */,
+				183960B91FFB58540076FE5D /* LBXPermissionReminders.m */,
+				183960BA1FFB58540076FE5D /* LBXPermissionSetting.h */,
+				183960BB1FFB58540076FE5D /* LBXPermissionSetting.m */,
+			);
+			path = LBXPermissions;
+			sourceTree = "<group>";
+		};
+		183960CF1FFB599A0076FE5D /* CornerRadiusCategory */ = {
+			isa = PBXGroup;
+			children = (
+				183960D01FFB599A0076FE5D /* UIImageView+CornerRadius.h */,
+				183960D11FFB599A0076FE5D /* UIImageView+CornerRadius.m */,
+			);
+			path = CornerRadiusCategory;
+			sourceTree = "<group>";
+		};
 		183A1DDE1FDF66030054547E = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +719,7 @@
 		183A1E341FDFA47F0054547E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				182F545E1FF6415200552572 /* 功能 */,
 				183585A41FF48811004BA12E /* Login */,
 				1829C9E11FF2441B00E289A9 /* 商品 */,
 				183501611FECA11A0019AD62 /* 我的 */,
@@ -686,6 +846,7 @@
 		183A1E541FDFA7EC0054547E /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				182F54631FF641BE00552572 /* LBXAlertAction */,
 				183A1E551FDFA7EC0054547E /* UIImage+MRExtension.h */,
 				183A1E561FDFA7EC0054547E /* UIImage+MRExtension.m */,
 			);
@@ -841,6 +1002,7 @@
 			files = (
 				186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */,
 				18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */,
+				183960CD1FFB58970076FE5D /* ScanResultViewController.xib in Resources */,
 				1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */,
 				186EA6981FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib in Resources */,
 				1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */,
@@ -901,6 +1063,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall-resources.sh",
+				"${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
@@ -940,38 +1103,56 @@
 				1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */,
 				186EA6C01FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m in Sources */,
 				1838D01E1FE26D410034C4B8 /* SDWebImageManager.m in Sources */,
+				183960C41FFB58540076FE5D /* LBXPermissionPhotos.m in Sources */,
 				186EA6BB1FE3B65200E796B9 /* UIView+Frame.m in Sources */,
 				186EA6BA1FE3B65200E796B9 /* NJKWebViewProgressView.m in Sources */,
+				183960BC1FFB58540076FE5D /* LBXPermission.m in Sources */,
+				182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */,
 				1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */,
+				183960C11FFB58540076FE5D /* LBXPermissionLocation.m in Sources */,
 				1829C9D71FF1EAD100E289A9 /* MineIntegralLisetCell.m in Sources */,
+				183960C61FFB58540076FE5D /* LBXPermissionSetting.m in Sources */,
 				1838D01A1FE26D410034C4B8 /* SDWebImageCompat.m in Sources */,
 				1838D01F1FE26D410034C4B8 /* SDWebImagePrefetcher.m in Sources */,
 				1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */,
+				182F54721FF641BE00552572 /* UIWindow+LBXHierarchy.m in Sources */,
+				183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
 				1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */,
+				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */,
 				1838D0201FE26D410034C4B8 /* UIButton+WebCache.m in Sources */,
 				183A1E481FDFA47F0054547E /* XMBaseViewController.m in Sources */,
+				183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
 				1838CFED1FE25C130034C4B8 /* TADotView.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
 				1838D0181FE26D410034C4B8 /* SDImageCache.m in Sources */,
 				1838CFDA1FE256790034C4B8 /* HeadButton.m in Sources */,
+				183960CE1FFB58970076FE5D /* ScanResultViewController.m in Sources */,
 				183585991FF4816A004BA12E /* WLUnitField.m in Sources */,
 				1838D0211FE26D410034C4B8 /* UIImage+GIF.m in Sources */,
+				183960C91FFB58750076FE5D /* CreateBarCodeViewController.m in Sources */,
 				1838D0261FE26D410034C4B8 /* UIView+WebCacheOperation.m in Sources */,
 				1838D0251FE26D410034C4B8 /* UIView+WebCache.m in Sources */,
+				183960D51FFB59BA0076FE5D /* Global.m in Sources */,
+				183960BF1FFB58540076FE5D /* LBXPermissionContacts.m in Sources */,
+				182F54701FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m in Sources */,
 				1838D0171FE26D410034C4B8 /* NSImage+WebCache.m in Sources */,
 				183A1E571FDFA7EC0054547E /* UIImage+MRExtension.m in Sources */,
 				1838D0221FE26D410034C4B8 /* UIImage+MultiFormat.m in Sources */,
+				183960C31FFB58540076FE5D /* LBXPermissionNetwork.m in Sources */,
 				1838D01B1FE26D410034C4B8 /* SDWebImageDecoder.m in Sources */,
+				183960C21FFB58540076FE5D /* LBXPermissionMicrophone.m in Sources */,
 				1838CFEB1FE25C130034C4B8 /* TAAbstractDotView.m in Sources */,
 				1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */,
+				183960BE1FFB58540076FE5D /* LBXPermissionCamera.m in Sources */,
+				183960BD1FFB58540076FE5D /* LBXPermissionCalendar.m in Sources */,
 				1838D0161FE26D410034C4B8 /* NSData+ImageContentType.m in Sources */,
 				1838D01D1FE26D410034C4B8 /* SDWebImageDownloaderOperation.m in Sources */,
 				1838CFEC1FE25C130034C4B8 /* TAAnimatedDotView.m in Sources */,
@@ -985,9 +1166,11 @@
 				186EA6B11FE3A52700E796B9 /* goodsViewStyleOne.m in Sources */,
 				1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
+				183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,
 				1838CFEE1FE25C130034C4B8 /* TAPageControl.m in Sources */,
+				183960DB1FFB5B140076FE5D /* StyleDIY.m in Sources */,
 				186EA69D1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m in Sources */,
 				183A1E531FDFA5510054547E /* SignPresentingAnimator.m in Sources */,
 				183A1E4B1FDFA47F0054547E /* SSJFHomeViewController.m in Sources */,
@@ -995,6 +1178,8 @@
 				186EA6A41FE3745E00E796B9 /* XMIntegralHeadView.m in Sources */,
 				183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */,
 				1838CFF11FE25C130034C4B8 /* UIView+SDExtension.m in Sources */,
+				183960C01FFB58540076FE5D /* LBXPermissionHealth.m in Sources */,
+				182F546F1FF641BE00552572 /* UIActionSheet+LBXAlertAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

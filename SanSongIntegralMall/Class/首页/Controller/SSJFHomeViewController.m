@@ -19,6 +19,9 @@
 #import "SSJFMineViewController.h"
 #import "SSJFMineIntegralList.h"
 #import "SSJFShopDetailViewController.h"
+#import "QQLBXScanViewController.h"
+#import "Global.h"
+#import "StyleDIY.h"
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
@@ -57,6 +60,10 @@
     //初始化tabview
     [self initTableView];
     
+    UIButton *click = [[UIButton alloc]initWithFrame:CGRectMake(0, 200, 40, 40)];
+    click.backgroundColor = [UIColor redColor];
+    [click addTarget:self action:@selector(qqStyle) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:click];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -430,6 +437,21 @@
 {
     SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
     [self.navigationController pushViewController:shopVC animated:YES];
+}
+
+#pragma mark -模仿qq界面
+- (void)qqStyle
+{
+    //添加一些扫码或相册结果处理
+    QQLBXScanViewController *vc = [QQLBXScanViewController new];
+    vc.libraryType = [Global sharedManager].libraryType;
+    vc.scanCodeType = [Global sharedManager].scanCodeType;
+    
+    vc.style = [StyleDIY qqStyle];
+    
+    //镜头拉远拉近功能
+    vc.isVideoZoom = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
