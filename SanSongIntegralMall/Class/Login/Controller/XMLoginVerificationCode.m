@@ -181,8 +181,22 @@
     if (allString.length ==6){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
-            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            [XM_AppDelegate setRootView];
+            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+            [dic setValue:self.phonenNumber forKey:@"tel"];
+            [dic setValue:_unitField.text forKey:@"code"];
+            NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+                [requestInfo setObject:[Utility accessNSDiconary:dic] forKey:@"data"];
+            
+            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/smartapi/api/Login/LoginByTel"];
+            [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                [SSJF_AppDelegate setRootView];
+            } onError:^(NSError *engineError) {
+                NSLog(@"no");
+            }];
+            
         });
         
     }

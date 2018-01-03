@@ -146,7 +146,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"192.168.50.178"
+#define kBaseURL @"192.168.50.196"
 #define MallBaseURL @"apimall.dknb.nbtv.cn"
 
 

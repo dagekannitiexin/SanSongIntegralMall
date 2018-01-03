@@ -24,7 +24,12 @@
     self.window.frame = [UIScreen mainScreen].bounds;
     // 设置窗口的根控制器
     self.window.rootViewController = [[XMTabBarController alloc] init];
+    
+    //创建网络
+    self.engine = [[RESTfulEngine alloc]initWithHostName:@"118.31.4.245"];
+    
     [self.window makeKeyAndVisible];
+    
     
     return YES;
 }

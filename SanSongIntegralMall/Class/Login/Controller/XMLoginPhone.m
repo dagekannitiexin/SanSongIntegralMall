@@ -93,9 +93,22 @@
 
 - (void)nextBtnClick
 {
-    XMLoginVerificationCode *vc = [[XMLoginVerificationCode alloc]init];
-    [vc setNumberOfPhone:_numTextField.text setOpenId:self.openid];
-    [self.navigationController pushViewController:vc animated:YES];
+
+    
+    //设置常用参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:_numTextField.text forKey:@"telNumber"];
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/smartapi/api/Login/GetMessageCode"];
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"]isEqualToString:@"1"])
+        {
+            XMLoginVerificationCode *vc = [[XMLoginVerificationCode alloc]init];
+            [vc setNumberOfPhone:_numTextField.text setOpenId:self.openid];
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
 }
 #pragma mark - uitextfieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
