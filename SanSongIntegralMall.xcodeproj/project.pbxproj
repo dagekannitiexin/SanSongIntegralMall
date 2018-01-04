@@ -86,6 +86,7 @@
 		183A1E521FDFA5510054547E /* SignDismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A1E4F1FDFA5510054547E /* SignDismissingAnimator.m */; };
 		183A1E531FDFA5510054547E /* SignPresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A1E511FDFA5510054547E /* SignPresentingAnimator.m */; };
 		183A1E571FDFA7EC0054547E /* UIImage+MRExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 183A1E561FDFA7EC0054547E /* UIImage+MRExtension.m */; };
+		183CADB31FFDC308007E5DC6 /* NSData+AES.m in Sources */ = {isa = PBXBuildFile; fileRef = 183CADB21FFDC308007E5DC6 /* NSData+AES.m */; };
 		1841EB521FFCB733008FF118 /* Errors_en_US.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1841EB441FFCB733008FF118 /* Errors_en_US.plist */; };
 		1841EB531FFCB733008FF118 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB461FFCB733008FF118 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB541FFCB733008FF118 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB481FFCB733008FF118 /* JSONModel.m */; };
@@ -106,7 +107,6 @@
 		1841EB841FFCB956008FF118 /* DesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB801FFCB955008FF118 /* DesUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB851FFCB956008FF118 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB821FFCB955008FF118 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB891FFCBBF5008FF118 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB881FFCBBF5008FF118 /* Utility.m */; };
-		1841EB8D1FFCBF2A008FF118 /* AESCipher.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB8C1FFCBF29008FF118 /* AESCipher.m */; };
 		186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6941FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m */; };
 		186EA6981FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6951FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib */; };
 		186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6991FE36ED600E796B9 /* XMGoodsViewStyleTwoView.xib */; };
@@ -307,6 +307,8 @@
 		183A1E511FDFA5510054547E /* SignPresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignPresentingAnimator.m; sourceTree = "<group>"; };
 		183A1E551FDFA7EC0054547E /* UIImage+MRExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRExtension.h"; sourceTree = "<group>"; };
 		183A1E561FDFA7EC0054547E /* UIImage+MRExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRExtension.m"; sourceTree = "<group>"; };
+		183CADB11FFDC308007E5DC6 /* NSData+AES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES.h"; sourceTree = "<group>"; };
+		183CADB21FFDC308007E5DC6 /* NSData+AES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES.m"; sourceTree = "<group>"; };
 		1841EB441FFCB733008FF118 /* Errors_en_US.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Errors_en_US.plist; sourceTree = "<group>"; };
 		1841EB451FFCB733008FF118 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		1841EB461FFCB733008FF118 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
@@ -348,8 +350,6 @@
 		1841EB831FFCB955008FF118 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		1841EB871FFCBBF5008FF118 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1841EB881FFCBBF5008FF118 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
-		1841EB8B1FFCBF29008FF118 /* AESCipher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCipher.h; sourceTree = "<group>"; };
-		1841EB8C1FFCBF29008FF118 /* AESCipher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCipher.m; sourceTree = "<group>"; };
 		186EA6941FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGoodsViewStyleTwoHeadView.m; sourceTree = "<group>"; };
 		186EA6951FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGoodsViewStyleTwoHeadView.xib; sourceTree = "<group>"; };
 		186EA6961FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGoodsViewStyleTwoHeadView.h; sourceTree = "<group>"; };
@@ -887,7 +887,7 @@
 		183A1E4C1FDFA5510054547E /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
-				1841EB8A1FFCBF29008FF118 /* AESCipher */,
+				183CADB01FFDC308007E5DC6 /* 加密 */,
 				1841EB7E1FFCB955008FF118 /* DES */,
 				1841EB581FFCB797008FF118 /* MKNetworkKit */,
 				1841EB431FFCB733008FF118 /* RESTEngine */,
@@ -921,6 +921,15 @@
 				183A1E561FDFA7EC0054547E /* UIImage+MRExtension.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		183CADB01FFDC308007E5DC6 /* 加密 */ = {
+			isa = PBXGroup;
+			children = (
+				183CADB11FFDC308007E5DC6 /* NSData+AES.h */,
+				183CADB21FFDC308007E5DC6 /* NSData+AES.m */,
+			);
+			path = "加密";
 			sourceTree = "<group>";
 		};
 		1841EB431FFCB733008FF118 /* RESTEngine */ = {
@@ -1013,15 +1022,6 @@
 				1841EB881FFCBBF5008FF118 /* Utility.m */,
 			);
 			path = "工具";
-			sourceTree = "<group>";
-		};
-		1841EB8A1FFCBF29008FF118 /* AESCipher */ = {
-			isa = PBXGroup;
-			children = (
-				1841EB8B1FFCBF29008FF118 /* AESCipher.h */,
-				1841EB8C1FFCBF29008FF118 /* AESCipher.m */,
-			);
-			path = AESCipher;
 			sourceTree = "<group>";
 		};
 		186EA6B21FE3B65100E796B9 /* NJKWebViewProgress */ = {
@@ -1284,11 +1284,11 @@
 				186EA6BB1FE3B65200E796B9 /* UIView+Frame.m in Sources */,
 				186EA6BA1FE3B65200E796B9 /* NJKWebViewProgressView.m in Sources */,
 				1841EB751FFCB797008FF118 /* NSString+MKNetworkKitAdditions.m in Sources */,
+				183CADB31FFDC308007E5DC6 /* NSData+AES.m in Sources */,
 				1841EB7D1FFCB908008FF118 /* Base64.m in Sources */,
 				183960BC1FFB58540076FE5D /* LBXPermission.m in Sources */,
 				182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */,
 				1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */,
-				1841EB8D1FFCBF2A008FF118 /* AESCipher.m in Sources */,
 				183960C11FFB58540076FE5D /* LBXPermissionLocation.m in Sources */,
 				1829C9D71FF1EAD100E289A9 /* MineIntegralLisetCell.m in Sources */,
 				183960C61FFB58540076FE5D /* LBXPermissionSetting.m in Sources */,

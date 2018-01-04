@@ -53,6 +53,9 @@
     //隐藏设置 底部tabBar
     self.view.backgroundColor= [UIColor whiteColor];
     
+    //调用等待界面
+    //请求首页数据
+    [self initNetWork];
     //建设
     self.title = @"积分商城";
     //创建头部视图
@@ -71,6 +74,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ 请求首页数据
+ */
+- (void)initNetWork
+{
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Home/GetHomeInfo"];
+    
+    __weak SSJFHomeViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSLog(@"%@",aDictronaryBaseObjects);
+        
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
+}
+
+/*
+ 请求活动更多
+ */
+- (void)moreActive
+{
+    //查看更多促销活动
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Home/GetProListByType"];
+    
+    __weak SSJFHomeViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSLog(@"%@",aDictronaryBaseObjects);
+        
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
+}
 /*
  头部图
  */

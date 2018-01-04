@@ -98,7 +98,7 @@
     //设置常用参数
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
     [requestInfo setValue:_numTextField.text forKey:@"telNumber"];
-    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/smartapi/api/Login/GetMessageCode"];
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Login/GetMessageCode"];
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"]isEqualToString:@"1"])
         {

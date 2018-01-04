@@ -13,5 +13,7 @@
 
 /** 字典生成accesstoken */
 + (NSString *)accessNSDiconary:(NSDictionary *)dic;
+/** 获取http头文件 */
++ (NSDictionary*)getHttpHead;
 
 @end

@@ -180,18 +180,19 @@
     NSString *allString = [uniField.text stringByAppendingString:string];
     if (allString.length ==6){
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            
-            NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-            [dic setValue:self.phonenNumber forKey:@"tel"];
-            [dic setValue:_unitField.text forKey:@"code"];
+            //参数
             NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-                [requestInfo setObject:[Utility accessNSDiconary:dic] forKey:@"data"];
+            [requestInfo setValue:self.phonenNumber forKey:@"tel"];
+            [requestInfo setValue:_unitField.text forKey:@"code"];
             
-            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/smartapi/api/Login/LoginByTel"];
+            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Login/LoginByTel"];
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+                NSDictionary *info = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+                NSDictionary *data = [info objectForKey:@"ReData"];
+                NSUserDefaults * de =[NSUserDefaults standardUserDefaults];
+                [de setObject:[data objectForKey:@"token"] forKey:@"token"];
                 [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                 [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                 [SSJF_AppDelegate setRootView];
             } onError:^(NSError *engineError) {
                 NSLog(@"no");
