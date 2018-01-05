@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface goodsViewStyleOne : UIView
+@property (weak, nonatomic) IBOutlet UILabel *ProductName;
+@property (weak, nonatomic) IBOutlet UILabel *Price;
+@property (weak, nonatomic) IBOutlet UIImageView *Imageurl;
 
 @end

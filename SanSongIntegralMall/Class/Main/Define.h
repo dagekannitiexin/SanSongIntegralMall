@@ -18,6 +18,9 @@
 #define DMLog(...) do { } while (0)
 #endif
 
+
+
+
 //********设备属性***********
 #define kDeviceVersion [[UIDevice currentDevice] systemVersion]
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 ? YES :NO)
@@ -146,7 +149,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"192.168.50.196"
+#define kBaseURL @"192.168.50.198:9002"
 #define MallBaseURL @"apimall.dknb.nbtv.cn"
 
 

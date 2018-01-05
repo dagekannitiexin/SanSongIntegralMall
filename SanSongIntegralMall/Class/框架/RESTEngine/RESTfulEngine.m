@@ -41,16 +41,13 @@
             return ;
         }
         
-        //有返回数据的情况下  暂时拿时间字判断
+        //有返回数据的情况下
         NSString *ret = [responseDictionary valueForKey:@"ReFlag"];
         if(ret){
-            
             [SVProgressHUD dismiss];
             succeededBlock(responseDictionary);
             return;
         }
-        [SVProgressHUD dismiss];
-        succeededBlock(responseDictionary);
         
         
     } onError:^(NSError *error) {

@@ -185,7 +185,7 @@
             [requestInfo setValue:self.phonenNumber forKey:@"tel"];
             [requestInfo setValue:_unitField.text forKey:@"code"];
             
-            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Login/LoginByTel"];
+            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Login/LoginByTel"];
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
                 NSDictionary *info = [aDictronaryBaseObjects objectForKey:@"Rdt"];
                 NSDictionary *data = [info objectForKey:@"ReData"];

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface XMGoodsViewStyleTwoView : UIView
+@property (weak, nonatomic) IBOutlet UIImageView *Imageurl;
+@property (weak, nonatomic) IBOutlet UILabel *ProductName;
+@property (weak, nonatomic) IBOutlet UILabel *Price;
 
 
 

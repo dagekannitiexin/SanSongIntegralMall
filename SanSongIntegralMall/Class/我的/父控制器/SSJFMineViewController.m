@@ -41,12 +41,16 @@ static CGFloat CellHeight = 44;
     
 
     
-//    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/User/GetUserInfo"];
-//    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-//        NSLog(@"成功");
-//    } onError:^(NSError *engineError) {
-//        NSLog(@"no");
-//    }];
+    //查看更多促销活动
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/GetUserInfo"];
+    
+    __weak SSJFMineViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSLog(@"%@",aDictronaryBaseObjects);
+        
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
     
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
     _tableView.backgroundColor = RGBCOLOR(246, 246, 249);

@@ -22,6 +22,9 @@
 #import "QQLBXScanViewController.h"
 #import "Global.h"
 #import "StyleDIY.h"
+#import "SSJFHomeModel.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
@@ -35,6 +38,7 @@
     
 }
 
+@property (nonatomic,strong)SSJFHomeModel * homeDetailModel;
 
 @end
 
@@ -58,10 +62,6 @@
     [self initNetWork];
     //建设
     self.title = @"积分商城";
-    //创建头部视图
-    [self initHeadView];
-    //初始化tabview
-    [self initTableView];
     
     UIButton *click = [[UIButton alloc]initWithFrame:CGRectMake(0, 200, 40, 40)];
     click.backgroundColor = [UIColor redColor];
@@ -80,12 +80,16 @@
 - (void)initNetWork
 {
     //查看首页
-    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Home/GetHomeInfo"];
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Home/GetHomeInfo"];
     
     __weak SSJFHomeViewController *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-        NSLog(@"%@",aDictronaryBaseObjects);
-        
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        weakSelf.homeDetailModel = [SSJFHomeModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+        //创建头部视图
+        [self initHeadView];
+        //初始化tabview
+        [self initTableView];
     } onError:^(NSError *engineError) {
         NSLog(@"no");
     }];
@@ -97,7 +101,7 @@
 - (void)moreActive
 {
     //查看更多促销活动
-    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/IntegralMall/api/Home/GetProListByType"];
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Home/GetProListByType"];
     
     __weak SSJFHomeViewController *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
@@ -170,6 +174,10 @@
     [_headView addSubview:bgView];
     
     _infoView = [[[NSBundle mainBundle]loadNibNamed:@"SSJFUserInfoView" owner:nil options:nil]lastObject];
+    [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.userinfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    _infoView.Name.text = _homeDetailModel.userinfo.UserName;
+    _infoView.MemberLeves.text = _homeDetailModel.userinfo.UserLevel;
+    _infoView.Integral.text = _homeDetailModel.userinfo.Integral;
     
     __block SSJFHomeViewController *blockSelf = self;
     _infoView.touchViewBlock = ^(NSString *str) {
@@ -229,9 +237,16 @@
  */
 - (void)createBanner
 {
+    NSMutableArray *imageArray = [NSMutableArray new];
+    for (int i =0; i<_homeDetailModel.homeadv.count-1; i++) {
+        if ([_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]){
+            [imageArray addObject:[_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]];
+        }
+        
+    }
     //创建轮转图
-//    __weak SSJFHomeViewController *weakSelf = self;
-    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _activeView.bottom+12, SCREEN_WIDTH, SCREEN_WIDTH/3) imageNamesGroup:[NSArray arrayWithObjects:@"Img_default",@"Img_default",@"Img_default", nil]];
+    __weak SSJFHomeViewController *weakSelf = self;
+    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _activeView.bottom+12, SCREEN_WIDTH, SCREEN_WIDTH/3) imageURLStringsGroup:imageArray];
     _lunzhuanView.backgroundColor = [UIColor whiteColor];
     _lunzhuanView.contentMode = UIViewContentModeScaleAspectFit;
     _lunzhuanView.placeholderImage=[UIImage imageNamed:@"Img_default"];
@@ -267,6 +282,9 @@
     
     for (int i =0; i<4; i++) {
         goodsViewStyleOne *shopView = [[[NSBundle mainBundle]loadNibNamed:@"goodsViewStyleOne" owner:nil options:nil]lastObject];
+        shopView.ProductName.text = _homeDetailModel.homepro1[i].ProductName;
+        shopView.Price.text = [NSString stringWithFormat:@"%@%@",_homeDetailModel.homepro1[i].Price,@"元起"];
+        [shopView.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro1[i].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
         shopView.width = shopViewWith;
         [viewTwo addSubview:shopView];
         CGPoint viewPoint;
@@ -312,8 +330,11 @@
     //创建scrollerView内部商品视图
     CGFloat shopTwoSapce = 10;
     CGFloat shopTwoWith = 141;
-    for (int i = 0;i<4;i++){
+    for (int i = 0;i<_homeDetailModel.homepro3.count-1;i++){
         XMGoodsViewStyleTwoView *shopView = [[[NSBundle mainBundle]loadNibNamed:@"XMGoodsViewStyleTwoView" owner:nil options:nil]lastObject];
+        shopView.ProductName.text = _homeDetailModel.homepro3[i].ProductName;
+        shopView.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro3[i].Price];
+        [shopView.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro3[i].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
         [goodsScr addSubview:shopView];
         CGPoint orginPoint = CGPointMake(shopTwoSapce+(shopTwoSapce+shopTwoWith)*i, shopTwoSapce);
         shopView.origin = orginPoint;
@@ -336,8 +357,11 @@
     CGFloat goodsViewHeight = 140;
     CGFloat goodsViewWidth = SCREEN_WIDTH -2*goodsViewWidthSpace;
     ;
-    for (int i =0; i<3; i++) {
+    for (int i =0; i<_homeDetailModel.homepro4.count-1; i++) {
         XMGoodsViewStyleThreeView *goodsView = [[[NSBundle mainBundle]loadNibNamed:@"XMGoodsViewStyleThreeView" owner:nil options:nil]lastObject];
+        goodsView.ProductName.text = _homeDetailModel.homepro4[i].ProductName;
+        goodsView.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro4[i].Price];
+        [goodsView.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro4[i].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
         goodsView.width = goodsViewWidth;
         [viewFour addSubview:goodsView];
         //设置位置
@@ -364,8 +388,8 @@
     layout.itemSize =CGSizeMake((SCREEN_WIDTH-30)/2, 255);
     
     //2.初始化collectionView
-    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 275*12+55) collectionViewLayout:layout];
-    mainCollectionView.scrollEnabled = YES;
+    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 275*(_homeDetailModel.homepro5.count+1)/2+55) collectionViewLayout:layout];
+    mainCollectionView.scrollEnabled = NO;
     mainCollectionView.showsVerticalScrollIndicator = NO;
     [_headView addSubview:mainCollectionView];
     mainCollectionView.backgroundColor = [UIColor whiteColor];
@@ -399,13 +423,15 @@
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 24;
+    return _homeDetailModel.homepro5.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     SSJFGoodsMostNumView *cell = (SSJFGoodsMostNumView *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
+    cell.ProductName.text = _homeDetailModel.homepro5[indexPath.row].ProductName;
+    cell.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro5[indexPath.row].Price];
+    [cell.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro5[indexPath.row].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
     return cell;
 }
 
@@ -430,7 +456,7 @@
 //设置每个item的UIEdgeInsets
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(10, 10, 10, 10);
+    return UIEdgeInsetsMake(0, 10, 10, 10);
 }
 
 //设置每个item水平间距
@@ -477,16 +503,19 @@
 #pragma mark -模仿qq界面
 - (void)qqStyle
 {
-    //添加一些扫码或相册结果处理
-    QQLBXScanViewController *vc = [QQLBXScanViewController new];
-    vc.libraryType = [Global sharedManager].libraryType;
-    vc.scanCodeType = [Global sharedManager].scanCodeType;
+    SSJFLoginViewController *login = [[SSJFLoginViewController alloc]init];
+    [self.navigationController pushViewController:login animated:YES];
     
-    vc.style = [StyleDIY qqStyle];
-    
-    //镜头拉远拉近功能
-    vc.isVideoZoom = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+//    //添加一些扫码或相册结果处理
+//    QQLBXScanViewController *vc = [QQLBXScanViewController new];
+//    vc.libraryType = [Global sharedManager].libraryType;
+//    vc.scanCodeType = [Global sharedManager].scanCodeType;
+//
+//    vc.style = [StyleDIY qqStyle];
+//
+//    //镜头拉远拉近功能
+//    vc.isVideoZoom = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
