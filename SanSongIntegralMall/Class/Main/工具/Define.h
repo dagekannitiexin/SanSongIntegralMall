@@ -194,13 +194,21 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
  #define USER_ID  [[NSUserDefaults standardUserDefaults] objectForKey:@"id"]
  #define USER_TOKEN  [[NSUserDefaults standardUserDefaults] objectForKey:@"token"]
- #define USER_ICON  [[NSUserDefaults standardUserDefaults] objectForKey:@"avatar"]
+ #define USER_ICON  [[NSUserDefaults standardUserDefaults] objectForKey:@"avatar"]//头像
  #define USER_NICKNAME  [[NSUserDefaults standardUserDefaults] objectForKey:@"nickname"]
  #define USER_HAVENEWS  [[NSUserDefaults standardUserDefaults] objectForKey:HAVENEWS]
  #define USER_FIRSTUSESHOW [[NSUserDefaults standardUserDefaults] objectForKey:@"allshow"]
  #define USER_POINT [[NSUserDefaults standardUserDefaults] objectForKey:@"integral"]
  #define USER_FIRSTUSECOLORBARRAGE [[NSUserDefaults standardUserDefaults] objectForKey:FIRSTUSECOLORBARRAGE]
  #define USER_USERNAME  [[NSUserDefaults standardUserDefaults] objectForKey:@"username"]
+//*********************************
+//公主家积分商城
+ #define USER_TELPHONE  [[NSUserDefaults standardUserDefaults] objectForKey:@"Telphone"]
+ #define USER_WECHATID  [[NSUserDefaults standardUserDefaults] objectForKey:@"WechatID"]
+ #define USER_BLOGID  [[NSUserDefaults standardUserDefaults] objectForKey:@"BlogID"]
+ #define USER_QQID  [[NSUserDefaults standardUserDefaults] objectForKey:@"QQID"]
+ #define USER_USERLEVEL  [[NSUserDefaults standardUserDefaults] objectForKey:@"UserLevel"]
+ #define USER_QQID  [[NSUserDefaults standardUserDefaults] objectForKey:@"QQID"]
 
 
 #define HAVENEWS @"havenews"

@@ -46,8 +46,19 @@ static CGFloat CellHeight = 44;
     
     __weak SSJFMineViewController *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-        NSLog(@"%@",aDictronaryBaseObjects);
-        
+        NSDictionary *Rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        NSDictionary *info = [Rdt objectForKey:@"ReData"];
+        NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+        [de setObject:[info objectForKey:@"Telphone"] forKey:@"Telphone"];
+        [de setObject:[info objectForKey:@"WechatID"] forKey:@"WechatID"];
+        [de setObject:[info objectForKey:@"BlogID"] forKey:@"BlogID"];
+        [de setObject:[info objectForKey:@"QQID"] forKey:@"QQID"];
+        [de setObject:[info objectForKey:@"UserName"] forKey:@"username"];
+        [de setObject:[info objectForKey:@"Integral"] forKey:@"integral"];
+        [de setObject:[info objectForKey:@"LevelIntegral"] forKey:@"LevelIntegral"];
+        [de setObject:[info objectForKey:@"UserLevel"] forKey:@"UserLevel"];
+        [de setObject:[info objectForKey:@"blogname"] forKey:@"blogname"];
+        [de setObject:[info objectForKey:@"qqname"] forKey:@"qqname"];
     } onError:^(NSError *engineError) {
         NSLog(@"no");
     }];

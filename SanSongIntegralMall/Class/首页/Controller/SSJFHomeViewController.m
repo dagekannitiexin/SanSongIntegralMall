@@ -132,7 +132,7 @@
     //创建新品兑换
     [self createNewShop];
     //人气推荐
-    [self madeRecommend];
+//    [self madeRecommend];
     //兑换大量
     [self createActDuiHuan];
 
@@ -177,7 +177,7 @@
     [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.userinfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
     _infoView.Name.text = _homeDetailModel.userinfo.UserName;
     _infoView.MemberLeves.text = _homeDetailModel.userinfo.UserLevel;
-    _infoView.Integral.text = _homeDetailModel.userinfo.Integral;
+    _infoView.Integral.text = [NSString stringWithFormat:@"%@积分",_homeDetailModel.userinfo.Integral];
     
     __block SSJFHomeViewController *blockSelf = self;
     _infoView.touchViewBlock = ^(NSString *str) {
