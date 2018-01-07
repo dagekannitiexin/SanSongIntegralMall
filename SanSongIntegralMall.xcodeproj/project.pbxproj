@@ -143,6 +143,9 @@
 		1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */; };
 		1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */; };
 		18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F4FFA11FDFA9C700A258CE /* Main.storyboard */; };
+		2323EC6C2001D4CA00D0EA8C /* jpush-ios-2.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */; };
+		2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */; };
+		2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335FCD92001D05D009293C1 /* ModelLocator.m */; };
 		E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */; };
 /* End PBXBuildFile section */
 
@@ -424,6 +427,12 @@
 		1877AE3F1FF4D2B700FC9BA5 /* SSJFLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLoginView.h; sourceTree = "<group>"; };
 		1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLoginView.m; sourceTree = "<group>"; };
 		18F4FFA21FDFA9C700A258CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.2.0.a"; sourceTree = "<group>"; };
+		2323EC692001D4CA00D0EA8C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
+		2323EC6E2001E4BB00D0EA8C /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
+		2335FCD82001D05C009293C1 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
+		2335FCD92001D05D009293C1 /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
 		64894BAED3ED6A9A60A68C78 /* Pods-SanSongIntegralMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.release.xcconfig"; sourceTree = "<group>"; };
 		8A0AB8935F760AEED625732D /* Pods-SanSongIntegralMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.debug.xcconfig"; sourceTree = "<group>"; };
 		E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SanSongIntegralMall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -434,6 +443,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2323EC6C2001D4CA00D0EA8C /* jpush-ios-2.2.0.a in Frameworks */,
 				E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -877,7 +887,6 @@
 			children = (
 				183A1E361FDFA47F0054547E /* AppDelegate.h */,
 				183A1E371FDFA47F0054547E /* AppDelegate.m */,
-				183A1E3F1FDFA47F0054547E /* Define.h */,
 				183A1E401FDFA47F0054547E /* SSIntegralMall-Prefix.pch */,
 				1841EB861FFCBBDE008FF118 /* 工具 */,
 				183A1E381FDFA47F0054547E /* Controller */,
@@ -965,6 +974,7 @@
 		183A1E4C1FDFA5510054547E /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
+				2323EC662001D4CA00D0EA8C /* JPush */,
 				18286DF61FFF0E8A00CCA8D9 /* MJExtension */,
 				183CADB01FFDC308007E5DC6 /* 加密 */,
 				1841EB7E1FFCB955008FF118 /* DES */,
@@ -1078,6 +1088,8 @@
 			children = (
 				1841EB7B1FFCB908008FF118 /* Base64.h */,
 				1841EB7C1FFCB908008FF118 /* Base64.m */,
+				2323EC6E2001E4BB00D0EA8C /* UIAlertView+Blocks.h */,
+				2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -1097,6 +1109,9 @@
 		1841EB861FFCBBDE008FF118 /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				183A1E3F1FDFA47F0054547E /* Define.h */,
+				2335FCD82001D05C009293C1 /* ModelLocator.h */,
+				2335FCD92001D05D009293C1 /* ModelLocator.m */,
 				1841EB871FFCBBF5008FF118 /* Utility.h */,
 				1841EB881FFCBBF5008FF118 /* Utility.m */,
 			);
@@ -1122,6 +1137,15 @@
 				1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */,
 			);
 			path = "资源";
+			sourceTree = "<group>";
+		};
+		2323EC662001D4CA00D0EA8C /* JPush */ = {
+			isa = PBXGroup;
+			children = (
+				2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */,
+				2323EC692001D4CA00D0EA8C /* JPUSHService.h */,
+			);
+			path = JPush;
 			sourceTree = "<group>";
 		};
 		ABF2306CF92E2E4F16FBA9FF /* Pods */ = {
@@ -1388,6 +1412,7 @@
 				1841EB561FFCB733008FF118 /* RESTfulEngine.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
 				1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */,
+				2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */,
 				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
@@ -1447,6 +1472,7 @@
 				186EA6B11FE3A52700E796B9 /* goodsViewStyleOne.m in Sources */,
 				1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
+				2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */,
 				183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,
@@ -1635,6 +1661,10 @@
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1652,6 +1682,10 @@
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";

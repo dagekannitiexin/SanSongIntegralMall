@@ -9,6 +9,7 @@
 #import "XMLoginVerificationCode.h"
 #import "WLUnitField.h"
 #import "XMTabBarController.h"
+#import "JPUSHService.h"
 
 @interface XMLoginVerificationCode ()<WLUnitFieldDelegate>
 
@@ -187,12 +188,20 @@
             
             NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Login/LoginByTel"];
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
                 NSDictionary *info = [aDictronaryBaseObjects objectForKey:@"Rdt"];
                 NSDictionary *data = [info objectForKey:@"ReData"];
                 NSUserDefaults * de =[NSUserDefaults standardUserDefaults];
                 [de setObject:[data objectForKey:@"token"] forKey:@"token"];
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                [de synchronize];
+                
+                // 登陆成功 用户的单独注册
+                [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[info objectForKey:@"id"]]];
+                
+                [ModelLocator sharedInstance].step = @"1";
+                
                 [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                
                 [SSJF_AppDelegate setRootView];
             } onError:^(NSError *engineError) {
                 NSLog(@"no");

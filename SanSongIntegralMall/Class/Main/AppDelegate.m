@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 #import "XMTabBarController.h"
+#import "JPUSHService.h"
+#import "UIAlertView+Blocks.h"
+#import "XMNavigationController.h"
+#import "SSJFLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -23,10 +27,26 @@
     self.window = [[UIWindow alloc] init];
     self.window.frame = [UIScreen mainScreen].bounds;
     // 设置窗口的根控制器
-    self.window.rootViewController = [[XMTabBarController alloc] init];
+    [self setRootView];
+    //****************************************************************************
+    //提示框初始化
+    [SVProgressHUD setCornerRadius:8.0];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    [SVProgressHUD setDefaultAnimationType:SVProgressHUDAnimationTypeFlat];
+    [SVProgressHUD setMinimumDismissTimeInterval:0.1f];
+    [SVProgressHUD setBackgroundColor:[UIColor blackColor]];
+    [SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+    [SVProgressHUD setErrorImage:[UIImage imageNamed:@""]];
+    [SVProgressHUD setSuccessImage:[UIImage imageNamed:@""]];
+    //********************************************************************
+    
     
     //创建网络
-    self.engine = [[RESTfulEngine alloc]initWithHostName:@"118.31.4.245"];
+    self.engine = [[RESTfulEngine alloc]initWithHostName:kBaseURL];
+    
+    //监控step状态
+    [self addObserverAndNotification];
     
     [self.window makeKeyAndVisible];
     
@@ -34,10 +54,95 @@
     return YES;
 }
 
+- (void)addObserverAndNotification{
+    [[ModelLocator sharedInstance] addObserver:self forKeyPath:@"step" options:NSKeyValueObservingOptionNew context:nil];
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    if(object ==[ModelLocator sharedInstance] && [keyPath isEqualToString:@"step"]){
+        
+        if([[ModelLocator sharedInstance].step isEqualToString:@"-1"]){
+            
+            NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+            NSDictionary *dictionary = [de dictionaryRepresentation];
+            for(NSString* key in [dictionary allKeys]){
+                [de removeObjectForKey:key];
+                [de synchronize];
+            }
+            [JPUSHService setTags:nil aliasInbackground:@""];
+        }
+        else if ([[ModelLocator sharedInstance].step isEqualToString:@"-2"])
+        {
+            NSDictionary *dictionary = [USER_DEFAULT dictionaryRepresentation];
+            for(NSString* key in [dictionary allKeys]){
+                [USER_DEFAULT removeObjectForKey:key];
+                [USER_DEFAULT synchronize];
+            }
+            [JPUSHService setTags:nil aliasInbackground:@""];
+            
+            [UIAlertView showAlertViewWithTitle:@"异常登录" message:@"您的帐号在其他设备上登录，为了您的帐号安全，请即时修改密码  ！" cancelButtonTitle:nil otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex) {
+                
+                UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;
+                UIViewController *topVC = appRootVC;
+                if (topVC.presentedViewController) {
+                    topVC = topVC.presentedViewController;
+                    UINavigationController * nav =(UINavigationController*)topVC;
+                    [nav dismissViewControllerAnimated:YES completion:nil];
+                    
+                }
+                else
+                {
+                    SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+                    XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+                    [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+                    
+                }
+                
+            } onCancel:^{
+                
+            }];
+            
+        }
+        else if ([[ModelLocator sharedInstance].step isEqualToString:@"1"])
+        {
+            //登陆状态
+            
+        }
+        else if ([[ModelLocator sharedInstance].step isEqualToString:@"0"])
+        {
+            
+            SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+            XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+            [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+            
+        }
+        else if ([[ModelLocator sharedInstance].step isEqualToString:@"2"])
+        {
+            //去更新
+            
+        }
+    }
+}
+
 //切换
 - (void)setRootView{
-    self.window.rootViewController = [[XMTabBarController alloc] init];
-    [self.window makeKeyAndVisible];
+    if ([USER_TOKEN isEqualToString:@"(null)"]||USER_TOKEN==nil||[USER_TOKEN isEqualToString:@"(null)"]){
+        [ModelLocator sharedInstance].step = @"0";//未登录
+        [JPUSHService setTags:nil aliasInbackground:@""];//登录
+        
+        SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+        XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+        self.window.rootViewController = nav;
+        [self.window makeKeyAndVisible];
+    }else {
+        [ModelLocator sharedInstance].step = @"1";
+        [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[USER_DEFAULT objectForKey:@"id"]]];//登录
+        
+        self.window.rootViewController = [[XMTabBarController alloc] init];
+        [self.window makeKeyAndVisible];
+    }
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
