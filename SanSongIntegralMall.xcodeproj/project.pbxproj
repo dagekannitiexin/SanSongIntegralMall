@@ -120,6 +120,9 @@
 		1841EB841FFCB956008FF118 /* DesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB801FFCB955008FF118 /* DesUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB851FFCB956008FF118 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB821FFCB955008FF118 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB891FFCBBF5008FF118 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB881FFCBBF5008FF118 /* Utility.m */; };
+		1867F15E200308BB00C8733B /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F15D200308BB00C8733B /* UserInfo.m */; };
+		1867F16220035FB800C8733B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1867F15F20035FB700C8733B /* DetailViewController.xib */; };
+		1867F16320035FB800C8733B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F16020035FB800C8733B /* DetailViewController.m */; };
 		186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6941FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m */; };
 		186EA6981FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6951FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib */; };
 		186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6991FE36ED600E796B9 /* XMGoodsViewStyleTwoView.xib */; };
@@ -143,7 +146,6 @@
 		1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */; };
 		1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */; };
 		18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F4FFA11FDFA9C700A258CE /* Main.storyboard */; };
-		2323EC6C2001D4CA00D0EA8C /* jpush-ios-2.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */; };
 		2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */; };
 		2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335FCD92001D05D009293C1 /* ModelLocator.m */; };
 		E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */; };
@@ -391,6 +393,11 @@
 		1841EB831FFCB955008FF118 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		1841EB871FFCBBF5008FF118 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1841EB881FFCBBF5008FF118 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		1867F15C200308BB00C8733B /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		1867F15D200308BB00C8733B /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
+		1867F15F20035FB700C8733B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		1867F16020035FB800C8733B /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		1867F16120035FB800C8733B /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		186EA6941FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMGoodsViewStyleTwoHeadView.m; sourceTree = "<group>"; };
 		186EA6951FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMGoodsViewStyleTwoHeadView.xib; sourceTree = "<group>"; };
 		186EA6961FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMGoodsViewStyleTwoHeadView.h; sourceTree = "<group>"; };
@@ -427,8 +434,6 @@
 		1877AE3F1FF4D2B700FC9BA5 /* SSJFLoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLoginView.h; sourceTree = "<group>"; };
 		1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLoginView.m; sourceTree = "<group>"; };
 		18F4FFA21FDFA9C700A258CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.2.0.a"; sourceTree = "<group>"; };
-		2323EC692001D4CA00D0EA8C /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
 		2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		2323EC6E2001E4BB00D0EA8C /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		2335FCD82001D05C009293C1 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -443,7 +448,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2323EC6C2001D4CA00D0EA8C /* jpush-ios-2.2.0.a in Frameworks */,
 				E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -620,6 +624,8 @@
 		183501631FECA11A0019AD62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1867F15C200308BB00C8733B /* UserInfo.h */,
+				1867F15D200308BB00C8733B /* UserInfo.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -639,6 +645,9 @@
 				1829C9DC1FF213CB00E289A9 /* MineIntegrallOrderCell.h */,
 				1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */,
 				1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */,
+				1867F16120035FB800C8733B /* DetailViewController.h */,
+				1867F16020035FB800C8733B /* DetailViewController.m */,
+				1867F15F20035FB700C8733B /* DetailViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1142,8 +1151,6 @@
 		2323EC662001D4CA00D0EA8C /* JPush */ = {
 			isa = PBXGroup;
 			children = (
-				2323EC682001D4CA00D0EA8C /* jpush-ios-2.2.0.a */,
-				2323EC692001D4CA00D0EA8C /* JPUSHService.h */,
 			);
 			path = JPush;
 			sourceTree = "<group>";
@@ -1289,6 +1296,7 @@
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
+				1867F16220035FB800C8733B /* DetailViewController.xib in Resources */,
 				18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */,
 				1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */,
 				183A1DF41FDF66030054547E /* Assets.xcassets in Resources */,
@@ -1343,6 +1351,7 @@
 				"${PODS_ROOT}/LBXScan/LBXScan/UI/CodeScan.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -1439,6 +1448,7 @@
 				18286E181FFF0E8A00CCA8D9 /* NSObject+MJProperty.m in Sources */,
 				1838D0251FE26D410034C4B8 /* UIView+WebCache.m in Sources */,
 				183960D51FFB59BA0076FE5D /* Global.m in Sources */,
+				1867F15E200308BB00C8733B /* UserInfo.m in Sources */,
 				1841EB891FFCBBF5008FF118 /* Utility.m in Sources */,
 				18286E121FFF0E8A00CCA8D9 /* MJProperty.m in Sources */,
 				183960BF1FFB58540076FE5D /* LBXPermissionContacts.m in Sources */,
@@ -1448,6 +1458,7 @@
 				1838D0221FE26D410034C4B8 /* UIImage+MultiFormat.m in Sources */,
 				183960C31FFB58540076FE5D /* LBXPermissionNetwork.m in Sources */,
 				1838D01B1FE26D410034C4B8 /* SDWebImageDecoder.m in Sources */,
+				1867F16320035FB800C8733B /* DetailViewController.m in Sources */,
 				1841EB791FFCB797008FF118 /* Reachability.m in Sources */,
 				183960C21FFB58540076FE5D /* LBXPermissionMicrophone.m in Sources */,
 				1838CFEB1FE25C130034C4B8 /* TAAbstractDotView.m in Sources */,
@@ -1665,7 +1676,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1686,7 +1697,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = xxx.SanSongIntegralMall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

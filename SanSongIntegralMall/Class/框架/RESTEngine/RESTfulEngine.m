@@ -75,6 +75,8 @@
     RESTfulOperation *op = (RESTfulOperation*) [self operationWithPath:portPath params:requestInfo httpMethod:@"POST"];
     op.stringEncoding = NSUTF8StringEncoding;
     
+    [op addHeaders:[Utility getHttpHead]];
+    
     [op addData:fileData forKey:@"fileUp" mimeType:@"image/png" fileName:@"image.png"];
     NSLog(@"%@",[op description]);
     [op onCompletion:^(MKNetworkOperation *completedOperation) {

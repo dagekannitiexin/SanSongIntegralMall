@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "XMTabBarController.h"
-#import "JPUSHService.h"
 #import "UIAlertView+Blocks.h"
 #import "XMNavigationController.h"
 #import "SSJFLoginViewController.h"
@@ -70,7 +69,7 @@
                 [de removeObjectForKey:key];
                 [de synchronize];
             }
-            [JPUSHService setTags:nil aliasInbackground:@""];
+//            [JPUSHService setTags:nil aliasInbackground:@""];
         }
         else if ([[ModelLocator sharedInstance].step isEqualToString:@"-2"])
         {
@@ -79,7 +78,7 @@
                 [USER_DEFAULT removeObjectForKey:key];
                 [USER_DEFAULT synchronize];
             }
-            [JPUSHService setTags:nil aliasInbackground:@""];
+//            [JPUSHService setTags:nil aliasInbackground:@""];
             
             [UIAlertView showAlertViewWithTitle:@"异常登录" message:@"您的帐号在其他设备上登录，为了您的帐号安全，请即时修改密码  ！" cancelButtonTitle:nil otherButtonTitles:@[@"确定"] onDismiss:^(int buttonIndex) {
                 
@@ -129,7 +128,7 @@
 - (void)setRootView{
     if ([USER_TOKEN isEqualToString:@"(null)"]||USER_TOKEN==nil||[USER_TOKEN isEqualToString:@"(null)"]){
         [ModelLocator sharedInstance].step = @"0";//未登录
-        [JPUSHService setTags:nil aliasInbackground:@""];//登录
+//        [JPUSHService setTags:nil aliasInbackground:@""];//登录
         
         SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
         XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
@@ -137,7 +136,7 @@
         [self.window makeKeyAndVisible];
     }else {
         [ModelLocator sharedInstance].step = @"1";
-        [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[USER_DEFAULT objectForKey:@"id"]]];//登录
+//        [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[USER_DEFAULT objectForKey:@"id"]]];//登录
         
         self.window.rootViewController = [[XMTabBarController alloc] init];
         [self.window makeKeyAndVisible];

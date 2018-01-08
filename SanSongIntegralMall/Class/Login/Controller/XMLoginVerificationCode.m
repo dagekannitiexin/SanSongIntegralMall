@@ -9,7 +9,6 @@
 #import "XMLoginVerificationCode.h"
 #import "WLUnitField.h"
 #import "XMTabBarController.h"
-#import "JPUSHService.h"
 
 @interface XMLoginVerificationCode ()<WLUnitFieldDelegate>
 
@@ -196,7 +195,7 @@
                 [de synchronize];
                 
                 // 登陆成功 用户的单独注册
-                [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[info objectForKey:@"id"]]];
+//                [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[info objectForKey:@"id"]]];
                 
                 [ModelLocator sharedInstance].step = @"1";
                 

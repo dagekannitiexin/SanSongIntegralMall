@@ -149,7 +149,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"118.31.4.245/IM"
+#define kBaseURL @"192.168.50.196/IntegralMall"
 #define MallBaseURL @"apimall.dknb.nbtv.cn"
 
 
@@ -208,8 +208,11 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
  #define USER_BLOGID  [[NSUserDefaults standardUserDefaults] objectForKey:@"BlogID"]
  #define USER_QQID  [[NSUserDefaults standardUserDefaults] objectForKey:@"QQID"]
  #define USER_USERLEVEL  [[NSUserDefaults standardUserDefaults] objectForKey:@"UserLevel"]
- #define USER_QQID  [[NSUserDefaults standardUserDefaults] objectForKey:@"QQID"]
-
+ #define USER_LEVELINTEGRAL  [[NSUserDefaults standardUserDefaults] objectForKey:@"LevelIntegral"]
+#define USER_INTEGRSAL [[NSUserDefaults standardUserDefaults] objectForKey:@"Integral"]
+#define USER_WEICHATNAME [[NSUserDefaults standardUserDefaults] objectForKey:@"weichatname"]
+#define USER_BLOGNAME [[NSUserDefaults standardUserDefaults] objectForKey:@"blogname"]
+#define USER_QQNAME [[NSUserDefaults standardUserDefaults] objectForKey:@"qqname"]
 
 #define HAVENEWS @"havenews"
 #define FIRSTUSECOLORBARRAGE @"firstusecolorbarrage"
