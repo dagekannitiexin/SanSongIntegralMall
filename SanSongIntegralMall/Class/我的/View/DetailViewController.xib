@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
+            <connections>
+                <outlet property="TextFiled" destination="Szw-Q2-hVT" id="mZe-3U-qfH"/>
+                <outlet property="TextView" destination="AIg-Q8-hGR" id="vKt-Ya-lED"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIg-Q8-hGR">
+                    <rect key="frame" x="0.0" y="79" width="375" height="41.5"/>
+                    <subviews>
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Szw-Q2-hVT">
+                            <rect key="frame" x="8" y="0.0" width="359" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="Szw-Q2-hVT" secondAttribute="height" multiplier="96:11" id="mRm-db-52e"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="mRm-db-52e"/>
+                                </mask>
+                            </variation>
+                            <variation key="heightClass=regular-widthClass=compact">
+                                <mask key="constraints">
+                                    <include reference="mRm-db-52e"/>
+                                </mask>
+                            </variation>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Szw-Q2-hVT" secondAttribute="trailing" constant="8" id="4o4-jc-HzN"/>
+                        <constraint firstItem="Szw-Q2-hVT" firstAttribute="top" secondItem="AIg-Q8-hGR" secondAttribute="top" id="P3e-5M-Eeo"/>
+                        <constraint firstAttribute="width" secondItem="AIg-Q8-hGR" secondAttribute="height" multiplier="100:11" id="WXf-E6-Lgd"/>
+                        <constraint firstItem="Szw-Q2-hVT" firstAttribute="leading" secondItem="AIg-Q8-hGR" secondAttribute="leading" constant="8" id="aK9-9Y-uhf"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="subviews">
+                            <exclude reference="Szw-Q2-hVT"/>
+                        </mask>
+                        <mask key="constraints">
+                            <exclude reference="WXf-E6-Lgd"/>
+                            <exclude reference="4o4-jc-HzN"/>
+                            <exclude reference="P3e-5M-Eeo"/>
+                            <exclude reference="aK9-9Y-uhf"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="subviews">
+                            <include reference="Szw-Q2-hVT"/>
+                        </mask>
+                        <mask key="constraints">
+                            <include reference="WXf-E6-Lgd"/>
+                            <include reference="4o4-jc-HzN"/>
+                            <include reference="P3e-5M-Eeo"/>
+                            <include reference="aK9-9Y-uhf"/>
+                        </mask>
+                    </variation>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="0.93725490196078431" green="0.93333333333333335" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="AIg-Q8-hGR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hWG-mq-BmJ"/>
+                <constraint firstAttribute="trailing" secondItem="AIg-Q8-hGR" secondAttribute="trailing" id="jSw-rN-6ep"/>
+                <constraint firstItem="AIg-Q8-hGR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="y8n-kF-3mh"/>
+            </constraints>
+            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="AIg-Q8-hGR"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="hWG-mq-BmJ"/>
+                    <exclude reference="jSw-rN-6ep"/>
+                    <exclude reference="y8n-kF-3mh"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=compact">
+                <mask key="subviews">
+                    <include reference="AIg-Q8-hGR"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="hWG-mq-BmJ"/>
+                    <include reference="jSw-rN-6ep"/>
+                    <include reference="y8n-kF-3mh"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>
