@@ -11,6 +11,7 @@
 #import "UserInfo.h"
 #import "UIImageView+WebCache.h"
 #import "DetailViewController.h"
+#import "XMMeAddressEmpty.h"
 
 static CGFloat FirstCellHeight = 100;
 static CGFloat CellHeight = 44;
@@ -241,6 +242,10 @@ static CGFloat CellHeight = 44;
         NSLog(@"%@",_listArray[indexPath.section][indexPath.row]);
         detail.Deatail = USER_USERNAME;
         [self.navigationController pushViewController:detail animated:YES];
+    }else if (indexPath.section ==0 && indexPath.row == 3){
+        NSLog(@"设置地址");
+        XMMeAddressEmpty *adress = [[XMMeAddressEmpty alloc]init];
+        [self.navigationController pushViewController:adress animated:YES];
     }
 }
 
