@@ -126,17 +126,8 @@
     {
         [dic setValue:self.TextFiled.text forKey:@"email"];
 
-//        if([_TextFiled.text hasPrefix:@"@"])
-//        {
-//            
-//        }
-//        else
-//        {
-//            [SVProgressHUD showErrorWithStatus:@"请输入正确的邮编"];
-//            return;
-//        
-//        }
-//        
+
+        
        
         
         
