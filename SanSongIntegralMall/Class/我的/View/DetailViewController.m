@@ -153,7 +153,7 @@
     [SVProgressHUD showWithStatus:@"正在上传"];
     
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-    [requestInfo setObject:[dic objectForKey:@"nickname"] forKey:@"username"];
+    [requestInfo setObject:[dic objectForKey:@"nickname"] forKey:@""];
     
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath  Method:@"POST" onSucceeded:^(NSDictionary *responseDic){
         NSNumber * result  = [responseDic valueForKey:@"succ"];
