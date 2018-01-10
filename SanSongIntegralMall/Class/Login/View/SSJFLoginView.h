@@ -18,7 +18,13 @@
 
 @end
 
+typedef void (^loginBtn) (void);
+
 @interface SSJFLoginView : UIView
+
+@property (nonatomic ,copy) loginBtn _Nullable wechatLoginBtnBlock;
+@property (nonatomic ,copy) loginBtn _Nullable qqLoginBtnBlock;
+@property (nonatomic ,copy) loginBtn _Nullable weiboLoginBtnBlock;
 
 @property (nonatomic, weak, nullable) id <SSJFLoginViewDelegate> delegate;
 

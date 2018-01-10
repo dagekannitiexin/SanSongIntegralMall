@@ -10,4 +10,5 @@
 
 @interface SSJFShopDetailViewController : UIViewController
 
+@property (nonatomic ,strong)NSString *proid;
 @end

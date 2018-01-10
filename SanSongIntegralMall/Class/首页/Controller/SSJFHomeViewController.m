@@ -132,7 +132,7 @@
     //创建新品兑换
     [self createNewShop];
     //人气推荐
-//    [self madeRecommend];
+    [self madeRecommend];
     //兑换大量
     [self createActDuiHuan];
 
@@ -238,11 +238,10 @@
 - (void)createBanner
 {
     NSMutableArray *imageArray = [NSMutableArray new];
-    for (int i =0; i<_homeDetailModel.homeadv.count-1; i++) {
+    for (int i =0; i<_homeDetailModel.homeadv.count; i++) {
         if ([_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]){
             [imageArray addObject:[_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]];
         }
-        
     }
     //创建轮转图
     __weak SSJFHomeViewController *weakSelf = self;
@@ -285,6 +284,13 @@
         shopView.ProductName.text = _homeDetailModel.homepro1[i].ProductName;
         shopView.Price.text = [NSString stringWithFormat:@"%@%@",_homeDetailModel.homepro1[i].Price,@"元起"];
         [shopView.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro1[i].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+        //添加手势到商品详细  并且上传参数商品id
+        __block SSJFHomeViewController *blockSelf = self;
+        NSString *proid = _homeDetailModel.homepro1[i].ProductID;
+        shopView.selectDetailBlock = ^{
+            [blockSelf shopDetail:proid];
+        };
+        
         shopView.width = shopViewWith;
         [viewTwo addSubview:shopView];
         CGPoint viewPoint;
@@ -295,9 +301,7 @@
         }
         shopView.x =viewPoint.x;
         shopView.y =viewPoint.y+titleView.bottom;
-        //添加手势到商品详细
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shopDetail)];
-        [shopView addGestureRecognizer:tap];
+        
     }
     [_headView addSubview:viewTwo];
     // 加10原因是因为存在边线_totleHeight+10 过了
@@ -330,7 +334,7 @@
     //创建scrollerView内部商品视图
     CGFloat shopTwoSapce = 10;
     CGFloat shopTwoWith = 141;
-    for (int i = 0;i<_homeDetailModel.homepro3.count-1;i++){
+    for (int i = 0;i<_homeDetailModel.homepro3.count;i++){
         XMGoodsViewStyleTwoView *shopView = [[[NSBundle mainBundle]loadNibNamed:@"XMGoodsViewStyleTwoView" owner:nil options:nil]lastObject];
         shopView.ProductName.text = _homeDetailModel.homepro3[i].ProductName;
         shopView.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro3[i].Price];
@@ -357,7 +361,7 @@
     CGFloat goodsViewHeight = 140;
     CGFloat goodsViewWidth = SCREEN_WIDTH -2*goodsViewWidthSpace;
     ;
-    for (int i =0; i<_homeDetailModel.homepro4.count-1; i++) {
+    for (int i =0; i<3; i++) {
         XMGoodsViewStyleThreeView *goodsView = [[[NSBundle mainBundle]loadNibNamed:@"XMGoodsViewStyleThreeView" owner:nil options:nil]lastObject];
         goodsView.ProductName.text = _homeDetailModel.homepro4[i].ProductName;
         goodsView.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro4[i].Price];
@@ -494,9 +498,10 @@
 /*
  点击事件 1.商品详细
  */
-- (void)shopDetail
+- (void)shopDetail:(NSString *)proid
 {
     SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
+    shopVC.proid = proid;
     [self.navigationController pushViewController:shopVC animated:YES];
 }
 

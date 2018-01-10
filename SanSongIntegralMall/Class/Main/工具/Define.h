@@ -149,7 +149,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"118.31.4.245/IM"
+#define kBaseURL @"192.168.50.196/IntegralMall"
 //192.168.50.196/IntegralMall
 //118.31.4.245/IM
 #define MallBaseURL @"apimall.dknb.nbtv.cn"
@@ -158,7 +158,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 #define kSuccessCode  1
 #define kSatatusKey  @"status"
 #define kServiceTimeOut -1001
-#define kPageSize  (iPad? @"20": @"10")
+#define kPageSize  (iPad? @"20": @"10")0000
 
 //network message
 #define kServiceErrorMessage  @"网络异常，请检查网络设置！"

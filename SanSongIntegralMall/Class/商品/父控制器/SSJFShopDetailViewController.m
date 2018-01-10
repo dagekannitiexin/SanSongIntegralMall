@@ -10,6 +10,7 @@
 #import "SDCycleScrollView.h"
 #import "XMBuyShopView.h"
 #import "XMMeAddressEmpty.h"
+#import "ShopDetailModel.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -18,6 +19,8 @@
     UITextView        *_text;
     CGFloat            _totleHeight;
 }
+
+@property (nonatomic ,strong)ShopDetailModel *shopModel;
 /*
  毛玻璃界面
  */
@@ -32,15 +35,54 @@
 
 @implementation SSJFShopDetailViewController
 
+//初始化proid 来获取产品详细
+- (void)setProid:(NSString *)proid
+{
+    if (proid){
+        _proid = proid;
+        [self initNetwork];
+    }
+}
+
+/*
+ 请求网络详细
+ */
+- (void)initNetwork
+{
+    
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Product/GetProDetail"];
+    //设置常用参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:self.proid forKey:@"proid"];
+    [SVProgressHUD showWithStatus:@"获取商品详细中"];
+    __weak SSJFShopDetailViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        if ([reflag isEqualToString:@"1"]){
+            [SVProgressHUD dismiss];
+            weakSelf.shopModel = [ShopDetailModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+            //创建主视图 并且将其嵌入tableView内
+            [weakSelf createView];
+            [weakSelf initTableView];
+            //创建底部兑换界面
+            [weakSelf exchangeView];
+        }else {
+            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+        }
+        
+    } onError:^(NSError *engineError) {
+        [SVProgressHUD dismiss];
+        NSLog(@"no");
+    }];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"商品详细";
-    //创建主视图 并且将其嵌入tableView内
-    [self createView];
-    [self initTableView];
-    //创建底部兑换界面
-    [self exchangeView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

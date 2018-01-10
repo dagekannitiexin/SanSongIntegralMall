@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void (^cancelBtn) ();
+typedef void (^cancelBtn) (void);
 
 @interface XMBuyShopView : UIView
 

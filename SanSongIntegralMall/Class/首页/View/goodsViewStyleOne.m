@@ -18,6 +18,21 @@
     //设置背景颜色
     self.backgroundColor = XMBgColor;
     
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(shopSelect)];
+    [self addGestureRecognizer:tap];
+    
+}
+
+/*
+ 点击进入商品详细
+ */
+- (void)shopSelect
+{
+    if (self.selectDetailBlock){
+        
+        self.selectDetailBlock();
+        
+    }
 }
 
 

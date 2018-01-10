@@ -124,6 +124,8 @@
         [_wechatButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _wechatButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [_wechatButton setImage:[UIImage imageNamed:@"auth_wechat"] forState:UIControlStateNormal];
+        _weiboButton.tag = 101;
+        [_weiboButton addTarget:self action:@selector(loginBtnChoose:) forControlEvents:UIControlEventTouchUpInside];
         _wechatButton.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
     }
     return _wechatButton;
@@ -141,6 +143,8 @@
         [_QQButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _QQButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [_QQButton setImage:[UIImage imageNamed:@"auth_QQ"] forState:UIControlStateNormal];
+        _QQButton.tag = 102;
+        [_QQButton addTarget:self action:@selector(loginBtnChoose:) forControlEvents:UIControlEventTouchUpInside];
         _QQButton.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
     }
     return _QQButton;
@@ -158,8 +162,30 @@
         [_weiboButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _weiboButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [_weiboButton setImage:[UIImage imageNamed:@"auth_weibo"] forState:UIControlStateNormal];
+        _weiboButton.tag = 103;
+        [_weiboButton addTarget:self action:@selector(loginBtnChoose:) forControlEvents:UIControlEventTouchUpInside];
         _weiboButton.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
     }
     return _weiboButton;
+}
+
+- (void)loginBtnChoose:(UIButton *)sender
+{
+    if (sender.tag == 101){
+        if (self.wechatLoginBtnBlock)
+        {
+            self.wechatLoginBtnBlock();
+        }
+    }else if (sender.tag == 102){
+        if (self.qqLoginBtnBlock)
+        {
+            self.qqLoginBtnBlock();
+        }
+    }else if (sender.tag ==103){
+        if (self.weiboLoginBtnBlock)
+        {
+            self.weiboLoginBtnBlock();
+        }
+    }
 }
 @end

@@ -26,6 +26,7 @@
 		1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9DD1FF213CB00E289A9 /* MineIntegrallOrderCell.m */; };
 		1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */; };
 		1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */; };
+		1829CDBF2006051D006A97DD /* ShopDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829CDBE2006051D006A97DD /* ShopDetailModel.m */; };
 		182F546F1FF641BE00552572 /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */; };
 		182F54701FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54681FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m */; };
 		182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */; };
@@ -224,6 +225,8 @@
 		1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MineIntegrallOrderCell.xib; sourceTree = "<group>"; };
 		1829C9E61FF2444500E289A9 /* SSJFShopDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFShopDetailViewController.h; sourceTree = "<group>"; };
 		1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFShopDetailViewController.m; sourceTree = "<group>"; };
+		1829CDBD2006051D006A97DD /* ShopDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetailModel.h; sourceTree = "<group>"; };
+		1829CDBE2006051D006A97DD /* ShopDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetailModel.m; sourceTree = "<group>"; };
 		182F54651FF641BE00552572 /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
 		182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
 		182F54671FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
@@ -585,6 +588,8 @@
 		1829C9E31FF2441B00E289A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1829CDBD2006051D006A97DD /* ShopDetailModel.h */,
+				1829CDBE2006051D006A97DD /* ShopDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1613,6 +1618,7 @@
 				1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
 				2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */,
+				1829CDBF2006051D006A97DD /* ShopDetailModel.m in Sources */,
 				183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,

@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^selectDetail) (void);
 @interface goodsViewStyleOne : UIView
+@property (nonatomic ,copy) selectDetail selectDetailBlock;
 @property (weak, nonatomic) IBOutlet UILabel *ProductName;
 @property (weak, nonatomic) IBOutlet UILabel *Price;
 @property (weak, nonatomic) IBOutlet UIImageView *Imageurl;
