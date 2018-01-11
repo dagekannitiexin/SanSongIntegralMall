@@ -25,6 +25,13 @@
 
 @implementation XMBuyShopView
 
+- (void)setShopModel:(ShopDetailModel *)shopModel
+{
+    if (!_shopModel){
+        _shopModel = shopModel;
+    }
+}
+
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame])
     {

@@ -27,7 +27,7 @@
     //简单的GET操作请求URL
     RESTfulOperation *op = (RESTfulOperation*) [self operationWithPath:portPath params:requestInfo httpMethod:method];
     op.stringEncoding = NSUTF8StringEncoding;
-
+    
     [op addHeaders:[Utility getHttpHead]];
     
     [op onCompletion:^(MKNetworkOperation *completedOperation) {

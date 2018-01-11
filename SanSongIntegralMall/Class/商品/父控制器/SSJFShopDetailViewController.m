@@ -11,6 +11,7 @@
 #import "XMBuyShopView.h"
 #import "XMMeAddressEmpty.h"
 #import "ShopDetailModel.h"
+#import "NSString+JSON.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -192,7 +193,8 @@
     priceLabel.centerY = buy.height/2;
     [buy addSubview:priceLabel];
     
-    NSString *priceStr = @"单价:188 积分";
+//    NSString *priceStr = @"单价:188 积分";
+    NSString *priceStr = [NSString stringWithFormat:@"单价:%@ 积分",_shopModel.NewPrice];
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:priceStr];
     [attrStr addAttribute:NSForegroundColorAttributeName
                     value:RGBCOLOR(255, 128, 0)
@@ -206,8 +208,17 @@
     [buy addSubview:buyBtn];
     buyBtn.layer.cornerRadius = 3.0;
     buyBtn.titleLabel.font = [UIFont systemFontOfSize:14.0];
-    [buyBtn setTitle:@"立即兑换" forState:UIControlStateNormal];
-    [buyBtn setBackgroundColor:RGBACOLOR(238, 149, 96, 1)];
+    //判断是否下架
+    NSString *enable = _shopModel.Enable;
+    if ([enable isEqualToString:@"0"]){
+        [buyBtn setTitle:@"立即兑换" forState:UIControlStateNormal];
+        [buyBtn setBackgroundColor:RGBACOLOR(238, 149, 96, 1)];
+    }else if ([enable isEqualToString:@"1"]){
+        [buyBtn setTitle:@"已下架" forState:UIControlStateNormal];
+        [buyBtn setBackgroundColor:RGBACOLOR(192, 192, 192, 1)];
+        buyBtn.enabled = NO;
+    }
+    
     [buyBtn addTarget:self action:@selector(exchangeNow) forControlEvents:UIControlEventTouchUpInside];
 }
 
@@ -216,19 +227,47 @@
  */
 - (void)exchangeNow
 {
-    NSLog(@"立即兑换成功");
-    //产生毛玻璃效果盖在最顶层
-    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-    _effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
-    //必须给effcetView的frame赋值,因为UIVisualEffectView是一个加到UIIamgeView上的子视图.
-    _effectView.frame = self.view.bounds;
-    [self.view addSubview:_effectView];
-    //将view显示出来
-    [self.view addSubview:self.shopView];
-    //计算上移动大小
-    [UIView animateWithDuration:0.35 animations:^{
-        self.shopView.centerY = SCREEN_HEIGHT/2;
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/ConfirmList"];
+    //设置常用参数
+    NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+    [dic setValue:self.proid forKey:@"ProductId"];
+    [dic setValue:@"1" forKey:@"Num"];
+    NSMutableArray *shopArray = [NSMutableArray arrayWithObjects:dic, nil];
+    NSString *jsonStr = [NSString jsonStringWithArray:shopArray];
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:jsonStr forKey:@""];
+    [SVProgressHUD showWithStatus:@"生成订单中"];
+    __weak SSJFShopDetailViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        if (reflag){
+            if ([reflag isEqualToString:@"1"]){
+                [SVProgressHUD dismiss];
+                //产生毛玻璃效果盖在最顶层
+                UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+                _effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+                //必须给effcetView的frame赋值,因为UIVisualEffectView是一个加到UIIamgeView上的子视图.
+                _effectView.frame = self.view.bounds;
+                [self.view addSubview:_effectView];
+                //将view显示出来
+                [self.view addSubview:self.shopView];
+                //计算上移动大小
+                [UIView animateWithDuration:0.35 animations:^{
+                    self.shopView.centerY = SCREEN_HEIGHT/2;
+                }];
+        }
+
+        }else {
+            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+        }
+        
+    } onError:^(NSError *engineError) {
+        [SVProgressHUD dismiss];
+        NSLog(@"no");
     }];
+    
 }
 
 #pragma mark - lazyInit
@@ -236,6 +275,7 @@
 {
     if (!_shopView){
         _shopView = [[XMBuyShopView alloc]init];
+        _shopView.shopModel = _shopModel;
         __block SSJFShopDetailViewController *blockSelf = self;
         //取消按钮 响应
         _shopView.cancelBtnBlock = ^{
@@ -269,4 +309,16 @@
     }
     return _shopView;
 }
+
+/*
+ NSSttring
+ */
+- (NSString *)removeSpaceAndNewline:(NSString *)str
+{
+    NSString *temp = [str stringByReplacingOccurrencesOfString:@" " withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    temp = [temp stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    return temp;
+}
+
 @end

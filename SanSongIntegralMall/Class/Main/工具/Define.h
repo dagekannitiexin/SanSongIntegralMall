@@ -152,6 +152,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 #define kBaseURL @"192.168.50.196/IntegralMall"
 //192.168.50.196/IntegralMall
 //118.31.4.245/IM
+//192.168.50.198:9002
 #define MallBaseURL @"apimall.dknb.nbtv.cn"
 
 //Response Code

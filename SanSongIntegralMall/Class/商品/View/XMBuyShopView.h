@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShopDetailModel.h"
 
 typedef void (^cancelBtn) (void);
 
+
 @interface XMBuyShopView : UIView
 
+@property (nonatomic ,strong)ShopDetailModel *shopModel;
 @property (nonatomic ,copy) cancelBtn cancelBtnBlock;
 @property (nonatomic ,copy) cancelBtn adressBtnBlock;
 @property (nonatomic ,copy) cancelBtn payBtnBlock;

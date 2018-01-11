@@ -27,6 +27,7 @@
 		1829C9E01FF213CB00E289A9 /* MineIntegrallOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1829C9DE1FF213CB00E289A9 /* MineIntegrallOrderCell.xib */; };
 		1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */; };
 		1829CDBF2006051D006A97DD /* ShopDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1829CDBE2006051D006A97DD /* ShopDetailModel.m */; };
+		182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 182B8B6E200764FE00780A60 /* buyDetailModel.m */; };
 		182F546F1FF641BE00552572 /* UIActionSheet+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */; };
 		182F54701FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F54681FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.m */; };
 		182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */; };
@@ -227,6 +228,8 @@
 		1829C9E71FF2444500E289A9 /* SSJFShopDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFShopDetailViewController.m; sourceTree = "<group>"; };
 		1829CDBD2006051D006A97DD /* ShopDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShopDetailModel.h; sourceTree = "<group>"; };
 		1829CDBE2006051D006A97DD /* ShopDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShopDetailModel.m; sourceTree = "<group>"; };
+		182B8B6D200764FE00780A60 /* buyDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = buyDetailModel.h; sourceTree = "<group>"; };
+		182B8B6E200764FE00780A60 /* buyDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = buyDetailModel.m; sourceTree = "<group>"; };
 		182F54651FF641BE00552572 /* UIActionSheet+LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+LBXAlertAction.h"; sourceTree = "<group>"; };
 		182F54661FF641BE00552572 /* UIActionSheet+LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+LBXAlertAction.m"; sourceTree = "<group>"; };
 		182F54671FF641BE00552572 /* UIAlertController+supportedInterfaceOrientations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertController+supportedInterfaceOrientations.h"; sourceTree = "<group>"; };
@@ -590,6 +593,8 @@
 			children = (
 				1829CDBD2006051D006A97DD /* ShopDetailModel.h */,
 				1829CDBE2006051D006A97DD /* ShopDetailModel.m */,
+				182B8B6D200764FE00780A60 /* buyDetailModel.h */,
+				182B8B6E200764FE00780A60 /* buyDetailModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1561,6 +1566,7 @@
 				1838D0201FE26D410034C4B8 /* UIButton+WebCache.m in Sources */,
 				183A1E481FDFA47F0054547E /* XMBaseViewController.m in Sources */,
 				183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */,
+				182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
 				1838CFED1FE25C130034C4B8 /* TADotView.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
