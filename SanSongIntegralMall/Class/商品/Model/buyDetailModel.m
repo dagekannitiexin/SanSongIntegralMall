@@ -10,4 +10,16 @@
 
 @implementation buyDetailModel
 
++ (NSDictionary *)objectClassInArray{
+    return @{ @"address" : [addressModel class],@"proinfo" :[proinfoModel class] };
+}
+
+@end
+
+@implementation addressModel
+
+@end
+
+@implementation proinfoModel
+
 @end

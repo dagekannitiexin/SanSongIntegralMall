@@ -149,7 +149,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"192.168.50.196/IntegralMall"
+#define kBaseURL @"192.168.50.198:9002"
 //192.168.50.196/IntegralMall
 //118.31.4.245/IM
 //192.168.50.198:9002

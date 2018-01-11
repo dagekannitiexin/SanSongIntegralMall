@@ -24,7 +24,6 @@
 @property (nonatomic, strong) NSString *SaleType;
 @property (nonatomic, strong) NSString *Enable;
 @property (nonatomic, strong) NSArray <proSaleModel *>*proSale;
-
 @end
 
 
