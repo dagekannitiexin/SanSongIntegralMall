@@ -17,6 +17,7 @@
 @property (nonatomic, assign)BOOL isNomalAddress; //是否设置默认地址
 @property (nonatomic, strong)XMMeAdressView *adressView;
 @property (nonatomic, strong)XXTextView *textView;
+
 @end
 
 @implementation XMMeAddressEmptyDetail
@@ -27,7 +28,6 @@
     self.navigationController.navigationBarHidden = YES;
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -37,6 +37,11 @@
     
     [self creatnavigationbar];
     [self createAdressView];
+    
+    //判断是新增状态还是修改状态
+    if (_isupdate){
+        [self upDateAdress];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -158,5 +163,14 @@
         _cricleImg.image = [UIImage imageNamed:@"iconAddressCheckSelected"];
         self.isNomalAddress = YES;
     }
+}
+
+#pragma maek -- 更新地址方法 就是保存方法改变了 设置两种状态的
+- (void)upDateAdress
+{
+    self.adressView.name.text = _model.ReData[_indexPath.row].ReceiveName;
+    self.adressView.phone.text = _model.ReData[_indexPath.row].Telphone;
+    self.adressView.address.text = [NSString stringWithFormat:@"%@%@%@",_model.ReData[_indexPath.row].Province,_model.ReData[_indexPath.row].Town,_model.ReData[_indexPath.row].District];
+    self.textView.text = self.model.ReData[_indexPath.row].Address;
 }
 @end

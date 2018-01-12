@@ -7,7 +7,12 @@
 //
 
 #import "XMBaseViewController.h"
+#import "adressModel.h"
 
 @interface XMMeAddressEmptyDetail : XMBaseViewController
+
+@property (nonatomic , strong)adressModel *model;
+@property (nonatomic, assign)BOOL         isupdate; //判断是否在修改状态
+@property (nonatomic, strong)NSIndexPath  *indexPath; //model的参数
 
 @end

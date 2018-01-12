@@ -11,7 +11,16 @@
 @implementation buyDetailModel
 
 + (NSDictionary *)objectClassInArray{
-    return @{ @"address" : [addressModel class],@"proinfo" :[proinfoModel class] };
+    return @{ @"ReData" : [ReDataModel class] };
+}
+
+@end
+
+
+@implementation ReDataModel
+
++ (NSDictionary *)objectClassInArray{
+    return @{ @"proinfo" : [proinfoModel class] , @"address" : [addressModel class] };
 }
 
 @end

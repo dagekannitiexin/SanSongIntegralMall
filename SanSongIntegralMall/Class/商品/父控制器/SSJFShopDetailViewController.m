@@ -227,47 +227,22 @@
  */
 - (void)exchangeNow
 {
-    //查看首页
-    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/ConfirmList"];
-    //设置常用参数
-    NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-    [dic setValue:self.proid forKey:@"ProductId"];
-    [dic setValue:@"1" forKey:@"Num"];
-    NSMutableArray *shopArray = [NSMutableArray arrayWithObjects:dic, nil];
-    NSString *jsonStr = [NSString jsonStringWithArray:shopArray];
-    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-    [requestInfo setValue:jsonStr forKey:@""];
-    [SVProgressHUD showWithStatus:@"生成订单中"];
-    __weak SSJFShopDetailViewController *weakSelf = self;
-    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-        NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
-        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
-        if (reflag){
-            if ([reflag isEqualToString:@"1"]){
-                [SVProgressHUD dismiss];
-                //产生毛玻璃效果盖在最顶层
-                UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-                _effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
-                //必须给effcetView的frame赋值,因为UIVisualEffectView是一个加到UIIamgeView上的子视图.
-                _effectView.frame = self.view.bounds;
-                [self.view addSubview:_effectView];
-                //将view显示出来
-                [self.view addSubview:self.shopView];
-                //计算上移动大小
-                [UIView animateWithDuration:0.35 animations:^{
-                    self.shopView.centerY = SCREEN_HEIGHT/2;
-                }];
-        }
-
-        }else {
-            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
-        }
-        
-    } onError:^(NSError *engineError) {
-        [SVProgressHUD dismiss];
-        NSLog(@"no");
-    }];
     
+    //产生毛玻璃效果盖在最顶层
+    UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    _effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+    //必须给effcetView的frame赋值,因为UIVisualEffectView是一个加到UIIamgeView上的子视图.
+    _effectView.frame = self.view.bounds;
+    [self.view addSubview:_effectView];
+    
+    //将view显示出来
+    [self.view addSubview:self.shopView];
+    
+    //计算上移动大小 加入动画效果
+    [UIView animateWithDuration:0.35 animations:^{
+        self.shopView.centerY = SCREEN_HEIGHT/2;
+    }];
+        
 }
 
 #pragma mark - lazyInit

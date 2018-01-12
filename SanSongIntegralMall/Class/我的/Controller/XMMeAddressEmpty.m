@@ -8,11 +8,15 @@
 
 #import "XMMeAddressEmpty.h"
 #import "XMMeAddressEmptyDetail.h"
+#import "SSJFAdressCell.h"
+#import "adressModel.h"
 
-@interface XMMeAddressEmpty (){
+@interface XMMeAddressEmpty ()<UITableViewDelegate,UITableViewDataSource>{
     UIView *_emptyView;
+    UITableView *_tableView;
+    
 }
-
+@property (nonatomic , strong)adressModel *model;
 @end
 
 @implementation XMMeAddressEmpty
@@ -25,6 +29,19 @@
     self.title = @"管理收货地址";
     
     [self initNetWork];
+    
+}
+
+- (void)createTableView{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    [self.view addSubview:_tableView];
+    
+    _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
+    _tableView.showsVerticalScrollIndicator = NO;
+    
+    [_tableView registerNib:[UINib nibWithNibName:@"SSJFAdressCell" bundle:nil] forCellReuseIdentifier:@"SSJFAdressCell"];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
 }
 
 //initNetWork
@@ -35,8 +52,12 @@
     __weak XMMeAddressEmpty *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         [SVProgressHUD dismiss];
-        if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"]isEqualToString:@"-1"])
+        if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"]isEqualToString:@"1"])
         {
+            //给模型赋值
+            weakSelf.model = [adressModel mj_objectWithKeyValues:[aDictronaryBaseObjects objectForKey:@"Rdt"]];
+            [self createTableView];
+        }else {
             //无数据
             [weakSelf createEmptyView];
         }
@@ -133,4 +154,43 @@
     [self.navigationController pushViewController:VC animated:YES];
     
 }
+
+#pragma mark - uitableViewDelegate  UITAbleViewDateSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.model.ReData.count;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 80;
+}
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *identifier = @"SSJFAdressCell";
+    SSJFAdressCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell){
+        cell = [[SSJFAdressCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.name.text  = [NSString stringWithFormat:@"%@",_model.ReData[indexPath.row].ReceiveName];
+    cell.phone.text = [NSString stringWithFormat:@"%@",_model.ReData[indexPath.row].Telphone];
+    cell.adressDetail.text  = [NSString stringWithFormat:@"%@%@%@%@",_model.ReData[indexPath.row].Province,_model.ReData[indexPath.row].Town,_model.ReData[indexPath.row].District,_model.ReData[indexPath.row].Address];
+    cell.upDateBtnBlock = ^{
+        //修改地址  与新增收货地址一致
+        XMMeAddressEmptyDetail *VC = [[XMMeAddressEmptyDetail alloc]init];
+        VC.model = self.model;
+        VC.isupdate = YES;
+        [self.navigationController pushViewController:VC animated:YES];
+    };
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+}
+
 @end

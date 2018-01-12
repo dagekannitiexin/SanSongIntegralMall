@@ -7,6 +7,8 @@
 //
 
 #import "XMBuyShopView.h"
+#import "UIImageView+WebCache.h"
+#import "buyDetailModel.h"
 
 @interface XMBuyShopView(){
     NSString *_choosePayWay; //用于保存选择的数据
@@ -21,6 +23,7 @@
 @property (nonatomic ,strong)UIView *orderViewThree;
 @property (nonatomic ,strong)UIButton *cancelBtn; //取消返回按钮
 @property (nonatomic ,strong)UILabel *titleLabel; //标题
+@property (nonatomic ,strong)buyDetailModel *buyModel;
 @end
 
 @implementation XMBuyShopView
@@ -29,6 +32,11 @@
 {
     if (!_shopModel){
         _shopModel = shopModel;
+        //创建导航栏 和底部确认栏
+        [self createEditNavView];
+        
+        //创建第一步详细部分
+        [self editTheOrder];
     }
 }
 
@@ -42,11 +50,6 @@
         self.centerY = SCREEN_HEIGHT/2;
         self.layer.cornerRadius = 12.0;
         self.clipsToBounds = YES;
-        //创建导航栏 和底部确认栏
-        [self createEditNavView];
-        
-        //创建第一步详细部分
-        [self editTheOrder];
     }
     return self;
 }
@@ -101,21 +104,21 @@
     [_orderViewOne addSubview:scrView];
     
     UIImageView *iconImg = [[UIImageView alloc]initWithFrame:CGRectMake(_orderViewOne.width-68-15, 20, 68, 68)];
-    iconImg.image = [UIImage imageNamed:@"Img_default"];
+    [iconImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_shopModel.ImageUrl]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
     [scrView addSubview:iconImg];
  
     UILabel *desc = [[UILabel alloc]initWithFrame:CGRectMake(15, 20, iconImg.left-20, 15)];
-    desc.text = @"能搭配各种外套的满分内搭来哈哈哈哈哈哈哈哈";
+    desc.text = [NSString stringWithFormat:@"%@",_shopModel.ProductIntro];
     desc.font = [UIFont fontWithName:@"Helvetica" size:14];
     [scrView addSubview:desc];
     
     UILabel *price = [[UILabel alloc]initWithFrame:CGRectMake(15, desc.bottom+13, desc.width, 15)];
-    price.text = @"69元";
+    price.text = [NSString stringWithFormat:@"%@元",_shopModel.NewPrice];
     price.font = [UIFont fontWithName:@"Helvetica" size:14];
     [scrView addSubview:price];
     
     UILabel *info = [[UILabel alloc]initWithFrame:CGRectMake(15, price.bottom+15, desc.width, 11)];
-    info.text = @"免运费 | 库存充足";
+    info.text = @"江浙沪包邮 | 库存充足";
     info.textColor =XMHeigtGaryColor;
     info.font = [UIFont systemFontOfSize:10];
     [scrView addSubview:info];
@@ -137,7 +140,7 @@
     determine.centerX = footViewOne.centerX;
     determine.centerY = 75/2;
     determine.backgroundColor = RGBACOLOR(209, 88, 84, 1);
-    [determine setTitle:@"¥129确认" forState:UIControlStateNormal];
+    [determine setTitle:[NSString stringWithFormat:@"%@元确认",_shopModel.NewPrice] forState:UIControlStateNormal];
     [determine setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     determine.layer.cornerRadius = 7.0;
     determine.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
@@ -187,18 +190,47 @@
  点击确认按钮
  */
 - (void)determineBtnClick{
-    //此处有动画
-    [UIView animateWithDuration:0.15 animations:^{
-        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
-        self.centerY = SCREEN_HEIGHT/2;
-    } completion:^(BOOL finished) {
-        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
-    }];
-    //隐藏第一个界面 并且底部也隐藏
-    self.orderViewOne.hidden = YES;
-    //产生订单给用户 待确认
-    [self createDetermineViewTwo];
+    //请求网络
+        //查看首页
+        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/ConfirmList"];
+        //设置常用参数
+        NSMutableDictionary *dic =[NSMutableDictionary dictionary];
+        [dic setValue:_shopModel.ProductID forKey:@"ProductId"];
+        [dic setValue:@"2" forKey:@"Num"];
+        NSMutableArray *shopArray = [NSMutableArray arrayWithObjects:dic, nil];
+        NSString *jsonStr = [NSString jsonStringWithArray:shopArray];
+        NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+        [requestInfo setValue:jsonStr forKey:@""];
+        [SVProgressHUD showWithStatus:@"生成订单中"];
+        __weak XMBuyShopView *weakSelf = self;
+        [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+            NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
+            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+            if (reflag){
+                if ([reflag isEqualToString:@"1"]){
+                    [SVProgressHUD dismiss];
+                    //给模型赋值
+                    weakSelf.buyModel = [buyDetailModel mj_objectWithKeyValues:rdt];
+                    //此处有动画
+                    [UIView animateWithDuration:0.15 animations:^{
+                        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
+                        self.centerY = SCREEN_HEIGHT/2;
+                    } completion:^(BOOL finished) {
+                        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
+                    }];
+                    //隐藏第一个界面 并且底部也隐藏
+                    self.orderViewOne.hidden = YES;
+                    //产生订单给用户 待确认
+                    [self createDetermineViewTwo];
+            }
+            }else {
+                [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+            }
     
+        } onError:^(NSError *engineError) {
+            [SVProgressHUD dismiss];
+            NSLog(@"no");
+        }];
 }
 
 #pragma mark -创建订单  Two
@@ -231,20 +263,20 @@
     [adressView addSubview:adressImg];
     
     UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(adressImg.right+15, 15, 55, 16)];
-    name.text = @"林尤达";
+    name.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.ReceiveName];
     name.textColor = [UIColor blackColor];
     name.font = [UIFont systemFontOfSize:15];
     [adressView addSubview:name];
     
     UILabel *phone = [[UILabel alloc]initWithFrame:CGRectMake(name.right+5, name.y, 150, 15)];
-    phone.text = @"17858022558";
+    phone.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.Telphone];
     phone.textColor = [UIColor blackColor];
     phone.font = [UIFont systemFontOfSize:15];
     [adressView addSubview:phone];
     
     UILabel *address = [[UILabel alloc]initWithFrame:CGRectMake(name.x, name.bottom+10, adressView.width-name.right-15, 16)];
     address.font = [UIFont systemFontOfSize:14];
-    address.text = @"浙江省宁波市鄞州区XX小区XX幢XX号XXXXXXXXXXXXXXX";
+    address.text = [NSString stringWithFormat:@"%@%@%@%@",_buyModel.ReData[0].address.Province,_buyModel.ReData[0].address.Town,_buyModel.ReData[0].address.District,_buyModel.ReData[0].address.Address];
     address.textColor = XMHeigtGaryColor;
     [adressView addSubview:address];
     
@@ -258,7 +290,6 @@
     lineView.backgroundColor = XMGaryColor;
     [adressView addSubview:lineView];
     
-    
     //第二部分 商品icon 描述商品 商品选择尺码 数量
     UIView *shoppingView = [[UIView alloc]initWithFrame:CGRectMake(0, adressView.bottom, _orderViewTwo.width, 65)];
     [_orderViewTwo addSubview:shoppingView];
@@ -268,11 +299,10 @@
     [shoppingView addSubview:shoppingImg];
     
     UILabel *shoppingDesc = [[UILabel alloc]initWithFrame:CGRectMake(shoppingImg.right+15, 15, shoppingView.width -shoppingImg.right -30-30, 16)];
-    shoppingDesc.text = @"拿到手掂一掂，你就知道它们有多实心，会有多舒服，嘻嘻☺️";
+    shoppingDesc.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].proinfo.ProductIntro];
     shoppingDesc.textColor = [UIColor blackColor];
     shoppingDesc.font = [UIFont systemFontOfSize:15];
     [shoppingView addSubview:shoppingDesc];
-    
     
     UILabel *shoppingSize = [[UILabel alloc]initWithFrame:CGRectMake(shoppingDesc.x, shoppingDesc.bottom+10, shoppingView.width-shoppingDesc.x-15, 16)];
     shoppingSize.font = [UIFont systemFontOfSize:14];
@@ -327,7 +357,8 @@
     [payForView addSubview:payForLabel];
     
     UILabel *payForMoney = [[UILabel alloc]initWithFrame:CGRectMake(payForView.width-15-50, 15, 50, 16)];
-    payForMoney.text = @"¥136";
+    payForMoney.text = [NSString stringWithFormat:@"¥%@",_buyModel.ReData[0].proinfo.NewPrice];
+    //@"¥136"
     payForMoney.textColor = [UIColor redColor];
     payForMoney.font = [UIFont systemFontOfSize:15];
     [payForView addSubview:payForMoney];

@@ -42,6 +42,9 @@
 		183585991FF4816A004BA12E /* WLUnitField.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585981FF48169004BA12E /* WLUnitField.m */; };
 		183585AC1FF48811004BA12E /* XMLoginPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585A71FF48811004BA12E /* XMLoginPhone.m */; };
 		183585AD1FF48811004BA12E /* XMLoginVerificationCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 183585A91FF48811004BA12E /* XMLoginVerificationCode.m */; };
+		1835CA54200890DE00BAC62A /* SSJFAdressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835CA52200890DE00BAC62A /* SSJFAdressCell.m */; };
+		1835CA55200890DE00BAC62A /* SSJFAdressCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835CA53200890DE00BAC62A /* SSJFAdressCell.xib */; };
+		1835CA582008A5D700BAC62A /* adressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835CA572008A5D700BAC62A /* adressModel.m */; };
 		1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */; };
 		1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */; };
 		1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 1838CFD51FE220E60034C4B8 /* UIView+YYAdd.m */; };
@@ -256,6 +259,11 @@
 		183585A71FF48811004BA12E /* XMLoginPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoginPhone.m; sourceTree = "<group>"; };
 		183585A81FF48811004BA12E /* XMLoginVerificationCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLoginVerificationCode.h; sourceTree = "<group>"; };
 		183585A91FF48811004BA12E /* XMLoginVerificationCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLoginVerificationCode.m; sourceTree = "<group>"; };
+		1835CA51200890DE00BAC62A /* SSJFAdressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFAdressCell.h; sourceTree = "<group>"; };
+		1835CA52200890DE00BAC62A /* SSJFAdressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFAdressCell.m; sourceTree = "<group>"; };
+		1835CA53200890DE00BAC62A /* SSJFAdressCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFAdressCell.xib; sourceTree = "<group>"; };
+		1835CA562008A5D700BAC62A /* adressModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = adressModel.h; sourceTree = "<group>"; };
+		1835CA572008A5D700BAC62A /* adressModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = adressModel.m; sourceTree = "<group>"; };
 		1838CFD01FE214F20034C4B8 /* SSJFUserInfoView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFUserInfoView.h; sourceTree = "<group>"; };
 		1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFUserInfoView.m; sourceTree = "<group>"; };
 		1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFUserInfoView.xib; sourceTree = "<group>"; };
@@ -701,6 +709,8 @@
 			children = (
 				1867F15C200308BB00C8733B /* UserInfo.h */,
 				1867F15D200308BB00C8733B /* UserInfo.m */,
+				1835CA562008A5D700BAC62A /* adressModel.h */,
+				1835CA572008A5D700BAC62A /* adressModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -728,6 +738,9 @@
 				18E2C48E200463DD00120042 /* XMMeAdressView.xib */,
 				18E2C4922004641C00120042 /* XXTextView.h */,
 				18E2C4932004641D00120042 /* XXTextView.m */,
+				1835CA51200890DE00BAC62A /* SSJFAdressCell.h */,
+				1835CA52200890DE00BAC62A /* SSJFAdressCell.m */,
+				1835CA53200890DE00BAC62A /* SSJFAdressCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1404,6 +1417,7 @@
 				186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */,
 				18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */,
 				18E2C4AD2004646700120042 /* LICENSE in Resources */,
+				1835CA55200890DE00BAC62A /* SSJFAdressCell.xib in Resources */,
 				18E2C48C2004632900120042 /* address.json in Resources */,
 				18E2C491200463DD00120042 /* XMMeAdressView.xib in Resources */,
 				1841EB521FFCB733008FF118 /* Errors_en_US.plist in Resources */,
@@ -1560,6 +1574,7 @@
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
 				18E2C4882004630700120042 /* XMMeAddressEmptyDetailPresent.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
+				1835CA582008A5D700BAC62A /* adressModel.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1841EB541FFCB733008FF118 /* JSONModel.m in Sources */,
 				1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */,
@@ -1613,6 +1628,7 @@
 				1838D0191FE26D410034C4B8 /* SDImageCacheConfig.m in Sources */,
 				1841EB741FFCB797008FF118 /* NSString+JSON.m in Sources */,
 				18286E151FFF0E8A00CCA8D9 /* NSObject+MJClass.m in Sources */,
+				1835CA54200890DE00BAC62A /* SSJFAdressCell.m in Sources */,
 				183585AD1FF48811004BA12E /* XMLoginVerificationCode.m in Sources */,
 				1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */,
 				183A1E521FDFA5510054547E /* SignDismissingAnimator.m in Sources */,
