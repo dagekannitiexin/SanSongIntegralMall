@@ -132,7 +132,7 @@
     //创建新品兑换
     [self createNewShop];
     //人气推荐
-    [self madeRecommend];
+//    [self madeRecommend];
     //兑换大量
     [self createActDuiHuan];
 
