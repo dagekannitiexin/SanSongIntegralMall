@@ -17,5 +17,6 @@ typedef void (^upDateBtn) (void);
 @property (weak, nonatomic) IBOutlet UILabel *phone;
 @property (weak, nonatomic) IBOutlet UILabel *adressDetail;
 @property (weak, nonatomic) IBOutlet UIButton *setBtn;
+@property (weak, nonatomic) IBOutlet UIImageView *isDefault;
 @property (nonatomic ,assign)BOOL isChosse;
 @end

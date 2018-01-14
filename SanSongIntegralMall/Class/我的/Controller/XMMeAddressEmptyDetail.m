@@ -96,17 +96,19 @@
     [self.view addSubview:_textView];
     
     //加入设置为默认收货地址
-    UIView *setNomalView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 135, 17)];
+    UIView *setNomalView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 135, 40)];
     setNomalView.backgroundColor = [UIColor clearColor];
     setNomalView.center = CGPointMake(self.view.centerX, _adressView.bottom+30);
     [self.view addSubview:setNomalView];
     
-    _cricleImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 17, 17)];
+    _cricleImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 28, 35)];
     _cricleImg.image = [UIImage imageNamed:@"iconAddressCheckNormal"];
+    _cricleImg.centerY = 20;
     [setNomalView addSubview:_cricleImg];
     
     UILabel *setNamal = [[UILabel alloc]initWithFrame:CGRectMake(_cricleImg.right+7, 0, 120, 17)];
     setNamal.text  = @"设为默认收货地址";
+    setNamal.centerY = 40/2;
     setNamal.textColor = [UIColor blackColor];
     setNamal.font = [UIFont systemFontOfSize:14];
     [setNomalView addSubview:setNamal];
@@ -167,7 +169,7 @@
     [requestInfo setValue:_adressView.selections[1] forKey:@"Town"];
     [requestInfo setValue:_adressView.selections[2] forKey:@"District"];
     [requestInfo setValue:_textView.text forKey:@"Address"];
-    [requestInfo setValue:[NSString stringWithFormat:@"%ld",(long)_IsDefault] forKey:@"IsDefault"];
+    [requestInfo setValue:[NSString stringWithFormat:@"%ld",(long)_isNomalAddress] forKey:@"IsDefault"];
     //条件完成可以请求
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Address/CreateUserShippingAddress"];
     [SVProgressHUD showWithStatus:@"正在保存ing"];
@@ -211,7 +213,7 @@
         [requestInfo setValue:self.District forKey:@"District"];
     }
     
-    [requestInfo setValue:[NSString stringWithFormat:@"%ld",(long)_IsDefault] forKey:@"IsDefault"];
+    [requestInfo setValue:[NSString stringWithFormat:@"%ld",(long)_isNomalAddress] forKey:@"IsDefault"];
     //条件完成可以请求
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Address//setAddress"];
     [SVProgressHUD showWithStatus:@"正在修改地址"];

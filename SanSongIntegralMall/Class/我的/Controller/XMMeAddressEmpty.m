@@ -176,10 +176,15 @@
     cell.name.text  = [NSString stringWithFormat:@"%@",_model.ReData[indexPath.row].ReceiveName];
     cell.phone.text = [NSString stringWithFormat:@"%@",_model.ReData[indexPath.row].Telphone];
     cell.adressDetail.text  = [NSString stringWithFormat:@"%@%@%@%@",_model.ReData[indexPath.row].Province,_model.ReData[indexPath.row].Town,_model.ReData[indexPath.row].District,_model.ReData[indexPath.row].Address];
+    //判断是否是默认的地址
+    if (![_model.ReData[indexPath.row].IsDefault isEqualToString:@"1"]){
+        cell.isDefault.hidden = YES;
+    }
     cell.upDateBtnBlock = ^{
         //修改地址  与新增收货地址一致
         XMMeAddressEmptyDetail *VC = [[XMMeAddressEmptyDetail alloc]init];
         VC.model = self.model;
+        VC.indexPath = indexPath;
         VC.isupdate = YES;
         [self.navigationController pushViewController:VC animated:YES];
     };

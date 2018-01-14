@@ -61,7 +61,7 @@
                             <constraint firstAttribute="height" constant="1" id="U8K-VR-JPD"/>
                         </constraints>
                     </view>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0GJ-UL-lIT">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="0GJ-UL-lIT">
                         <rect key="frame" x="174" y="19" width="30" height="17"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="17" id="HSm-36-QJ4"/>
@@ -90,6 +90,7 @@
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
             <connections>
                 <outlet property="adressDetail" destination="7Qx-Mf-0SL" id="vjp-Nb-ZL6"/>
+                <outlet property="isDefault" destination="0GJ-UL-lIT" id="QxL-Ur-YY9"/>
                 <outlet property="name" destination="qM2-HU-KLM" id="pK9-8X-9Rs"/>
                 <outlet property="phone" destination="U7U-BI-vZg" id="qTF-eh-d60"/>
                 <outlet property="setBtn" destination="e4O-QH-1PO" id="Zbp-G9-tOu"/>
@@ -97,6 +98,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Img_default" width="640" height="360"/>
         <image name="btnAddressEdit" width="24" height="24"/>
     </resources>
 </document>
