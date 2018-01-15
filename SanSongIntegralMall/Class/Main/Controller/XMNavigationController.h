@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface XMNavigationController : UINavigationController
-
+-(void)Additionalfunction:(UIButton *)btn;
+/** pop出去 */
+-(void)pop;
+-(void)poptoshop;
 @end

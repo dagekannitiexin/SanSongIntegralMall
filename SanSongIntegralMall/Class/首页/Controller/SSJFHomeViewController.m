@@ -26,6 +26,7 @@
 #import "UIImageView+WebCache.h"
 
 
+
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
     CGFloat _totleHeight;

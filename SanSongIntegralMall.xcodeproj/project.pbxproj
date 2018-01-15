@@ -33,7 +33,8 @@
 		182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546A1FF641BE00552572 /* UIAlertView+LBXAlertAction.m */; };
 		182F54721FF641BE00552572 /* UIWindow+LBXHierarchy.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546C1FF641BE00552572 /* UIWindow+LBXHierarchy.m */; };
 		182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546E1FF641BE00552572 /* LBXAlertAction.m */; };
-		183080B7200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183080B6200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.m */; };
+		183080BB200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183080BA200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m */; };
+		183080BE200C6F1F00A3CDDB /* NewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 183080BC200C6F1E00A3CDDB /* NewButton.m */; };
 		1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */; };
 		1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */; };
 		183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */; };
@@ -244,8 +245,10 @@
 		182F546C1FF641BE00552572 /* UIWindow+LBXHierarchy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+LBXHierarchy.m"; sourceTree = "<group>"; };
 		182F546D1FF641BE00552572 /* LBXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBXAlertAction.h; sourceTree = "<group>"; };
 		182F546E1FF641BE00552572 /* LBXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBXAlertAction.m; sourceTree = "<group>"; };
-		183080B5200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFQuickNavgitonViewController.h; sourceTree = "<group>"; };
-		183080B6200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFQuickNavgitonViewController.m; sourceTree = "<group>"; };
+		183080B9200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFQuickNavgitonViewController.h; sourceTree = "<group>"; };
+		183080BA200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFQuickNavgitonViewController.m; sourceTree = "<group>"; };
+		183080BC200C6F1E00A3CDDB /* NewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewButton.m; sourceTree = "<group>"; };
+		183080BD200C6F1F00A3CDDB /* NewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewButton.h; sourceTree = "<group>"; };
 		183501691FECA17B0019AD62 /* SSJFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFMineViewController.h; sourceTree = "<group>"; };
 		1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFMineViewController.m; sourceTree = "<group>"; };
 		1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeadCell.h; sourceTree = "<group>"; };
@@ -631,7 +634,7 @@
 		182F545E1FF6415200552572 /* 功能 */ = {
 			isa = PBXGroup;
 			children = (
-				183080B4200C49DE00A3CDDB /* 快捷导航栏 */,
+				183080B8200C6DDC00A3CDDB /* 快捷导航 */,
 				182F545F1FF6415200552572 /* 二维码扫描 */,
 			);
 			path = "功能";
@@ -682,13 +685,15 @@
 			path = Class;
 			sourceTree = "<group>";
 		};
-		183080B4200C49DE00A3CDDB /* 快捷导航栏 */ = {
+		183080B8200C6DDC00A3CDDB /* 快捷导航 */ = {
 			isa = PBXGroup;
 			children = (
-				183080B5200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.h */,
-				183080B6200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.m */,
+				183080B9200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.h */,
+				183080BA200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m */,
+				183080BD200C6F1F00A3CDDB /* NewButton.h */,
+				183080BC200C6F1E00A3CDDB /* NewButton.m */,
 			);
-			path = "快捷导航栏";
+			path = "快捷导航";
 			sourceTree = "<group>";
 		};
 		183501611FECA11A0019AD62 /* 我的 */ = {
@@ -1593,7 +1598,7 @@
 				1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */,
 				1838D0201FE26D410034C4B8 /* UIButton+WebCache.m in Sources */,
 				183A1E481FDFA47F0054547E /* XMBaseViewController.m in Sources */,
-				183080B7200C4A2000A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */,
+				183080BB200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */,
 				183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */,
 				182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
@@ -1656,6 +1661,7 @@
 				2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */,
 				1829CDBF2006051D006A97DD /* ShopDetailModel.m in Sources */,
 				183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */,
+				183080BE200C6F1F00A3CDDB /* NewButton.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,
 				1841EB851FFCB956008FF118 /* GTMBase64.m in Sources */,
