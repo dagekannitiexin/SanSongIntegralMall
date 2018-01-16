@@ -58,7 +58,7 @@
 - (UIImageView *)imageView
 {
     if (!_imageView) {
-        UIImage *image = [UIImage imageNamed:@"tour_logo"];
+        UIImage *image = [UIImage imageNamed:@"proncessGoIcon"];
         _imageView = [[UIImageView alloc] initWithImage:image];
         CGFloat X = ([UIScreen mainScreen].bounds.size.width - image.size.width) * 0.5;
         CGFloat Y = [UIScreen mainScreen].bounds.size.height * 0.15;

@@ -19,11 +19,9 @@
 #import "SSJFMineViewController.h"
 #import "SSJFMineIntegralList.h"
 #import "SSJFShopDetailViewController.h"
-#import "QQLBXScanViewController.h"
-#import "Global.h"
-#import "StyleDIY.h"
 #import "SSJFHomeModel.h"
 #import "UIImageView+WebCache.h"
+#import "SSJFGetIntegralFromCommodity.h"
 
 
 
@@ -54,20 +52,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //隐藏设置 底部tabBar
     self.view.backgroundColor= [UIColor whiteColor];
-    
+    [self createNavgaiton];//创建左侧扫一扫视图
     //调用等待界面
     //请求首页数据
     [self initNetWork];
     //建设
     self.title = @"积分商城";
-    
-    UIButton *click = [[UIButton alloc]initWithFrame:CGRectMake(0, 200, 40, 40)];
-    click.backgroundColor = [UIColor redColor];
-    [click addTarget:self action:@selector(qqStyle) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:click];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -141,6 +132,29 @@
     //最后统计_headView大小
     _headView.frame = CGRectMake(0, 0, SCREEN_WIDTH, _totleHeight);
 }
+
+/*
+ navigation
+ */
+- (void)createNavgaiton
+{
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setBackgroundImage:[UIImage imageNamed: @"detailShopingcar" ] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(ToGetIntergralVC)
+     forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(0, 0, 18, 18);
+    UIBarButtonItem* itembutton = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = itembutton;
+}
+/*
+ 扫一扫 或者 手动输入的VC
+ */
+- (void)ToGetIntergralVC
+{
+    SSJFGetIntegralFromCommodity *VC  = [[SSJFGetIntegralFromCommodity alloc]init];
+    [self.navigationController pushViewController:VC animated:YES];
+}
+
 -(void)initTableView
 {
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
@@ -506,22 +520,6 @@
     [self.navigationController pushViewController:shopVC animated:YES];
 }
 
-#pragma mark -模仿qq界面
-- (void)qqStyle
-{
-    SSJFLoginViewController *login = [[SSJFLoginViewController alloc]init];
-    [self.navigationController pushViewController:login animated:YES];
-    
-//    //添加一些扫码或相册结果处理
-//    QQLBXScanViewController *vc = [QQLBXScanViewController new];
-//    vc.libraryType = [Global sharedManager].libraryType;
-//    vc.scanCodeType = [Global sharedManager].scanCodeType;
-//
-//    vc.style = [StyleDIY qqStyle];
-//
-//    //镜头拉远拉近功能
-//    vc.isVideoZoom = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
-}
+
 
 @end

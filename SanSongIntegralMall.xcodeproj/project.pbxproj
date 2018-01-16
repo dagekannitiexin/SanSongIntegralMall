@@ -127,6 +127,8 @@
 		1841EB841FFCB956008FF118 /* DesUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB801FFCB955008FF118 /* DesUtil.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB851FFCB956008FF118 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB821FFCB955008FF118 /* GTMBase64.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		1841EB891FFCBBF5008FF118 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB881FFCBBF5008FF118 /* Utility.m */; };
+		18447DCD200DC54F0099697C /* SSJFGetIntegralFromCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18447DCC200DC54F0099697C /* SSJFGetIntegralFromCommodity.m */; };
+		18447DD0200DE0660099697C /* SSJFInPutsixteenNum.m in Sources */ = {isa = PBXBuildFile; fileRef = 18447DCF200DE0660099697C /* SSJFInPutsixteenNum.m */; };
 		1867F15E200308BB00C8733B /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F15D200308BB00C8733B /* UserInfo.m */; };
 		1867F16220035FB800C8733B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1867F15F20035FB700C8733B /* DetailViewController.xib */; };
 		1867F16320035FB800C8733B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F16020035FB800C8733B /* DetailViewController.m */; };
@@ -433,6 +435,10 @@
 		1841EB831FFCB955008FF118 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 		1841EB871FFCBBF5008FF118 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		1841EB881FFCBBF5008FF118 /* Utility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Utility.m; sourceTree = "<group>"; };
+		18447DCB200DC54F0099697C /* SSJFGetIntegralFromCommodity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFGetIntegralFromCommodity.h; sourceTree = "<group>"; };
+		18447DCC200DC54F0099697C /* SSJFGetIntegralFromCommodity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFGetIntegralFromCommodity.m; sourceTree = "<group>"; };
+		18447DCE200DE0660099697C /* SSJFInPutsixteenNum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFInPutsixteenNum.h; sourceTree = "<group>"; };
+		18447DCF200DE0660099697C /* SSJFInPutsixteenNum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFInPutsixteenNum.m; sourceTree = "<group>"; };
 		1867F15C200308BB00C8733B /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		1867F15D200308BB00C8733B /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		1867F15F20035FB700C8733B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -634,6 +640,7 @@
 		182F545E1FF6415200552572 /* 功能 */ = {
 			isa = PBXGroup;
 			children = (
+				18447DC6200DC4EA0099697C /* 从产品获取积分 */,
 				183080B8200C6DDC00A3CDDB /* 快捷导航 */,
 				182F545F1FF6415200552572 /* 二维码扫描 */,
 			);
@@ -1239,6 +1246,49 @@
 			path = "工具";
 			sourceTree = "<group>";
 		};
+		18447DC6200DC4EA0099697C /* 从产品获取积分 */ = {
+			isa = PBXGroup;
+			children = (
+				18447DCA200DC4EA0099697C /* 父控制器 */,
+				18447DC7200DC4EA0099697C /* Controller */,
+				18447DC8200DC4EA0099697C /* Model */,
+				18447DC9200DC4EA0099697C /* View */,
+			);
+			path = "从产品获取积分";
+			sourceTree = "<group>";
+		};
+		18447DC7200DC4EA0099697C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				18447DCE200DE0660099697C /* SSJFInPutsixteenNum.h */,
+				18447DCF200DE0660099697C /* SSJFInPutsixteenNum.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		18447DC8200DC4EA0099697C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18447DC9200DC4EA0099697C /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18447DCA200DC4EA0099697C /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				18447DCB200DC54F0099697C /* SSJFGetIntegralFromCommodity.h */,
+				18447DCC200DC54F0099697C /* SSJFGetIntegralFromCommodity.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
 		186EA6B21FE3B65100E796B9 /* NJKWebViewProgress */ = {
 			isa = PBXGroup;
 			children = (
@@ -1591,6 +1641,7 @@
 				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
 				18E2C4882004630700120042 /* XMMeAddressEmptyDetailPresent.m in Sources */,
+				18447DCD200DC54F0099697C /* SSJFGetIntegralFromCommodity.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
 				1835CA582008A5D700BAC62A /* adressModel.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -1618,6 +1669,7 @@
 				18286E181FFF0E8A00CCA8D9 /* NSObject+MJProperty.m in Sources */,
 				1838D0251FE26D410034C4B8 /* UIView+WebCache.m in Sources */,
 				183960D51FFB59BA0076FE5D /* Global.m in Sources */,
+				18447DD0200DE0660099697C /* SSJFInPutsixteenNum.m in Sources */,
 				1867F15E200308BB00C8733B /* UserInfo.m in Sources */,
 				1841EB891FFCBBF5008FF118 /* Utility.m in Sources */,
 				18286E121FFF0E8A00CCA8D9 /* MJProperty.m in Sources */,
