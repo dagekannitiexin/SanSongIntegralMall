@@ -197,9 +197,7 @@
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
                 if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"] isEqualToString:@"1"]){
                     [ModelLocator sharedInstance].step = @"-1";
-                    SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
-                    XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
-                    [self.navigationController presentViewController:nav animated:YES completion:nil];
+                    [SSJF_AppDelegate setRootView];
                 }else {
                     [SVProgressHUD showErrorWithStatus:@"退出登录失败"];
                 }
