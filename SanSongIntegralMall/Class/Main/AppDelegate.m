@@ -79,6 +79,9 @@
                 [de removeObjectForKey:key];
                 [de synchronize];
             }
+            SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+            XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+            [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
 //            [JPUSHService setTags:nil aliasInbackground:@""];
         }
         else if ([[ModelLocator sharedInstance].step isEqualToString:@"-2"])
@@ -147,7 +150,6 @@
     }else {
         [ModelLocator sharedInstance].step = @"1";
 //        [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[USER_DEFAULT objectForKey:@"id"]]];//登录
-        
         self.window.rootViewController = [[XMTabBarController alloc] init];
         [self.window makeKeyAndVisible];
     }

@@ -24,21 +24,38 @@
 
 @implementation SSJFLoginViewController
 
+- (void)dealloc
+{
+    NSLog(@"登录控制器释放");
+}
+
 - (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.fd_prefersNavigationBarHidden = YES;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
     NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"LaunchTour" ofType:@"mp4"];
     
     self.moviePlayerController.contentURL = [[NSURL alloc] initFileURLWithPath:moviePath];
     
     [self.moviePlayerController play];
-//    [self.view addSubview:self.moviePlayerController.view];
     [self.moviePlayerController.view bringSubviewToFront:self.loginView];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self.moviePlayerController stop];
+    self.moviePlayerController = nil;
+    self.loginView = nil;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.fd_prefersNavigationBarHidden = YES;
+    
 }
 
 #pragma mark - NSNotificationCenter

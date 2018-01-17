@@ -204,8 +204,6 @@
             SSJFMineIntegralList *integral = [[SSJFMineIntegralList alloc]init];
             [blockSelf.navigationController pushViewController:integral animated:YES];
         }else if ([str isEqualToString:@"Login"]){//跳转到登录页面
-            SSJFLoginViewController *login = [[SSJFLoginViewController alloc]init];
-            [blockSelf.navigationController pushViewController:login animated:YES];
         }
     };
     [bgView addSubview:_infoView];

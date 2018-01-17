@@ -177,6 +177,9 @@
 		18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F4FFA11FDFA9C700A258CE /* Main.storyboard */; };
 		2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */; };
 		2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335FCD92001D05D009293C1 /* ModelLocator.m */; };
+		2352C592200F78EA00FC7D41 /* XMMeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352C591200F78EA00FC7D41 /* XMMeSetting.m */; };
+		2352C596200F794100FC7D41 /* XMMeCellStyleOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2352C593200F794000FC7D41 /* XMMeCellStyleOne.xib */; };
+		2352C597200F794100FC7D41 /* XMMeCellStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352C595200F794100FC7D41 /* XMMeCellStyleOne.m */; };
 		E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */; };
 /* End PBXBuildFile section */
 
@@ -521,6 +524,11 @@
 		2323EC6E2001E4BB00D0EA8C /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		2335FCD82001D05C009293C1 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		2335FCD92001D05D009293C1 /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
+		2352C590200F78EA00FC7D41 /* XMMeSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMeSetting.h; sourceTree = "<group>"; };
+		2352C591200F78EA00FC7D41 /* XMMeSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeSetting.m; sourceTree = "<group>"; };
+		2352C593200F794000FC7D41 /* XMMeCellStyleOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMMeCellStyleOne.xib; sourceTree = "<group>"; };
+		2352C594200F794100FC7D41 /* XMMeCellStyleOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMeCellStyleOne.h; sourceTree = "<group>"; };
+		2352C595200F794100FC7D41 /* XMMeCellStyleOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeCellStyleOne.m; sourceTree = "<group>"; };
 		64894BAED3ED6A9A60A68C78 /* Pods-SanSongIntegralMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.release.xcconfig"; sourceTree = "<group>"; };
 		8A0AB8935F760AEED625732D /* Pods-SanSongIntegralMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.debug.xcconfig"; sourceTree = "<group>"; };
 		E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SanSongIntegralMall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -725,6 +733,8 @@
 				18E2C4822004630600120042 /* XMMeAddressEmptyDetail.m */,
 				18E2C4832004630600120042 /* XMMeAddressEmptyDetailPresent.h */,
 				18E2C4852004630600120042 /* XMMeAddressEmptyDetailPresent.m */,
+				2352C590200F78EA00FC7D41 /* XMMeSetting.h */,
+				2352C591200F78EA00FC7D41 /* XMMeSetting.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -766,6 +776,9 @@
 				1835CA51200890DE00BAC62A /* SSJFAdressCell.h */,
 				1835CA52200890DE00BAC62A /* SSJFAdressCell.m */,
 				1835CA53200890DE00BAC62A /* SSJFAdressCell.xib */,
+				2352C594200F794100FC7D41 /* XMMeCellStyleOne.h */,
+				2352C595200F794100FC7D41 /* XMMeCellStyleOne.m */,
+				2352C593200F794000FC7D41 /* XMMeCellStyleOne.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1501,6 +1514,7 @@
 				18E2C4B72004646700120042 /* README.md in Resources */,
 				1829C9D81FF1EAD100E289A9 /* MineIntegralLisetCell.xib in Resources */,
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
+				2352C596200F794100FC7D41 /* XMMeCellStyleOne.xib in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
 				1867F16220035FB800C8733B /* DetailViewController.xib in Resources */,
@@ -1632,6 +1646,7 @@
 				18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */,
 				183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
+				2352C597200F794100FC7D41 /* XMMeCellStyleOne.m in Sources */,
 				1841EB561FFCB733008FF118 /* RESTfulEngine.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
 				18E2C4AF2004646700120042 /* ActionSheetCustomPicker.m in Sources */,
@@ -1640,6 +1655,7 @@
 				2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */,
 				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
 				186EA6971FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m in Sources */,
+				2352C592200F78EA00FC7D41 /* XMMeSetting.m in Sources */,
 				18E2C4882004630700120042 /* XMMeAddressEmptyDetailPresent.m in Sources */,
 				18447DCD200DC54F0099697C /* SSJFGetIntegralFromCommodity.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,

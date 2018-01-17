@@ -196,7 +196,8 @@
                 
                 // 登陆成功 用户的单独注册
 //                [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[info objectForKey:@"id"]]];
-                
+                [_timer invalidate]; // 销毁timer
+                _timer = nil; // 置nil
                 [ModelLocator sharedInstance].step = @"1";
                 
                 [self.navigationController dismissViewControllerAnimated:YES completion:nil];

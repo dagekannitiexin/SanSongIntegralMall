@@ -12,6 +12,7 @@
 #import "UIImageView+WebCache.h"
 #import "DetailViewController.h"
 #import "XMMeAddressEmpty.h"
+#import "XMMeSetting.h"
 
 static CGFloat FirstCellHeight = 100;
 static CGFloat CellHeight = 44;
@@ -28,7 +29,7 @@ static CGFloat CellHeight = 44;
 -(NSArray *)listArray
 {
     if (!_listArray) {
-        self.listArray = @[@[@"修改头像",@"会员等级",@"昵称",@"收货地址"],@[@"手机",@"微信",@"微博",@"QQ"]];
+        self.listArray = @[@[@"修改头像",@"会员等级",@"昵称",@"收货地址"],@[@"手机",@"微信",@"微博",@"QQ",@"设置"]];
     }
     return _listArray;
 }
@@ -102,7 +103,7 @@ static CGFloat CellHeight = 44;
             return 4;
             break;
         case 1:
-            return 4;
+            return 5;
         default:
             return 0;
             break;
@@ -246,6 +247,9 @@ static CGFloat CellHeight = 44;
         NSLog(@"设置地址");
         XMMeAddressEmpty *adress = [[XMMeAddressEmpty alloc]init];
         [self.navigationController pushViewController:adress animated:YES];
+    }else if (indexPath.section ==1 && indexPath.row ==4){ //设置
+        XMMeSetting *VCSetting = [[XMMeSetting alloc]init];
+        [self.navigationController pushViewController:VCSetting animated:YES];
     }
 }
 
