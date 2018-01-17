@@ -26,11 +26,8 @@
     if (self = [super initWithFrame:frame]) {
         
         [self addSubview:self.imageView];
-        
         [self addSubview:self.registerButton];
-        
         [self addSubview:self.loginButton];
-        
         [self addSubview:self.wechatButton];
         [self addSubview:self.QQButton];
         [self addSubview:self.weiboButton];

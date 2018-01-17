@@ -12,6 +12,7 @@
 
 @property (nonatomic ,strong)UIButton *inputBtn;
 @property (nonatomic ,strong)UITextField *inputField;
+@property (nonatomic ,strong)NSString *inputString;
 @end
 
 @implementation SSJFInPutsixteenNum
@@ -19,6 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"商品扫码";
+    self.inputString = @"";//初始化
     [self initView];
 }
 
@@ -84,13 +86,40 @@
 #pragma mark - uitextfieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if (textField.text.length == 6){
+    self.inputString = [NSString stringWithFormat:@"%@%@",self.inputString,string];
+    //判断按钮的
+    if (self.inputString.length == 6){
         self.inputBtn.enabled = YES;
-        return YES;
-    }else if (textField.text.length >16){
+    }else if (self.inputString.length >16){
         return NO;
     }
+    
+    //增加空格
+    textField.text = [self dealWithString:self.inputString];
+    
+    return NO;
+}
+
+- (BOOL)textFieldShouldClear:(UITextField *)textField
+{
+    self.inputString = @"";
     return YES;
+}
+//每隔4个字符添加一个空格的字符串算法
+- (NSString *)dealWithString:(NSString *)number
+{
+    NSString *doneTitle = @"";
+    int count = 0;
+    for (int i = 0; i < number.length; i++) {
+        
+        count++;
+        doneTitle = [doneTitle stringByAppendingString:[number substringWithRange:NSMakeRange(i, 1)]];
+        if (count == 4) {
+            doneTitle = [NSString stringWithFormat:@"%@ ", doneTitle];
+            count = 0;
+        }
+    }
+    return doneTitle;
 }
 
 /*
@@ -98,6 +127,23 @@
  */
 - (void)goToInput
 {
-    
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Home/SweepCode"];
+    //设置常用参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:self.inputString forKey:@""];
+    [SVProgressHUD showWithStatus:@"正在数据库拔羊毛中"];
+    __weak SSJFInPutsixteenNum *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"]isEqualToString:@"1"]){
+            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+            NSString *intergral = [rdt objectForKey:@"ReData"];
+            [SVProgressHUD showWithStatus:[NSString stringWithFormat:@"获取了%@积分",intergral]];
+        }
+        
+        
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
 }
 @end
