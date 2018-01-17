@@ -8,6 +8,7 @@
 
 #import "XMMeSetting.h"
 #import "XMMeCellStyleOne.h"
+#import "XMNavigationController.h"
 
 @interface XMMeSetting ()<UITableViewDelegate,UITableViewDataSource>{
     UITableView *_tableView;
@@ -196,8 +197,9 @@
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
                 if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"] isEqualToString:@"1"]){
                     [ModelLocator sharedInstance].step = @"-1";
-                    [ModelLocator sharedInstance].step = @"1";
-//                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+                    XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+                    [self.navigationController presentViewController:nav animated:YES completion:nil];
                 }else {
                     [SVProgressHUD showErrorWithStatus:@"退出登录失败"];
                 }

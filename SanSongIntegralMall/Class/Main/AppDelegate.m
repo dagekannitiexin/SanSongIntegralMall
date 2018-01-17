@@ -79,9 +79,6 @@
                 [de removeObjectForKey:key];
                 [de synchronize];
             }
-            SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
-            XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
-            [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
 //            [JPUSHService setTags:nil aliasInbackground:@""];
         }
         else if ([[ModelLocator sharedInstance].step isEqualToString:@"-2"])

@@ -62,9 +62,9 @@
 - (void)playbackStateChanged
 {
     MPMoviePlaybackState playbackState = [self.moviePlayerController playbackState];
-    if (playbackState == MPMoviePlaybackStateStopped || playbackState == MPMoviePlaybackStatePaused) {
-        [self.moviePlayerController play];
-    }
+//    if (playbackState == MPMoviePlaybackStateStopped || playbackState == MPMoviePlaybackStatePaused) {
+//        [self.moviePlayerController play];
+//    }
 }
 
 - (void)didReceiveMemoryWarning {
