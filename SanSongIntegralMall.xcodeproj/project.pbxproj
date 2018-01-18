@@ -151,6 +151,7 @@
 		186EA6C01FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6BE1FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m */; };
 		186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */ = {isa = PBXBuildFile; fileRef = 186EA6C71FE3D44F00E796B9 /* SSJFGoodsMostNumView.m */; };
 		186EA6CA1FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 186EA6C81FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib */; };
+		187744FD20103B3100689998 /* SSJFBindingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 187744FC20103B3100689998 /* SSJFBindingViewController.m */; };
 		1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE3A1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m */; };
 		1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */; };
 		1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877AE401FF4D2B700FC9BA5 /* SSJFLoginView.m */; };
@@ -477,6 +478,8 @@
 		186EA6C61FE3D44F00E796B9 /* SSJFGoodsMostNumView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFGoodsMostNumView.h; sourceTree = "<group>"; };
 		186EA6C71FE3D44F00E796B9 /* SSJFGoodsMostNumView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFGoodsMostNumView.m; sourceTree = "<group>"; };
 		186EA6C81FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSJFGoodsMostNumView.xib; sourceTree = "<group>"; };
+		187744FB20103B3100689998 /* SSJFBindingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFBindingViewController.h; sourceTree = "<group>"; };
+		187744FC20103B3100689998 /* SSJFBindingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFBindingViewController.m; sourceTree = "<group>"; };
 		1877AE391FF4C9DA00FC9BA5 /* SSJFLoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLoginViewController.h; sourceTree = "<group>"; };
 		1877AE3A1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLoginViewController.m; sourceTree = "<group>"; };
 		1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = LaunchTour.mp4; sourceTree = "<group>"; };
@@ -735,6 +738,8 @@
 				18E2C4852004630600120042 /* XMMeAddressEmptyDetailPresent.m */,
 				2352C590200F78EA00FC7D41 /* XMMeSetting.h */,
 				2352C591200F78EA00FC7D41 /* XMMeSetting.m */,
+				187744FB20103B3100689998 /* SSJFBindingViewController.h */,
+				187744FC20103B3100689998 /* SSJFBindingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1702,6 +1707,7 @@
 				1841EB791FFCB797008FF118 /* Reachability.m in Sources */,
 				18E2C4AE2004646700120042 /* AbstractActionSheetPicker.m in Sources */,
 				183960C21FFB58540076FE5D /* LBXPermissionMicrophone.m in Sources */,
+				187744FD20103B3100689998 /* SSJFBindingViewController.m in Sources */,
 				1838CFEB1FE25C130034C4B8 /* TAAbstractDotView.m in Sources */,
 				1877AE411FF4D2B700FC9BA5 /* SSJFLoginView.m in Sources */,
 				183960BE1FFB58540076FE5D /* LBXPermissionCamera.m in Sources */,

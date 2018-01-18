@@ -165,10 +165,15 @@
 - (void)createResponsibility
 {
     //这里创建免责条款等
-    UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 300)];
-    textView.backgroundColor = [UIColor grayColor];
+    UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/15*4+30)];
+    textView.backgroundColor = [UIColor whiteColor];
     [_homeView addSubview:textView];
     
+    UIImageView *shopWarningView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 30, SCREEN_WIDTH, SCREEN_WIDTH/15*4)];
+    shopWarningView.image = [UIImage imageNamed:@"shop_warning"];
+    shopWarningView.contentMode = UIViewContentModeScaleAspectFit;
+    [textView addSubview:shopWarningView];
+    _totleHeight = _totleHeight +textView.height+60;
 }
 
 /*

@@ -48,7 +48,7 @@
     _inputField.font = [UIFont systemFontOfSize:14];
     _inputField.textAlignment = NSTextAlignmentLeft;
     _inputField.textColor = [UIColor blackColor];
-    _inputField.clearButtonMode=UITextFieldViewModeWhileEditing;
+ _inputField.clearButtonMode=UITextFieldViewModeWhileEditing;
     _inputField.placeholder = @"请输入商品的16位码号";
     [_inputField becomeFirstResponder];
     _inputField.keyboardType = UIKeyboardTypePhonePad;
