@@ -19,6 +19,7 @@
 @end
 
 @interface ReDataModel : NSObject
+@property (nonatomic, strong) NSString *detailId;
 @property (nonatomic, strong) proinfoModel *proinfo;
 @property (nonatomic, strong) addressModel *address;
 @end

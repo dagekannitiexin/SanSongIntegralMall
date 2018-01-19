@@ -9,6 +9,7 @@
 #import "XMBuyShopView.h"
 #import "UIImageView+WebCache.h"
 #import "buyDetailModel.h"
+#import "XMMeAddressEmpty.h"
 
 @interface XMBuyShopView(){
     NSString *_choosePayWay; //用于保存选择的数据
@@ -24,6 +25,9 @@
 @property (nonatomic ,strong)UIButton *cancelBtn; //取消返回按钮
 @property (nonatomic ,strong)UILabel *titleLabel; //标题
 @property (nonatomic ,strong)buyDetailModel *buyModel;
+@property (nonatomic ,strong)UIView   *adressView; //地址view
+@property (nonatomic ,strong)NSString *adressID; //地址ID 换新的
+@property (nonatomic ,strong)UITextField *remarkTextFile; //备注
 @end
 
 @implementation XMBuyShopView
@@ -32,6 +36,7 @@
 {
     if (!_shopModel){
         _shopModel = shopModel;
+        _adressID = @"";
         //创建导航栏 和底部确认栏
         [self createEditNavView];
         
@@ -192,36 +197,21 @@
 - (void)determineBtnClick{
     //请求网络
         //查看首页
-        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/ConfirmList"];
+        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/CartDetail/AddCart"];
         //设置常用参数
-        NSMutableDictionary *dic =[NSMutableDictionary dictionary];
-        [dic setValue:_shopModel.ProductID forKey:@"ProductId"];
-        [dic setValue:@"2" forKey:@"Num"];
-        NSMutableArray *shopArray = [NSMutableArray arrayWithObjects:dic, nil];
-        NSString *jsonStr = [NSString jsonStringWithArray:shopArray];
         NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-        [requestInfo setValue:jsonStr forKey:@""];
-        [SVProgressHUD showWithStatus:@"生成订单中"];
+        [requestInfo setValue:_shopModel.ProductID forKey:@"ProductId"];
+        [requestInfo setValue:@"2" forKey:@"Num"];
+        [SVProgressHUD showWithStatus:@"加入购物车"];
         __weak XMBuyShopView *weakSelf = self;
         [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
             NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
             NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
             if (reflag){
                 if ([reflag isEqualToString:@"1"]){
-                    [SVProgressHUD dismiss];
-                    //给模型赋值
-                    weakSelf.buyModel = [buyDetailModel mj_objectWithKeyValues:rdt];
-                    //此处有动画
-                    [UIView animateWithDuration:0.15 animations:^{
-                        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
-                        self.centerY = SCREEN_HEIGHT/2;
-                    } completion:^(BOOL finished) {
-                        self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
-                    }];
-                    //隐藏第一个界面 并且底部也隐藏
-                    self.orderViewOne.hidden = YES;
-                    //产生订单给用户 待确认
-                    [self createDetermineViewTwo];
+                    [SVProgressHUD showWithStatus:@"确认订单"];
+                    _orderID = [rdt objectForKey:@"ReData"];
+                    [self createOrderRequite];
             }
             }else {
                 [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
@@ -233,6 +223,48 @@
         }];
 }
 
+/*
+ 确认订单
+ */
+- (void)createOrderRequite
+{
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/GetConfirmList"];
+    //设置常用参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:_orderID forKey:@"detailId"];
+    [requestInfo setValue:@"" forKey:@"addressId"];
+    __weak XMBuyShopView *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        if (reflag){
+            if ([reflag isEqualToString:@"1"]){
+                [SVProgressHUD dismiss];
+                _orderID = [rdt objectForKey:@"ReData"];
+            //给模型赋值
+            weakSelf.buyModel = [buyDetailModel mj_objectWithKeyValues:rdt];
+            //此处有动画
+            [UIView animateWithDuration:0.15 animations:^{
+                self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
+                self.centerY = SCREEN_HEIGHT/2;
+            } completion:^(BOOL finished) {
+                self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
+            }];
+            //隐藏第一个界面 并且底部也隐藏
+                self.orderViewOne.hidden = YES;
+            //产生订单给用户 待确认
+            [self createDetermineViewTwo];
+        }
+        }else {
+            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+        }
+        
+    } onError:^(NSError *engineError) {
+        [SVProgressHUD dismiss];
+        NSLog(@"no");
+    }];
+}
 #pragma mark -创建订单  Two
 
 - (void)createDetermineViewTwo{
@@ -251,47 +283,56 @@
 
 - (void)createDetailViewTwo{
     //第一部分 地址icon 姓名 电话 详细地址 选择按钮
-    UIView *adressView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _orderViewTwo.width, 65)];
-    [_orderViewTwo addSubview:adressView];
+    _adressView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, _orderViewTwo.width, 65)];
+    [_orderViewTwo addSubview:_adressView];
     
     //增加手势
     UITapGestureRecognizer *addressTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(chooseAdress)];
-    [adressView addGestureRecognizer:addressTap];
+    [_adressView addGestureRecognizer:addressTap];
     
     UIImageView *adressImg = [[UIImageView alloc]initWithFrame:CGRectMake(15, 22, 20, 20)];
     adressImg.image = [UIImage imageNamed:@"iconTradeLocation"];
-    [adressView addSubview:adressImg];
-    
-    UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(adressImg.right+15, 15, 55, 16)];
-    name.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.ReceiveName];
-    name.textColor = [UIColor blackColor];
-    name.font = [UIFont systemFontOfSize:15];
-    [adressView addSubview:name];
-    
-    UILabel *phone = [[UILabel alloc]initWithFrame:CGRectMake(name.right+5, name.y, 150, 15)];
-    phone.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.Telphone];
-    phone.textColor = [UIColor blackColor];
-    phone.font = [UIFont systemFontOfSize:15];
-    [adressView addSubview:phone];
-    
-    UILabel *address = [[UILabel alloc]initWithFrame:CGRectMake(name.x, name.bottom+10, adressView.width-name.right-15, 16)];
-    address.font = [UIFont systemFontOfSize:14];
-    address.text = [NSString stringWithFormat:@"%@%@%@%@",_buyModel.ReData[0].address.Province,_buyModel.ReData[0].address.Town,_buyModel.ReData[0].address.District,_buyModel.ReData[0].address.Address];
-    address.textColor = XMHeigtGaryColor;
-    [adressView addSubview:address];
+    [_adressView addSubview:adressImg];
+    //如果默认地址为空
+    if ([_buyModel.ReData[0].address.ReceiveName isEqualToString:@"(null)"]||_buyModel.ReData[0].address.ReceiveName==nil){
+        UILabel *enptyAdress = [[UILabel alloc]initWithFrame:CGRectMake(adressImg.right+15, 0, 100, 20)];
+        enptyAdress.centerY = adressImg.centerY;
+        enptyAdress.font = [UIFont systemFontOfSize:14];
+        enptyAdress.text = @"添加地址";
+        enptyAdress.textColor = RGBACOLOR(205, 52, 54, 1);
+        [_adressView addSubview:enptyAdress];
+    }else {
+        UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(adressImg.right+15, 15, 55, 16)];
+        name.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.ReceiveName];
+        name.textColor = [UIColor blackColor];
+        name.font = [UIFont systemFontOfSize:15];
+        [_adressView addSubview:name];
+        
+        UILabel *phone = [[UILabel alloc]initWithFrame:CGRectMake(name.right+5, name.y, 150, 15)];
+        phone.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].address.Telphone];
+        phone.textColor = [UIColor blackColor];
+        phone.font = [UIFont systemFontOfSize:15];
+        [_adressView addSubview:phone];
+        
+        UILabel *address = [[UILabel alloc]initWithFrame:CGRectMake(name.x, name.bottom+10, _adressView.width-name.right-15, 16)];
+        address.font = [UIFont systemFontOfSize:14];
+        address.text = [NSString stringWithFormat:@"%@%@%@%@",_buyModel.ReData[0].address.Province,_buyModel.ReData[0].address.Town,_buyModel.ReData[0].address.District,_buyModel.ReData[0].address.Address];
+        address.textColor = XMHeigtGaryColor;
+        [_adressView addSubview:address];
+    }
     
     //箭头
-    UIImageView *next = [[UIImageView alloc]initWithFrame:CGRectMake(adressView.width-15-24, 0, 24, 24)];
-    next.centerY = adressView.height/2;
+    UIImageView *next = [[UIImageView alloc]initWithFrame:CGRectMake(_adressView.width-15-24, 0, 24, 24)];
+    next.centerY = _adressView.height/2;
     next.image = [UIImage imageNamed:@"btnAdditionNormal"];
-    [adressView addSubview:next];
+    [_adressView addSubview:next];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(12, 64, adressView.width-24, 1)];
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(12, 64, _adressView.width-24, 1)];
     lineView.backgroundColor = XMGaryColor;
-    [adressView addSubview:lineView];
+    [_adressView addSubview:lineView];
     
     //第二部分 商品icon 描述商品 商品选择尺码 数量
-    UIView *shoppingView = [[UIView alloc]initWithFrame:CGRectMake(0, adressView.bottom, _orderViewTwo.width, 65)];
+    UIView *shoppingView = [[UIView alloc]initWithFrame:CGRectMake(0, _adressView.bottom, _orderViewTwo.width, 65)];
     [_orderViewTwo addSubview:shoppingView];
     
     UIImageView *shoppingImg = [[UIImageView alloc]initWithFrame:CGRectMake(15, 22, 20, 20)];
@@ -332,8 +373,8 @@
     [couponsView addSubview:couponsLabel];
     
     //箭头
-    UIImageView *nextCoupons = [[UIImageView alloc]initWithFrame:CGRectMake(adressView.width-15-24, 0, 24, 24)];
-    nextCoupons.centerY = adressView.height/2;
+    UIImageView *nextCoupons = [[UIImageView alloc]initWithFrame:CGRectMake(_adressView.width-15-24, 0, 24, 24)];
+    nextCoupons.centerY = _adressView.height/2;
     nextCoupons.image = [UIImage imageNamed:@"btnAdditionNormal"];
     [couponsView addSubview:nextCoupons];
     
@@ -383,12 +424,12 @@
     remarkImg.image = [UIImage imageNamed:@"iconTradeNote"];
     [remarkView addSubview:remarkImg];
     
-    UITextField *remarkTextFile = [[UITextField alloc]initWithFrame:CGRectMake(remarkImg.right+15, 0, remarkView.width -remarkImg.right -15-10, 20)];
-    remarkTextFile.centerY = remarkView.height/2;
-    remarkTextFile.placeholder = @"添加备注...";
-    remarkTextFile.font = [UIFont systemFontOfSize:14];
-    remarkTextFile.clearButtonMode = UITextFieldViewModeWhileEditing;
-    [remarkView addSubview:remarkTextFile];
+    _remarkTextFile = [[UITextField alloc]initWithFrame:CGRectMake(remarkImg.right+15, 0, remarkView.width -remarkImg.right -15-10, 20)];
+    _remarkTextFile.centerY = remarkView.height/2;
+    _remarkTextFile.placeholder = @"添加备注...";
+    _remarkTextFile.font = [UIFont systemFontOfSize:14];
+    _remarkTextFile.clearButtonMode = UITextFieldViewModeWhileEditing;
+    [remarkView addSubview:_remarkTextFile];
     
     UIView *lineRemarkView = [[UIView alloc]initWithFrame:CGRectMake(12, 64, remarkView.width-24, 1)];
     lineRemarkView.backgroundColor = XMGaryColor;
@@ -411,16 +452,44 @@
 }
 
 - (void)chooseBuyBtnClick{
-    //创建动画
-    [UIView animateWithDuration:0.25 animations:^{
-        self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
-        self.centerY = SCREEN_HEIGHT/2;
-    } completion:^(BOOL finished) {
-        self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
+    //生成订单
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/SetOrder"];
+    //设置常用参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:_buyModel.ReData[0].detailId forKey:@"detailIds"];
+    [requestInfo setValue:_buyModel.ReData[0].proinfo.NewPrice forKey:@"sumPrice"];
+    [requestInfo setValue:_adressID forKey:@"addressid"];
+    [requestInfo setValue:_remarkTextFile.text forKey:@"memo"];
+    [SVProgressHUD showWithStatus:@"生成订单"];
+    __weak XMBuyShopView *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        if (reflag){
+            if ([reflag isEqualToString:@"1"]){
+                [SVProgressHUD showSuccessWithStatus:@"确认订单"];
+                //创建动画
+                [UIView animateWithDuration:0.25 animations:^{
+                    self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
+                    self.centerY = SCREEN_HEIGHT/2;
+                } completion:^(BOOL finished) {
+                    self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
+                }];
+                //隐藏第二个界面
+                self.orderViewTwo.hidden = YES;
+                [self createDetailViewThree];
+            }
+        }else {
+            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+        }
+        
+    } onError:^(NSError *engineError) {
+        [SVProgressHUD dismiss];
+        NSLog(@"no");
     }];
-    //隐藏第二个界面
-    self.orderViewTwo.hidden = YES;
-    [self createDetailViewThree];
+    
+    
 }
 
 /*
@@ -428,10 +497,46 @@
  */
 - (void)chooseAdress
 {
-    if (self.adressBtnBlock)
-    {
-        self.adressBtnBlock();
-    }
+    XMMeAddressEmpty *addressVC = [[XMMeAddressEmpty alloc]init];
+    addressVC.isChooseId = YES;
+    //换新地址后
+    addressVC.chooseBtnClickBlock = ^(NSMutableDictionary *dic) {
+        //重设地址样式
+        [_adressView removeAllSubviews];
+        UIImageView *adressImg = [[UIImageView alloc]initWithFrame:CGRectMake(15, 22, 20, 20)];
+        adressImg.image = [UIImage imageNamed:@"iconTradeLocation"];
+        [_adressView addSubview:adressImg];
+        //如果默认地址为空
+            UILabel *name = [[UILabel alloc]initWithFrame:CGRectMake(adressImg.right+15, 15, 55, 16)];
+            name.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"ReceiveName"]];
+            name.textColor = [UIColor blackColor];
+            name.font = [UIFont systemFontOfSize:15];
+            [_adressView addSubview:name];
+            
+            UILabel *phone = [[UILabel alloc]initWithFrame:CGRectMake(name.right+5, name.y, 150, 15)];
+            phone.text = [NSString stringWithFormat:@"%@",[dic objectForKey:@"Telphone"]];
+            phone.textColor = [UIColor blackColor];
+            phone.font = [UIFont systemFontOfSize:15];
+            [_adressView addSubview:phone];
+            
+            UILabel *address = [[UILabel alloc]initWithFrame:CGRectMake(name.x, name.bottom+10, _adressView.width-name.right-15, 16)];
+            address.font = [UIFont systemFontOfSize:14];
+            address.text = [NSString stringWithFormat:@"%@%@%@%@",[dic objectForKey:@"Province"],[dic objectForKey:@"Town"],[dic objectForKey:@"District"],[dic objectForKey:@"Address"]];
+            address.textColor = XMHeigtGaryColor;
+            [_adressView addSubview:address];
+        //箭头
+        UIImageView *next = [[UIImageView alloc]initWithFrame:CGRectMake(_adressView.width-15-24, 0, 24, 24)];
+        next.centerY = _adressView.height/2;
+        next.image = [UIImage imageNamed:@"btnAdditionNormal"];
+        [_adressView addSubview:next];
+        
+        UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(12, 64, _adressView.width-24, 1)];
+        lineView.backgroundColor = XMGaryColor;
+        [_adressView addSubview:lineView];
+        
+        [addressVC.navigationController popViewControllerAnimated:YES];
+    };
+    [self.viewController.navigationController pushViewController:addressVC animated:YES];
 }
 
 /*

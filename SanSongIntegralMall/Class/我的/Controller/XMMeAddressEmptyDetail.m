@@ -177,8 +177,11 @@
     __weak XMMeAddressEmptyDetail *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"] isEqualToString:@"1"]){
-            [SVProgressHUD dismiss];
             [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            if (self.saveBtnBlock)
+            {
+                self.saveBtnBlock();
+            }
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             [SVProgressHUD showErrorWithStatus:@"修改失败"];
@@ -221,8 +224,11 @@
     __weak XMMeAddressEmptyDetail *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         if ([[aDictronaryBaseObjects objectForKey:@"ReFlag"] isEqualToString:@"1"]){
-            [SVProgressHUD dismiss];
             [SVProgressHUD showSuccessWithStatus:@"修改成功"];
+            if (self.saveBtnBlock)
+            {
+                self.saveBtnBlock();
+            }
             [self.navigationController popViewControllerAnimated:YES];
         }else {
             [SVProgressHUD showErrorWithStatus:@"修改失败"];

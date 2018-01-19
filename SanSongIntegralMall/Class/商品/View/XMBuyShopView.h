@@ -19,5 +19,6 @@ typedef void (^cancelBtn) (void);
 @property (nonatomic ,copy) cancelBtn adressBtnBlock;
 @property (nonatomic ,copy) cancelBtn payBtnBlock;
 @property (nonatomic ,copy) cancelBtn couponsBlock;
+@property (nonatomic ,strong)NSString *orderID;
 - (instancetype)initWithFrame:(CGRect)frame;
 @end

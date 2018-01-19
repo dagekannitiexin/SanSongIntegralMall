@@ -21,6 +21,7 @@
 
 @implementation XMMeAddressEmpty
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.fd_prefersNavigationBarHidden = YES;
@@ -151,6 +152,11 @@
 - (void)addNewAddressBtnClick
 {
     XMMeAddressEmptyDetail *VC = [[XMMeAddressEmptyDetail alloc]init];
+    //当保存好 回来重新请求并且刷新
+    VC.saveBtnBlock = ^{
+        [self.view removeAllSubviews];
+        [self initNetWork];
+    };
     [self.navigationController pushViewController:VC animated:YES];
     
 }
@@ -195,7 +201,21 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+    [dic setValue:_model.ReData[indexPath.row].AddressID forKey:@"AddressID"];
+    [dic setValue:_model.ReData[indexPath.row].ReceiveName forKey:@"ReceiveName"];
+    [dic setValue:_model.ReData[indexPath.row].Telphone forKey:@"Telphone"];
+    [dic setValue:_model.ReData[indexPath.row].Province forKey:@"Province"];
+    [dic setValue:_model.ReData[indexPath.row].Town forKey:@"Town"];
+    [dic setValue:_model.ReData[indexPath.row].District forKey:@"District"];
+    [dic setValue:_model.ReData[indexPath.row].Address forKey:@"Address"];
+    if (_isChooseId){
+        if (self.chooseBtnClickBlock){
+            self.chooseBtnClickBlock(dic);
+        }
+//        self.chooseAdressId = _model.ReData[indexPath.row].AddressID;
+//        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

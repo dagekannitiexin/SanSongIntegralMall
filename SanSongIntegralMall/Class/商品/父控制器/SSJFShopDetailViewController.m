@@ -276,16 +276,17 @@
             [blockSelf.effectView removeFromSuperview];
         };
         //地址按钮响应
-        _shopView.adressBtnBlock = ^{
-            XMMeAddressEmpty *addressVC = [[XMMeAddressEmpty alloc]init];
-            [blockSelf.navigationController pushViewController:addressVC animated:YES];
-        };
+//        _shopView.adressBtnBlock = ^{
+//            XMMeAddressEmpty *addressVC = [[XMMeAddressEmpty alloc]init];
+//            addressVC.isChooseId = YES;
+//            [blockSelf.navigationController pushViewController:addressVC animated:YES];
+//        };
         
         //优惠券按钮响应
-        _shopView.couponsBlock = ^{
-//            XMMeCoupon *couponVc =[[XMMeCoupon alloc]init];
-//            [blockSelf.navigationController pushViewController:couponVc animated:YES];
-        };
+//        _shopView.couponsBlock = ^{
+////            XMMeCoupon *couponVc =[[XMMeCoupon alloc]init];
+////            [blockSelf.navigationController pushViewController:couponVc animated:YES];
+//        };
     }
     return _shopView;
 }

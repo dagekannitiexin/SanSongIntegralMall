@@ -165,7 +165,7 @@
                     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
                     [requestInfo setValue:resp.uid forKey:@"ThirdID"];
                     [requestInfo setValue:@"1" forKey:@"ThirdType"];
-                    [requestInfo setValue:resp.accessToken forKey:@"Unionid"];
+                    [requestInfo setValue:resp.openid forKey:@"Unionid"];
                     [requestInfo setValue:resp.name forKey:@"Nickname"];
                     [requestInfo setValue:sex forKey:@"Sex"];
                     [requestInfo setValue:[resp.originalResponse objectForKey:@"province"] forKey:@"Province"];
@@ -210,7 +210,7 @@
                     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
                     [requestInfo setValue:resp.uid forKey:@"ThirdID"];
                     [requestInfo setValue:@"3" forKey:@"ThirdType"];
-                    [requestInfo setValue:resp.accessToken forKey:@"Unionid"];
+                    [requestInfo setValue:resp.openid forKey:@"Unionid"];
                     [requestInfo setValue:resp.name forKey:@"Nickname"];
                     [requestInfo setValue:sex forKey:@"Sex"];
                     [requestInfo setValue:[resp.originalResponse objectForKey:@"province"] forKey:@"Province"];
@@ -254,7 +254,7 @@
                     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
                     [requestInfo setValue:resp.uid forKey:@"ThirdID"];
                     [requestInfo setValue:@"2" forKey:@"ThirdType"];
-                    [requestInfo setValue:resp.accessToken forKey:@"Unionid"];
+                    [requestInfo setValue:resp.uid forKey:@"Unionid"];
                     [requestInfo setValue:resp.name forKey:@"Nickname"];
                     [requestInfo setValue:sex forKey:@"Sex"];
                     [requestInfo setValue:[resp.originalResponse objectForKey:@"province"] forKey:@"Province"];
