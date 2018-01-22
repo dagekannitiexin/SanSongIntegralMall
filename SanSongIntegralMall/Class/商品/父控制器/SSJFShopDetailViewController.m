@@ -272,6 +272,7 @@
                 blockSelf.shopView.y = SCREEN_HEIGHT;
             } completion:^(BOOL finished) {
                 [blockSelf.shopView removeFromSuperview];
+                blockSelf.shopView = nil;
             }];
             [blockSelf.effectView removeFromSuperview];
         };

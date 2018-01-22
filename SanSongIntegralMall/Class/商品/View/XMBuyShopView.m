@@ -195,32 +195,7 @@
  点击确认按钮
  */
 - (void)determineBtnClick{
-    //请求网络
-        //查看首页
-        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/CartDetail/AddCart"];
-        //设置常用参数
-        NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-        [requestInfo setValue:_shopModel.ProductID forKey:@"ProductId"];
-        [requestInfo setValue:@"2" forKey:@"Num"];
-        [SVProgressHUD showWithStatus:@"加入购物车"];
-        __weak XMBuyShopView *weakSelf = self;
-        [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-            NSString *reflag =  [NSString stringWithFormat:@"%@",[aDictronaryBaseObjects objectForKey:@"ReFlag"]];
-            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
-            if (reflag){
-                if ([reflag isEqualToString:@"1"]){
-                    [SVProgressHUD showWithStatus:@"确认订单"];
-                    _orderID = [rdt objectForKey:@"ReData"];
-                    [self createOrderRequite];
-            }
-            }else {
-                [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
-            }
-    
-        } onError:^(NSError *engineError) {
-            [SVProgressHUD dismiss];
-            NSLog(@"no");
-        }];
+    [self createOrderRequite];
 }
 
 /*
@@ -232,7 +207,8 @@
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/GetConfirmList"];
     //设置常用参数
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-    [requestInfo setValue:_orderID forKey:@"detailId"];
+    [requestInfo setValue:self.shopModel.ProductID forKey:@"ProductId"];
+    [requestInfo setValue:@"2" forKey:@"Num"];
     [requestInfo setValue:@"" forKey:@"addressId"];
     __weak XMBuyShopView *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
@@ -241,7 +217,7 @@
         if (reflag){
             if ([reflag isEqualToString:@"1"]){
                 [SVProgressHUD dismiss];
-                _orderID = [rdt objectForKey:@"ReData"];
+
             //给模型赋值
             weakSelf.buyModel = [buyDetailModel mj_objectWithKeyValues:rdt];
             //此处有动画
@@ -457,10 +433,17 @@
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/SetOrder"];
     //设置常用参数
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-    [requestInfo setValue:_buyModel.ReData[0].detailId forKey:@"detailIds"];
-    [requestInfo setValue:_buyModel.ReData[0].proinfo.NewPrice forKey:@"sumPrice"];
-    [requestInfo setValue:_adressID forKey:@"addressid"];
-    [requestInfo setValue:_remarkTextFile.text forKey:@"memo"];
+    [requestInfo setValue:_buyModel.ReData[0].proinfo.ProductID forKey:@"ProductId"];
+    [requestInfo setValue:_buyModel.ReData[0].proinfo.Num forKey:@"Num"];
+    [requestInfo setValue:_buyModel.ReData[0].proinfo.NewPrice forKey:@"SumPrice"];
+    //判断用户是否修改地址
+    if (_adressID.length >3){
+        [requestInfo setValue:_adressID forKey:@"Addressid"];
+    }else{
+        [requestInfo setValue:_buyModel.ReData[0].address.AddressID forKey:@"Addressid"];
+    }
+    
+    [requestInfo setValue:_remarkTextFile.text forKey:@"Memo"];
     [SVProgressHUD showWithStatus:@"生成订单"];
     __weak XMBuyShopView *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
@@ -468,7 +451,6 @@
         NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
         if (reflag){
             if ([reflag isEqualToString:@"1"]){
-                [SVProgressHUD showSuccessWithStatus:@"确认订单"];
                 //创建动画
                 [UIView animateWithDuration:0.25 animations:^{
                     self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
@@ -503,6 +485,7 @@
     addressVC.chooseBtnClickBlock = ^(NSMutableDictionary *dic) {
         //重设地址样式
         [_adressView removeAllSubviews];
+        _adressID = [dic objectForKey:@"AddressID"];
         UIImageView *adressImg = [[UIImageView alloc]initWithFrame:CGRectMake(15, 22, 20, 20)];
         adressImg.image = [UIImage imageNamed:@"iconTradeLocation"];
         [_adressView addSubview:adressImg];
