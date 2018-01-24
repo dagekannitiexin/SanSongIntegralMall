@@ -12,6 +12,7 @@
 #import "XMNavigationController.h"
 #import "SSJFLoginViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
+#import <AlipaySDK/AlipaySDK.h>
 #define USHARE_DEMO_APPKEY  @"5a5338158f4a9d64710000ab"
 @interface AppDelegate ()
 
@@ -60,6 +61,20 @@
     [self.window makeKeyAndVisible];
     
     
+    return YES;
+}
+
+/*
+ 支付宝回调
+ */
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+{
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            NSLog(@"result = %@",resultDic);
+        }];
+    }
     return YES;
 }
 

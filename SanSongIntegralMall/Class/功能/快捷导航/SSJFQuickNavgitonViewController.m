@@ -29,8 +29,8 @@
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     self.scrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.scrollView];
-    _btntitle = [NSArray arrayWithObjects:@"摇一摇",@"大转盘",@"积分商城",@"积分商城",@"积分商城",@"积分商城",@"积分商城",@"积分商城", nil];
-    _imgIcon =  [NSArray arrayWithObjects:@"14118b1838ce59ec1660349fe7132aab",@"0ffdf77a44bba312f53d5f2d72165d77",@"9250c17e8b4b74abb3ab41010b5a26b4",@"7c771ba44f5206f3d91946e28887accc",@"0cbdd1396a1aad263ce07e3e62f39071",@"aa1684550639106055813f6328a8a9d1",@"4460e0cf8575e8307f7f2cdf87aa4bb7",@"cd13de0e578303f904b8f1cd02ae9983", nil];
+    _btntitle = [NSArray arrayWithObjects:@"摇一摇",@"大转盘",@"签到",@"积分商城",@"分类", nil];
+    _imgIcon =  [NSArray arrayWithObjects:@"Quick_sharkitoff",@"Quick_ turnplate",@"Quick_signin",@"Quick_ integralShop",@"Quick_ classify",nil];
     [self reloadView];
 }
 

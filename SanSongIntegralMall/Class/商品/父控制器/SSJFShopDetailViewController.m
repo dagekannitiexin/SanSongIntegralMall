@@ -12,6 +12,7 @@
 #import "XMMeAddressEmpty.h"
 #import "ShopDetailModel.h"
 #import "NSString+JSON.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -266,6 +267,7 @@
             }];
             [blockSelf.effectView removeFromSuperview];
         };
+        
         //支付按钮响应
         _shopView.payBtnBlock = ^{
             [UIView animateWithDuration:0.15 animations:^{
@@ -276,6 +278,7 @@
             }];
             [blockSelf.effectView removeFromSuperview];
         };
+        
         //地址按钮响应
 //        _shopView.adressBtnBlock = ^{
 //            XMMeAddressEmpty *addressVC = [[XMMeAddressEmpty alloc]init];

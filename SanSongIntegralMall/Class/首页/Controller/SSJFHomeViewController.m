@@ -124,7 +124,7 @@
     //创建新品兑换
     [self createNewShop];
     //人气推荐
-//    [self madeRecommend];
+    [self madeRecommend];
     //兑换大量
     [self createActDuiHuan];
 
@@ -139,7 +139,7 @@
 - (void)createNavgaiton
 {
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-    [button setBackgroundImage:[UIImage imageNamed: @"detailShopingcar" ] forState:UIControlStateNormal];
+    [button setBackgroundImage:[UIImage imageNamed: @"Scan QR" ] forState:UIControlStateNormal];
     [button addTarget:self action:@selector(ToGetIntergralVC)
      forControlEvents:UIControlEventTouchUpInside];
     button.frame = CGRectMake(0, 0, 18, 18);
@@ -189,7 +189,7 @@
     [_headView addSubview:bgView];
     
     _infoView = [[[NSBundle mainBundle]loadNibNamed:@"SSJFUserInfoView" owner:nil options:nil]lastObject];
-    [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.userinfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.userinfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Icon_NomalImg"]];
     _infoView.Name.text = _homeDetailModel.userinfo.UserName;
     _infoView.MemberLeves.text = _homeDetailModel.userinfo.UserLevel;
     _infoView.Integral.text = [NSString stringWithFormat:@"%@积分",_homeDetailModel.userinfo.Integral];

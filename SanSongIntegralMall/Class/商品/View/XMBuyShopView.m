@@ -10,6 +10,7 @@
 #import "UIImageView+WebCache.h"
 #import "buyDetailModel.h"
 #import "XMMeAddressEmpty.h"
+#import <AlipaySDK/AlipaySDK.h>
 
 @interface XMBuyShopView(){
     NSString *_choosePayWay; //用于保存选择的数据
@@ -28,6 +29,7 @@
 @property (nonatomic ,strong)UIView   *adressView; //地址view
 @property (nonatomic ,strong)NSString *adressID; //地址ID 换新的
 @property (nonatomic ,strong)UITextField *remarkTextFile; //备注
+@property (nonatomic ,strong)NSString *dingdanId; //订单ID
 @end
 
 @implementation XMBuyShopView
@@ -451,6 +453,8 @@
         NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
         if (reflag){
             if ([reflag isEqualToString:@"1"]){
+                NSDictionary *ReData = [rdt objectForKey:@"ReData"];
+                _dingdanId = [NSString stringWithFormat:@"%@",[ReData objectForKey:@"OrderCode"]];
                 //创建动画
                 [UIView animateWithDuration:0.25 animations:^{
                     self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
@@ -641,10 +645,32 @@
         }
     }else if (_selectedZhifubao.highlighted){
         NSLog(@"去支付宝支付楼");
-        if (self.payBtnBlock)
-        {
-            self.payBtnBlock();
-        }
+        //查看首页
+        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/Payment"];
+        //设置常用参数
+        NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+        [requestInfo setValue:self.dingdanId forKey:@""];
+        [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+            NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
+            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+            NSString *zhifubaoOp = [rdt objectForKey:@"ReData"];
+            
+            //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+            NSString *appScheme = @"alisdkdemo";
+            // NOTE: 调用支付结果开始支付
+            [[AlipaySDK defaultService] payOrder:zhifubaoOp fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+                NSLog(@"reslut = %@",resultDic);
+            }];
+            
+//            if (self.payBtnBlock)
+//            {
+//                self.payBtnBlock();
+//            }
+        } onError:^(NSError *engineError) {
+            [SVProgressHUD dismiss];
+            NSLog(@"no");
+        }];
+        
     }
 }
 
