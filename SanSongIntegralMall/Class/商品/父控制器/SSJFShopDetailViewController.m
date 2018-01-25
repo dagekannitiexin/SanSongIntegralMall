@@ -15,6 +15,7 @@
 #import <AlipaySDK/AlipaySDK.h>
 #import "IsPaymentModel.h"
 #import "GZJShopResultOfThePayment.h"
+#import "GZJOrderOverRecommedShopModel.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -26,6 +27,9 @@
 
 @property (nonatomic ,strong)ShopDetailModel *shopModel;
 @property (nonatomic ,strong)IsPaymentModel  *isPaymentModel;
+//订单回调推荐商品model
+@property (nonatomic ,strong)GZJOrderOverRecommedShopModel *rderRecommedShopModel;
+
 /*
  毛玻璃界面
  */
@@ -130,9 +134,17 @@
             NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
             NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
             if ([reflag isEqualToString:@"1"]){
-                weakSelf.isPaymentModel = [IsPaymentModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+                NSDictionary *Reta = [rdt objectForKey:@"ReData"];
+                weakSelf.isPaymentModel = [IsPaymentModel mj_objectWithKeyValues:[Reta objectForKey:@"OrderVml"]];
+                weakSelf.rderRecommedShopModel = [GZJOrderOverRecommedShopModel mj_objectWithKeyValues:Reta];
                 GZJShopResultOfThePayment *VC = [[GZJShopResultOfThePayment alloc]init];
                 VC.isPaymentModel = weakSelf.isPaymentModel;
+                VC.rderRecommedShopModel = weakSelf.rderRecommedShopModel;
+                //设置回调页面的支付状态
+                if ([[rdt objectForKey:@"ErrorMessage"]isEqualToString:@"success"])
+                {
+                    VC.isPayfor = YES;
+                }
                 [weakSelf.navigationController pushViewController:VC animated:YES];
             }
         } onError:^(NSError *engineError) {

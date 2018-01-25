@@ -12,6 +12,7 @@
 #import "XMMeAddressEmpty.h"
 #import <AlipaySDK/AlipaySDK.h>
 
+
 @interface XMBuyShopView(){
     NSString *_choosePayWay; //用于保存选择的数据
     UIImageView *_zhifubaoImg; //切换选中的支付宝样式
@@ -457,14 +458,14 @@
                 _dingdanId = [NSString stringWithFormat:@"%@",[ReData objectForKey:@"OrderCode"]];
                 //创建动画
                 [UIView animateWithDuration:0.25 animations:^{
-                    self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
-                    self.centerY = SCREEN_HEIGHT/2;
+                    weakSelf.size = CGSizeMake(SCREEN_WIDTH-30, 260);
+                    weakSelf.centerY = SCREEN_HEIGHT/2;
                 } completion:^(BOOL finished) {
-                    self.size = CGSizeMake(SCREEN_WIDTH-30, 260);
+                    weakSelf.size = CGSizeMake(SCREEN_WIDTH-30, 260);
                 }];
                 //隐藏第二个界面
-                self.orderViewTwo.hidden = YES;
-                [self createDetailViewThree];
+                weakSelf.orderViewTwo.hidden = YES;
+                [weakSelf createDetailViewThree];
             }
         }else {
             [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
@@ -651,7 +652,6 @@
         NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
         [requestInfo setValue:self.dingdanId forKey:@""];
         [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-            NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
             NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
             NSString *zhifubaoOp = [rdt objectForKey:@"ReData"];
             

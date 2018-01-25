@@ -402,10 +402,10 @@
     //设置headerView的尺寸大小
     layout.headerReferenceSize = CGSizeMake(self.view.frame.size.width, 100);
     //该方法也可以设置itemSize
-    layout.itemSize =CGSizeMake((SCREEN_WIDTH-30)/2, 255);
+    layout.itemSize =CGSizeMake((SCREEN_WIDTH-30)/2, 270);
     
     //2.初始化collectionView
-    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 275*(_homeDetailModel.homepro5.count+1)/2+55) collectionViewLayout:layout];
+    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 290*(_homeDetailModel.homepro5.count+1)/2+55) collectionViewLayout:layout];
     mainCollectionView.scrollEnabled = NO;
     mainCollectionView.showsVerticalScrollIndicator = NO;
     [_headView addSubview:mainCollectionView];
@@ -455,7 +455,7 @@
 //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake((SCREEN_WIDTH-30)/2, 255);
+    return CGSizeMake((SCREEN_WIDTH-30)/2, 270);
 }
 
 //footer的size

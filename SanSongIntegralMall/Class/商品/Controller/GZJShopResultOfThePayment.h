@@ -8,9 +8,11 @@
 
 #import "XMBaseViewController.h"
 #import "IsPaymentModel.h"
+#import "GZJOrderOverRecommedShopModel.h"
 
 @interface GZJShopResultOfThePayment : XMBaseViewController
 
 @property (nonatomic , strong)IsPaymentModel *isPaymentModel;
-
+@property (nonatomic , strong)GZJOrderOverRecommedShopModel *rderRecommedShopModel;
+@property (nonatomic , assign)BOOL   isPayfor;//是否支付成功
 @end
