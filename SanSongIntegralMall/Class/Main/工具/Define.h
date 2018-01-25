@@ -41,11 +41,9 @@
 #if TARGET_OS_IPHONE
 //iPhone Device
 #endif
-
 #if TARGET_IPHONE_SIMULATOR
 //iPhone Simulator
 #endif
-
 
 //********ARC********
 #if __has_feature(objc_arc)
@@ -74,10 +72,10 @@
 
 
 
-#define DKNotificationCenter [NSNotificationCenter defaultCenter]
-#define DKApplication [UIApplication sharedApplication]
-#define DKFileManager [NSFileManager defaultManager]
-#define DKDevice [UIDevice currentDevice]
+#define GZNotificationCenter [NSNotificationCenter defaultCenter]
+#define GZApplication [UIApplication sharedApplication]
+#define GZFileManager [NSFileManager defaultManager]
+#define GZDevice [UIDevice currentDevice]
 
 //***********样式设置*************
 // rgb颜色方法
@@ -222,6 +220,11 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 #define Baidu [BaiduMobStat defaultStat]
 #define BaiDu_Start(str)            [[BaiduMobStat defaultStat] pageviewStartWithName:str]
 #define BaiDu_End(str)              [[BaiduMobStat defaultStat] pageviewEndWithName:str]
+
+
+//*********************************
+//通知名称
+#define PayForInfo @"PayForInfo" //支付回调通知
 
 //调试模式下输入NSLog，发布后不再输入。
 #define NSLog(...) NSLog(__VA_ARGS__)

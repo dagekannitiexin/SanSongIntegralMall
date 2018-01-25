@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="y8f-JG-UnH" customClass="orderPayBriefInformation">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林尤达" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWr-ug-dfK">
+                    <rect key="frame" x="15" y="13" width="60" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="xtM-QE-lhF"/>
+                        <constraint firstAttribute="height" constant="15" id="zVf-oF-ssk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="178****2557" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kqa-3c-Rm0">
+                    <rect key="frame" x="85" y="13" width="114" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="114" id="fel-GK-9gL"/>
+                        <constraint firstAttribute="height" constant="15" id="zBw-OC-LMS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="浙江省宁波市鄞州区诚信路紫郡小区20幢203室" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHk-UD-Qa0">
+                    <rect key="frame" x="15" y="37" width="345" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="T6j-7h-J7y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="实付:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2m-AG-iZO">
+                    <rect key="frame" x="15" y="61" width="60" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="Cea-C9-rFz"/>
+                        <constraint firstAttribute="width" constant="60" id="b3X-KM-8Qg"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.47058823529411764" green="0.47058823529411764" blue="0.47058823529411764" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥129.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FGV-0w-Oi2">
+                    <rect key="frame" x="85" y="61" width="160" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="R3f-mb-n25"/>
+                        <constraint firstAttribute="width" constant="160" id="pCF-eM-Ezv"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="FGV-0w-Oi2" firstAttribute="leading" secondItem="k2m-AG-iZO" secondAttribute="trailing" constant="10" id="9zh-7Z-bq1"/>
+                <constraint firstItem="kqa-3c-Rm0" firstAttribute="top" secondItem="CP2-vR-qfa" secondAttribute="top" constant="13" id="BUd-Jm-gqz"/>
+                <constraint firstItem="FGV-0w-Oi2" firstAttribute="top" secondItem="QHk-UD-Qa0" secondAttribute="bottom" constant="9" id="Khv-mF-7n8"/>
+                <constraint firstItem="kqa-3c-Rm0" firstAttribute="leading" secondItem="jWr-ug-dfK" secondAttribute="trailing" constant="10" id="Ove-ZS-GWS"/>
+                <constraint firstItem="CP2-vR-qfa" firstAttribute="trailing" secondItem="QHk-UD-Qa0" secondAttribute="trailing" constant="15" id="Pxd-aa-DVJ"/>
+                <constraint firstItem="QHk-UD-Qa0" firstAttribute="top" secondItem="jWr-ug-dfK" secondAttribute="bottom" constant="9" id="QBm-i0-HGl"/>
+                <constraint firstItem="jWr-ug-dfK" firstAttribute="leading" secondItem="CP2-vR-qfa" secondAttribute="leading" constant="15" id="RMd-TE-Vak"/>
+                <constraint firstItem="jWr-ug-dfK" firstAttribute="top" secondItem="CP2-vR-qfa" secondAttribute="top" constant="13" id="YhU-0P-Umo"/>
+                <constraint firstItem="k2m-AG-iZO" firstAttribute="top" secondItem="QHk-UD-Qa0" secondAttribute="bottom" constant="9" id="cR2-fD-UNE"/>
+                <constraint firstItem="k2m-AG-iZO" firstAttribute="leading" secondItem="CP2-vR-qfa" secondAttribute="leading" constant="15" id="toc-1i-xkM"/>
+                <constraint firstItem="QHk-UD-Qa0" firstAttribute="leading" secondItem="CP2-vR-qfa" secondAttribute="leading" constant="15" id="zj1-Xl-huD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="CP2-vR-qfa"/>
+            <connections>
+                <outlet property="AdressDetail" destination="QHk-UD-Qa0" id="qa7-ez-wfy"/>
+                <outlet property="Name" destination="jWr-ug-dfK" id="f0b-Wd-Cqz"/>
+                <outlet property="SumPrice" destination="FGV-0w-Oi2" id="j5Z-TS-Lao"/>
+                <outlet property="Tel" destination="kqa-3c-Rm0" id="rak-Ar-ifG"/>
+            </connections>
+            <point key="canvasLocation" x="137.5" y="113.5"/>
+        </view>
+    </objects>
+</document>

@@ -656,16 +656,16 @@
             NSString *zhifubaoOp = [rdt objectForKey:@"ReData"];
             
             //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
-            NSString *appScheme = @"alisdkdemo";
+            NSString *appScheme = @"alisdkGZG";
             // NOTE: 调用支付结果开始支付
             [[AlipaySDK defaultService] payOrder:zhifubaoOp fromScheme:appScheme callback:^(NSDictionary *resultDic) {
                 NSLog(@"reslut = %@",resultDic);
             }];
             
-//            if (self.payBtnBlock)
-//            {
-//                self.payBtnBlock();
-//            }
+            if (self.payBtnBlock)
+            {
+                self.payBtnBlock();
+            }
         } onError:^(NSError *engineError) {
             [SVProgressHUD dismiss];
             NSLog(@"no");

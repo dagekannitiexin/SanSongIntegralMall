@@ -13,6 +13,8 @@
 #import "ShopDetailModel.h"
 #import "NSString+JSON.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "IsPaymentModel.h"
+#import "GZJShopResultOfThePayment.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -23,6 +25,7 @@
 }
 
 @property (nonatomic ,strong)ShopDetailModel *shopModel;
+@property (nonatomic ,strong)IsPaymentModel  *isPaymentModel;
 /*
  毛玻璃界面
  */
@@ -37,6 +40,11 @@
 
 @implementation SSJFShopDetailViewController
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self removeNotificationCenter];
+}
 //初始化proid 来获取产品详细
 - (void)setProid:(NSString *)proid
 {
@@ -84,6 +92,56 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"商品详细";
+    //注册通知
+    [self registration];
+}
+
+/*
+ 注册通知
+ */
+- (void)registration
+{
+    [GZNotificationCenter addObserver:self selector:@selector(PayInfoThing:) name:PayForInfo object:nil];
+}
+
+/*
+ 移除通知
+ */
+- (void)removeNotificationCenter
+{
+    [GZNotificationCenter removeObserver:self];
+}
+/*
+ 支付回调
+ */
+- (void)PayInfoThing:(NSNotification *)note
+{
+    NSDictionary *payDic = [note valueForKey:@"object"];
+    if (payDic){
+        NSDictionary *result = [payDic objectForKey:@"result"];
+        NSString *jsonStr = [result mj_JSONString];
+        //查看首页
+        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/IsPayment"];
+        //设置常用参数
+        NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+        [requestInfo setValue:jsonStr forKey:@""];
+        __weak SSJFShopDetailViewController *weakSelf = self;
+        [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+            NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
+            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+            if ([reflag isEqualToString:@"1"]){
+                weakSelf.isPaymentModel = [IsPaymentModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+                GZJShopResultOfThePayment *VC = [[GZJShopResultOfThePayment alloc]init];
+                VC.isPaymentModel = weakSelf.isPaymentModel;
+                [weakSelf.navigationController pushViewController:VC animated:YES];
+            }
+        } onError:^(NSError *engineError) {
+            [SVProgressHUD dismiss];
+            NSLog(@"no");
+        }];
+    }else {
+        [SVProgressHUD showInfoWithStatus:@"网络状态不佳"];
+    }
     
 }
 

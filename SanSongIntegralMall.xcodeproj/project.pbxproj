@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		180F344B2019A2E600336E50 /* GZJShopResultOfThePayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F344A2019A2E600336E50 /* GZJShopResultOfThePayment.m */; };
+		180F344E2019AD8400336E50 /* NomalBtnOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F344D2019AD8400336E50 /* NomalBtnOne.m */; };
+		180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34502019C5ED00336E50 /* IsPaymentModel.m */; };
+		180F34542019CC3A00336E50 /* orderPayBriefInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34532019CC3A00336E50 /* orderPayBriefInformation.m */; };
+		180F34562019CC4600336E50 /* orderPayBriefInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180F34552019CC4600336E50 /* orderPayBriefInformation.xib */; };
 		18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18286DF71FFF0E8A00CCA8D9 /* LICENSE */; };
 		18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFB1FFF0E8A00CCA8D9 /* MJExtensionConst.m */; };
 		18286E111FFF0E8A00CCA8D9 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFD1FFF0E8A00CCA8D9 /* MJFoundation.m */; };
@@ -215,6 +220,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		180F34492019A2E600336E50 /* GZJShopResultOfThePayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZJShopResultOfThePayment.h; sourceTree = "<group>"; };
+		180F344A2019A2E600336E50 /* GZJShopResultOfThePayment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZJShopResultOfThePayment.m; sourceTree = "<group>"; };
+		180F344C2019AD8400336E50 /* NomalBtnOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NomalBtnOne.h; sourceTree = "<group>"; };
+		180F344D2019AD8400336E50 /* NomalBtnOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NomalBtnOne.m; sourceTree = "<group>"; };
+		180F344F2019C5ED00336E50 /* IsPaymentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsPaymentModel.h; sourceTree = "<group>"; };
+		180F34502019C5ED00336E50 /* IsPaymentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsPaymentModel.m; sourceTree = "<group>"; };
+		180F34522019CC3A00336E50 /* orderPayBriefInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderPayBriefInformation.h; sourceTree = "<group>"; };
+		180F34532019CC3A00336E50 /* orderPayBriefInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderPayBriefInformation.m; sourceTree = "<group>"; };
+		180F34552019CC4600336E50 /* orderPayBriefInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderPayBriefInformation.xib; sourceTree = "<group>"; };
 		18286DF71FFF0E8A00CCA8D9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		18286DF91FFF0E8A00CCA8D9 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		18286DFA1FFF0E8A00CCA8D9 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -653,6 +667,8 @@
 		1829C9E21FF2441B00E289A9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				180F34492019A2E600336E50 /* GZJShopResultOfThePayment.h */,
+				180F344A2019A2E600336E50 /* GZJShopResultOfThePayment.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -664,6 +680,8 @@
 				1829CDBE2006051D006A97DD /* ShopDetailModel.m */,
 				182B8B6D200764FE00780A60 /* buyDetailModel.h */,
 				182B8B6E200764FE00780A60 /* buyDetailModel.m */,
+				180F344F2019C5ED00336E50 /* IsPaymentModel.h */,
+				180F34502019C5ED00336E50 /* IsPaymentModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -673,6 +691,11 @@
 			children = (
 				18E2C4B92004A08100120042 /* XMBuyShopView.h */,
 				18E2C4B82004A08100120042 /* XMBuyShopView.m */,
+				180F344C2019AD8400336E50 /* NomalBtnOne.h */,
+				180F344D2019AD8400336E50 /* NomalBtnOne.m */,
+				180F34522019CC3A00336E50 /* orderPayBriefInformation.h */,
+				180F34532019CC3A00336E50 /* orderPayBriefInformation.m */,
+				180F34552019CC4600336E50 /* orderPayBriefInformation.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1582,6 +1605,7 @@
 				2352C596200F794100FC7D41 /* XMMeCellStyleOne.xib in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
+				180F34562019CC4600336E50 /* orderPayBriefInformation.xib in Resources */,
 				1867F16220035FB800C8733B /* DetailViewController.xib in Resources */,
 				18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */,
 				1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */,
@@ -1705,9 +1729,11 @@
 				1838D01A1FE26D410034C4B8 /* SDWebImageCompat.m in Sources */,
 				1838D01F1FE26D410034C4B8 /* SDWebImagePrefetcher.m in Sources */,
 				1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */,
+				180F34542019CC3A00336E50 /* orderPayBriefInformation.m in Sources */,
 				18E2C490200463DD00120042 /* XMMeAdressView.m in Sources */,
 				182F54721FF641BE00552572 /* UIWindow+LBXHierarchy.m in Sources */,
 				1841EB531FFCB733008FF118 /* JSONKit.m in Sources */,
+				180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */,
 				18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */,
 				183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
@@ -1716,6 +1742,7 @@
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
 				18E2C4AF2004646700120042 /* ActionSheetCustomPicker.m in Sources */,
 				1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */,
+				180F344B2019A2E600336E50 /* GZJShopResultOfThePayment.m in Sources */,
 				18E2C4B42004646700120042 /* ActionSheetStringPicker.m in Sources */,
 				2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */,
 				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
@@ -1739,6 +1766,7 @@
 				18286E171FFF0E8A00CCA8D9 /* NSObject+MJKeyValue.m in Sources */,
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
 				1838D0181FE26D410034C4B8 /* SDImageCache.m in Sources */,
+				180F344E2019AD8400336E50 /* NomalBtnOne.m in Sources */,
 				1838CFDA1FE256790034C4B8 /* HeadButton.m in Sources */,
 				18286E1D1FFF0F1900CCA8D9 /* SSJFHomeModel.m in Sources */,
 				183960CE1FFB58970076FE5D /* ScanResultViewController.m in Sources */,
