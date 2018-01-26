@@ -30,7 +30,32 @@
     UITapGestureRecognizer *tapLogin = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(loginBtn)];
     [self.Name addGestureRecognizer:tapLogin];
     
+    self.MemberIcon.contentMode = UIViewContentModeScaleAspectFill;
+    
 }
+/*
+ 设置会员图标
+ */
+- (void)setMemberStr:(NSString *)memberStr
+{
+    if (!_memberStr){
+        _memberStr = memberStr;
+        if ([_memberStr isEqualToString:@"0"]) {//积分会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_point"];
+        }else if ([_memberStr isEqualToString:@"1"]){//白银会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_silver"];
+        }else if ([_memberStr isEqualToString:@"2"]){//黄金会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_golden"];
+        }else if ([_memberStr isEqualToString:@"3"]){//白金会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_platina"];
+        }else if ([_memberStr isEqualToString:@"4"]){//钻石会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_niello"];
+        }else if ([_memberStr isEqualToString:@"5"]){//黑金会员
+            self.MemberIcon.image = [UIImage imageNamed:@"core_silver"];
+        }
+    }
+}
+
 /*
  点击登录
  */

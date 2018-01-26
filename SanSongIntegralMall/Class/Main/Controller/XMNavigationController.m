@@ -72,12 +72,12 @@
     
     // 设置背景图片
     navigationBar.barTintColor = MRRedBg;
-    
+//    navigationBar.backgroundColor = MRRedBg;
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
-    
     [navigationBar setTitleTextAttributes:attrs];
     [navigationBar setTintColor:[UIColor whiteColor]];
+    [navigationBar setTranslucent:NO];
 }
 
 -(void)addrightitem:(UIViewController *)viewController

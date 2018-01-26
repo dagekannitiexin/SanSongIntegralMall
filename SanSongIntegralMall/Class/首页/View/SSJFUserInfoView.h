@@ -17,6 +17,7 @@ typedef void (^touchView) (NSString *str);
 @property (weak, nonatomic) IBOutlet UILabel *MemberLeves;//会员等级
 @property (weak, nonatomic) IBOutlet UILabel *Integral;//积分
 
+@property (nonatomic , strong)NSString *memberStr;
 @property (nonatomic,copy)touchView touchViewBlock;
 
 

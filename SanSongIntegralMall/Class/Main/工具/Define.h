@@ -86,10 +86,10 @@
 
 // 全局主题颜色
 #define MRGlobalBg MRRGBColor(250, 250, 250)
-#define MRRedBg MRRGBColor(245, 80, 83)
+#define MRRedBg MRRGBColor(212, 60, 52)
 // 主题背景颜色
 #define LYBgColor MRRGBColor(244, 244, 244)
-
+#define XMLineGaryColor MRRGBColor(226, 227,228)
 //灰色字体颜色
 #define XMGaryColor MRRGBColor(214, 214, 214)
 #define XMHeigtGaryColor MRRGBColor(193, 193, 193)

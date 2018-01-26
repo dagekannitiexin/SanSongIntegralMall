@@ -252,7 +252,7 @@
  */
 - (void)exchangeView
 {
-    UIView *buy = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49, SCREEN_WIDTH, 49)];
+    UIView *buy = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-49-64, SCREEN_WIDTH, 49)];
     buy.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:buy];
     

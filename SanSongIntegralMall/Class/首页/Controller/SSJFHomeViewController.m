@@ -52,7 +52,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor= [UIColor whiteColor];
     [self createNavgaiton];//创建左侧扫一扫视图
     //调用等待界面
     //请求首页数据
@@ -115,11 +114,11 @@
     
     //创建个人信息部分
     [self createInfoView];
-    //创建活动
-    [self madeActiveView];
     //创建广告轮转图
     [self createBanner];
-    //品牌制造商直供
+    //创建活动
+    [self madeActiveView];
+    //本周推荐
     [self madeNewMajor];
     //创建新品兑换
     [self createNewShop];
@@ -192,6 +191,7 @@
     [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.userinfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Icon_NomalImg"]];
     _infoView.Name.text = _homeDetailModel.userinfo.UserName;
     _infoView.MemberLeves.text = _homeDetailModel.userinfo.UserLevel;
+    _infoView.memberStr = _homeDetailModel.userinfo.UserLevelSort;
     _infoView.Integral.text = [NSString stringWithFormat:@"%@积分",_homeDetailModel.userinfo.Integral];
     
     __block SSJFHomeViewController *blockSelf = self;
@@ -208,10 +208,7 @@
     };
     [bgView addSubview:_infoView];
     
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, bgView.height, SCREEN_WIDTH, 12)];
-    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
-    [_headView addSubview:line];
-    _totleHeight = _totleHeight +line.bottom;
+    _totleHeight = _totleHeight +_infoView.bottom;
 }
 
 - (void)madeActiveView
@@ -239,10 +236,11 @@
         [_activeView addSubview:btn];
         _activeView.contentSize = CGSizeMake(CGRectGetMaxX(btn.frame)+20, _activeView.height);
     }
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _activeView.bottom, SCREEN_WIDTH, 12)];
-    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
-    [_headView addSubview:line];
-    _totleHeight = line.bottom;
+    
+//    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _activeView.bottom, SCREEN_WIDTH, 0.33)];
+//    line.backgroundColor = XMLineGaryColor;
+//    [_headView addSubview:line];
+    _totleHeight = _activeView.bottom;
 }
 
 /*
@@ -258,7 +256,7 @@
     }
     //创建轮转图
     __weak SSJFHomeViewController *weakSelf = self;
-    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _activeView.bottom+12, SCREEN_WIDTH, SCREEN_WIDTH/3) imageURLStringsGroup:imageArray];
+    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/3) imageURLStringsGroup:imageArray];
     _lunzhuanView.backgroundColor = [UIColor whiteColor];
     _lunzhuanView.contentMode = UIViewContentModeScaleAspectFit;
     _lunzhuanView.placeholderImage=[UIImage imageNamed:@"Img_default"];
@@ -271,10 +269,10 @@
     };
     [_headView addSubview:_lunzhuanView];
     
-    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _lunzhuanView.bottom, SCREEN_WIDTH, 12)];
-    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
-    [_headView addSubview:line];
-    _totleHeight = line.bottom;
+//    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _lunzhuanView.bottom, SCREEN_WIDTH, 12)];
+//    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
+//    [_headView addSubview:line];
+    _totleHeight = _lunzhuanView.bottom;
 }
 
 //品牌制造商直供
