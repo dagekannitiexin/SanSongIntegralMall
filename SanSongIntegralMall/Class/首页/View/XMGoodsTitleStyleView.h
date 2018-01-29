@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface XMGoodsTitleStyleView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *title;
+
 
 @end

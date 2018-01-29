@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1611" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,21 +18,30 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tMh-M7-9Ye">
                     <rect key="frame" x="134" y="0.0" width="130" height="55"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="品牌制造商直供" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQL-Tc-8ir">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌制造商直供" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OQL-Tc-8ir">
                             <rect key="frame" x="-1" y="18" width="108" height="18"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="H6U-C2-0Qe"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Img_default" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-qf-IeF">
-                            <rect key="frame" x="115" y="20" width="15" height="15"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homepage_more_ic" translatesAutoresizingMaskIntoConstraints="NO" id="3NW-qf-IeF">
+                            <rect key="frame" x="112" y="20" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="Dgk-tF-VuV"/>
+                                <constraint firstAttribute="width" constant="15" id="hiP-pm-Guv"/>
+                            </constraints>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="130" id="o6B-yu-PFL"/>
+                        <constraint firstItem="3NW-qf-IeF" firstAttribute="leading" secondItem="OQL-Tc-8ir" secondAttribute="trailing" constant="5" id="4O4-yR-wvY"/>
+                        <constraint firstItem="3NW-qf-IeF" firstAttribute="top" secondItem="tMh-M7-9Ye" secondAttribute="top" constant="20" id="4Yc-3j-Epv"/>
+                        <constraint firstAttribute="trailing" secondItem="3NW-qf-IeF" secondAttribute="trailing" constant="3" id="HWb-Uu-cZs"/>
+                        <constraint firstItem="OQL-Tc-8ir" firstAttribute="top" secondItem="tMh-M7-9Ye" secondAttribute="top" constant="18" id="geK-Xe-Fbn"/>
+                        <constraint firstItem="OQL-Tc-8ir" firstAttribute="leading" secondItem="tMh-M7-9Ye" secondAttribute="leading" constant="-1" id="s48-UK-0Ne"/>
                     </constraints>
                 </view>
             </subviews>
@@ -44,10 +53,13 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="title" destination="OQL-Tc-8ir" id="6Tu-lq-IAR"/>
+            </connections>
             <point key="canvasLocation" x="59.5" y="40.5"/>
         </view>
     </objects>
     <resources>
-        <image name="Img_default" width="640" height="360"/>
+        <image name="homepage_more_ic" width="16" height="16"/>
     </resources>
 </document>

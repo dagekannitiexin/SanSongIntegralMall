@@ -184,7 +184,7 @@
  */
 - (void)createInfoView
 {
-    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 85)];
+    UIView *bgView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 65)];
     [_headView addSubview:bgView];
     
     _infoView = [[[NSBundle mainBundle]loadNibNamed:@"SSJFUserInfoView" owner:nil options:nil]lastObject];
@@ -208,7 +208,7 @@
     };
     [bgView addSubview:_infoView];
     
-    _totleHeight = _totleHeight +_infoView.bottom;
+    _totleHeight = _totleHeight +bgView.bottom;
 }
 
 - (void)madeActiveView
@@ -237,10 +237,10 @@
         _activeView.contentSize = CGSizeMake(CGRectGetMaxX(btn.frame)+20, _activeView.height);
     }
     
-//    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _activeView.bottom, SCREEN_WIDTH, 0.33)];
-//    line.backgroundColor = XMLineGaryColor;
-//    [_headView addSubview:line];
-    _totleHeight = _activeView.bottom;
+    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _activeView.bottom, SCREEN_WIDTH, 5)];
+    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
+    [_headView addSubview:line];
+    _totleHeight = line.bottom;
 }
 
 /*
@@ -256,7 +256,7 @@
     }
     //创建轮转图
     __weak SSJFHomeViewController *weakSelf = self;
-    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/3) imageURLStringsGroup:imageArray];
+    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/16*9) imageURLStringsGroup:imageArray];
     _lunzhuanView.backgroundColor = [UIColor whiteColor];
     _lunzhuanView.contentMode = UIViewContentModeScaleAspectFit;
     _lunzhuanView.placeholderImage=[UIImage imageNamed:@"Img_default"];
@@ -269,9 +269,6 @@
     };
     [_headView addSubview:_lunzhuanView];
     
-//    UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, _lunzhuanView.bottom, SCREEN_WIDTH, 12)];
-//    line.backgroundColor = RGBACOLOR(240, 240, 240, 1);
-//    [_headView addSubview:line];
     _totleHeight = _lunzhuanView.bottom;
 }
 
@@ -283,6 +280,7 @@
     viewTwo.backgroundColor = [UIColor whiteColor];
     XMGoodsTitleStyleView *titleView = [[[NSBundle mainBundle] loadNibNamed:@"XMGoodsTitleStyleView" owner:nil options:nil]lastObject];
     titleView.width = SCREEN_WIDTH;
+    titleView.title.text = @"公主家热推";
     [viewTwo addSubview:titleView];
     
     CGFloat spaceWithCenter = 5.0;
@@ -315,6 +313,8 @@
         
     }
     [_headView addSubview:viewTwo];
+    
+    
     // 加10原因是因为存在边线_totleHeight+10 过了
     _totleHeight = _totleHeight +viewTwo.height;
 }
@@ -365,6 +365,7 @@
     viewFour.backgroundColor = [UIColor whiteColor];
     //标题栏
     XMGoodsTitleStyleView *titleView = [[[NSBundle mainBundle]loadNibNamed:@"XMGoodsTitleStyleView" owner:nil options:nil]lastObject];
+    titleView.title.text = @"人气推荐";
     [viewFour addSubview:titleView];
     
     CGFloat goodsViewHeighSpace = 15;
@@ -494,6 +495,7 @@
     UICollectionReusableView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"reusableView" forIndexPath:indexPath];
     headerView.backgroundColor =[UIColor whiteColor];
     XMGoodsTitleStyleView *titleView = [[NSBundle mainBundle]loadNibNamed:@"XMGoodsTitleStyleView" owner:nil options:nil].lastObject;
+    titleView.title.text =@"为你推荐";
     [headerView addSubview:titleView];
     return headerView;
 }
