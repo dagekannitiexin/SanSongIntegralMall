@@ -36,25 +36,27 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"LaunchTour" ofType:@"mp4"];
-    
-    self.moviePlayerController.contentURL = [[NSURL alloc] initFileURLWithPath:moviePath];
-    
     [self.moviePlayerController play];
-    [self.moviePlayerController.view bringSubviewToFront:self.loginView];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    [self.moviePlayerController stop];
-    self.moviePlayerController = nil;
-    self.loginView = nil;
+    [self.moviePlayerController pause];
+//    self.moviePlayerController = nil;
+//    self.loginView = nil;
 }
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
+    
+    NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"LaunchTour" ofType:@"mp4"];
+    self.moviePlayerController.contentURL = [[NSURL alloc] initFileURLWithPath:moviePath];
+    [self.moviePlayerController prepareToPlay];//缓存
+    [self.moviePlayerController.view bringSubviewToFront:self.loginView];
     
 }
 
@@ -183,7 +185,7 @@
             NSLog(@"使用QQ登录");
             [[UMSocialManager defaultManager] getUserInfoWithPlatform:UMSocialPlatformType_QQ currentViewController:nil completion:^(id result, NSError *error) {
                 if (error) {
-                    
+                    NSLog(@"QQ登录失败");
                 } else {
                     UMSocialUserInfoResponse *resp = result;
                     

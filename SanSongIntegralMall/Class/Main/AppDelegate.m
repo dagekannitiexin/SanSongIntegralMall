@@ -137,9 +137,9 @@
         else if ([[ModelLocator sharedInstance].step isEqualToString:@"0"])
         {
             
-            SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
-            XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
-            [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
+//            SSJFLoginViewController *land = [[SSJFLoginViewController alloc]init];
+//            XMNavigationController *nav = [[XMNavigationController alloc]initWithRootViewController:land];
+//            [self.window.rootViewController presentViewController:nav animated:YES completion:nil];
             
         }
         else if ([[ModelLocator sharedInstance].step isEqualToString:@"2"])

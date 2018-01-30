@@ -16,7 +16,7 @@
 #import "AppDelegate.h"
 #import "ModelLocator.h"
 #import <SVProgressHUD.h>
-#import "SSJFLoginViewController.h"
+//#import "SSJFLoginViewController.h"
 #import <UINavigationController+FDFullscreenPopGesture.h>
 #import "Utility.h"
 #import "NSString+JSON.h"
