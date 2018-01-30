@@ -37,7 +37,7 @@
 
 - (void)createBackView
 {
-    UIImageView *imView= [[UIImageView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_WIDTH/3*2)];
+    UIImageView *imView= [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH/3*2)];
     imView.image = [UIImage imageNamed:@"getIntergrolBg"];
     imView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imView];

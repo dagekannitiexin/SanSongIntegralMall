@@ -36,6 +36,7 @@
         viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"checkUserType_backward_9x15_"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackClick)];
     }else {
         [self addrightitem:viewController];
+        
     }
     
     // 一定要在最后在执行父类的push操作, 这样让第一次的根控制器Push进来的时候childViewController为0, 并且让viewController可以覆盖上面设置的leftBarButtonItem

@@ -12,6 +12,10 @@
 		180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34502019C5ED00336E50 /* IsPaymentModel.m */; };
 		180F34542019CC3A00336E50 /* orderPayBriefInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34532019CC3A00336E50 /* orderPayBriefInformation.m */; };
 		180F34562019CC4600336E50 /* orderPayBriefInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180F34552019CC4600336E50 /* orderPayBriefInformation.xib */; };
+		1812D7C020203FC9000F7472 /* WebViewBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7BD20203FC9000F7472 /* WebViewBannerController.m */; };
+		1812D7C120203FC9000F7472 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7BF20203FC9000F7472 /* WebViewController.m */; };
+		1812D7DD20204D0A000F7472 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7D420204D0A000F7472 /* SignViewController.m */; };
+		1812D7DE20204D0A000F7472 /* SignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1812D7D520204D0A000F7472 /* SignViewController.xib */; };
 		18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18286DF71FFF0E8A00CCA8D9 /* LICENSE */; };
 		18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFB1FFF0E8A00CCA8D9 /* MJExtensionConst.m */; };
 		18286E111FFF0E8A00CCA8D9 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFD1FFF0E8A00CCA8D9 /* MJFoundation.m */; };
@@ -171,6 +175,12 @@
 		187A4A252016CDB5009E2B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A242016CDB5009E2B6C /* Foundation.framework */; };
 		187A4A272016CDBB009E2B6C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A262016CDBB009E2B6C /* CFNetwork.framework */; };
 		187A4A292016CDC9009E2B6C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A282016CDC9009E2B6C /* CoreMotion.framework */; };
+		18B13319202051C7002A41D0 /* NewShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13310202051C7002A41D0 /* NewShakeViewController.m */; };
+		18B1331A202051C7002A41D0 /* NewShakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B13311202051C7002A41D0 /* NewShakeViewController.xib */; };
+		18B1331B202051C7002A41D0 /* NZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13313202051C7002A41D0 /* NZLabel.m */; };
+		18B1331C202051C7002A41D0 /* DismissingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13316202051C7002A41D0 /* DismissingAnimator.m */; };
+		18B1331D202051C7002A41D0 /* PresentingAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13318202051C7002A41D0 /* PresentingAnimator.m */; };
+		18B1331F20205584002A41D0 /* 摇一摇音效.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18B1331E20205584002A41D0 /* 摇一摇音效.mp3 */; };
 		18E2C4862004630700120042 /* XMMeAddressEmpty.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2C4802004630600120042 /* XMMeAddressEmpty.m */; };
 		18E2C4872004630700120042 /* XMMeAddressEmptyDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2C4822004630600120042 /* XMMeAddressEmptyDetail.m */; };
 		18E2C4882004630700120042 /* XMMeAddressEmptyDetailPresent.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2C4852004630600120042 /* XMMeAddressEmptyDetailPresent.m */; };
@@ -230,6 +240,13 @@
 		180F34522019CC3A00336E50 /* orderPayBriefInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderPayBriefInformation.h; sourceTree = "<group>"; };
 		180F34532019CC3A00336E50 /* orderPayBriefInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderPayBriefInformation.m; sourceTree = "<group>"; };
 		180F34552019CC4600336E50 /* orderPayBriefInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderPayBriefInformation.xib; sourceTree = "<group>"; };
+		1812D7BC20203FC9000F7472 /* WebViewBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewBannerController.h; sourceTree = "<group>"; };
+		1812D7BD20203FC9000F7472 /* WebViewBannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewBannerController.m; sourceTree = "<group>"; };
+		1812D7BE20203FC9000F7472 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		1812D7BF20203FC9000F7472 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		1812D7D320204D0A000F7472 /* SignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
+		1812D7D420204D0A000F7472 /* SignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
+		1812D7D520204D0A000F7472 /* SignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignViewController.xib; sourceTree = "<group>"; };
 		18286DF71FFF0E8A00CCA8D9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		18286DF91FFF0E8A00CCA8D9 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		18286DFA1FFF0E8A00CCA8D9 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -524,6 +541,16 @@
 		187A4A242016CDB5009E2B6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		187A4A262016CDBB009E2B6C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		187A4A282016CDC9009E2B6C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		18B1330F202051C7002A41D0 /* NewShakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewShakeViewController.h; sourceTree = "<group>"; };
+		18B13310202051C7002A41D0 /* NewShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewShakeViewController.m; sourceTree = "<group>"; };
+		18B13311202051C7002A41D0 /* NewShakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewShakeViewController.xib; sourceTree = "<group>"; };
+		18B13312202051C7002A41D0 /* NZLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NZLabel.h; sourceTree = "<group>"; };
+		18B13313202051C7002A41D0 /* NZLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NZLabel.m; sourceTree = "<group>"; };
+		18B13315202051C7002A41D0 /* DismissingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimator.h; sourceTree = "<group>"; };
+		18B13316202051C7002A41D0 /* DismissingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimator.m; sourceTree = "<group>"; };
+		18B13317202051C7002A41D0 /* PresentingAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimator.h; sourceTree = "<group>"; };
+		18B13318202051C7002A41D0 /* PresentingAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimator.m; sourceTree = "<group>"; };
+		18B1331E20205584002A41D0 /* 摇一摇音效.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "摇一摇音效.mp3"; sourceTree = "<group>"; };
 		18E2C4802004630600120042 /* XMMeAddressEmpty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeAddressEmpty.m; sourceTree = "<group>"; };
 		18E2C4812004630600120042 /* XMMeAddressEmptyDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMeAddressEmptyDetail.h; sourceTree = "<group>"; };
 		18E2C4822004630600120042 /* XMMeAddressEmptyDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeAddressEmptyDetail.m; sourceTree = "<group>"; };
@@ -618,6 +645,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1812D7BB20203FC9000F7472 /* 不同的Web */ = {
+			isa = PBXGroup;
+			children = (
+				1812D7BC20203FC9000F7472 /* WebViewBannerController.h */,
+				1812D7BD20203FC9000F7472 /* WebViewBannerController.m */,
+				1812D7BE20203FC9000F7472 /* WebViewController.h */,
+				1812D7BF20203FC9000F7472 /* WebViewController.m */,
+			);
+			path = "不同的Web";
+			sourceTree = "<group>";
+		};
+		1812D7CD20204D0A000F7472 /* 签到 */ = {
+			isa = PBXGroup;
+			children = (
+				1812D7D320204D0A000F7472 /* SignViewController.h */,
+				1812D7D420204D0A000F7472 /* SignViewController.m */,
+				1812D7D520204D0A000F7472 /* SignViewController.xib */,
+			);
+			path = "签到";
+			sourceTree = "<group>";
+		};
 		18286DF61FFF0E8A00CCA8D9 /* MJExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -717,6 +765,8 @@
 		182F545E1FF6415200552572 /* 功能 */ = {
 			isa = PBXGroup;
 			children = (
+				18B1330E202051C7002A41D0 /* 摇一摇 */,
+				1812D7CD20204D0A000F7472 /* 签到 */,
 				18447DC6200DC4EA0099697C /* 从产品获取积分 */,
 				183080B8200C6DDC00A3CDDB /* 快捷导航 */,
 				182F545F1FF6415200552572 /* 二维码扫描 */,
@@ -1321,6 +1371,7 @@
 		1841EB861FFCBBDE008FF118 /* 工具 */ = {
 			isa = PBXGroup;
 			children = (
+				1812D7BB20203FC9000F7472 /* 不同的Web */,
 				183A1E3F1FDFA47F0054547E /* Define.h */,
 				2335FCD82001D05C009293C1 /* ModelLocator.h */,
 				2335FCD92001D05D009293C1 /* ModelLocator.m */,
@@ -1393,8 +1444,33 @@
 				18E2C48A2004632900120042 /* address.json */,
 				18E2C4892004632900120042 /* hotelcity.json */,
 				1877AE3D1FF4CD4D00FC9BA5 /* LaunchTour.mp4 */,
+				18B1331E20205584002A41D0 /* 摇一摇音效.mp3 */,
 			);
 			path = "资源";
+			sourceTree = "<group>";
+		};
+		18B1330E202051C7002A41D0 /* 摇一摇 */ = {
+			isa = PBXGroup;
+			children = (
+				18B1330F202051C7002A41D0 /* NewShakeViewController.h */,
+				18B13310202051C7002A41D0 /* NewShakeViewController.m */,
+				18B13311202051C7002A41D0 /* NewShakeViewController.xib */,
+				18B13312202051C7002A41D0 /* NZLabel.h */,
+				18B13313202051C7002A41D0 /* NZLabel.m */,
+				18B13314202051C7002A41D0 /* PresentingAnimator */,
+			);
+			path = "摇一摇";
+			sourceTree = "<group>";
+		};
+		18B13314202051C7002A41D0 /* PresentingAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				18B13315202051C7002A41D0 /* DismissingAnimator.h */,
+				18B13316202051C7002A41D0 /* DismissingAnimator.m */,
+				18B13317202051C7002A41D0 /* PresentingAnimator.h */,
+				18B13318202051C7002A41D0 /* PresentingAnimator.m */,
+			);
+			path = PresentingAnimator;
 			sourceTree = "<group>";
 		};
 		18E2C4952004646600120042 /* ActionSheetPicker-3.0 */ = {
@@ -1593,6 +1669,7 @@
 				1835CA55200890DE00BAC62A /* SSJFAdressCell.xib in Resources */,
 				18E2C48C2004632900120042 /* address.json in Resources */,
 				18E2C491200463DD00120042 /* XMMeAdressView.xib in Resources */,
+				1812D7DE20204D0A000F7472 /* SignViewController.xib in Resources */,
 				1841EB521FFCB733008FF118 /* Errors_en_US.plist in Resources */,
 				18286E1A1FFF0E8A00CCA8D9 /* README.md in Resources */,
 				183960CD1FFB58970076FE5D /* ScanResultViewController.xib in Resources */,
@@ -1602,6 +1679,7 @@
 				1838CFD41FE215030034C4B8 /* SSJFUserInfoView.xib in Resources */,
 				183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */,
 				186EA6BF1FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.xib in Resources */,
+				18B1331F20205584002A41D0 /* 摇一摇音效.mp3 in Resources */,
 				186EA6CA1FE3D44F00E796B9 /* SSJFGoodsMostNumView.xib in Resources */,
 				23359131201A01100000CAED /* AlipaySDK.bundle in Resources */,
 				18E2C4B72004646700120042 /* README.md in Resources */,
@@ -1615,6 +1693,7 @@
 				18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */,
 				1877AE3E1FF4CF8500FC9BA5 /* LaunchTour.mp4 in Resources */,
 				183A1DF41FDF66030054547E /* Assets.xcassets in Resources */,
+				18B1331A202051C7002A41D0 /* NewShakeViewController.xib in Resources */,
 				186EA6A61FE3745E00E796B9 /* XMIntegralHeadView.xib in Resources */,
 				183501751FED0A2B0019AD62 /* SSJFMineIntegralListHeadView.xib in Resources */,
 				186EA6AB1FE375AA00E796B9 /* XMGoodsTitleStyleView.xib in Resources */,
@@ -1737,9 +1816,11 @@
 				1838D0241FE26D410034C4B8 /* UIImageView+WebCache.m in Sources */,
 				180F34542019CC3A00336E50 /* orderPayBriefInformation.m in Sources */,
 				18E2C490200463DD00120042 /* XMMeAdressView.m in Sources */,
+				18B13319202051C7002A41D0 /* NewShakeViewController.m in Sources */,
 				182F54721FF641BE00552572 /* UIWindow+LBXHierarchy.m in Sources */,
 				1841EB531FFCB733008FF118 /* JSONKit.m in Sources */,
 				180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */,
+				18B1331D202051C7002A41D0 /* PresentingAnimator.m in Sources */,
 				18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */,
 				183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
@@ -1768,6 +1849,7 @@
 				182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
 				1838CFED1FE25C130034C4B8 /* TADotView.m in Sources */,
+				1812D7C020203FC9000F7472 /* WebViewBannerController.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
 				18286E171FFF0E8A00CCA8D9 /* NSObject+MJKeyValue.m in Sources */,
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
@@ -1813,12 +1895,15 @@
 				1838CFEC1FE25C130034C4B8 /* TAAnimatedDotView.m in Sources */,
 				186EA6A71FE3745E00E796B9 /* XMintegralCollectionViewCell.m in Sources */,
 				1838D0191FE26D410034C4B8 /* SDImageCacheConfig.m in Sources */,
+				18B1331B202051C7002A41D0 /* NZLabel.m in Sources */,
 				1841EB741FFCB797008FF118 /* NSString+JSON.m in Sources */,
 				18286E151FFF0E8A00CCA8D9 /* NSObject+MJClass.m in Sources */,
 				1835CA54200890DE00BAC62A /* SSJFAdressCell.m in Sources */,
 				183585AD1FF48811004BA12E /* XMLoginVerificationCode.m in Sources */,
 				1838CFD21FE214F20034C4B8 /* SSJFUserInfoView.m in Sources */,
 				183A1E521FDFA5510054547E /* SignDismissingAnimator.m in Sources */,
+				1812D7C120203FC9000F7472 /* WebViewController.m in Sources */,
+				1812D7DD20204D0A000F7472 /* SignViewController.m in Sources */,
 				1838CFF01FE25C130034C4B8 /* SDCycleScrollView.m in Sources */,
 				18E2C4B02004646700120042 /* ActionSheetDatePicker.m in Sources */,
 				1841EB731FFCB797008FF118 /* NSDictionary+RequestEncoding.m in Sources */,
@@ -1832,6 +1917,7 @@
 				183080BE200C6F1F00A3CDDB /* NewButton.m in Sources */,
 				186EA6B91FE3B65200E796B9 /* NJKWebViewProgress.m in Sources */,
 				1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */,
+				18B1331C202051C7002A41D0 /* DismissingAnimator.m in Sources */,
 				1841EB851FFCB956008FF118 /* GTMBase64.m in Sources */,
 				1838CFEE1FE25C130034C4B8 /* TAPageControl.m in Sources */,
 				183960DB1FFB5B140076FE5D /* StyleDIY.m in Sources */,
@@ -2018,9 +2104,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/资源/支付宝",
 				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2043,9 +2130,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/资源/支付宝",
 				);
+				GCC_NO_COMMON_BLOCKS = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = SanSongIntegralMall/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

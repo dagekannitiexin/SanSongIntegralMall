@@ -55,11 +55,11 @@
 - (UIImageView *)imageView
 {
     if (!_imageView) {
-        UIImage *image = [UIImage imageNamed:@"proncessGoIcon"];
+        UIImage *image = [UIImage imageNamed:@"Home_Logo"];
         _imageView = [[UIImageView alloc] initWithImage:image];
         CGFloat X = ([UIScreen mainScreen].bounds.size.width - image.size.width) * 0.5;
-        CGFloat Y = [UIScreen mainScreen].bounds.size.height * 0.15;
-        _imageView.frame = CGRectMake(X, Y, image.size.width, image.size.height);
+//        CGFloat Y = [UIScreen mainScreen].bounds.size.height * 0.15;
+        _imageView.frame = CGRectMake(X, 0, image.size.width, image.size.height);
         [self addSubview:_imageView];
     }
     return _imageView;

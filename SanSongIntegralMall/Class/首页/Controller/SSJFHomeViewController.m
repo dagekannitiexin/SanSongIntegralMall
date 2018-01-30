@@ -56,8 +56,7 @@
     //调用等待界面
     //请求首页数据
     [self initNetWork];
-    //建设
-    self.title = @"积分商城";
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,6 +143,10 @@
     button.frame = CGRectMake(0, 0, 18, 18);
     UIBarButtonItem* itembutton = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.leftBarButtonItem = itembutton;
+    
+    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 75, 24)];
+    logoView.image = [UIImage imageNamed:@"SSJF_Logo"];
+    self.navigationItem.titleView = logoView;
 }
 /*
  扫一扫 或者 手动输入的VC
@@ -264,8 +267,12 @@
  _lunzhuanView.pageControlStyle=SDCycleScrollViewPageContolStyleClassic;
     _lunzhuanView.pageControlAliment = SDCycleScrollViewPageContolAlimentRight;
     _lunzhuanView.pageDotColor =RGBACOLOR(19,150,224,0.7);
+    __block SSJFHomeViewController *blockSelf = self;
     _lunzhuanView.clickItemOperationBlock = ^(NSInteger currentIndex) {
-        NSLog(@"hah");
+        NSString * tag = @"没有tag";
+        NSString * out_url = blockSelf.homeDetailModel.homeadv[currentIndex].AdActionUrl;
+        NSString * type = @"专题栏";
+        [Utility goVcForItemId:tag WithURL:out_url WithType:type WithNavGation:blockSelf.navigationController];
     };
     [_headView addSubview:_lunzhuanView];
     

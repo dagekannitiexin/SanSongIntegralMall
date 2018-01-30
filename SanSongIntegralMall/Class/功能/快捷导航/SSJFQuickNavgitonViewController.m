@@ -9,6 +9,8 @@
 #import "SSJFQuickNavgitonViewController.h"
 #import "NewButton.h"
 #import "XMNavigationController.h"
+#import "NewShakeViewController.h"
+#import "SignViewController.h"
 
 @interface SSJFQuickNavgitonViewController ()
 /** 功能数组 */
@@ -95,6 +97,64 @@
 
 -(void)btnclick:(UIButton *)btn
 {
-    
+    NSInteger i = btn.tag;
+    switch (i) {
+        case 0:
+        {
+            //摇一摇
+            NewShakeViewController * shake = [[NewShakeViewController alloc] init];
+            shake.title = @"摇一摇";
+            [self.navigationController pushViewController:shake animated:YES];
+
+        }
+            break;
+        case 1:
+        {
+            
+        }
+            break;
+        case 2:
+        {
+            //签到
+            SignViewController * vc = [[SignViewController alloc]init];
+            
+            NSArray *array1 = [NSArray arrayWithObjects:@"5",@"10",@"15",@"20",@"25", nil];
+            NSDictionary *rule = [NSDictionary dictionaryWithObjectsAndKeys:
+                                  @"5",@"1",
+                                  @"10",@"2",
+                                  @"15",@"3",
+                                  @"20",@"4",
+                                  @"25",@"5",nil];
+            
+            NSDictionary *dicnew = [NSDictionary dictionaryWithObjectsAndKeys:
+                                    array1,@"analysis_rule",
+                                    @"1",@"current",
+                                    rule,@"rule",
+                                    @"103",@"score",
+                                    @"5",@"sign_score",
+                                    nil];
+            vc.transitioningDelegate = [UIApplication sharedApplication].keyWindow.rootViewController;
+            vc.modalPresentationStyle = UIModalPresentationCustom;
+            vc.dic = dicnew;
+            [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:^{
+                
+            }];
+            
+        }
+            break;
+        case 3:
+        {
+            //回到主页
+            [self close];
+        }
+            break;
+        case 4:
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
 }
 @end

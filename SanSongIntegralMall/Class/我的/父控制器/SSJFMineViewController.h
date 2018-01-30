@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMBaseViewController.h"
 
-@interface SSJFMineViewController : UIViewController
+@interface SSJFMineViewController :XMBaseViewController
 
 @property (strong,nonatomic) NSString *pickType;
 

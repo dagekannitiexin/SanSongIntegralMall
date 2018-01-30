@@ -46,7 +46,6 @@ static CGFloat CellHeight = 44;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initTableView];
     
     //查看更多促销活动
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/GetUserInfo"];
@@ -72,7 +71,7 @@ static CGFloat CellHeight = 44;
         [de setObject:_userInfo.blogname forKey:@"blogname"];
         [de setObject:_userInfo.qqname forKey:@"qqname"];
         [de synchronize];
-        [_tableView reloadData];
+        [self initTableView];
     } onError:^(NSError *engineError) {
         NSLog(@"no");
     }];
