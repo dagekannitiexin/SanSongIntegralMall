@@ -31,7 +31,7 @@
     self.scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64)];
     self.scrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.scrollView];
-    _btntitle = [NSArray arrayWithObjects:@"摇一摇",@"大转盘",@"签到",@"积分商城",@"分类", nil];
+    _btntitle = [NSArray arrayWithObjects:@"摇一摇",@"大转盘",@"签到",@"积分商城",@"邀请好友", nil];
     _imgIcon =  [NSArray arrayWithObjects:@"Quick_sharkitoff",@"Quick_ turnplate",@"Quick_signin",@"Quick_ integralShop",@"Quick_ classify",nil];
     [self reloadView];
 }
@@ -150,7 +150,19 @@
             break;
         case 4:
         {
-            
+            //设置邀请码
+            NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/GetShareUrl"];
+            __weak SSJFQuickNavgitonViewController *weakSelf = self;
+            [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+                NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+                NSString *str = [rdt objectForKey:@"ReData"];
+                NSString * tag = @"没有tag";
+                NSString * out_url = str;
+                NSString * type = @"专题栏";
+                [Utility goVcForItemId:tag WithURL:out_url WithType:type WithNavGation:self.navigationController];
+            } onError:^(NSError *engineError) {
+                NSLog(@"no");
+            }];
         }
             break;
         default:

@@ -64,21 +64,6 @@
     return YES;
 }
 
-/*
- 支付宝回调
- */
-- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
-{
-    if ([url.host isEqualToString:@"safepay"]) {
-        //跳转支付宝钱包进行支付，处理支付结果
-        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
-            //发送支付成功的通知
-            [[NSNotificationCenter defaultCenter]postNotificationName:PayForInfo object:resultDic];
-        }];
-    }
-    return YES;
-}
-
 - (void)addObserverAndNotification{
     [[ModelLocator sharedInstance] addObserver:self forKeyPath:@"step" options:NSKeyValueObservingOptionNew context:nil];
     
@@ -203,6 +188,13 @@
 // 支持所有iOS系统
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    if ([url.host isEqualToString:@"safepay"]) {
+        //跳转支付宝钱包进行支付，处理支付结果
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+            //发送支付成功的通知
+            [[NSNotificationCenter defaultCenter]postNotificationName:PayForInfo object:resultDic];
+        }];
+    }
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {

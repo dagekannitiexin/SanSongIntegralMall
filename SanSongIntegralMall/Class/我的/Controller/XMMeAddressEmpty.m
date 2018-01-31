@@ -137,7 +137,7 @@
 
 - (void)addAddressBtn
 {
-    UIButton *addNewAddressBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50, SCREEN_WIDTH, 50)];
+    UIButton *addNewAddressBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT-50-64, SCREEN_WIDTH, 50)];
     addNewAddressBtn.backgroundColor = RGBACOLOR(208, 88, 84, 1);
     [addNewAddressBtn setTitle:@"新增收货地址" forState:UIControlStateNormal];
     [addNewAddressBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

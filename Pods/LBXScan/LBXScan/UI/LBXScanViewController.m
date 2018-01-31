@@ -30,7 +30,7 @@
 
     switch (_libraryType) {
         case SLT_Native:
-            self.title = @"native";
+            self.title = @"二维码";
             break;
         case SLT_ZXing:
             self.title = @"ZXing";

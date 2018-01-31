@@ -86,9 +86,13 @@
 #pragma mark - uitextfieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    if ([string isEqualToString:@""] || string == nil)
+    {
+        return YES;
+    }
     self.inputString = [NSString stringWithFormat:@"%@%@",self.inputString,string];
     //判断按钮的
-    if (self.inputString.length == 6){
+    if (self.inputString.length == 16){
         self.inputBtn.enabled = YES;
     }else if (self.inputString.length >16){
         return NO;

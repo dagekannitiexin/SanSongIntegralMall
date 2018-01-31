@@ -27,6 +27,11 @@ static CGFloat CellHeight = 44;
 @end
 
 @implementation SSJFMineViewController
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self reDataView];
+}
 
 -(NSArray *)listArray
 {
@@ -47,6 +52,11 @@ static CGFloat CellHeight = 44;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+}
+
+- (void)reDataView
+{
     //查看更多促销活动
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/GetUserInfo"];
     [SVProgressHUD showWithStatus:@"正在加载中"];
@@ -71,11 +81,11 @@ static CGFloat CellHeight = 44;
         [de setObject:_userInfo.blogname forKey:@"blogname"];
         [de setObject:_userInfo.qqname forKey:@"qqname"];
         [de synchronize];
+        _tableView = nil;
         [self initTableView];
     } onError:^(NSError *engineError) {
         NSLog(@"no");
     }];
-    
 }
 
 - (void)initTableView{
@@ -127,9 +137,9 @@ static CGFloat CellHeight = 44;
         cell.Title.text = self.listArray[indexPath.section][indexPath.row];
         cell.IConBtn.userInteractionEnabled = YES;
         if (USER_ICON){
-            [cell.IConBtn sd_setImageWithURL:[NSURL URLWithString:USER_ICON] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+            [cell.IConBtn sd_setImageWithURL:[NSURL URLWithString:USER_ICON] placeholderImage:[UIImage imageNamed:@"Icon_NomalImg"]];
         }else {
-            cell.IConBtn.image = [UIImage imageNamed:@"Img_default"];
+            cell.IConBtn.image = [UIImage imageNamed:@"Icon_NomalImg"];
         }
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(ChangeIcon)];
         [cell addGestureRecognizer:tap];
@@ -317,7 +327,7 @@ static CGFloat CellHeight = 44;
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/SetUserImage"];
     [SSJF_AppDelegate.engine sendRequesttoWeiBo:nil fileDate:dateImage portPath:netPath onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         [SVProgressHUD dismiss];
-        NSLog(@"成功");
+        [self reDataView];
     } onError:^(NSError *engineError) {
         NSLog(@"失败");
     }];
@@ -492,16 +502,17 @@ static CGFloat CellHeight = 44;
  上传用户信息
  */
 - (void)postInfo:(NSMutableDictionary *)resp LoginType:(NSString*)type{
-    
+    [SVProgressHUD showWithStatus:@"正在绑定三方账号中"];
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/BindThird"];
     [SSJF_AppDelegate.engine sendRequesttoSSJF:resp portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
         NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
         if ([reflag isEqualToString:@"1"]){
-            [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-            
+            [SVProgressHUD showSuccessWithStatus:@"绑定成功"];
+            [self reDataView];
         }else {
             [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+            [self reDataView];
         }
     } onError:^(NSError *engineError) {
         [SVProgressHUD showErrorWithStatus:@"登录失败请检查网络"];

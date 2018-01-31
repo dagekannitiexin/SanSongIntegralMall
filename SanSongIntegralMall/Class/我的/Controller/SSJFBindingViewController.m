@@ -46,7 +46,7 @@
 
 - (void)initView
 {
-    UIView *bgViewOne = [[UIView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, 55)];
+    UIView *bgViewOne = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 55)];
     bgViewOne.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:bgViewOne];
     

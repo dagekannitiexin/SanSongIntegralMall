@@ -175,39 +175,45 @@
 
 #pragma mark - delegate
 - (BOOL)unitField:(WLUnitField *)uniField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    //当string传入为空
+    if ([string isEqualToString:@""] || string ==nil){
+        return YES;
+    }
     NSLog(@"%@",string);
     NSLog(@"******>%@",uniField.text);
     NSString *allString = [uniField.text stringByAppendingString:string];
     if (allString.length ==6){
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD showWithStatus:@"正在登陆"];
             //参数
             NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
             [requestInfo setValue:self.phonenNumber forKey:@"tel"];
-            [requestInfo setValue:_unitField.text forKey:@"code"];
+            [requestInfo setValue:allString forKey:@"code"];
             
             NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Login/LoginByTel"];
             [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
-                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
-                NSDictionary *info = [aDictronaryBaseObjects objectForKey:@"Rdt"];
-                NSDictionary *data = [info objectForKey:@"ReData"];
-                NSUserDefaults * de =[NSUserDefaults standardUserDefaults];
-                [de setObject:[data objectForKey:@"token"] forKey:@"token"];
-                [de synchronize];
+                NSString *reflag = [aDictronaryBaseObjects objectForKey:@"ReFlag"];
+                NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+                if ([reflag isEqualToString:@"1"]){
+                    [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+                    NSDictionary *info = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+                    NSDictionary *data = [info objectForKey:@"ReData"];
+                    NSUserDefaults * de =[NSUserDefaults standardUserDefaults];
+                    [de setObject:[data objectForKey:@"token"] forKey:@"token"];
+                    [de synchronize];
+                    
+                    // 登陆成功 用户的单独注册
+                    [_timer invalidate]; // 销毁timer
+                    _timer = nil; // 置nil
+                    [ModelLocator sharedInstance].step = @"1";
+                    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+                    [SSJF_AppDelegate setRootView];
+                }else {
+                    [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
+                }
                 
-                // 登陆成功 用户的单独注册
-//                [JPUSHService setTags:nil aliasInbackground:[NSString stringWithFormat:@"%@",[info objectForKey:@"id"]]];
-                [_timer invalidate]; // 销毁timer
-                _timer = nil; // 置nil
-                [ModelLocator sharedInstance].step = @"1";
-                
-                [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-                
-                [SSJF_AppDelegate setRootView];
             } onError:^(NSError *engineError) {
                 NSLog(@"no");
             }];
-            
-        });
         
     }
     

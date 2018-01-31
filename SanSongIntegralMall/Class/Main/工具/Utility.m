@@ -95,9 +95,6 @@
     NSString * authkey = [NSString stringWithFormat:@"%@|%@|%@",Device,Key,Date];
     NSLog(@"authkey = %@",authkey);
     NSString *token = USER_TOKEN;
-//    NSString * Tcze = [token authCodeEncoded:authkey];
-//    Tcze = [Tcze stringByReplacingOccurrencesOfString:@"\r" withString:@""];
-//    Tcze = [Tcze stringByReplacingOccurrencesOfString:@"\n" withString:@""];
     [dicc setValue:Device forKey:@"pragma-device"];
     [dicc setValue:token forKey:@"pragma-tcze"];
     [dicc setValue:Uuid forKey:@"pragma-uuid"];
