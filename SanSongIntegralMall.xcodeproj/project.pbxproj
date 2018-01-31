@@ -210,6 +210,30 @@
 		2352C592200F78EA00FC7D41 /* XMMeSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352C591200F78EA00FC7D41 /* XMMeSetting.m */; };
 		2352C596200F794100FC7D41 /* XMMeCellStyleOne.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2352C593200F794000FC7D41 /* XMMeCellStyleOne.xib */; };
 		2352C597200F794100FC7D41 /* XMMeCellStyleOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 2352C595200F794100FC7D41 /* XMMeCellStyleOne.m */; };
+		238795DD202201B500726528 /* SSJFLeisureFunViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795DC202201B500726528 /* SSJFLeisureFunViewController.m */; };
+		238795E0202201E200726528 /* SSJFClassification.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795DF202201E200726528 /* SSJFClassification.m */; };
+		238795F32022096100726528 /* TGMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795E32022096100726528 /* TGMoreCell.m */; };
+		238795F42022096100726528 /* TGMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 238795E42022096100726528 /* TGMoreCell.xib */; };
+		238795F52022096100726528 /* TGMoreLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795E62022096100726528 /* TGMoreLayout.m */; };
+		238795F62022096100726528 /* TGSegmentBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795E82022096100726528 /* TGSegmentBar.m */; };
+		238795F72022096100726528 /* TGSegmentConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795EA2022096100726528 /* TGSegmentConfig.m */; };
+		238795F82022096100726528 /* TGSegmentMoreBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795EC2022096100726528 /* TGSegmentMoreBtn.m */; };
+		238795F92022096100726528 /* TGSementBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795EE2022096100726528 /* TGSementBarVC.m */; };
+		238795FA2022096100726528 /* TGShowMoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795F02022096100726528 /* TGShowMoreVC.m */; };
+		238795FB2022096100726528 /* UIView+TGSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 238795F22022096100726528 /* UIView+TGSegment.m */; };
+		2387964020220C9600726528 /* GZGRecommend.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387963F20220C9600726528 /* GZGRecommend.m */; };
+		2387964320220CCD00726528 /* GZGNewProduc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387964220220CCD00726528 /* GZGNewProduc.m */; };
+		2387964620220D0300726528 /* GZGBeauty.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387964520220D0300726528 /* GZGBeauty.m */; };
+		2387964920220D2100726528 /* GZGHomeFurnishing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387964820220D2100726528 /* GZGHomeFurnishing.m */; };
+		2387964C20220D3700726528 /* GZGClothes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387964B20220D3700726528 /* GZGClothes.m */; };
+		2387965020220D8700726528 /* GZGElectricAppliance.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387964F20220D8700726528 /* GZGElectricAppliance.m */; };
+		2387965320220DA300726528 /* GZGPersonalCare.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387965220220DA300726528 /* GZGPersonalCare.m */; };
+		2387965620220DBD00726528 /* GZGGroceries.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387965520220DBD00726528 /* GZGGroceries.m */; };
+		2387965920220DD500726528 /* GZGKitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387965820220DD500726528 /* GZGKitchen.m */; };
+		2387965D20220E3A00726528 /* GZGParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387965C20220E3A00726528 /* GZGParts.m */; };
+		2387966020220E5900726528 /* GZGDiet.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387965F20220E5900726528 /* GZGDiet.m */; };
+		2387966320220E7500726528 /* GZGChild.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387966220220E7500726528 /* GZGChild.m */; };
+		2387966620220E8F00726528 /* GZGInterest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2387966520220E8F00726528 /* GZGInterest.m */; };
 		E422D08395B6D467FD100DC5 /* libPods-SanSongIntegralMall.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */; };
 /* End PBXBuildFile section */
 
@@ -602,6 +626,53 @@
 		2352C593200F794000FC7D41 /* XMMeCellStyleOne.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XMMeCellStyleOne.xib; sourceTree = "<group>"; };
 		2352C594200F794100FC7D41 /* XMMeCellStyleOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMMeCellStyleOne.h; sourceTree = "<group>"; };
 		2352C595200F794100FC7D41 /* XMMeCellStyleOne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMMeCellStyleOne.m; sourceTree = "<group>"; };
+		238795DB202201B500726528 /* SSJFLeisureFunViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFLeisureFunViewController.h; sourceTree = "<group>"; };
+		238795DC202201B500726528 /* SSJFLeisureFunViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFLeisureFunViewController.m; sourceTree = "<group>"; };
+		238795DE202201E200726528 /* SSJFClassification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFClassification.h; sourceTree = "<group>"; };
+		238795DF202201E200726528 /* SSJFClassification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFClassification.m; sourceTree = "<group>"; };
+		238795E22022096100726528 /* TGMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMoreCell.h; sourceTree = "<group>"; };
+		238795E32022096100726528 /* TGMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMoreCell.m; sourceTree = "<group>"; };
+		238795E42022096100726528 /* TGMoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TGMoreCell.xib; sourceTree = "<group>"; };
+		238795E52022096100726528 /* TGMoreLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGMoreLayout.h; sourceTree = "<group>"; };
+		238795E62022096100726528 /* TGMoreLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGMoreLayout.m; sourceTree = "<group>"; };
+		238795E72022096100726528 /* TGSegmentBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSegmentBar.h; sourceTree = "<group>"; };
+		238795E82022096100726528 /* TGSegmentBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSegmentBar.m; sourceTree = "<group>"; };
+		238795E92022096100726528 /* TGSegmentConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSegmentConfig.h; sourceTree = "<group>"; };
+		238795EA2022096100726528 /* TGSegmentConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSegmentConfig.m; sourceTree = "<group>"; };
+		238795EB2022096100726528 /* TGSegmentMoreBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSegmentMoreBtn.h; sourceTree = "<group>"; };
+		238795EC2022096100726528 /* TGSegmentMoreBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSegmentMoreBtn.m; sourceTree = "<group>"; };
+		238795ED2022096100726528 /* TGSementBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGSementBarVC.h; sourceTree = "<group>"; };
+		238795EE2022096100726528 /* TGSementBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGSementBarVC.m; sourceTree = "<group>"; };
+		238795EF2022096100726528 /* TGShowMoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGShowMoreVC.h; sourceTree = "<group>"; };
+		238795F02022096100726528 /* TGShowMoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGShowMoreVC.m; sourceTree = "<group>"; };
+		238795F12022096100726528 /* UIView+TGSegment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+TGSegment.h"; sourceTree = "<group>"; };
+		238795F22022096100726528 /* UIView+TGSegment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+TGSegment.m"; sourceTree = "<group>"; };
+		2387963E20220C9600726528 /* GZGRecommend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGRecommend.h; sourceTree = "<group>"; };
+		2387963F20220C9600726528 /* GZGRecommend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGRecommend.m; sourceTree = "<group>"; };
+		2387964120220CCD00726528 /* GZGNewProduc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGNewProduc.h; sourceTree = "<group>"; };
+		2387964220220CCD00726528 /* GZGNewProduc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGNewProduc.m; sourceTree = "<group>"; };
+		2387964420220D0300726528 /* GZGBeauty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGBeauty.h; sourceTree = "<group>"; };
+		2387964520220D0300726528 /* GZGBeauty.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGBeauty.m; sourceTree = "<group>"; };
+		2387964720220D2100726528 /* GZGHomeFurnishing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGHomeFurnishing.h; sourceTree = "<group>"; };
+		2387964820220D2100726528 /* GZGHomeFurnishing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGHomeFurnishing.m; sourceTree = "<group>"; };
+		2387964A20220D3700726528 /* GZGClothes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGClothes.h; sourceTree = "<group>"; };
+		2387964B20220D3700726528 /* GZGClothes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGClothes.m; sourceTree = "<group>"; };
+		2387964E20220D8700726528 /* GZGElectricAppliance.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGElectricAppliance.h; sourceTree = "<group>"; };
+		2387964F20220D8700726528 /* GZGElectricAppliance.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGElectricAppliance.m; sourceTree = "<group>"; };
+		2387965120220DA300726528 /* GZGPersonalCare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGPersonalCare.h; sourceTree = "<group>"; };
+		2387965220220DA300726528 /* GZGPersonalCare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGPersonalCare.m; sourceTree = "<group>"; };
+		2387965420220DBD00726528 /* GZGGroceries.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGGroceries.h; sourceTree = "<group>"; };
+		2387965520220DBD00726528 /* GZGGroceries.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGGroceries.m; sourceTree = "<group>"; };
+		2387965720220DD500726528 /* GZGKitchen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGKitchen.h; sourceTree = "<group>"; };
+		2387965820220DD500726528 /* GZGKitchen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGKitchen.m; sourceTree = "<group>"; };
+		2387965B20220E3A00726528 /* GZGParts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGParts.h; sourceTree = "<group>"; };
+		2387965C20220E3A00726528 /* GZGParts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGParts.m; sourceTree = "<group>"; };
+		2387965E20220E5900726528 /* GZGDiet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGDiet.h; sourceTree = "<group>"; };
+		2387965F20220E5900726528 /* GZGDiet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGDiet.m; sourceTree = "<group>"; };
+		2387966120220E7500726528 /* GZGChild.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGChild.h; sourceTree = "<group>"; };
+		2387966220220E7500726528 /* GZGChild.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGChild.m; sourceTree = "<group>"; };
+		2387966420220E8F00726528 /* GZGInterest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGInterest.h; sourceTree = "<group>"; };
+		2387966520220E8F00726528 /* GZGInterest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGInterest.m; sourceTree = "<group>"; };
 		64894BAED3ED6A9A60A68C78 /* Pods-SanSongIntegralMall.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.release.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.release.xcconfig"; sourceTree = "<group>"; };
 		8A0AB8935F760AEED625732D /* Pods-SanSongIntegralMall.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SanSongIntegralMall.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SanSongIntegralMall/Pods-SanSongIntegralMall.debug.xcconfig"; sourceTree = "<group>"; };
 		E5AEBE25FBE4AABDDA6C9AB3 /* libPods-SanSongIntegralMall.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SanSongIntegralMall.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1130,6 +1201,9 @@
 		183A1E341FDFA47F0054547E /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				238795FC20220C0200726528 /* 商品分类 */,
+				238795D6202200F900726528 /* 分类 */,
+				238795D1202200F300726528 /* 闲趣 */,
 				182F545E1FF6415200552572 /* 功能 */,
 				183A1E351FDFA47F0054547E /* Main */,
 				183A1E541FDFA7EC0054547E /* Category */,
@@ -1235,6 +1309,7 @@
 		183A1E4C1FDFA5510054547E /* 框架 */ = {
 			isa = PBXGroup;
 			children = (
+				238795E12022096100726528 /* TGSegment */,
 				18E2C4952004646600120042 /* ActionSheetPicker-3.0 */,
 				2323EC662001D4CA00D0EA8C /* JPush */,
 				18286DF61FFF0E8A00CCA8D9 /* MJExtension */,
@@ -1526,6 +1601,681 @@
 			path = "支付宝";
 			sourceTree = "<group>";
 		};
+		238795D1202200F300726528 /* 闲趣 */ = {
+			isa = PBXGroup;
+			children = (
+				238795D5202200F300726528 /* 父控制器 */,
+				238795D2202200F300726528 /* Controller */,
+				238795D3202200F300726528 /* Model */,
+				238795D4202200F300726528 /* View */,
+			);
+			path = "闲趣";
+			sourceTree = "<group>";
+		};
+		238795D2202200F300726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		238795D3202200F300726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		238795D4202200F300726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		238795D5202200F300726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				238795DB202201B500726528 /* SSJFLeisureFunViewController.h */,
+				238795DC202201B500726528 /* SSJFLeisureFunViewController.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		238795D6202200F900726528 /* 分类 */ = {
+			isa = PBXGroup;
+			children = (
+				238795DA202200F900726528 /* 父控制器 */,
+				238795D7202200F900726528 /* Controller */,
+				238795D8202200F900726528 /* Model */,
+				238795D9202200F900726528 /* View */,
+			);
+			path = "分类";
+			sourceTree = "<group>";
+		};
+		238795D7202200F900726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		238795D8202200F900726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		238795D9202200F900726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		238795DA202200F900726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				238795DE202201E200726528 /* SSJFClassification.h */,
+				238795DF202201E200726528 /* SSJFClassification.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		238795E12022096100726528 /* TGSegment */ = {
+			isa = PBXGroup;
+			children = (
+				238795E22022096100726528 /* TGMoreCell.h */,
+				238795E32022096100726528 /* TGMoreCell.m */,
+				238795E42022096100726528 /* TGMoreCell.xib */,
+				238795E52022096100726528 /* TGMoreLayout.h */,
+				238795E62022096100726528 /* TGMoreLayout.m */,
+				238795E72022096100726528 /* TGSegmentBar.h */,
+				238795E82022096100726528 /* TGSegmentBar.m */,
+				238795E92022096100726528 /* TGSegmentConfig.h */,
+				238795EA2022096100726528 /* TGSegmentConfig.m */,
+				238795EB2022096100726528 /* TGSegmentMoreBtn.h */,
+				238795EC2022096100726528 /* TGSegmentMoreBtn.m */,
+				238795ED2022096100726528 /* TGSementBarVC.h */,
+				238795EE2022096100726528 /* TGSementBarVC.m */,
+				238795EF2022096100726528 /* TGShowMoreVC.h */,
+				238795F02022096100726528 /* TGShowMoreVC.m */,
+				238795F12022096100726528 /* UIView+TGSegment.h */,
+				238795F22022096100726528 /* UIView+TGSegment.m */,
+			);
+			path = TGSegment;
+			sourceTree = "<group>";
+		};
+		238795FC20220C0200726528 /* 商品分类 */ = {
+			isa = PBXGroup;
+			children = (
+				2387960C20220C0200726528 /* 推荐 */,
+				2387961120220C0200726528 /* 新品 */,
+				2387962A20220C0200726528 /* 美妆 */,
+				2387960220220C0200726528 /* 家居 */,
+				2387961620220C0200726528 /* 服装 */,
+				2387962520220C0200726528 /* 电器 */,
+				2387962020220C0200726528 /* 洗护 */,
+				2387961B20220C0200726528 /* 杂货 */,
+				2387963420220C0200726528 /* 餐厨 */,
+				2387962F20220C0200726528 /* 配件 */,
+				2387963920220C0200726528 /* 饮食 */,
+				238795FD20220C0200726528 /* 婴童 */,
+				2387960720220C0200726528 /* 志趣 */,
+			);
+			path = "商品分类";
+			sourceTree = "<group>";
+		};
+		238795FD20220C0200726528 /* 婴童 */ = {
+			isa = PBXGroup;
+			children = (
+				2387960120220C0200726528 /* 父控制器 */,
+				238795FE20220C0200726528 /* Controller */,
+				238795FF20220C0200726528 /* Model */,
+				2387960020220C0200726528 /* View */,
+			);
+			path = "婴童";
+			sourceTree = "<group>";
+		};
+		238795FE20220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		238795FF20220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387960020220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387960120220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387966120220E7500726528 /* GZGChild.h */,
+				2387966220220E7500726528 /* GZGChild.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387960220220C0200726528 /* 家居 */ = {
+			isa = PBXGroup;
+			children = (
+				2387960620220C0200726528 /* 父控制器 */,
+				2387960320220C0200726528 /* Controller */,
+				2387960420220C0200726528 /* Model */,
+				2387960520220C0200726528 /* View */,
+			);
+			path = "家居";
+			sourceTree = "<group>";
+		};
+		2387960320220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387960420220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387960520220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387960620220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964720220D2100726528 /* GZGHomeFurnishing.h */,
+				2387964820220D2100726528 /* GZGHomeFurnishing.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387960720220C0200726528 /* 志趣 */ = {
+			isa = PBXGroup;
+			children = (
+				2387960B20220C0200726528 /* 父控制器 */,
+				2387960820220C0200726528 /* Controller */,
+				2387960920220C0200726528 /* Model */,
+				2387960A20220C0200726528 /* View */,
+			);
+			path = "志趣";
+			sourceTree = "<group>";
+		};
+		2387960820220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387960920220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387960A20220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387960B20220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387966420220E8F00726528 /* GZGInterest.h */,
+				2387966520220E8F00726528 /* GZGInterest.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387960C20220C0200726528 /* 推荐 */ = {
+			isa = PBXGroup;
+			children = (
+				2387961020220C0200726528 /* 父控制器 */,
+				2387960D20220C0200726528 /* Controller */,
+				2387960E20220C0200726528 /* Model */,
+				2387960F20220C0200726528 /* View */,
+			);
+			path = "推荐";
+			sourceTree = "<group>";
+		};
+		2387960D20220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387960E20220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387960F20220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387961020220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387963E20220C9600726528 /* GZGRecommend.h */,
+				2387963F20220C9600726528 /* GZGRecommend.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387961120220C0200726528 /* 新品 */ = {
+			isa = PBXGroup;
+			children = (
+				2387961520220C0200726528 /* 父控制器 */,
+				2387961220220C0200726528 /* Controller */,
+				2387961320220C0200726528 /* Model */,
+				2387961420220C0200726528 /* View */,
+			);
+			path = "新品";
+			sourceTree = "<group>";
+		};
+		2387961220220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387961320220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387961420220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387961520220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964120220CCD00726528 /* GZGNewProduc.h */,
+				2387964220220CCD00726528 /* GZGNewProduc.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387961620220C0200726528 /* 服装 */ = {
+			isa = PBXGroup;
+			children = (
+				2387961A20220C0200726528 /* 父控制器 */,
+				2387961720220C0200726528 /* Controller */,
+				2387961820220C0200726528 /* Model */,
+				2387961920220C0200726528 /* View */,
+			);
+			path = "服装";
+			sourceTree = "<group>";
+		};
+		2387961720220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387961820220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387961920220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2387962920220C0200726528 /* 父控制器 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387961A20220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964A20220D3700726528 /* GZGClothes.h */,
+				2387964B20220D3700726528 /* GZGClothes.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387961B20220C0200726528 /* 杂货 */ = {
+			isa = PBXGroup;
+			children = (
+				2387961C20220C0200726528 /* Controller */,
+				2387961D20220C0200726528 /* Model */,
+				2387961E20220C0200726528 /* View */,
+				2387961F20220C0200726528 /* 父控制器 */,
+			);
+			path = "杂货";
+			sourceTree = "<group>";
+		};
+		2387961C20220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2387965420220DBD00726528 /* GZGGroceries.h */,
+				2387965520220DBD00726528 /* GZGGroceries.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387961D20220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387961E20220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387961F20220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387962020220C0200726528 /* 洗护 */ = {
+			isa = PBXGroup;
+			children = (
+				2387962420220C0200726528 /* 父控制器 */,
+				2387962120220C0200726528 /* Controller */,
+				2387962220220C0200726528 /* Model */,
+				2387962320220C0200726528 /* View */,
+			);
+			path = "洗护";
+			sourceTree = "<group>";
+		};
+		2387962120220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387962220220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387962320220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387962420220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387965120220DA300726528 /* GZGPersonalCare.h */,
+				2387965220220DA300726528 /* GZGPersonalCare.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387962520220C0200726528 /* 电器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964D20220D6000726528 /* 父控制器 */,
+				2387962620220C0200726528 /* Controller */,
+				2387962720220C0200726528 /* Model */,
+				2387962820220C0200726528 /* View */,
+			);
+			path = "电器";
+			sourceTree = "<group>";
+		};
+		2387962620220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387962720220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387962820220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387962920220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387962A20220C0200726528 /* 美妆 */ = {
+			isa = PBXGroup;
+			children = (
+				2387962E20220C0200726528 /* 父控制器 */,
+				2387962B20220C0200726528 /* Controller */,
+				2387962C20220C0200726528 /* Model */,
+				2387962D20220C0200726528 /* View */,
+			);
+			path = "美妆";
+			sourceTree = "<group>";
+		};
+		2387962B20220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387962C20220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387962D20220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387962E20220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964420220D0300726528 /* GZGBeauty.h */,
+				2387964520220D0300726528 /* GZGBeauty.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387962F20220C0200726528 /* 配件 */ = {
+			isa = PBXGroup;
+			children = (
+				2387965A20220E0600726528 /* 父控制器 */,
+				2387963020220C0200726528 /* Controller */,
+				2387963120220C0200726528 /* Model */,
+				2387963220220C0200726528 /* View */,
+			);
+			path = "配件";
+			sourceTree = "<group>";
+		};
+		2387963020220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387963120220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387963220220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387963320220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387963420220C0200726528 /* 餐厨 */ = {
+			isa = PBXGroup;
+			children = (
+				2387963820220C0200726528 /* 父控制器 */,
+				2387963520220C0200726528 /* Controller */,
+				2387963620220C0200726528 /* Model */,
+				2387963720220C0200726528 /* View */,
+			);
+			path = "餐厨";
+			sourceTree = "<group>";
+		};
+		2387963520220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387963620220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387963720220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2387963320220C0200726528 /* 父控制器 */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387963820220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387965720220DD500726528 /* GZGKitchen.h */,
+				2387965820220DD500726528 /* GZGKitchen.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387963920220C0200726528 /* 饮食 */ = {
+			isa = PBXGroup;
+			children = (
+				2387963D20220C0200726528 /* 父控制器 */,
+				2387963A20220C0200726528 /* Controller */,
+				2387963B20220C0200726528 /* Model */,
+				2387963C20220C0200726528 /* View */,
+			);
+			path = "饮食";
+			sourceTree = "<group>";
+		};
+		2387963A20220C0200726528 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2387963B20220C0200726528 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2387963C20220C0200726528 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2387963D20220C0200726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387965E20220E5900726528 /* GZGDiet.h */,
+				2387965F20220E5900726528 /* GZGDiet.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387964D20220D6000726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387964E20220D8700726528 /* GZGElectricAppliance.h */,
+				2387964F20220D8700726528 /* GZGElectricAppliance.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
+		2387965A20220E0600726528 /* 父控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				2387965B20220E3A00726528 /* GZGParts.h */,
+				2387965C20220E3A00726528 /* GZGParts.m */,
+			);
+			path = "父控制器";
+			sourceTree = "<group>";
+		};
 		ABF2306CF92E2E4F16FBA9FF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1685,6 +2435,7 @@
 				18E2C4B72004646700120042 /* README.md in Resources */,
 				1829C9D81FF1EAD100E289A9 /* MineIntegralLisetCell.xib in Resources */,
 				183A1DF71FDF66030054547E /* LaunchScreen.storyboard in Resources */,
+				238795F42022096100726528 /* TGMoreCell.xib in Resources */,
 				2352C596200F794100FC7D41 /* XMMeCellStyleOne.xib in Resources */,
 				186EA6A51FE3745E00E796B9 /* XMintegralCollectionViewCell.xib in Resources */,
 				186EA6B01FE3A52700E796B9 /* goodsViewStyleOne.xib in Resources */,
@@ -1783,13 +2534,16 @@
 				1829C9DF1FF213CB00E289A9 /* MineIntegrallOrderCell.m in Sources */,
 				186EA6C01FE3B96A00E796B9 /* XMGoodsViewStyleThreeView.m in Sources */,
 				1838D01E1FE26D410034C4B8 /* SDWebImageManager.m in Sources */,
+				2387966320220E7500726528 /* GZGChild.m in Sources */,
 				1841EB571FFCB733008FF118 /* RESTfulOperation.m in Sources */,
 				183960C41FFB58540076FE5D /* LBXPermissionPhotos.m in Sources */,
 				18286E111FFF0E8A00CCA8D9 /* MJFoundation.m in Sources */,
 				1841EB701FFCB797008FF118 /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				1841EB551FFCB733008FF118 /* RESTError.m in Sources */,
 				1841EB761FFCB797008FF118 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				2387965620220DBD00726528 /* GZGGroceries.m in Sources */,
 				18286E161FFF0E8A00CCA8D9 /* NSObject+MJCoding.m in Sources */,
+				238795F62022096100726528 /* TGSegmentBar.m in Sources */,
 				18E2C4872004630700120042 /* XMMeAddressEmptyDetail.m in Sources */,
 				1841EB711FFCB797008FF118 /* NSData+Base64.m in Sources */,
 				186EA6BB1FE3B65200E796B9 /* UIView+Frame.m in Sources */,
@@ -1801,14 +2555,17 @@
 				18E2C4862004630700120042 /* XMMeAddressEmpty.m in Sources */,
 				1841EB7D1FFCB908008FF118 /* Base64.m in Sources */,
 				183960BC1FFB58540076FE5D /* LBXPermission.m in Sources */,
+				2387964620220D0300726528 /* GZGBeauty.m in Sources */,
 				182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */,
 				1829C9E81FF2444500E289A9 /* SSJFShopDetailViewController.m in Sources */,
 				18E2C4942004641D00120042 /* XXTextView.m in Sources */,
 				18E2C4B22004646700120042 /* ActionSheetLocalePicker.m in Sources */,
 				183960C11FFB58540076FE5D /* LBXPermissionLocation.m in Sources */,
 				1829C9D71FF1EAD100E289A9 /* MineIntegralLisetCell.m in Sources */,
+				2387965320220DA300726528 /* GZGPersonalCare.m in Sources */,
 				18E2C4B32004646700120042 /* ActionSheetMultipleStringPicker.m in Sources */,
 				183960C61FFB58540076FE5D /* LBXPermissionSetting.m in Sources */,
+				238795FB2022096100726528 /* UIView+TGSegment.m in Sources */,
 				18286E191FFF0E8A00CCA8D9 /* NSString+MJExtension.m in Sources */,
 				18286E131FFF0E8A00CCA8D9 /* MJPropertyKey.m in Sources */,
 				1838D01A1FE26D410034C4B8 /* SDWebImageCompat.m in Sources */,
@@ -1830,6 +2587,7 @@
 				18E2C4AF2004646700120042 /* ActionSheetCustomPicker.m in Sources */,
 				1877AE3B1FF4C9DA00FC9BA5 /* SSJFLoginViewController.m in Sources */,
 				180F344B2019A2E600336E50 /* GZJShopResultOfThePayment.m in Sources */,
+				2387964C20220D3700726528 /* GZGClothes.m in Sources */,
 				18E2C4B42004646700120042 /* ActionSheetStringPicker.m in Sources */,
 				2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */,
 				182F54711FF641BE00552572 /* UIAlertView+LBXAlertAction.m in Sources */,
@@ -1837,19 +2595,24 @@
 				2352C592200F78EA00FC7D41 /* XMMeSetting.m in Sources */,
 				18E2C4882004630700120042 /* XMMeAddressEmptyDetailPresent.m in Sources */,
 				18447DCD200DC54F0099697C /* SSJFGetIntegralFromCommodity.m in Sources */,
+				2387964020220C9600726528 /* GZGRecommend.m in Sources */,
 				183501781FED0A420019AD62 /* SSJFMineIntegralListHeadView.m in Sources */,
 				1835CA582008A5D700BAC62A /* adressModel.m in Sources */,
 				1838D0231FE26D410034C4B8 /* UIImageView+HighlightedWebCache.m in Sources */,
 				1841EB541FFCB733008FF118 /* JSONModel.m in Sources */,
 				1838CFD71FE220E60034C4B8 /* UIView+YYAdd.m in Sources */,
+				2387965020220D8700726528 /* GZGElectricAppliance.m in Sources */,
+				238795FA2022096100726528 /* TGShowMoreVC.m in Sources */,
 				1838D0201FE26D410034C4B8 /* UIButton+WebCache.m in Sources */,
 				183A1E481FDFA47F0054547E /* XMBaseViewController.m in Sources */,
 				183080BB200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */,
 				183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */,
+				238795DD202201B500726528 /* SSJFLeisureFunViewController.m in Sources */,
 				182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,
 				1838CFED1FE25C130034C4B8 /* TADotView.m in Sources */,
 				1812D7C020203FC9000F7472 /* WebViewBannerController.m in Sources */,
+				238795E0202201E200726528 /* SSJFClassification.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
 				18286E171FFF0E8A00CCA8D9 /* NSObject+MJKeyValue.m in Sources */,
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
@@ -1875,12 +2638,14 @@
 				1838D0171FE26D410034C4B8 /* NSImage+WebCache.m in Sources */,
 				18E2C4BA2004A08100120042 /* XMBuyShopView.m in Sources */,
 				183A1E571FDFA7EC0054547E /* UIImage+MRExtension.m in Sources */,
+				238795F82022096100726528 /* TGSegmentMoreBtn.m in Sources */,
 				1838D0221FE26D410034C4B8 /* UIImage+MultiFormat.m in Sources */,
 				183960C31FFB58540076FE5D /* LBXPermissionNetwork.m in Sources */,
 				18E2C4B62004646700120042 /* SWActionSheet.m in Sources */,
 				1838D01B1FE26D410034C4B8 /* SDWebImageDecoder.m in Sources */,
 				1867F16320035FB800C8733B /* DetailViewController.m in Sources */,
 				1841EB791FFCB797008FF118 /* Reachability.m in Sources */,
+				238795F52022096100726528 /* TGMoreLayout.m in Sources */,
 				18E2C4AE2004646700120042 /* AbstractActionSheetPicker.m in Sources */,
 				183960C21FFB58540076FE5D /* LBXPermissionMicrophone.m in Sources */,
 				187744FD20103B3100689998 /* SSJFBindingViewController.m in Sources */,
@@ -1891,6 +2656,7 @@
 				1838D0161FE26D410034C4B8 /* NSData+ImageContentType.m in Sources */,
 				1838D01D1FE26D410034C4B8 /* SDWebImageDownloaderOperation.m in Sources */,
 				1841EB781FFCB797008FF118 /* MKNetworkOperation.m in Sources */,
+				238795F32022096100726528 /* TGMoreCell.m in Sources */,
 				1841EB771FFCB797008FF118 /* MKNetworkEngine.m in Sources */,
 				1838CFEC1FE25C130034C4B8 /* TAAnimatedDotView.m in Sources */,
 				186EA6A71FE3745E00E796B9 /* XMintegralCollectionViewCell.m in Sources */,
@@ -1905,12 +2671,16 @@
 				1812D7C120203FC9000F7472 /* WebViewController.m in Sources */,
 				1812D7DD20204D0A000F7472 /* SignViewController.m in Sources */,
 				1838CFF01FE25C130034C4B8 /* SDCycleScrollView.m in Sources */,
+				238795F72022096100726528 /* TGSegmentConfig.m in Sources */,
 				18E2C4B02004646700120042 /* ActionSheetDatePicker.m in Sources */,
+				2387964320220CCD00726528 /* GZGNewProduc.m in Sources */,
 				1841EB731FFCB797008FF118 /* NSDictionary+RequestEncoding.m in Sources */,
 				1838D01C1FE26D410034C4B8 /* SDWebImageDownloader.m in Sources */,
 				186EA6B11FE3A52700E796B9 /* goodsViewStyleOne.m in Sources */,
 				1829C9DB1FF1F88700E289A9 /* SSJFMineOrderViewController.m in Sources */,
 				183A1DFA1FDF66030054547E /* main.m in Sources */,
+				2387966620220E8F00726528 /* GZGInterest.m in Sources */,
+				238795F92022096100726528 /* TGSementBarVC.m in Sources */,
 				2335FCDA2001D05D009293C1 /* ModelLocator.m in Sources */,
 				1829CDBF2006051D006A97DD /* ShopDetailModel.m in Sources */,
 				183960C51FFB58540076FE5D /* LBXPermissionReminders.m in Sources */,
@@ -1923,8 +2693,12 @@
 				183960DB1FFB5B140076FE5D /* StyleDIY.m in Sources */,
 				186EA69D1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m in Sources */,
 				183A1E531FDFA5510054547E /* SignPresentingAnimator.m in Sources */,
+				2387966020220E5900726528 /* GZGDiet.m in Sources */,
 				183A1E4B1FDFA47F0054547E /* SSJFHomeViewController.m in Sources */,
+				2387965D20220E3A00726528 /* GZGParts.m in Sources */,
+				2387965920220DD500726528 /* GZGKitchen.m in Sources */,
 				18E2C4B52004646700120042 /* DistancePickerView.m in Sources */,
+				2387964920220D2100726528 /* GZGHomeFurnishing.m in Sources */,
 				1841EB721FFCB797008FF118 /* NSDate+RFC1123.m in Sources */,
 				18286E141FFF0E8A00CCA8D9 /* MJPropertyType.m in Sources */,
 				183585AC1FF48811004BA12E /* XMLoginPhone.m in Sources */,

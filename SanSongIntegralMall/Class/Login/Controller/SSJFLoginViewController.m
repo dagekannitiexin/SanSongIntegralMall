@@ -52,7 +52,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.fd_prefersNavigationBarHidden = YES;
-    
     NSString *moviePath = [[NSBundle mainBundle] pathForResource:@"LaunchTour" ofType:@"mp4"];
     self.moviePlayerController.contentURL = [[NSURL alloc] initFileURLWithPath:moviePath];
     [self.moviePlayerController prepareToPlay];//缓存

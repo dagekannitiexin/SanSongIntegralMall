@@ -22,7 +22,23 @@
 #import "SSJFHomeModel.h"
 #import "UIImageView+WebCache.h"
 #import "SSJFGetIntegralFromCommodity.h"
+#import "TGSementBarVC.h"
 
+
+//下面是新的控制器
+#import "GZGRecommend.h"
+#import "GZGNewProduc.h"
+#import "GZGBeauty.h"
+#import "GZGHomeFurnishing.h"
+#import "GZGClothes.h"
+#import "GZGElectricAppliance.h"
+#import "GZGPersonalCare.h"
+#import "GZGGroceries.h"
+#import "GZGKitchen.h"
+#import "GZGParts.h"
+#import "GZGDiet.h"
+#import "GZGChild.h"
+#import "GZGInterest.h"
 
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
@@ -36,7 +52,7 @@
     UICollectionView  *mainCollectionView;
     
 }
-
+@property (nonatomic, weak) TGSementBarVC *segmentBarVC; //扩展控制器
 @property (nonatomic,strong)SSJFHomeModel * homeDetailModel;
 
 @end
@@ -47,16 +63,74 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
     self.tabBarController.tabBar.hidden = YES;
+}
+
+- (TGSementBarVC *)segmentBarVC {
+    if (!_segmentBarVC) {
+        TGSementBarVC *vc = [[TGSementBarVC alloc] init];
+        [self addChildViewController:vc];//成链
+        _segmentBarVC = vc;
+    }
+    return _segmentBarVC;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self createNavgaiton];//创建左侧扫一扫视图
     //调用等待界面
     //请求首页数据
-    [self initNetWork];
-    
+//    [self initNetWork];
+
+    self.segmentBarVC.segmentBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
+    //设置segmentBarVC大小
+    self.segmentBarVC.view.frame = CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT-64);
+    //使用segmentBarVC
+    [self.view addSubview:self.segmentBarVC.view];
+    NSArray *items = @[@"推荐", @"新品", @"美妆", @"家居",@"服装",@"电器",@"洗护",@"杂货",@"餐厨",@"配件",@"饮食",@"婴童",@"志趣"];
+    NSMutableArray* childVCs = [NSMutableArray array];
+    [childVCs addObject:[[GZGRecommend alloc] init]];
+    [childVCs addObject:[[GZGNewProduc alloc] init]];
+    [childVCs addObject:[[GZGBeauty alloc] init]];
+    [childVCs addObject:[[GZGHomeFurnishing alloc] init]];
+    [childVCs addObject:[[GZGClothes alloc] init]];
+    [childVCs addObject:[[GZGElectricAppliance alloc] init]];
+    [childVCs addObject:[[GZGPersonalCare alloc] init]];
+    [childVCs addObject:[[GZGGroceries alloc] init]];
+    [childVCs addObject:[[GZGKitchen alloc] init]];
+    [childVCs addObject:[[GZGParts alloc] init]];
+    [childVCs addObject:[[GZGDiet alloc] init]];
+    [childVCs addObject:[[GZGChild alloc] init]];
+    [childVCs addObject:[[GZGInterest alloc] init]];
+    [self.segmentBarVC setupWithItems:items childVCs:childVCs];
+    [self.segmentBarVC.segmentBar updateViewWithConfig:^(TGSegmentConfig *config) {
+        config.selectedColor(RGBCOLOR(175, 36, 38))
+        .normalColor(RGBCOLOR(51, 51, 51))
+        .selectedFont([UIFont systemFontOfSize:14])//选中字体大于其他正常标签的字体的情况下，根据情况稍微调大margin（默认8），以免选中的字体变大后挡住其他正常标签的内容
+        .normalFont([UIFont systemFontOfSize:14])
+        .indicateExtraW(15)
+        .indicateH(3)
+        .indicateColor(RGBCOLOR(180, 40, 45))//调试完成
+        .showMore(YES)
+        .moreCellBGColor([[UIColor grayColor] colorWithAlphaComponent:0.3])
+        .moreBGColor([UIColor clearColor])
+        .moreCellFont([UIFont systemFontOfSize:13])
+        .moreCellTextColor([UIColor whiteColor])
+        .moreCellMinH(30)
+        .showMoreBtnlineView(YES)
+        .moreBtnlineViewColor([UIColor lightTextColor])
+        .moreBtnTitleFont([UIFont systemFontOfSize:13])
+        .moreBtnTitleColor([UIColor lightTextColor])
+        .margin(42)
+        .barBGColor([UIColor whiteColor])
+        ;
+    }];
+    [self createNavgaiton];//创建左侧扫一扫视图
 }
 
 - (void)didReceiveMemoryWarning {

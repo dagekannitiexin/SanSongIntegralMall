@@ -9,9 +9,9 @@
 #import "XMTabBarController.h"
 #import "XMNavigationController.h"
 #import "SSJFHomeViewController.h"
-//#import "XMLearnViewController.h"
-//#import "XMMeViewController.h"
-//#import "XMThematicViewController.h"
+#import "SSJFLeisureFunViewController.h"
+#import "SSJFClassification.h"
+#import "SSJFMineViewController.h"
 #import "SignPresentingAnimator.h"
 #import "SignDismissingAnimator.h"
 
@@ -37,11 +37,14 @@
     [super viewDidLoad];
     
     // 添加子控制器
-    [self addChildController:[[SSJFHomeViewController alloc]init] imageName:@"tabar_Homenew0" selectedImage:@"tabar_Homenew1" title:@"首页"];
+    [self addChildController:[[SSJFHomeViewController alloc]init] imageName:@"commoditydetail_ic_details_home_black" selectedImage:@"commoditydetail_ic_details_home_black_pressed" title:@"首页"];
     
-//    [self addChildController:[[XMThematicViewController alloc]init] imageName:@"tabar_activitynew0" selectedImage:@"tabar_activitynew1" title:@"专题"];
-//
-//    [self addChildController:[[XMMeViewController alloc]init] imageName:@"tabar_shakenew0" selectedImage:@"tabar_shakenew1" title:@"我的"];
+    [self addChildController:[[SSJFLeisureFunViewController alloc]init] imageName:@"homepage_ic_menu_topic_nor" selectedImage:@"homepage_ic_menu_topic_pressed" title:@"闲趣"];
+
+    [self addChildController:[[SSJFClassification alloc]init] imageName:@"homepage_ic_menu_sort_nor" selectedImage:@"homepage_ic_menu_sort_pressed" title:@"分类"];
+    
+    [self addChildController:[[SSJFMineViewController alloc]init] imageName:@"homepage_ic_menu_me_nor" selectedImage:@"homepage_ic_menu_me_pressed" title:@"个人"];
+
     
 }
 
