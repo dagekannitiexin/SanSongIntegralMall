@@ -91,30 +91,15 @@
 
 - (TGSegmentMoreBtn *)showMoreBtn{
     if (!_showMoreBtn) {
-//        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
-//        NSString *sourcePath = [currentBundle.infoDictionary[@"CFBundleName"] stringByAppendingString:@".bundle"];
-//        NSString *showImgPath = [currentBundle pathForResource:@"icon_radio_show@2x" ofType:@".png" inDirectory:sourcePath];
-//        UIImage *showImage = [UIImage imageWithContentsOfFile:showImgPath];
-//        NSString *hideImgPath = [currentBundle pathForResource:@"icon_radio_hide@2x" ofType:@".png" inDirectory:sourcePath];
-//        UIImage *hideImage = [UIImage imageWithContentsOfFile:hideImgPath];
-        
         UIImage * showImage = [UIImage imageNamed:@"threeColumn_open_icon"];//threeColumn_open_icon//Profile_filter_downClick
         UIImage * hideImage = [UIImage imageNamed:@"threeColumn_close_icon"];//Profile_filter_upClick
         
         _showMoreBtn = [[TGSegmentMoreBtn alloc] init];
-        [_showMoreBtn setTitle:@"更多" forState:UIControlStateNormal];
+        _showMoreBtn.backgroundColor = [UIColor clearColor];
         [_showMoreBtn setImage:showImage forState:UIControlStateNormal];
-        _showMoreBtn.layer.borderColor = [self.segmentConfig.showMoreBtnBorderColor CGColor];
-        _showMoreBtn.layer.borderWidth = self.segmentConfig.showMoreBtnborderW;
-        _showMoreBtn.layer.masksToBounds = YES;
-        _showMoreBtn.layer.cornerRadius = self.segmentConfig.indicatorH * 2;
-        [_showMoreBtn setTitle:@"收起" forState:UIControlStateSelected];
         [_showMoreBtn setImage:hideImage forState:UIControlStateSelected];
-        _showMoreBtn.imageView.contentMode = UIViewContentModeCenter;
-        [_showMoreBtn setTitleColor:self.segmentConfig.showMoreBtnTitleColor forState:UIControlStateNormal];
-        _showMoreBtn.backgroundColor = self.segmentConfig.showMoreBtnBGColor;
-        _showMoreBtn.titleLabel.font = self.segmentConfig.showMoreBtnTitleFont;
-        
+        [_showMoreBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
+        [_showMoreBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
         UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(self.segmentConfig.limitMargin * 0.5, (self.segmentConfig.segmentBarH - self.segmentConfig.showMoreBtnlineViewH) * 0.5 - self.segmentConfig.indicatorH * 2 + 2, 1, self.segmentConfig.showMoreBtnlineViewH -2)];
         lineV.backgroundColor = self.segmentConfig.showMoreBtnlineViewColor;
         if (self.segmentConfig.isShowMoreBtnlineView){
@@ -340,8 +325,8 @@
         self.contentScrollV.frame = self.bounds;
         self.showMoreBtn.width = -1;
     }else {
-        self.contentScrollV.frame = CGRectMake(0, 0, self.width - kShowMoreBtnW, self.height);
-        self.showMoreBtn.frame = CGRectMake(self.width - kShowMoreBtnW - self.segmentConfig.indicatorH, self.segmentConfig.indicatorH, kShowMoreBtnW, self.height - self.segmentConfig.indicatorH * 4);
+        self.contentScrollV.frame = CGRectMake(0, 0, self.width, self.height);
+        self.showMoreBtn.frame = CGRectMake(self.width - kShowMoreBtnW, self.segmentConfig.indicatorH, kShowMoreBtnW, self.height - self.segmentConfig.indicatorH * 4);
     }
     
     CGFloat titleTotalW = 0;

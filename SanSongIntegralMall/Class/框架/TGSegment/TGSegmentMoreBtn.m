@@ -15,22 +15,23 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
-        self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        self.imageView.contentMode = UIViewContentModeCenter;//UIViewContentModeScaleAspectFill
+//        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+//        self.imageView.contentMode = UIViewContentModeScaleAspectFit;//UIViewContentModeScaleAspectFill
     }
     return self;
 }
 
 -(CGFloat)radio {
-    return 0.86;
+    return 0.2;
 }
 
 -(CGRect)titleRectForContentRect:(CGRect)contentRect{
-    return CGRectMake(0, 1, contentRect.size.width * self.radio, contentRect.size.height);
+//    return CGRectMake(0, 1, contentRect.size.width * self.radio, contentRect.size.height);
+    return CGRectMake(0, 0, 0, 0);
 }
 
 -(CGRect)imageRectForContentRect:(CGRect)contentRect{
-    return CGRectMake(contentRect.size.width * self.radio * self.radio, 4, contentRect.size.width * ( 1 - self.radio), contentRect.size.height -4);
+    return CGRectMake((contentRect.size.width-15*1.2)/2,(contentRect.size.height -8*1.2)/2+4,15*1.2,8*1.2);
 }
 
 @end

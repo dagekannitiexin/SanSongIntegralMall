@@ -69,7 +69,7 @@
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    self.tabBarController.tabBar.hidden = YES;
+
 }
 
 - (TGSementBarVC *)segmentBarVC {
@@ -122,14 +122,21 @@
         .moreCellFont([UIFont systemFontOfSize:13])
         .moreCellTextColor([UIColor whiteColor])
         .moreCellMinH(30)
-        .showMoreBtnlineView(YES)
+        .showMoreBtnlineView(NO)
         .moreBtnlineViewColor([UIColor lightTextColor])
-        .moreBtnTitleFont([UIFont systemFontOfSize:13])
+        .moreBtnTitleFont([UIFont systemFontOfSize:0])
         .moreBtnTitleColor([UIColor lightTextColor])
         .margin(42)
         .barBGColor([UIColor whiteColor])
         ;
     }];
+    
+//    UIButton *bgBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-50, 0, 50, 30)];
+//    bgBtn.backgroundColor = [UIColor clearColor];
+//    [bgBtn setImage:[UIImage imageNamed:@"threeColumn_close_icon"] forState:UIControlStateNormal];
+//    [bgBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
+//    [self.view addSubview:bgBtn];
+    
     [self createNavgaiton];//创建左侧扫一扫视图
 }
 
