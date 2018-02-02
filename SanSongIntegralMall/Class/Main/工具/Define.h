@@ -64,8 +64,8 @@
 #define IOS_SYSTEM_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
 
 
-#define KWidth_Scale    [UIScreen mainScreen].bounds.size.width/375.0f
-#define KHeight_Scale    [UIScreen mainScreen].bounds.size.height/667.0f
+#define KWidth_Scale    [UIScreen mainScreen].bounds.size.width/320.0f
+#define KHeight_Scale    [UIScreen mainScreen].bounds.size.height/568.0f
 
 #define SCREEN_WIDTH    [[UIScreen mainScreen] bounds].size.width
 #define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
@@ -94,8 +94,12 @@
 #define XMGaryColor MRRGBColor(214, 214, 214)
 #define XMHeigtGaryColor MRRGBColor(193, 193, 193)
 #define XMPalceHolderColor MRRGBColor(199, 199, 205)
+//黑色字体颜色
+#define GZGTextColor MRRGBColor(66, 66, 66)
+//红色价格
+#define GZGPriceColor MRRGBColor(176, 23, 31)
 //底线颜色
-#define XMBottomLine MRRGBColor(151, 151, 151)
+#define XMBottomLine MRRGBColor(244, 244, 244)
 
 #define XMLowBottomLine MRRGBColor(216, 216, 216)
 //灰色面板

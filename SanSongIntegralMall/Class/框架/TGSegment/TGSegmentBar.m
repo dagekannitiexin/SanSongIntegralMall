@@ -13,7 +13,7 @@
 #import "TGSegmentMoreBtn.h"
 #import "UIView+TGSegment.h"
 
-#define kShowMoreBtnW (self.bounds.size.height + 30)
+#define kShowMoreBtnW (self.bounds.size.height + 40)
 
 @interface TGSegmentBar()<UICollectionViewDelegate>
 {
@@ -91,6 +91,10 @@
 
 - (TGSegmentMoreBtn *)showMoreBtn{
     if (!_showMoreBtn) {
+        UIImageView *img = [[UIImageView alloc]initWithFrame: CGRectMake(self.width - kShowMoreBtnW, self.segmentConfig.indicatorH, kShowMoreBtnW, self.height - self.segmentConfig.indicatorH * 4)];
+        img.image = [UIImage imageNamed:@"common_sort_mask_right_ic1"];
+        [self addSubview:img];
+        
         UIImage * showImage = [UIImage imageNamed:@"threeColumn_open_icon"];//threeColumn_open_icon//Profile_filter_downClick
         UIImage * hideImage = [UIImage imageNamed:@"threeColumn_close_icon"];//Profile_filter_upClick
         
@@ -98,8 +102,6 @@
         _showMoreBtn.backgroundColor = [UIColor clearColor];
         [_showMoreBtn setImage:showImage forState:UIControlStateNormal];
         [_showMoreBtn setImage:hideImage forState:UIControlStateSelected];
-        [_showMoreBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
-        [_showMoreBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
         UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(self.segmentConfig.limitMargin * 0.5, (self.segmentConfig.segmentBarH - self.segmentConfig.showMoreBtnlineViewH) * 0.5 - self.segmentConfig.indicatorH * 2 + 2, 1, self.segmentConfig.showMoreBtnlineViewH -2)];
         lineV.backgroundColor = self.segmentConfig.showMoreBtnlineViewColor;
         if (self.segmentConfig.isShowMoreBtnlineView){
@@ -325,8 +327,8 @@
         self.contentScrollV.frame = self.bounds;
         self.showMoreBtn.width = -1;
     }else {
-        self.contentScrollV.frame = CGRectMake(0, 0, self.width, self.height);
-        self.showMoreBtn.frame = CGRectMake(self.width - kShowMoreBtnW, self.segmentConfig.indicatorH, kShowMoreBtnW, self.height - self.segmentConfig.indicatorH * 4);
+        self.contentScrollV.frame = CGRectMake(0, 0, self.width-30, self.height);
+        self.showMoreBtn.frame = CGRectMake(self.width - kShowMoreBtnW+10, self.segmentConfig.indicatorH, kShowMoreBtnW-10, self.height - self.segmentConfig.indicatorH * 4);
     }
     
     CGFloat titleTotalW = 0;

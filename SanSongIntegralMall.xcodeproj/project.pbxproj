@@ -44,6 +44,7 @@
 		182F54731FF641BE00552572 /* LBXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 182F546E1FF641BE00552572 /* LBXAlertAction.m */; };
 		183080BB200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 183080BA200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m */; };
 		183080BE200C6F1F00A3CDDB /* NewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 183080BC200C6F1E00A3CDDB /* NewButton.m */; };
+		1833790F2024291A00172F0A /* GZGProductViewOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 1833790E2024291A00172F0A /* GZGProductViewOne.m */; };
 		1835016B1FECA17B0019AD62 /* SSJFMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */; };
 		1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1835016D1FECB2CA0019AD62 /* PersonHeadCell.m */; };
 		183501701FECB2CA0019AD62 /* PersonHeadCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835016E1FECB2CA0019AD62 /* PersonHeadCell.xib */; };
@@ -324,6 +325,8 @@
 		183080BA200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFQuickNavgitonViewController.m; sourceTree = "<group>"; };
 		183080BC200C6F1E00A3CDDB /* NewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewButton.m; sourceTree = "<group>"; };
 		183080BD200C6F1F00A3CDDB /* NewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewButton.h; sourceTree = "<group>"; };
+		1833790D2024291A00172F0A /* GZGProductViewOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGProductViewOne.h; sourceTree = "<group>"; };
+		1833790E2024291A00172F0A /* GZGProductViewOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGProductViewOne.m; sourceTree = "<group>"; };
 		183501691FECA17B0019AD62 /* SSJFMineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJFMineViewController.h; sourceTree = "<group>"; };
 		1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJFMineViewController.m; sourceTree = "<group>"; };
 		1835016C1FECB2CA0019AD62 /* PersonHeadCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonHeadCell.h; sourceTree = "<group>"; };
@@ -901,6 +904,15 @@
 			path = "快捷导航";
 			sourceTree = "<group>";
 		};
+		1833790C202428F400172F0A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1833790D2024291A00172F0A /* GZGProductViewOne.h */,
+				1833790E2024291A00172F0A /* GZGProductViewOne.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		183501611FECA11A0019AD62 /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1277,12 +1289,12 @@
 				1838CFD91FE256790034C4B8 /* HeadButton.m */,
 				1838CFD01FE214F20034C4B8 /* SSJFUserInfoView.h */,
 				1838CFD11FE214F20034C4B8 /* SSJFUserInfoView.m */,
-				186EA69B1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m */,
 				1838CFD31FE215030034C4B8 /* SSJFUserInfoView.xib */,
 				186EA6961FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.h */,
 				186EA6941FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.m */,
 				186EA6951FE3690200E796B9 /* XMGoodsViewStyleTwoHeadView.xib */,
 				186EA69A1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.h */,
+				186EA69B1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.m */,
 				186EA6991FE36ED600E796B9 /* XMGoodsViewStyleTwoView.xib */,
 				186EA69E1FE3745D00E796B9 /* XMintegralCollectionViewCell.h */,
 				186EA6A21FE3745E00E796B9 /* XMintegralCollectionViewCell.m */,
@@ -1854,9 +1866,9 @@
 			isa = PBXGroup;
 			children = (
 				2387961020220C0200726528 /* 父控制器 */,
+				1833790C202428F400172F0A /* View */,
 				2387960D20220C0200726528 /* Controller */,
 				2387960E20220C0200726528 /* Model */,
-				2387960F20220C0200726528 /* View */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -1873,13 +1885,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		2387960F20220C0200726528 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2387961020220C0200726528 /* 父控制器 */ = {
@@ -2639,6 +2644,7 @@
 				18E2C4BA2004A08100120042 /* XMBuyShopView.m in Sources */,
 				183A1E571FDFA7EC0054547E /* UIImage+MRExtension.m in Sources */,
 				238795F82022096100726528 /* TGSegmentMoreBtn.m in Sources */,
+				1833790F2024291A00172F0A /* GZGProductViewOne.m in Sources */,
 				1838D0221FE26D410034C4B8 /* UIImage+MultiFormat.m in Sources */,
 				183960C31FFB58540076FE5D /* LBXPermissionNetwork.m in Sources */,
 				18E2C4B62004646700120042 /* SWActionSheet.m in Sources */,

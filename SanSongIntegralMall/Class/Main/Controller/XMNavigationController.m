@@ -33,7 +33,7 @@
         // 隐藏tabBar
         viewController.hidesBottomBarWhenPushed = YES;
         // 修改导航栏左边的item
-        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"checkUserType_backward_9x15_"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackClick)];
+        viewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"commoditydetail_detail_ic_back_2_nor"] style:UIBarButtonItemStylePlain target:self action:@selector(navigationBackClick)];
     }else {
         [self addrightitem:viewController];
         
@@ -72,13 +72,14 @@
     UINavigationBar *navigationBar = [UINavigationBar appearanceWhenContainedInInstancesOfClasses:@[[XMNavigationController class]]];
     
     // 设置背景图片
-    navigationBar.barTintColor = MRRedBg;
+    navigationBar.barTintColor = RGBACOLOR(250, 250, 250, 1);
 //    navigationBar.backgroundColor = MRRedBg;
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
     attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
     [navigationBar setTitleTextAttributes:attrs];
     [navigationBar setTintColor:[UIColor whiteColor]];
     [navigationBar setTranslucent:NO];
+    [navigationBar setShadowImage:[[UIImage alloc]init]];
 }
 
 -(void)addrightitem:(UIViewController *)viewController
@@ -186,7 +187,7 @@
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
+    return UIStatusBarStyleDefault;
 }
 
 @end

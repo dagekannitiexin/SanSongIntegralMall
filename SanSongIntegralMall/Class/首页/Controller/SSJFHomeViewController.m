@@ -89,7 +89,7 @@
 
     self.segmentBarVC.segmentBar.frame = CGRectMake(0, 0, SCREEN_WIDTH, 30);
     //设置segmentBarVC大小
-    self.segmentBarVC.view.frame = CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT-64);
+    self.segmentBarVC.view.frame = CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT+20);
     //使用segmentBarVC
     [self.view addSubview:self.segmentBarVC.view];
     NSArray *items = @[@"推荐", @"新品", @"美妆", @"家居",@"服装",@"电器",@"洗护",@"杂货",@"餐厨",@"配件",@"饮食",@"婴童",@"志趣"];
@@ -127,15 +127,11 @@
         .moreBtnTitleFont([UIFont systemFontOfSize:0])
         .moreBtnTitleColor([UIColor lightTextColor])
         .margin(42)
-        .barBGColor([UIColor whiteColor])
+        .barBGColor(RGBACOLOR(250, 250, 250, 1))
         ;
     }];
     
-//    UIButton *bgBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-50, 0, 50, 30)];
-//    bgBtn.backgroundColor = [UIColor clearColor];
-//    [bgBtn setImage:[UIImage imageNamed:@"threeColumn_close_icon"] forState:UIControlStateNormal];
-//    [bgBtn setBackgroundImage:[UIImage imageNamed:@"common_sort_mask_right_ic"] forState:UIControlStateNormal];
-//    [self.view addSubview:bgBtn];
+
     
     [self createNavgaiton];//创建左侧扫一扫视图
 }
