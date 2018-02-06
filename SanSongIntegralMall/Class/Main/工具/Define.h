@@ -96,6 +96,7 @@
 #define XMPalceHolderColor MRRGBColor(199, 199, 205)
 //黑色字体颜色
 #define GZGTextColor MRRGBColor(66, 66, 66)
+#define GZGGaryTextColor MRRGBColor(127, 127, 127)
 //红色价格
 #define GZGPriceColor MRRGBColor(176, 23, 31)
 //底线颜色

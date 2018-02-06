@@ -139,6 +139,7 @@
 		1841EB891FFCBBF5008FF118 /* Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1841EB881FFCBBF5008FF118 /* Utility.m */; };
 		18447DCD200DC54F0099697C /* SSJFGetIntegralFromCommodity.m in Sources */ = {isa = PBXBuildFile; fileRef = 18447DCC200DC54F0099697C /* SSJFGetIntegralFromCommodity.m */; };
 		18447DD0200DE0660099697C /* SSJFInPutsixteenNum.m in Sources */ = {isa = PBXBuildFile; fileRef = 18447DCF200DE0660099697C /* SSJFInPutsixteenNum.m */; };
+		1850259A20297349000BDC56 /* GZGMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1850259920297349000BDC56 /* GZGMineViewController.m */; };
 		1867F15E200308BB00C8733B /* UserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F15D200308BB00C8733B /* UserInfo.m */; };
 		1867F16220035FB800C8733B /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1867F15F20035FB700C8733B /* DetailViewController.xib */; };
 		1867F16320035FB800C8733B /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1867F16020035FB800C8733B /* DetailViewController.m */; };
@@ -515,6 +516,8 @@
 		18447DCC200DC54F0099697C /* SSJFGetIntegralFromCommodity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFGetIntegralFromCommodity.m; sourceTree = "<group>"; };
 		18447DCE200DE0660099697C /* SSJFInPutsixteenNum.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSJFInPutsixteenNum.h; sourceTree = "<group>"; };
 		18447DCF200DE0660099697C /* SSJFInPutsixteenNum.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSJFInPutsixteenNum.m; sourceTree = "<group>"; };
+		1850259820297349000BDC56 /* GZGMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGMineViewController.h; sourceTree = "<group>"; };
+		1850259920297349000BDC56 /* GZGMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGMineViewController.m; sourceTree = "<group>"; };
 		1867F15C200308BB00C8733B /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
 		1867F15D200308BB00C8733B /* UserInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserInfo.m; sourceTree = "<group>"; };
 		1867F15F20035FB700C8733B /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
@@ -994,6 +997,8 @@
 				1835016A1FECA17B0019AD62 /* SSJFMineViewController.m */,
 				183501711FED09130019AD62 /* SSJFMineIntegralList.h */,
 				183501721FED09130019AD62 /* SSJFMineIntegralList.m */,
+				1850259820297349000BDC56 /* GZGMineViewController.h */,
+				1850259920297349000BDC56 /* GZGMineViewController.m */,
 			);
 			path = "父控制器";
 			sourceTree = "<group>";
@@ -2712,6 +2717,7 @@
 				183501731FED09130019AD62 /* SSJFMineIntegralList.m in Sources */,
 				1838CFF11FE25C130034C4B8 /* UIView+SDExtension.m in Sources */,
 				183960C01FFB58540076FE5D /* LBXPermissionHealth.m in Sources */,
+				1850259A20297349000BDC56 /* GZGMineViewController.m in Sources */,
 				182F546F1FF641BE00552572 /* UIActionSheet+LBXAlertAction.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

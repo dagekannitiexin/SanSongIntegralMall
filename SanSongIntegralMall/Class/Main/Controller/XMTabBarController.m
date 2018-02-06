@@ -11,7 +11,7 @@
 #import "SSJFHomeViewController.h"
 #import "SSJFLeisureFunViewController.h"
 #import "SSJFClassification.h"
-#import "SSJFMineViewController.h"
+#import "GZGMineViewController.h"
 #import "SignPresentingAnimator.h"
 #import "SignDismissingAnimator.h"
 
@@ -43,9 +43,8 @@
 
     [self addChildController:[[SSJFClassification alloc]init] imageName:@"homepage_ic_menu_sort_nor" selectedImage:@"homepage_ic_menu_sort_pressed" title:@"分类"];
     
-    [self addChildController:[[SSJFMineViewController alloc]init] imageName:@"homepage_ic_menu_me_nor" selectedImage:@"homepage_ic_menu_me_pressed" title:@"个人"];
+    [self addChildController:[[GZGMineViewController alloc]init] imageName:@"homepage_ic_menu_me_nor" selectedImage:@"homepage_ic_menu_me_pressed" title:@"个人"];
 
-    
 }
 
 /**
