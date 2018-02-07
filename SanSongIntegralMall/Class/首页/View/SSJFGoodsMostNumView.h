@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *Imageurl;
 @property (weak, nonatomic) IBOutlet UILabel *ProductName;
 @property (weak, nonatomic) IBOutlet UILabel *Price;
+@property (weak, nonatomic) IBOutlet UILabel *introduct;
 
 @end

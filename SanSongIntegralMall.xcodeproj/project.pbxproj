@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18045DA9202A949B00C7C3D3 /* GZGRecommendModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18045DA8202A949B00C7C3D3 /* GZGRecommendModel.m */; };
 		180F344B2019A2E600336E50 /* GZJShopResultOfThePayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F344A2019A2E600336E50 /* GZJShopResultOfThePayment.m */; };
 		180F344E2019AD8400336E50 /* NomalBtnOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F344D2019AD8400336E50 /* NomalBtnOne.m */; };
 		180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34502019C5ED00336E50 /* IsPaymentModel.m */; };
@@ -257,6 +258,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18045DA7202A949B00C7C3D3 /* GZGRecommendModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGRecommendModel.h; sourceTree = "<group>"; };
+		18045DA8202A949B00C7C3D3 /* GZGRecommendModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGRecommendModel.m; sourceTree = "<group>"; };
 		180F34492019A2E600336E50 /* GZJShopResultOfThePayment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZJShopResultOfThePayment.h; sourceTree = "<group>"; };
 		180F344A2019A2E600336E50 /* GZJShopResultOfThePayment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZJShopResultOfThePayment.m; sourceTree = "<group>"; };
 		180F344C2019AD8400336E50 /* NomalBtnOne.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NomalBtnOne.h; sourceTree = "<group>"; };
@@ -722,6 +725,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18045DA6202A918500C7C3D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18045DA7202A949B00C7C3D3 /* GZGRecommendModel.h */,
+				18045DA8202A949B00C7C3D3 /* GZGRecommendModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1812D7BB20203FC9000F7472 /* 不同的Web */ = {
 			isa = PBXGroup;
 			children = (
@@ -1871,9 +1883,9 @@
 			isa = PBXGroup;
 			children = (
 				2387961020220C0200726528 /* 父控制器 */,
-				1833790C202428F400172F0A /* View */,
 				2387960D20220C0200726528 /* Controller */,
-				2387960E20220C0200726528 /* Model */,
+				1833790C202428F400172F0A /* View */,
+				18045DA6202A918500C7C3D3 /* Model */,
 			);
 			path = "推荐";
 			sourceTree = "<group>";
@@ -1883,13 +1895,6 @@
 			children = (
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2387960E20220C0200726528 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		2387961020220C0200726528 /* 父控制器 */ = {
@@ -2617,6 +2622,7 @@
 				183A1E481FDFA47F0054547E /* XMBaseViewController.m in Sources */,
 				183080BB200C6DDC00A3CDDB /* SSJFQuickNavgitonViewController.m in Sources */,
 				183960D21FFB599B0076FE5D /* UIImageView+CornerRadius.m in Sources */,
+				18045DA9202A949B00C7C3D3 /* GZGRecommendModel.m in Sources */,
 				238795DD202201B500726528 /* SSJFLeisureFunViewController.m in Sources */,
 				182B8B6F200764FE00780A60 /* buyDetailModel.m in Sources */,
 				186EA6C91FE3D44F00E796B9 /* SSJFGoodsMostNumView.m in Sources */,

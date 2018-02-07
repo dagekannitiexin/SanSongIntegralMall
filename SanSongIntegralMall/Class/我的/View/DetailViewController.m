@@ -429,15 +429,17 @@
     UIButton *cancle = [[UIButton alloc] initWithFrame:CGRectMake(0, 0,33, 30)];
     [cancle setTitle:@"取消" forState:UIControlStateNormal];
     cancle.titleLabel.font = [UIFont systemFontOfSize:15];
-    [cancle setTintColor:[UIColor whiteColor]];
+    [cancle setTintColor:[UIColor blackColor]];
+    [cancle setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancle addTarget:self action:@selector(dismissview) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *cancleItem = [[UIBarButtonItem alloc] initWithCustomView:cancle];
     self.navigationItem.leftBarButtonItem = cancleItem;
     
     UIButton *save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0,33, 30)];
     [save setTitle:@"保存" forState:UIControlStateNormal];
+    [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     save.titleLabel.font = [UIFont systemFontOfSize:15];
-    [save setTintColor:[UIColor whiteColor]];
+    [save setTintColor:[UIColor blackColor]];
     [save addTarget:self action:@selector(save) forControlEvents:UIControlEventTouchUpInside];
     UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithCustomView:save];
     self.navigationItem.rightBarButtonItem = saveItem;

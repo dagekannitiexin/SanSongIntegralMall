@@ -13,6 +13,9 @@
 #import "XMGoodsTitleStyleView.h"
 #import "XMGoodsTitleStyleView.h"
 #import "SSJFGoodsMostNumView.h"
+#import "GZGRecommendModel.h"
+#import "UIImageView+WebCache.h"
+#import "SSJFShopDetailViewController.h"
 
 @interface GZGRecommend ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
@@ -22,15 +25,34 @@
     SDCycleScrollView *_lunzhuanView;
 }
 @property (nonatomic,strong)SSJFHomeModel * homeDetailModel;
+@property (nonatomic,strong)GZGRecommendModel * recommendModel;
 @end
 
 @implementation GZGRecommend
+/*
+ 请求首页数据
+ */
+- (void)initNetWork
+{
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Home/GetHomeVml"];
+    
+    __weak GZGRecommend *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        weakSelf.recommendModel = [GZGRecommendModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+        [self initHeadView];
+        //初始化tabview
+        [self initTableView];
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initHeadView];
-    //初始化tabview
-    [self initTableView];
+    [self initNetWork];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -77,13 +99,12 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 - (void)createBanner
 {
     NSMutableArray *imageArray = [NSMutableArray new];
-//    for (int i =0; i<_homeDetailModel.homeadv.count; i++) {
-//        if ([_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]){
-//            [imageArray addObject:[_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]];
-//        }
-//    }
+    for (int i =0; i<_recommendModel.homeadv.count; i++) {
+        if ([_recommendModel.homeadv[i] valueForKey:@"ImageUrl"]){
+            [imageArray addObject:[_recommendModel.homeadv[i] valueForKey:@"ImageUrl"]];
+        }
+    }
     
-    imageArray = @[@"Img_default",@"Img_default",@"Img_default",@"Img_default",@"Img_default"];
     //创建轮转图
     __weak GZGRecommend *weakSelf = self;
     _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/16*9) imageURLStringsGroup:imageArray];
@@ -99,7 +120,7 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     __block GZGRecommend *blockSelf = self;
     _lunzhuanView.clickItemOperationBlock = ^(NSInteger currentIndex) {
         NSString * tag = @"没有tag";
-        NSString * out_url = blockSelf.homeDetailModel.homeadv[currentIndex].AdActionUrl;
+        NSString * out_url = blockSelf.recommendModel.homeadv[currentIndex].AdActionUrl;
         NSString * type = @"专题栏";
         [Utility goVcForItemId:tag WithURL:out_url WithType:type WithNavGation:blockSelf.navigationController];
     };
@@ -129,13 +150,24 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     NSLog(@"%f",20*KHeight_Scale);
     NSLog(@"%f,%f",SCREEN_WIDTH,SCREEN_HEIGHT);
     for (int i =0; i<6; i++) {
+        GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, title.bottom, shopViewWith, shopViewHeight)];
+        [oneView addSubview:shopView];
+
         if (i<3){
-            GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, title.bottom, shopViewWith, shopViewHeight)];
-            [oneView addSubview:shopView];
+            shopView.frame = CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, title.bottom, shopViewWith, shopViewHeight);
         }else {
-            GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*(i-3), title.bottom+shopViewHeight, shopViewWith, shopViewHeight)];
-            [oneView addSubview:shopView];
+            shopView.frame = CGRectMake(spaceWith+(spaceWith +shopViewWith)*(i-3), title.bottom+shopViewHeight, shopViewWith, shopViewHeight);
         }
+//        shopView.headImgString = _recommendModel.homeadv[0].ImageUrl ;
+        shopView.headImgString = _recommendModel.actListVml[0].proList[i].Showing;
+        shopView.nameLabelString = _recommendModel.actListVml[0].proList[i].ProductName;
+        shopView.priceLabelString = [NSString stringWithFormat:@"%@积分+%@元",_recommendModel.actListVml[0].proList[i].IntegralPrice,_recommendModel.actListVml[0].proList[i].MoneyPrice];
+        //添加手势到商品详细  并且上传参数商品id
+        __block GZGRecommend *blockSelf = self;
+        NSString *proid = _recommendModel.actListVml[0].proList[i].ProductID;
+        shopView.selectDetailBlock = ^{
+            [blockSelf shopDetail:proid];
+        };
             }
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, title.bottom+shopViewHeight*2, SCREEN_WIDTH, 10)];
@@ -166,13 +198,24 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     NSLog(@"%f",20*KHeight_Scale);
     NSLog(@"%f,%f",SCREEN_WIDTH,SCREEN_HEIGHT);
     for (int i =0; i<6; i++) {
+        GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, titleView.bottom, shopViewWith, shopViewHeight)];
+        [twoView addSubview:shopView];
+        
         if (i<3){
-            GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, titleView.bottom, shopViewWith, shopViewHeight)];
-            [twoView addSubview:shopView];
+            shopView.frame = CGRectMake(spaceWith+(spaceWith +shopViewWith)*i, titleView.bottom, shopViewWith, shopViewHeight);
         }else {
-            GZGProductViewOne *shopView = [[GZGProductViewOne alloc]initWithFrame:CGRectMake(spaceWith+(spaceWith +shopViewWith)*(i-3), titleView.bottom+shopViewHeight, shopViewWith, shopViewHeight)];
-            [twoView addSubview:shopView];
+            shopView.frame = CGRectMake(spaceWith+(spaceWith +shopViewWith)*(i-3), titleView.bottom+shopViewHeight, shopViewWith, shopViewHeight);
         }
+        shopView.headImgString = _recommendModel.actListVml[1].proList[i].Showing;
+        shopView.nameLabelString = _recommendModel.actListVml[1].proList[i].ProductName;
+        shopView.priceLabelString = [NSString stringWithFormat:@"%@积分+%@元",_recommendModel.actListVml[1].proList[i].IntegralPrice,_recommendModel.actListVml[1].proList[i].MoneyPrice];
+        //添加手势到商品详细  并且上传参数商品id
+        __block GZGRecommend *blockSelf = self;
+        NSString *proid = _recommendModel.actListVml[1].proList[i].ProductID;
+        shopView.selectDetailBlock = ^{
+            [blockSelf shopDetail:proid];
+        };
+        
     }
     
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, titleView.bottom+shopViewHeight*2, SCREEN_WIDTH, 10)];
@@ -198,7 +241,7 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     layout.itemSize =CGSizeMake((SCREEN_WIDTH-30)/2, 270);
     
     //2.初始化collectionView
-    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 290*(8)/2+55) collectionViewLayout:layout];
+    mainCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 290*(_recommendModel.actListVml[2].proList.count)/2+55) collectionViewLayout:layout];
     mainCollectionView.scrollEnabled = NO;
     mainCollectionView.showsVerticalScrollIndicator = NO;
     [_headView addSubview:mainCollectionView];
@@ -227,15 +270,17 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
+    return _recommendModel.actListVml[2].proList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SSJFGoodsMostNumView *cell = (SSJFGoodsMostNumView *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
-//    cell.ProductName.text = _homeDetailModel.homepro5[indexPath.row].ProductName;
-//    cell.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro5[indexPath.row].Price];
-//    [cell.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro5[indexPath.row].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    NSString *url = _recommendModel.actListVml[2].proList[indexPath.row].Showing;
+    [cell.Imageurl sd_setImageWithURL:[NSURL URLWithString:[url stringByReplacingOccurrencesOfString:@" " withString:@""]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    cell.ProductName.text = _recommendModel.actListVml[2].proList[indexPath.row].ProductName;
+    cell.Price.text = [NSString stringWithFormat:@"%@积分+%@元",_recommendModel.actListVml[2].proList[indexPath.row].IntegralPrice,_recommendModel.actListVml[2].proList[indexPath.row].MoneyPrice];
+    cell.introduct.text = _recommendModel.actListVml[2].proList[indexPath.row].ProductIntro;
     return cell;
 }
 
@@ -245,11 +290,6 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     return CGSizeMake((SCREEN_WIDTH-30)/2, 270);
 }
 
-//footer的size
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section
-//{
-//    return CGSizeMake(10, 10);
-//}
 
 //header的size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section
@@ -291,8 +331,18 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
 //点击item方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    MyCollectionViewCell *cell = (MyCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //    NSString *msg = cell.botlabel.text;
-    //    NSLog(@"%@",msg);
+    NSString *idString = _recommendModel.actListVml[2].proList[indexPath.row].ProductID;
+    [self shopDetail:idString];
+    
+}
+
+/*
+ 点击事件 1.商品详细
+ */
+- (void)shopDetail:(NSString *)proid
+{
+    SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
+    shopVC.proid = proid;
+    [self.navigationController pushViewController:shopVC animated:YES];
 }
 @end

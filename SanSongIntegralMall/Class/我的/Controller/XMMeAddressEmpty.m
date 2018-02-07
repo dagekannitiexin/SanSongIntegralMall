@@ -113,7 +113,7 @@
 #pragma mark- initView
 - (void)createEmptyView
 {
-    _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT)];
+    _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
     _emptyView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:_emptyView];
     

@@ -31,6 +31,10 @@ static CGFloat CellHeight = 44;
 {
     [super viewWillAppear:animated];
     [self reDataView];
+    self.navigationController.navigationBar.hidden = NO;
+    self.navigationController.navigationBar.barStyle = UIBarStyleDefault;
+    self.title = @"个人中心";
+    
 }
 
 -(NSArray *)listArray

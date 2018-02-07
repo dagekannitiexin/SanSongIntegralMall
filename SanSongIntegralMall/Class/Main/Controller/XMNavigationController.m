@@ -75,9 +75,9 @@
     navigationBar.barTintColor = RGBACOLOR(250, 250, 250, 1);
 //    navigationBar.backgroundColor = MRRedBg;
     NSMutableDictionary *attrs = [NSMutableDictionary dictionary];
-    attrs[NSForegroundColorAttributeName] = [UIColor whiteColor];
+    attrs[NSForegroundColorAttributeName] = [UIColor blackColor];
     [navigationBar setTitleTextAttributes:attrs];
-    [navigationBar setTintColor:[UIColor whiteColor]];
+    [navigationBar setTintColor:RGBACOLOR(127, 127, 127, 1)];
     [navigationBar setTranslucent:NO];
     [navigationBar setShadowImage:[[UIImage alloc]init]];
 }

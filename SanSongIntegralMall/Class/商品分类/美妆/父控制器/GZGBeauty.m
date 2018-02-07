@@ -24,12 +24,38 @@
 
 @implementation GZGBeauty
 
+/*
+ 请求首页数据
+ */
+- (void)initNetWork
+{
+    //查看首页
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/Home/GetProByTypeVml"];
+    //参数
+    NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+    [requestInfo setValue:@"00000000-0000-0000-0000-000000000001" forKey:@"typeId"];
+    __weak GZGBeauty *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+//        weakSelf.recommendModel = [GZGRecommendModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+        //        weakSelf.homeDetailModel = [SSJFHomeModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+        //        //创建头部视图
+        //        [self initHeadView];
+        //        //初始化tabview
+        //        [self initTableView];
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _arrayTitle = [NSMutableArray arrayWithObjects:@"面部护理",@"唇膏",@"面膜",@"眼影",@"乳液面霜",@"面部精华",@"男士护肤", nil];
     [self initHeadView];
     //为你推荐 设置contentView
     [self createActDuiHuan];
+    [self initNetWork];
 }
 
 - (void)didReceiveMemoryWarning {

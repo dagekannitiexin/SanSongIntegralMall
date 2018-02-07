@@ -87,6 +87,7 @@
                 <outlet property="Imageurl" destination="YOp-lb-cdO" id="ftf-Sg-xlM"/>
                 <outlet property="Price" destination="GtR-rM-GG0" id="3y1-Md-pPH"/>
                 <outlet property="ProductName" destination="Q6e-gc-RoO" id="Mdc-Bo-32h"/>
+                <outlet property="introduct" destination="IYX-75-9bv" id="vDU-gS-Lch"/>
             </connections>
             <point key="canvasLocation" x="24.5" y="51.5"/>
         </collectionViewCell>

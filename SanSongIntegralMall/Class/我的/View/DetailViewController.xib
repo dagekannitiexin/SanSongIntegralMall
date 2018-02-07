@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AIg-Q8-hGR">
-                    <rect key="frame" x="0.0" y="79" width="375" height="41.5"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="41.5"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Szw-Q2-hVT">
                             <rect key="frame" x="8" y="0.0" width="359" height="41"/>
@@ -48,7 +48,7 @@
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="Szw-Q2-hVT" secondAttribute="trailing" constant="8" id="4o4-jc-HzN"/>
                         <constraint firstItem="Szw-Q2-hVT" firstAttribute="top" secondItem="AIg-Q8-hGR" secondAttribute="top" id="P3e-5M-Eeo"/>
-                        <constraint firstAttribute="width" secondItem="AIg-Q8-hGR" secondAttribute="height" multiplier="100:11" id="WXf-E6-Lgd"/>
+                        <constraint firstAttribute="width" secondItem="AIg-Q8-hGR" secondAttribute="height" multiplier="100:11" constant="-2.2727272727273089" id="WXf-E6-Lgd"/>
                         <constraint firstItem="Szw-Q2-hVT" firstAttribute="leading" secondItem="AIg-Q8-hGR" secondAttribute="leading" constant="8" id="aK9-9Y-uhf"/>
                     </constraints>
                     <variation key="default">
@@ -79,7 +79,7 @@
             <constraints>
                 <constraint firstItem="AIg-Q8-hGR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hWG-mq-BmJ"/>
                 <constraint firstAttribute="trailing" secondItem="AIg-Q8-hGR" secondAttribute="trailing" id="jSw-rN-6ep"/>
-                <constraint firstItem="AIg-Q8-hGR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="79" id="y8n-kF-3mh"/>
+                <constraint firstItem="AIg-Q8-hGR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y8n-kF-3mh"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <variation key="default">
