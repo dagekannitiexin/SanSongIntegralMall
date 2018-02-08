@@ -19,8 +19,10 @@
 @end
 
 @interface ReDataModel : NSObject
-@property (nonatomic, strong) proinfoModel *proinfo;
+@property (nonatomic, strong) proinfoModel *proVml;
 @property (nonatomic, strong) addressModel *address;
+@property (nonatomic, strong) NSString  *SumMoneyPrice;
+@property (nonatomic, strong) NSString  *SumIntegralPrice;
 @end
 
 
@@ -42,8 +44,12 @@
 @property (nonatomic, strong) NSString *ProductID;
 @property (nonatomic, strong) NSString *ProductName;
 @property (nonatomic, strong) NSString *ProductIntro;
+@property (nonatomic, strong) NSString *MoneyPrice;
+@property (nonatomic, strong) NSString *IntegralPrice;
+@property (nonatomic, strong) NSString *ProTypeID;
+@property (nonatomic, strong) NSString *Showing;
+@property (nonatomic, strong) NSString *SaleID;
+@property (nonatomic, strong) NSString *TagsId;
+@property (nonatomic, strong) NSArray  *proTagList;
 @property (nonatomic, strong) NSString *Num;
-@property (nonatomic, strong) NSString *Price;
-@property (nonatomic, strong) NSString *NewPrice;
-@property (nonatomic, strong) NSArray  *ImageUrl;
 @end

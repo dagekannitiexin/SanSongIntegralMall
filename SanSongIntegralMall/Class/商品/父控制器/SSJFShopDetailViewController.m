@@ -16,6 +16,8 @@
 #import "IsPaymentModel.h"
 #import "GZJShopResultOfThePayment.h"
 #import "GZJOrderOverRecommedShopModel.h"
+#import "UIImageView+WebCache.h"
+#import "GZGShopIntroduction.h"
 
 @interface SSJFShopDetailViewController ()<SDCycleScrollViewDelegate>{
     SDCycleScrollView *_lunzhuanView;
@@ -180,6 +182,8 @@
     _totleHeight = 0;
     //商品详细第一部分 轮转图
     [self createBannerView];
+    //创建介绍
+    [self createIntroductView];
     //创建介绍富文本
     [self createDetailView];
     //创建底部责任条款
@@ -191,7 +195,13 @@
 
 - (void)createBannerView
 {
-    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/16*9) imageNamesGroup:[NSArray arrayWithObjects:@"Img_default",@"Img_default",@"Img_default", nil]];
+    NSMutableArray *imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<_shopModel.MasterImg.count; i++) {
+        NSString *imageStr = [_shopModel.MasterImg[i] objectForKey:@"Url"];
+        [imageArray addObject:imageStr];
+    }
+    
+    _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH) imageURLStringsGroup:imageArray];
     _lunzhuanView.backgroundColor = [UIColor whiteColor];
     _lunzhuanView.contentMode = UIViewContentModeScaleAspectFit;
     _lunzhuanView.placeholderImage=[UIImage imageNamed:@"Img_default"];
@@ -206,31 +216,59 @@
     _totleHeight = _totleHeight + _lunzhuanView.height;
 }
 
+/*
+ 介绍视图
+ */
+- (void)createIntroductView
+{
+    GZGShopIntroduction *introView = [[GZGShopIntroduction alloc]init];
+    introView.origin = CGPointMake(0, _totleHeight);
+    [introView initNewView:_shopModel.ProductName productIntro:_shopModel.ProductIntro moneyPriceAndIntegralPrice:[NSString stringWithFormat:@"%@积分+%@元",_shopModel.IntegralPrice,_shopModel.MoneyPrice] proTagList:_shopModel.proTagList];
+    [_homeView addSubview:introView];
+    _totleHeight = _totleHeight + introView.height;
+}
+
  - (void)createDetailView
 {
-    _text = [[UITextView alloc]initWithFrame:CGRectMake(10, _totleHeight, SCREEN_WIDTH -20, SCREEN_HEIGHT -_totleHeight)];
-    [_homeView addSubview:_text];
-    _text.editable = NO;
-    if(self.string)
-    {
-        _text.text = self.string;
+    NSMutableArray *imageArray = [[NSMutableArray alloc]init];
+    for (int i=0; i<_shopModel.IntroImg.count; i++) {
+        NSString *imageStr = [_shopModel.IntroImg[i] objectForKey:@"Url"];
+        [imageArray addObject:imageStr];
     }
-    else
-    {
-        _text.text = @"一.活动时间 \n     每周一到周一: 18:45-19:45 \n     每周六:18:45-19:20 \n     锁定宁波电视台都市文体频道《讲大道》、《宁波老话》栏目。  \n二.参与方式 \n     1.屏幕右上方出现“摇一摇”提示，摇动手机即可参与。 \n     2.摇动即有奖，进入积分商城将积分独欢礼品。 \n三.得分规则 \n     每成功摇动1次可获得随机数额积分,最高可获得500个积分。  \n四.兑换奖品 \n     积分可在商城兑换奖品，由快递发送。 \n     部分奖品需上门自取。 \n五.活动说明 \n     活动细则详询“点看宁波”客服，苹果公司不是该游戏的发起者，也没有任何方式参与该活动，“点看宁波”保留对本次活动的最终解释权。";
+    UIView *imageArrayView = [[UIView alloc]initWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, 0)];
+    [_homeView addSubview:imageArrayView];
+    for (int i=0; i<imageArray.count; i++) {
+        UIImageView *shouImageView =[[UIImageView alloc]initWithFrame:CGRectMake(0, i*SCREEN_WIDTH/2, SCREEN_WIDTH, SCREEN_WIDTH/2)];
+        [shouImageView sd_setImageWithURL:[NSURL URLWithString:imageArray[i]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+        shouImageView.clipsToBounds = YES;
+        [imageArrayView addSubview:shouImageView];
     }
+    imageArrayView.height = imageArray.count*SCREEN_WIDTH/2;
+    _totleHeight = _totleHeight +imageArrayView.height;
     
-    
-    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_text.text];
-    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    [paragraphStyle setLineSpacing:3];
-    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, _text.text.length)];
-    
-    _text.attributedText = attributedString;
-    _text.textColor = RGBCOLOR(150, 150, 150);
-    [_text setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
-    [_text sizeToFit];
-    _totleHeight = _totleHeight +_text.height;
+//    _text = [[UITextView alloc]initWithFrame:CGRectMake(10, _totleHeight, SCREEN_WIDTH -20, SCREEN_HEIGHT -_totleHeight)];
+//    [_homeView addSubview:_text];
+//    _text.editable = NO;
+//    if(self.string)
+//    {
+//        _text.text = self.string;
+//    }
+//    else
+//    {
+//        _text.text = @"一.活动时间 \n     每周一到周一: 18:45-19:45 \n     每周六:18:45-19:20 \n     锁定宁波电视台都市文体频道《讲大道》、《宁波老话》栏目。  \n二.参与方式 \n     1.屏幕右上方出现“摇一摇”提示，摇动手机即可参与。 \n     2.摇动即有奖，进入积分商城将积分独欢礼品。 \n三.得分规则 \n     每成功摇动1次可获得随机数额积分,最高可获得500个积分。  \n四.兑换奖品 \n     积分可在商城兑换奖品，由快递发送。 \n     部分奖品需上门自取。 \n五.活动说明 \n     活动细则详询“点看宁波”客服，苹果公司不是该游戏的发起者，也没有任何方式参与该活动，“点看宁波”保留对本次活动的最终解释权。";
+//    }
+//
+//
+//    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:_text.text];
+//    NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+//    [paragraphStyle setLineSpacing:3];
+//    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, _text.text.length)];
+//
+//    _text.attributedText = attributedString;
+//    _text.textColor = RGBCOLOR(150, 150, 150);
+//    [_text setFont:[UIFont fontWithName:@"Helvetica" size:14.0]];
+//    [_text sizeToFit];
+//    _totleHeight = _totleHeight +_text.height;
 }
 
 - (void)createResponsibility
@@ -270,11 +308,14 @@
     [buy addSubview:priceLabel];
     
 //    NSString *priceStr = @"单价:188 积分";
-    NSString *priceStr = [NSString stringWithFormat:@"单价:%@ 积分",_shopModel.NewPrice];
+    NSString *priceStr = [NSString stringWithFormat:@"单价:%@ 积分+%@元",_shopModel.IntegralPrice,_shopModel.MoneyPrice];
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:priceStr];
     [attrStr addAttribute:NSForegroundColorAttributeName
                     value:RGBCOLOR(255, 128, 0)
-                    range:NSMakeRange(3, 4)];
+                    range:NSMakeRange(3, _shopModel.IntegralPrice.length)];
+    [attrStr addAttribute:NSForegroundColorAttributeName
+                    value:RGBCOLOR(255, 128, 0)
+                range:NSMakeRange(7+_shopModel.IntegralPrice.length, _shopModel.MoneyPrice.length)];
     priceLabel.attributedText = attrStr;
     
     //购买按钮
@@ -316,7 +357,7 @@
     
     //计算上移动大小 加入动画效果
     [UIView animateWithDuration:0.35 animations:^{
-        self.shopView.centerY = SCREEN_HEIGHT/2;
+        self.shopView.centerY = (SCREEN_HEIGHT-64)/2;
     }];
         
 }

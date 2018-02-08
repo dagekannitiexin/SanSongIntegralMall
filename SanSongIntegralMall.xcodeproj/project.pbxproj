@@ -17,6 +17,7 @@
 		1812D7C120203FC9000F7472 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7BF20203FC9000F7472 /* WebViewController.m */; };
 		1812D7DD20204D0A000F7472 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7D420204D0A000F7472 /* SignViewController.m */; };
 		1812D7DE20204D0A000F7472 /* SignViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1812D7D520204D0A000F7472 /* SignViewController.xib */; };
+		18253C92202C348400484924 /* GZGShopIntroduction.m in Sources */ = {isa = PBXBuildFile; fileRef = 18253C91202C348400484924 /* GZGShopIntroduction.m */; };
 		18286E0F1FFF0E8A00CCA8D9 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 18286DF71FFF0E8A00CCA8D9 /* LICENSE */; };
 		18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFB1FFF0E8A00CCA8D9 /* MJExtensionConst.m */; };
 		18286E111FFF0E8A00CCA8D9 /* MJFoundation.m in Sources */ = {isa = PBXBuildFile; fileRef = 18286DFD1FFF0E8A00CCA8D9 /* MJFoundation.m */; };
@@ -276,6 +277,8 @@
 		1812D7D320204D0A000F7472 /* SignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignViewController.h; sourceTree = "<group>"; };
 		1812D7D420204D0A000F7472 /* SignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignViewController.m; sourceTree = "<group>"; };
 		1812D7D520204D0A000F7472 /* SignViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignViewController.xib; sourceTree = "<group>"; };
+		18253C90202C348400484924 /* GZGShopIntroduction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGShopIntroduction.h; sourceTree = "<group>"; };
+		18253C91202C348400484924 /* GZGShopIntroduction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGShopIntroduction.m; sourceTree = "<group>"; };
 		18286DF71FFF0E8A00CCA8D9 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		18286DF91FFF0E8A00CCA8D9 /* MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtension.h; sourceTree = "<group>"; };
 		18286DFA1FFF0E8A00CCA8D9 /* MJExtensionConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJExtensionConst.h; sourceTree = "<group>"; };
@@ -838,6 +841,8 @@
 				180F34522019CC3A00336E50 /* orderPayBriefInformation.h */,
 				180F34532019CC3A00336E50 /* orderPayBriefInformation.m */,
 				180F34552019CC4600336E50 /* orderPayBriefInformation.xib */,
+				18253C90202C348400484924 /* GZGShopIntroduction.h */,
+				18253C91202C348400484924 /* GZGShopIntroduction.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2630,6 +2635,7 @@
 				1812D7C020203FC9000F7472 /* WebViewBannerController.m in Sources */,
 				238795E0202201E200726528 /* SSJFClassification.m in Sources */,
 				183A1E471FDFA47F0054547E /* AppDelegate.m in Sources */,
+				18253C92202C348400484924 /* GZGShopIntroduction.m in Sources */,
 				18286E171FFF0E8A00CCA8D9 /* NSObject+MJKeyValue.m in Sources */,
 				1835016F1FECB2CA0019AD62 /* PersonHeadCell.m in Sources */,
 				1838D0181FE26D410034C4B8 /* SDImageCache.m in Sources */,

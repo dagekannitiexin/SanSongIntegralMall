@@ -8,29 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@class proSaleModel;//打折活动
-
 @interface ShopDetailModel : NSObject
 
 @property (nonatomic, strong) NSString *ProductID;
 @property (nonatomic, strong) NSString *ProductName;
 @property (nonatomic, strong) NSString *ProductIntro;
-@property (nonatomic, strong) NSString *StartTime;
-@property (nonatomic, strong) NSString *EndTime;
-@property (nonatomic, strong) NSString *Price;
-@property (nonatomic, strong) NSString *NewPrice;
-@property (nonatomic, strong) NSString *ImageUrl;
-@property (nonatomic, strong) NSString *SaleActivityType;
-@property (nonatomic, strong) NSString *SaleType;
-@property (nonatomic, strong) NSString *Enable;
-@property (nonatomic, strong) NSArray <proSaleModel *>*proSale;
-@end
-
-
-@interface proSaleModel : NSObject
-
+@property (nonatomic, strong) NSString *MoneyPrice;
+@property (nonatomic, strong) NSString *IntegralPrice;
+@property (nonatomic, strong) NSString *Showing;
 @property (nonatomic, strong) NSString *SaleID;
-@property (nonatomic, strong) NSString *SaleName;
-@property (nonatomic, strong) NSArray  *FavContent;
-
+@property (nonatomic, strong) NSString *TagsId;
+@property (nonatomic, strong) NSArray *proTagList;
+@property (nonatomic, strong) NSArray *MasterImg;
+@property (nonatomic, strong) NSArray *IntroImg;
+@property (nonatomic, strong) NSDictionary *saleActVml;
+@property (nonatomic, strong) NSString *Enable;
 @end
+
+

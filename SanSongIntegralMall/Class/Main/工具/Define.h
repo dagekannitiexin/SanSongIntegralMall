@@ -152,7 +152,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 
 //******网络通信************
 
-#define kBaseURL @"192.168.50.196/IntegralMall"
+#define kBaseURL @"118.31.4.245/IM"
 //192.168.50.196/IntegralMall
 //118.31.4.245/IM
 //192.168.50.198:9002
@@ -161,7 +161,7 @@ attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
 //Response Code
 #define kSuccessCode  1
 #define kSatatusKey  @"status"
-#define kServiceTimeOut -1001
+#define kServiceTimeOut -100134
 #define kPageSize  (iPad? @"20": @"10")0000
 
 //network message

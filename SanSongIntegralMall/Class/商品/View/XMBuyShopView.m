@@ -112,7 +112,9 @@
     [_orderViewOne addSubview:scrView];
     
     UIImageView *iconImg = [[UIImageView alloc]initWithFrame:CGRectMake(_orderViewOne.width-68-15, 20, 68, 68)];
-    [iconImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",_shopModel.ImageUrl]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    NSString *urlString = _shopModel.Showing;
+    urlString = [urlString stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [iconImg sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@",urlString]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
     [scrView addSubview:iconImg];
  
     UILabel *desc = [[UILabel alloc]initWithFrame:CGRectMake(15, 20, iconImg.left-20, 15)];
@@ -121,7 +123,7 @@
     [scrView addSubview:desc];
     
     UILabel *price = [[UILabel alloc]initWithFrame:CGRectMake(15, desc.bottom+13, desc.width, 15)];
-    price.text = [NSString stringWithFormat:@"%@元",_shopModel.NewPrice];
+    price.text = [NSString stringWithFormat:@"%@积分+%@元",_shopModel.IntegralPrice,_shopModel.MoneyPrice];
     price.font = [UIFont fontWithName:@"Helvetica" size:14];
     [scrView addSubview:price];
     
@@ -148,7 +150,7 @@
     determine.centerX = footViewOne.centerX;
     determine.centerY = 75/2;
     determine.backgroundColor = RGBACOLOR(209, 88, 84, 1);
-    [determine setTitle:[NSString stringWithFormat:@"%@元确认",_shopModel.NewPrice] forState:UIControlStateNormal];
+    [determine setTitle:[NSString stringWithFormat:@"%@积分+%@元确认",_shopModel.IntegralPrice,_shopModel.MoneyPrice] forState:UIControlStateNormal];
     [determine setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     determine.layer.cornerRadius = 7.0;
     determine.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
@@ -211,7 +213,7 @@
     //设置常用参数
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
     [requestInfo setValue:self.shopModel.ProductID forKey:@"ProductId"];
-    [requestInfo setValue:@"2" forKey:@"Num"];
+    [requestInfo setValue:@"1" forKey:@"Num"];
     [requestInfo setValue:@"" forKey:@"addressId"];
     __weak XMBuyShopView *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
@@ -226,7 +228,7 @@
             //此处有动画
             [UIView animateWithDuration:0.15 animations:^{
                 self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
-                self.centerY = SCREEN_HEIGHT/2;
+                self.centerY = (SCREEN_HEIGHT-64)/2;
             } completion:^(BOOL finished) {
                 self.size = CGSizeMake(SCREEN_WIDTH-30, 455);
             }];
@@ -319,7 +321,7 @@
     [shoppingView addSubview:shoppingImg];
     
     UILabel *shoppingDesc = [[UILabel alloc]initWithFrame:CGRectMake(shoppingImg.right+15, 15, shoppingView.width -shoppingImg.right -30-30, 16)];
-    shoppingDesc.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].proinfo.ProductIntro];
+    shoppingDesc.text = [NSString stringWithFormat:@"%@",_buyModel.ReData[0].proVml.ProductIntro];
     shoppingDesc.textColor = [UIColor blackColor];
     shoppingDesc.font = [UIFont systemFontOfSize:15];
     [shoppingView addSubview:shoppingDesc];
@@ -377,7 +379,7 @@
     [payForView addSubview:payForLabel];
     
     UILabel *payForMoney = [[UILabel alloc]initWithFrame:CGRectMake(payForView.width-15-50, 15, 50, 16)];
-    payForMoney.text = [NSString stringWithFormat:@"¥%@",_buyModel.ReData[0].proinfo.NewPrice];
+    payForMoney.text = [NSString stringWithFormat:@"%@积分+%@元",_buyModel.ReData[0].proVml.IntegralPrice,_buyModel.ReData[0].proVml.MoneyPrice];
     //@"¥136"
     payForMoney.textColor = [UIColor redColor];
     payForMoney.font = [UIFont systemFontOfSize:15];
@@ -436,9 +438,10 @@
     NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/SetOrder"];
     //设置常用参数
     NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
-    [requestInfo setValue:_buyModel.ReData[0].proinfo.ProductID forKey:@"ProductId"];
-    [requestInfo setValue:_buyModel.ReData[0].proinfo.Num forKey:@"Num"];
-    [requestInfo setValue:_buyModel.ReData[0].proinfo.NewPrice forKey:@"SumPrice"];
+    [requestInfo setValue:_buyModel.ReData[0].proVml.ProductID forKey:@"ProductId"];
+    [requestInfo setValue:_buyModel.ReData[0].proVml.Num forKey:@"Num"];
+    [requestInfo setValue:_buyModel.ReData[0].SumMoneyPrice forKey:@"SumMoneyPrice"];
+    [requestInfo setValue:_buyModel.ReData[0].SumIntegralPrice forKey:@"SumIntegralPrice"];
     //判断用户是否修改地址
     if (_adressID.length >3){
         [requestInfo setValue:_adressID forKey:@"Addressid"];
@@ -446,7 +449,7 @@
         [requestInfo setValue:_buyModel.ReData[0].address.AddressID forKey:@"Addressid"];
     }
     
-    [requestInfo setValue:_remarkTextFile.text forKey:@"Memo"];
+    [requestInfo setValue:[NSString stringWithFormat:@"%@",_remarkTextFile.text] forKey:@"Memo"];
     [SVProgressHUD showWithStatus:@"生成订单"];
     __weak XMBuyShopView *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
@@ -459,7 +462,7 @@
                 //创建动画
                 [UIView animateWithDuration:0.25 animations:^{
                     weakSelf.size = CGSizeMake(SCREEN_WIDTH-30, 260);
-                    weakSelf.centerY = SCREEN_HEIGHT/2;
+                    weakSelf.centerY = (SCREEN_HEIGHT-64)/2;
                 } completion:^(BOOL finished) {
                     weakSelf.size = CGSizeMake(SCREEN_WIDTH-30, 260);
                 }];

@@ -9,11 +9,6 @@
 #import "ShopDetailModel.h"
 
 @implementation ShopDetailModel
-+ (NSDictionary *)objectClassInArray{
-    return @{ @"proSale" : [proSaleModel class] };
-}
-@end
-
-@implementation proSaleModel
 
 @end
+
