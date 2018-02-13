@@ -128,16 +128,16 @@
     [scrView addSubview:price];
     
     UILabel *info = [[UILabel alloc]initWithFrame:CGRectMake(15, price.bottom+15, desc.width, 11)];
-    info.text = @"江浙沪包邮 | 库存充足";
+    info.text = @"邮费自理 | 库存充足";
     info.textColor =XMHeigtGaryColor;
     info.font = [UIFont systemFontOfSize:10];
     [scrView addSubview:info];
     
-    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, info.bottom+20, _orderViewOne.width-30, 150)];
-    imgView.contentMode = UIViewContentModeScaleAspectFill;
-    imgView.clipsToBounds = YES;
-    imgView.image = [UIImage imageNamed:@"Img_default"];
-    [scrView addSubview:imgView];
+//    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(15, info.bottom+20, _orderViewOne.width-30, 150)];
+//    imgView.contentMode = UIViewContentModeScaleAspectFill;
+//    imgView.clipsToBounds = YES;
+//    imgView.image = [UIImage imageNamed:@"Img_default"];
+//    [scrView addSubview:imgView];
     
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, scrView.height-1, scrView.width, 0.5)];
     lineView.backgroundColor = XMGaryColor;
@@ -379,14 +379,16 @@
     [payForView addSubview:payForLabel];
     
     UILabel *payForMoney = [[UILabel alloc]initWithFrame:CGRectMake(payForView.width-15-50, 15, 50, 16)];
-    payForMoney.text = [NSString stringWithFormat:@"%@积分+%@元",_buyModel.ReData[0].proVml.IntegralPrice,_buyModel.ReData[0].proVml.MoneyPrice];
+    payForMoney.text = [NSString stringWithFormat:@"%@积分+%@元",_buyModel.ReData[0].SumIntegralPrice,_buyModel.ReData[0].SumMoneyPrice];
     //@"¥136"
     payForMoney.textColor = [UIColor redColor];
     payForMoney.font = [UIFont systemFontOfSize:15];
+    [payForMoney sizeToFit];
+    payForMoney.right = payForView.width -15;
     [payForView addSubview:payForMoney];
     
     UILabel *payForFreight = [[UILabel alloc]initWithFrame:CGRectMake(payForView.width-15-60, payForMoney.bottom+5, 60, 16)];
-    payForFreight.text = @"含运费7元";
+    payForFreight.text = @"含运费0元";
     payForFreight.font = [UIFont systemFontOfSize:12];
     payForFreight.textColor = XMHeigtGaryColor;
     [payForView addSubview:payForFreight];
@@ -469,9 +471,9 @@
                 //隐藏第二个界面
                 weakSelf.orderViewTwo.hidden = YES;
                 [weakSelf createDetailViewThree];
+            }else {
+                [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
             }
-        }else {
-            [SVProgressHUD showInfoWithStatus:[rdt objectForKey:@"ErrorMessage"]];
         }
         
     } onError:^(NSError *engineError) {

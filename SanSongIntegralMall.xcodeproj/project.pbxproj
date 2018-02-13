@@ -179,6 +179,7 @@
 		187A4A252016CDB5009E2B6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A242016CDB5009E2B6C /* Foundation.framework */; };
 		187A4A272016CDBB009E2B6C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A262016CDBB009E2B6C /* CFNetwork.framework */; };
 		187A4A292016CDC9009E2B6C /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A4A282016CDC9009E2B6C /* CoreMotion.framework */; };
+		18A42D242031983900E6DA70 /* GZGBeautyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A42D232031983900E6DA70 /* GZGBeautyModel.m */; };
 		18B13319202051C7002A41D0 /* NewShakeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13310202051C7002A41D0 /* NewShakeViewController.m */; };
 		18B1331A202051C7002A41D0 /* NewShakeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B13311202051C7002A41D0 /* NewShakeViewController.xib */; };
 		18B1331B202051C7002A41D0 /* NZLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B13313202051C7002A41D0 /* NZLabel.m */; };
@@ -205,7 +206,6 @@
 		18E2C4B62004646700120042 /* SWActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2C4AB2004646600120042 /* SWActionSheet.m */; };
 		18E2C4B72004646700120042 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 18E2C4AC2004646600120042 /* README.md */; };
 		18E2C4BA2004A08100120042 /* XMBuyShopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E2C4B82004A08100120042 /* XMBuyShopView.m */; };
-		18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18F4FFA11FDFA9C700A258CE /* Main.storyboard */; };
 		2323EC6F2001E4BC00D0EA8C /* UIAlertView+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */; };
 		23359131201A01100000CAED /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2335912F201A01100000CAED /* AlipaySDK.bundle */; };
 		23359132201A01100000CAED /* AlipaySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23359130201A01100000CAED /* AlipaySDK.framework */; };
@@ -577,6 +577,8 @@
 		187A4A242016CDB5009E2B6C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		187A4A262016CDBB009E2B6C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		187A4A282016CDC9009E2B6C /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		18A42D222031983900E6DA70 /* GZGBeautyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GZGBeautyModel.h; sourceTree = "<group>"; };
+		18A42D232031983900E6DA70 /* GZGBeautyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GZGBeautyModel.m; sourceTree = "<group>"; };
 		18B1330F202051C7002A41D0 /* NewShakeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewShakeViewController.h; sourceTree = "<group>"; };
 		18B13310202051C7002A41D0 /* NewShakeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewShakeViewController.m; sourceTree = "<group>"; };
 		18B13311202051C7002A41D0 /* NewShakeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewShakeViewController.xib; sourceTree = "<group>"; };
@@ -624,7 +626,6 @@
 		18E2C4AC2004646600120042 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		18E2C4B82004A08100120042 /* XMBuyShopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMBuyShopView.m; sourceTree = "<group>"; };
 		18E2C4B92004A08100120042 /* XMBuyShopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMBuyShopView.h; sourceTree = "<group>"; };
-		18F4FFA21FDFA9C700A258CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2323EC6D2001E4BB00D0EA8C /* UIAlertView+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+Blocks.m"; sourceTree = "<group>"; };
 		2323EC6E2001E4BB00D0EA8C /* UIAlertView+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+Blocks.h"; sourceTree = "<group>"; };
 		2335912F201A01100000CAED /* AlipaySDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AlipaySDK.bundle; sourceTree = "<group>"; };
@@ -1205,7 +1206,6 @@
 			children = (
 				183A1E341FDFA47F0054547E /* Class */,
 				183A1DF31FDF66030054547E /* Assets.xcassets */,
-				18F4FFA11FDFA9C700A258CE /* Main.storyboard */,
 				183A1DF51FDF66030054547E /* LaunchScreen.storyboard */,
 				183A1DF81FDF66030054547E /* Info.plist */,
 				183A1DF91FDF66030054547E /* main.m */,
@@ -1556,6 +1556,15 @@
 				18B1331E20205584002A41D0 /* 摇一摇音效.mp3 */,
 			);
 			path = "资源";
+			sourceTree = "<group>";
+		};
+		18A42D21203197C100E6DA70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18A42D222031983900E6DA70 /* GZGBeautyModel.h */,
+				18A42D232031983900E6DA70 /* GZGBeautyModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		18B1330E202051C7002A41D0 /* 摇一摇 */ = {
@@ -2119,9 +2128,8 @@
 			isa = PBXGroup;
 			children = (
 				2387962E20220C0200726528 /* 父控制器 */,
+				18A42D21203197C100E6DA70 /* Model */,
 				2387962B20220C0200726528 /* Controller */,
-				2387962C20220C0200726528 /* Model */,
-				2387962D20220C0200726528 /* View */,
 			);
 			path = "美妆";
 			sourceTree = "<group>";
@@ -2131,20 +2139,6 @@
 			children = (
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		2387962C20220C0200726528 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		2387962D20220C0200726528 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		2387962E20220C0200726528 /* 父控制器 */ = {
@@ -2434,7 +2428,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				186EA69C1FE36ED700E796B9 /* XMGoodsViewStyleTwoView.xib in Resources */,
-				18F4FFA31FDFA9C800A258CE /* Main.storyboard in Resources */,
 				18E2C4AD2004646700120042 /* LICENSE in Resources */,
 				1835CA55200890DE00BAC62A /* SSJFAdressCell.xib in Resources */,
 				18E2C48C2004632900120042 /* address.json in Resources */,
@@ -2517,6 +2510,7 @@
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialSDK/UMSocialSDKPromptResources.bundle",
+				"${PODS_ROOT}/UMengUShare/UShareSDK/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
@@ -2601,6 +2595,7 @@
 				18286E101FFF0E8A00CCA8D9 /* MJExtensionConst.m in Sources */,
 				183960A41FFB57AD0076FE5D /* QQLBXScanViewController.m in Sources */,
 				183A1E4A1FDFA47F0054547E /* XMTabBarController.m in Sources */,
+				18A42D242031983900E6DA70 /* GZGBeautyModel.m in Sources */,
 				2352C597200F794100FC7D41 /* XMMeCellStyleOne.m in Sources */,
 				1841EB561FFCB733008FF118 /* RESTfulEngine.m in Sources */,
 				1838CFEF1FE25C130034C4B8 /* SDCollectionViewCell.m in Sources */,
@@ -2774,14 +2769,6 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		18F4FFA11FDFA9C700A258CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				18F4FFA21FDFA9C700A258CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -2896,6 +2883,7 @@
 			baseConfigurationReference = 8A0AB8935F760AEED625732D /* Pods-SanSongIntegralMall.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X9KZX2DWJL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2913,6 +2901,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -2922,6 +2912,7 @@
 			baseConfigurationReference = 64894BAED3ED6A9A60A68C78 /* Pods-SanSongIntegralMall.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X9KZX2DWJL;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2937,8 +2928,12 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
 				);
+				OTHER_CODE_SIGN_FLAGS = /Users/apple/Downloads/gongzhugou.mobileprovision;
+				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = /Users/apple/Downloads/gongzhugou.mobileprovision;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

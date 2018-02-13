@@ -16,6 +16,7 @@
 #import "GZGRecommendModel.h"
 #import "UIImageView+WebCache.h"
 #import "SSJFShopDetailViewController.h"
+#import "SignViewController.h"
 
 @interface GZGRecommend ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
     UIView *_headView;
@@ -71,6 +72,8 @@
     _totleHeight = 0; //设置总head高度
     //创建广告轮转图
     [self createBanner];
+    //创建签到按钮
+    [self createQianDao];
     //创建商品1 自营商品
     [self createSelfShop];
     //周一周四新品首发
@@ -119,6 +122,15 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     _lunzhuanView.pageDotImage = [UIImage imageNamed:@"homepage_switching_point_white"];
     __block GZGRecommend *blockSelf = self;
     _lunzhuanView.clickItemOperationBlock = ^(NSInteger currentIndex) {
+        if([blockSelf.recommendModel.homeadv[currentIndex].IsExternalLink isEqualToString:@"0"]){
+            
+            if ([blockSelf.recommendModel.homeadv[currentIndex].AdName isEqualToString:@"礼品"]){
+                [blockSelf shopDetail:blockSelf.recommendModel.homeadv[currentIndex].AdDescription];
+                return;
+            }
+            return;
+        }
+        
         NSString * tag = @"没有tag";
         NSString * out_url = blockSelf.recommendModel.homeadv[currentIndex].AdActionUrl;
         NSString * type = @"专题栏";
@@ -127,6 +139,28 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     [_headView addSubview:_lunzhuanView];
     
     _totleHeight = _lunzhuanView.height;
+}
+
+/*
+ 签到
+ */
+- (void)createQianDao
+{
+    UIButton *qiandaoBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, _lunzhuanView.height*0.15, 100, 33)];
+    [_lunzhuanView addSubview:qiandaoBtn];
+    [qiandaoBtn setTitle:@"签到" forState:UIControlStateNormal];
+    [qiandaoBtn setTitleColor:GZGGaryTextColor forState:UIControlStateNormal];
+    [qiandaoBtn setImage:[UIImage imageNamed:@"commodityorder_red_envelopes_ic"] forState:UIControlStateNormal];
+    qiandaoBtn.backgroundColor = [UIColor whiteColor];
+    qiandaoBtn.layer.borderWidth = 1.0;
+    qiandaoBtn.layer.borderColor = XMBgColor.CGColor;
+    qiandaoBtn.layer.cornerRadius = 33/2;
+    qiandaoBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 30);
+    qiandaoBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
+    //重设位置
+    qiandaoBtn.right = SCREEN_WIDTH+30;
+    [qiandaoBtn addTarget:self action:@selector(qiandaoClick:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
 
 /*
@@ -160,7 +194,7 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
         }
 //        shopView.headImgString = _recommendModel.homeadv[0].ImageUrl ;
         shopView.headImgString = _recommendModel.actListVml[0].proList[i].Showing;
-        shopView.nameLabelString = _recommendModel.actListVml[0].proList[i].ProductName;
+        shopView.nameLabelString = _recommendModel.actListVml[0].proList[i].ProductName;                                                                                                                                                                                                                                                                                                                                                                                                           
         shopView.priceLabelString = [NSString stringWithFormat:@"%@积分+%@元",_recommendModel.actListVml[0].proList[i].IntegralPrice,_recommendModel.actListVml[0].proList[i].MoneyPrice];
         //添加手势到商品详细  并且上传参数商品id
         __block GZGRecommend *blockSelf = self;
@@ -344,5 +378,42 @@ _tableView.separatorStyle=UITableViewCellSeparatorStyleNone;
     SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
     shopVC.proid = proid;
     [self.navigationController pushViewController:shopVC animated:YES];
+}
+
+/*
+ 签到事件
+ */
+- (void)qiandaoClick:(UIButton *)sender
+{
+    [UIView animateWithDuration:0.5 animations:^{
+        sender.x = SCREEN_WIDTH;
+    } completion:^(BOOL finished) {
+        sender.hidden = YES;
+    }];
+    
+    //签到
+    SignViewController * vc = [[SignViewController alloc]init];
+    
+    NSArray *array1 = [NSArray arrayWithObjects:@"5",@"10",@"15",@"20",@"25", nil];
+    NSDictionary *rule = [NSDictionary dictionaryWithObjectsAndKeys:
+                          @"5",@"1",
+                          @"10",@"2",
+                          @"15",@"3",
+                          @"20",@"4",
+                          @"25",@"5",nil];
+    
+    NSDictionary *dicnew = [NSDictionary dictionaryWithObjectsAndKeys:
+                            array1,@"analysis_rule",
+                            @"1",@"current",
+                            rule,@"rule",
+                            @"103",@"score",
+                            @"5",@"sign_score",
+                            nil];
+    vc.transitioningDelegate = [UIApplication sharedApplication].keyWindow.rootViewController;
+    vc.modalPresentationStyle = UIModalPresentationCustom;
+    vc.dic = dicnew;
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:vc animated:YES completion:^{
+        
+    }];
 }
 @end

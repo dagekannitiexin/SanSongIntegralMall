@@ -6,6 +6,7 @@ pod 'SVProgressHUD'
 pod 'FDFullscreenPopGesture'
 pod 'LBXScan/UI','~> 2.3'
 pod 'LBXScan/LBXNative','~> 2.3'
+pod ‘UMengUShare/UI’
 pod ‘UMengUShare/Social/ReducedWeChat'
 pod ‘UMengUShare/Social/ReducedQQ'
 pod ‘UMengUShare/Social/ReducedSina'

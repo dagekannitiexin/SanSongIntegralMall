@@ -24,6 +24,8 @@
 @interface HomeadvDetailModell : NSObject
 @property(nonatomic,strong)NSString * AdID;
 @property(nonatomic,strong)NSString * AdActionUrl;
+@property(nonatomic,strong)NSString * IsExternalLink;
+@property(nonatomic,strong)NSString * AdPosId;
 @property(nonatomic,strong)NSString * AdName;
 @property(nonatomic,strong)NSString * AdDescription;
 @property(nonatomic,strong)NSString * ImageUrl;

@@ -11,6 +11,9 @@
 #import "SSJFHomeModel.h"
 #import "XMGoodsTitleStyleView.h"
 #import "SSJFGoodsMostNumView.h"
+#import "GZGBeautyModel.h"
+#import "UIImageView+WebCache.h"
+#import "SSJFShopDetailViewController.h"
 
 @interface GZGBeauty ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>{
     UIView *_headView;
@@ -20,6 +23,7 @@
     NSMutableArray *_arrayTitle;
 }
 @property (nonatomic,strong)SSJFHomeModel * homeDetailModel;
+@property (nonatomic,strong)GZGBeautyModel * brautyModel;
 @end
 
 @implementation GZGBeauty
@@ -37,12 +41,11 @@
     __weak GZGBeauty *weakSelf = self;
     [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
         NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
-//        weakSelf.recommendModel = [GZGRecommendModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
-        //        weakSelf.homeDetailModel = [SSJFHomeModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
-        //        //创建头部视图
-        //        [self initHeadView];
-        //        //初始化tabview
-        //        [self initTableView];
+        weakSelf.brautyModel = [GZGBeautyModel mj_objectWithKeyValues:[rdt objectForKey:@"ReData"]];
+        [self initHeadView];
+        //为你推荐 设置contentView
+        [self createActDuiHuan];
+
     } onError:^(NSError *engineError) {
         NSLog(@"no");
     }];
@@ -51,11 +54,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _arrayTitle = [NSMutableArray arrayWithObjects:@"面部护理",@"唇膏",@"面膜",@"眼影",@"乳液面霜",@"面部精华",@"男士护肤", nil];
-    [self initHeadView];
-    //为你推荐 设置contentView
-    [self createActDuiHuan];
-    [self initNetWork];
+    _arrayTitle = [NSMutableArray arrayWithObjects:@"饰品美妆",@"唇膏",@"面膜",@"眼影",@"乳液面霜",@"面部精华",@"男士护肤", nil];
+    
+        [self initNetWork];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -84,13 +85,11 @@
 - (void)createBanner
 {
     NSMutableArray *imageArray = [NSMutableArray new];
-    //    for (int i =0; i<_homeDetailModel.homeadv.count; i++) {
-    //        if ([_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]){
-    //            [imageArray addObject:[_homeDetailModel.homeadv[i] valueForKey:@"ImageUrl"]];
-    //        }
-    //    }
-    
-    imageArray = @[@"Img_default",@"Img_default",@"Img_default",@"Img_default",@"Img_default"];
+    for (int i =0; i<_brautyModel.homeadv.count; i++) {
+        if ([_brautyModel.homeadv[i] valueForKey:@"ImageUrl"]){
+            [imageArray addObject:[_brautyModel.homeadv[i] valueForKey:@"ImageUrl"]];
+        }
+    }
     //创建轮转图
     __weak GZGBeauty *weakSelf = self;
     _lunzhuanView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, _totleHeight, SCREEN_WIDTH, SCREEN_WIDTH/16*9) imageURLStringsGroup:imageArray];
@@ -154,21 +153,23 @@
 //返回section个数
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return _arrayTitle.count;
+    return 1;
 }
 
 //每个section的item个数
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 8;
+    return _brautyModel.proList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     SSJFGoodsMostNumView *cell = (SSJFGoodsMostNumView *)[collectionView dequeueReusableCellWithReuseIdentifier:@"cellId" forIndexPath:indexPath];
-    //    cell.ProductName.text = _homeDetailModel.homepro5[indexPath.row].ProductName;
-    //    cell.Price.text = [NSString stringWithFormat:@"%@%@",@"¥",_homeDetailModel.homepro5[indexPath.row].Price];
-    //    [cell.Imageurl sd_setImageWithURL:[NSURL URLWithString:_homeDetailModel.homepro5[indexPath.row].Imageurl] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    NSString *url = _brautyModel.proList[indexPath.row].Showing;
+    [cell.Imageurl sd_setImageWithURL:[NSURL URLWithString:[url stringByReplacingOccurrencesOfString:@" " withString:@""]] placeholderImage:[UIImage imageNamed:@"Img_default"]];
+    cell.ProductName.text = _brautyModel.proList[indexPath.row].ProductName;
+    cell.Price.text = [NSString stringWithFormat:@"%@积分+%@元",_brautyModel.proList[indexPath.row].IntegralPrice,_brautyModel.proList[indexPath.row].MoneyPrice];
+    cell.introduct.text = _brautyModel.proList[indexPath.row].ProductIntro;
     return cell;
 }
 
@@ -241,11 +242,18 @@
 //点击item方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    MyCollectionViewCell *cell = (MyCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-    //    NSString *msg = cell.botlabel.text;
-    //    NSLog(@"%@",msg);
+    NSString *idString = _brautyModel.proList[indexPath.row].ProductID;
+    [self shopDetail:idString];
 }
 
-
+/*
+ 点击事件 1.商品详细
+ */
+- (void)shopDetail:(NSString *)proid
+{
+    SSJFShopDetailViewController *shopVC = [[SSJFShopDetailViewController alloc]init];
+    shopVC.proid = proid;
+    [self.navigationController pushViewController:shopVC animated:YES];
+}
 @end
 

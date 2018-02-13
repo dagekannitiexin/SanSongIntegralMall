@@ -27,18 +27,18 @@
 
 //下面是新的控制器
 #import "GZGRecommend.h"
-#import "GZGNewProduc.h"
-#import "GZGBeauty.h"
-#import "GZGHomeFurnishing.h"
-#import "GZGClothes.h"
-#import "GZGElectricAppliance.h"
-#import "GZGPersonalCare.h"
-#import "GZGGroceries.h"
-#import "GZGKitchen.h"
-#import "GZGParts.h"
-#import "GZGDiet.h"
-#import "GZGChild.h"
-#import "GZGInterest.h"
+//#import "GZGNewProduc.h"//新品
+#import "GZGBeauty.h"//美妆
+#import "GZGHomeFurnishing.h"//家居
+//#import "GZGClothes.h"//服装
+#import "GZGElectricAppliance.h"//电器
+//#import "GZGPersonalCare.h"//洗护
+#import "GZGGroceries.h"//杂货
+//#import "GZGKitchen.h"//餐厨
+//#import "GZGParts.h"//配件
+//#import "GZGDiet.h"//饮食
+#import "GZGChild.h"//婴童
+//#import "GZGInterest.h"//志趣
 
 
 @interface SSJFHomeViewController ()<SDCycleScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UITableViewDelegate>{
@@ -92,21 +92,21 @@
     self.segmentBarVC.view.frame = CGRectMake(0, -64, SCREEN_WIDTH, SCREEN_HEIGHT+20);
     //使用segmentBarVC
     [self.view addSubview:self.segmentBarVC.view];
-    NSArray *items = @[@"推荐", @"新品", @"美妆", @"家居",@"服装",@"电器",@"洗护",@"杂货",@"餐厨",@"配件",@"饮食",@"婴童",@"志趣"];
+    NSArray *items = @[@"推荐", @"饰品美妆", @"家纺",@"电器",@"婴童"];
     NSMutableArray* childVCs = [NSMutableArray array];
     [childVCs addObject:[[GZGRecommend alloc] init]];
-    [childVCs addObject:[[GZGNewProduc alloc] init]];
+//    [childVCs addObject:[[GZGNewProduc alloc] init]];
     [childVCs addObject:[[GZGBeauty alloc] init]];
     [childVCs addObject:[[GZGHomeFurnishing alloc] init]];
-    [childVCs addObject:[[GZGClothes alloc] init]];
+//    [childVCs addObject:[[GZGClothes alloc] init]];
     [childVCs addObject:[[GZGElectricAppliance alloc] init]];
-    [childVCs addObject:[[GZGPersonalCare alloc] init]];
+//    [childVCs addObject:[[GZGPersonalCare alloc] init]];
     [childVCs addObject:[[GZGGroceries alloc] init]];
-    [childVCs addObject:[[GZGKitchen alloc] init]];
-    [childVCs addObject:[[GZGParts alloc] init]];
-    [childVCs addObject:[[GZGDiet alloc] init]];
+//    [childVCs addObject:[[GZGKitchen alloc] init]];
+//    [childVCs addObject:[[GZGParts alloc] init]];
+//    [childVCs addObject:[[GZGDiet alloc] init]];
     [childVCs addObject:[[GZGChild alloc] init]];
-    [childVCs addObject:[[GZGInterest alloc] init]];
+//    [childVCs addObject:[[GZGInterest alloc] init]];
     [self.segmentBarVC setupWithItems:items childVCs:childVCs];
     [self.segmentBarVC.segmentBar updateViewWithConfig:^(TGSegmentConfig *config) {
         config.selectedColor(RGBCOLOR(175, 36, 38))

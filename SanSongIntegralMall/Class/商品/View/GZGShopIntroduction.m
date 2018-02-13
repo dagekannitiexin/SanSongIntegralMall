@@ -69,7 +69,7 @@
     //评价数量
     UILabel *numSay = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 78, 20)];
     numSay.text = @"999+";
-    numSay.font = [UIFont fontWithName:@"Helvetica-BoldOblique" size:26];//又粗又斜
+    numSay.font = [UIFont fontWithName:@"Helvetica-Oblique" size:26];//又粗又斜
     numSay.textAlignment = NSTextAlignmentCenter;
     numSay.textColor = GZGPriceColor;
     numSay.centerY = troLabel.centerY-25;

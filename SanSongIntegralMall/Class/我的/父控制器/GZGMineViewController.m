@@ -10,6 +10,9 @@
 #import "SSJFUserInfoView.h"
 #import "SSJFMineViewController.h"
 #import "HeadButton.h"
+#import <UShareUI/UShareUI.h>
+#import "UserInfo.h"
+#import "UIImageView+WebCache.h"
 
 @interface GZGMineViewController (){
     UIScrollView *_mainScrollerView;
@@ -17,6 +20,8 @@
     UIView *_headView;
     SSJFUserInfoView  *_infoView;
 }
+
+@property (nonatomic,strong) UserInfo* userInfo;
 
 @end
 
@@ -38,12 +43,37 @@
     _mainScrollerView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-49)];
     [self.view addSubview:_mainScrollerView];
     
-    //创建内容视图
-    [self initHeadView];
+    //创建网络接口
+    [self createNetWork];
     
-    _mainScrollerView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
+- (void)createNetWork
+{
+    //查看更多促销活动
+    NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/User/GetSimpleUser"];
+    [SVProgressHUD showWithStatus:@"正在加载中"];
+    __weak GZGMineViewController *weakSelf = self;
+    [SSJF_AppDelegate.engine sendRequesttoSSJF:nil portPath:netPath Method:@"GET" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+        [SVProgressHUD dismiss];
+        NSDictionary *Rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+        NSDictionary *info = [Rdt objectForKey:@"ReData"];
+        weakSelf.userInfo = [UserInfo mj_objectWithKeyValues:info];
+        
+        NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+        [de setObject:_userInfo.ImageUrl forKey:@"avatar"];
+        [de setObject:_userInfo.UserName forKey:@"username"];
+        [de setObject:_userInfo.Integral forKey:@"integral"];
+        [de setObject:_userInfo.UserLevel forKey:@"UserLevel"];
+        [de synchronize];
+        //创建内容视图
+        [self initHeadView];
+        
+        _mainScrollerView.contentSize = CGSizeMake(SCREEN_WIDTH, SCREEN_HEIGHT);
+    } onError:^(NSError *engineError) {
+        NSLog(@"no");
+    }];
+}
 /*
  头部图
  */
@@ -84,6 +114,11 @@
     [_headView addSubview:bgView];
     
     _infoView = [[[NSBundle mainBundle]loadNibNamed:@"SSJFUserInfoView" owner:nil options:nil]lastObject];
+    [_infoView.IconImg sd_setImageWithURL:[NSURL URLWithString:_userInfo.ImageUrl] placeholderImage:[UIImage imageNamed:@"Icon_NomalImg"]];
+    _infoView.Name.text = _userInfo.UserName;
+    _infoView.MemberLeves.text = _userInfo.UserLevel;
+    _infoView.memberStr = _userInfo.UserLevel;
+    _infoView.Integral.text = [NSString stringWithFormat:@"%@积分",_userInfo.Integral];
     _infoView.centerY = bgView.height/2;
     __block GZGMineViewController *blockSelf = self;
     _infoView.touchViewBlock = ^(NSString *str) {
@@ -95,6 +130,13 @@
         }else if ([str isEqualToString:@"Login"]){//跳转到登录页面
         }
     };
+    
+    //添加分享按钮
+    UIButton *shareBtn = [[UIButton alloc]initWithFrame:CGRectMake(SCREEN_WIDTH-40, 20, 25, 25)];
+    [shareBtn setImage:[UIImage imageNamed:@"icon_share_white_25"] forState:UIControlStateNormal];
+    [shareBtn addTarget:self action:@selector(shareClick) forControlEvents:UIControlEventTouchUpInside];
+    [bgView addSubview:shareBtn];
+    
     [bgView addSubview:_infoView];
     _totleHeight = _totleHeight +bgView.bottom;
 }
@@ -198,5 +240,38 @@
         [orderTwo addSubview:btn];
     }
     _totleHeight = _totleHeight +fuWuView.height;
+}
+
+/*
+ 分享
+ */
+- (void)shareClick
+{
+    
+    
+    //显示分享面板
+    [UMSocialUIManager showShareMenuViewInWindowWithPlatformSelectionBlock:^(UMSocialPlatformType platformType, NSDictionary *userInfo) {
+        // 根据获取的platformType确定所选平台进行下一步操作
+        
+        //创建分享消息对象
+        UMSocialMessageObject *messageObject = [UMSocialMessageObject messageObject];
+
+        //创建网页内容对象
+        UMShareWebpageObject *shareObject = [UMShareWebpageObject shareObjectWithTitle:@"快来支持吧公主家上线啦,新人有惊喜哦送1000元大礼包 " descr:@"" thumImage:@"https://mobile.umeng.com/images/pic/home/social/img-1.png"];
+        //设置网页地址
+        shareObject.webpageUrl =@"http://www.princess-house.cn/";
+
+        //分享消息对象设置分享内容对象
+        messageObject.shareObject = shareObject;
+        
+        //调用分享接口
+        [[UMSocialManager defaultManager] shareToPlatform:platformType messageObject:messageObject currentViewController:self completion:^(id data, NSError *error) {
+            if (error) {
+                NSLog(@"************Share fail with error %@*********",error);
+            }else{
+                NSLog(@"response data is %@",data);
+            }
+        }];
+    }];
 }
 @end
