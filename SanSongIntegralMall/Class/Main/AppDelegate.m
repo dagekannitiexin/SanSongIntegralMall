@@ -13,8 +13,9 @@
 #import "SSJFLoginViewController.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
 #define USHARE_DEMO_APPKEY  @"5a5338158f4a9d64710000ab"
-@interface AppDelegate ()
+@interface AppDelegate ()<WXApiDelegate>
 
 @end
 
@@ -54,6 +55,8 @@
     [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_DEMO_APPKEY];
     
     [self configUSharePlatforms];
+    //向微信注册
+    [WXApi registerApp:@"wx1c63a8d8de96ae2e"];
     
     //监控step状态
     [self addObserverAndNotification];
@@ -161,7 +164,7 @@
      设置微信的appKey和appSecret
      [微信平台从U-Share 4/5升级说明]http://dev.umeng.com/social/ios/%E8%BF%9B%E9%98%B6%E6%96%87%E6%A1%A3#1_1
      */
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wxdfe30886341374ad" appSecret:@"b65ee69946fce8de5a516f40946a90ec" redirectURL:nil];
+    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:@"wx1c63a8d8de96ae2e" appSecret:@"7ff98ef9e848a9911f7ab13b6263e444" redirectURL:nil];
     /*
      * 移除相应平台的分享，如微信收藏
      */
@@ -195,6 +198,10 @@
             [[NSNotificationCenter defaultCenter]postNotificationName:PayForInfo object:resultDic];
         }];
     }
+
+    if ([url.host isEqualToString:@"pay"]) {
+        return [WXApi handleOpenURL:url delegate:self];
+    }
     //6.3的新的API调用，是为了兼容国外平台(例如:新版facebookSDK,VK等)的调用[如果用6.2的api调用会没有回调],对国内平台没有影响
     BOOL result = [[UMSocialManager defaultManager] handleOpenURL:url sourceApplication:sourceApplication annotation:annotation];
     if (!result) {
@@ -202,6 +209,34 @@
     }
     return result;
 }
+
+#pragma mark 微信支付相关方法
+-(void)onResp:(BaseResp *)resp{
+    //如果第三方程序向微信发送了sendReq的请求，那么onResp会被回调。sendReq请求调用后，会切到微信终端程序界面
+    NSString *strMsg=[NSString stringWithFormat:@"errcode:%d",resp.errCode];
+    NSString *strTitle;
+    if ([resp isKindOfClass:[PayResp class]]) {
+        //支付返回结果，实际支付结果需要去微信服务器端查询
+        strTitle=[NSString stringWithFormat:@"支付结果"];
+        switch (resp.errCode) {
+            case WXSuccess:
+            {
+                strMsg=@"支付结果：成功！";
+            }
+                
+                 break;
+                
+                
+            default:
+                strMsg = [NSString stringWithFormat:@"支付结果：失败！retcode = %d, retstr = %@", resp.errCode,resp.errStr];
+                break;
+        }
+            }
+}
+-(void)onReq:(BaseReq *)req{
+    //onReq是微信终端向第三方程序发起请求，要求第三方程序响应。第三方程序响应完后必须调用sendRsp返回。在调用sendRsp返回时，会切回到微信终端程序界面
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

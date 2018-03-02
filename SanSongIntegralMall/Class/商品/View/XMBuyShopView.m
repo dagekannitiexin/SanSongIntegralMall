@@ -11,6 +11,7 @@
 #import "buyDetailModel.h"
 #import "XMMeAddressEmpty.h"
 #import <AlipaySDK/AlipaySDK.h>
+#import "WXApi.h"
 
 
 @interface XMBuyShopView(){
@@ -645,10 +646,49 @@
 {
     if (_selectedWeiXin.highlighted){
         NSLog(@"去微信支付喽");
-        if (self.payBtnBlock)
-        {
-            self.payBtnBlock();
-        }
+//        if (self.payBtnBlock)
+//        {
+//            self.payBtnBlock();
+//        }
+        //查看首页
+        NSString *netPath = [NSString stringWithFormat:@"%@%@",kBaseURL,@"/api/OrderDetail/UnifiedOrder"];
+        //设置常用参数
+        NSMutableDictionary *requestInfo = [[NSMutableDictionary alloc]init];
+        [requestInfo setValue:self.dingdanId forKey:@""];
+        [SSJF_AppDelegate.engine sendRequesttoSSJF:requestInfo portPath:netPath Method:@"POST" onSucceeded:^(NSDictionary *aDictronaryBaseObjects) {
+            NSDictionary *rdt = [aDictronaryBaseObjects objectForKey:@"Rdt"];
+            NSDictionary *weiXingOp = [rdt objectForKey:@"ReData"];
+            
+            NSString *partnerId = [weiXingOp objectForKey:@"mch_id"];
+            NSString *prepayId = [weiXingOp objectForKey:@"prepay_id"];
+            NSString *nonceStr = [weiXingOp objectForKey:@"nonceStr"];
+            NSString *timeStamp = [weiXingOp objectForKey:@"time_start"];
+            NSString *sign = [weiXingOp objectForKey:@"sign"];
+            
+            PayReq *request = [[PayReq alloc] init];
+            
+            request.partnerId = partnerId;
+            
+            request.prepayId= prepayId;
+            
+            request.package = @"Sign=WXPay";
+            
+            request.nonceStr= nonceStr;
+            
+            request.timeStamp= [timeStamp intValue];
+            
+            request.sign= sign;
+            
+            [WXApi sendReq:request];
+            
+            if (self.payBtnBlock)
+            {
+                self.payBtnBlock();
+            }
+        } onError:^(NSError *engineError) {
+            [SVProgressHUD dismiss];
+            NSLog(@"no");
+        }];
     }else if (_selectedZhifubao.highlighted){
         NSLog(@"去支付宝支付楼");
         //查看首页

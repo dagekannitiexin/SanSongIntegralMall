@@ -13,6 +13,7 @@
 		180F34512019C5ED00336E50 /* IsPaymentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34502019C5ED00336E50 /* IsPaymentModel.m */; };
 		180F34542019CC3A00336E50 /* orderPayBriefInformation.m in Sources */ = {isa = PBXBuildFile; fileRef = 180F34532019CC3A00336E50 /* orderPayBriefInformation.m */; };
 		180F34562019CC4600336E50 /* orderPayBriefInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 180F34552019CC4600336E50 /* orderPayBriefInformation.xib */; };
+		1811F4852041077F00348891 /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1811F4812041077F00348891 /* libWeChatSDK.a */; };
 		1812D7C020203FC9000F7472 /* WebViewBannerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7BD20203FC9000F7472 /* WebViewBannerController.m */; };
 		1812D7C120203FC9000F7472 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7BF20203FC9000F7472 /* WebViewController.m */; };
 		1812D7DD20204D0A000F7472 /* SignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1812D7D420204D0A000F7472 /* SignViewController.m */; };
@@ -270,6 +271,10 @@
 		180F34522019CC3A00336E50 /* orderPayBriefInformation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = orderPayBriefInformation.h; sourceTree = "<group>"; };
 		180F34532019CC3A00336E50 /* orderPayBriefInformation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = orderPayBriefInformation.m; sourceTree = "<group>"; };
 		180F34552019CC4600336E50 /* orderPayBriefInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = orderPayBriefInformation.xib; sourceTree = "<group>"; };
+		1811F4812041077F00348891 /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		1811F4822041077F00348891 /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		1811F4832041077F00348891 /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		1811F4842041077F00348891 /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
 		1812D7BC20203FC9000F7472 /* WebViewBannerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewBannerController.h; sourceTree = "<group>"; };
 		1812D7BD20203FC9000F7472 /* WebViewBannerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewBannerController.m; sourceTree = "<group>"; };
 		1812D7BE20203FC9000F7472 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -696,6 +701,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1811F4852041077F00348891 /* libWeChatSDK.a in Frameworks */,
 				187A4A292016CDC9009E2B6C /* CoreMotion.framework in Frameworks */,
 				187A4A272016CDBB009E2B6C /* CFNetwork.framework in Frameworks */,
 				187A4A252016CDB5009E2B6C /* Foundation.framework in Frameworks */,
@@ -736,6 +742,17 @@
 				18045DA8202A949B00C7C3D3 /* GZGRecommendModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		1811F4802041077F00348891 /* 微信支付 */ = {
+			isa = PBXGroup;
+			children = (
+				1811F4812041077F00348891 /* libWeChatSDK.a */,
+				1811F4822041077F00348891 /* WechatAuthSDK.h */,
+				1811F4832041077F00348891 /* WXApi.h */,
+				1811F4842041077F00348891 /* WXApiObject.h */,
+			);
+			path = "微信支付";
 			sourceTree = "<group>";
 		};
 		1812D7BB20203FC9000F7472 /* 不同的Web */ = {
@@ -1549,6 +1566,7 @@
 		1877AE3C1FF4CD0700FC9BA5 /* 资源 */ = {
 			isa = PBXGroup;
 			children = (
+				1811F4802041077F00348891 /* 微信支付 */,
 				2335912E201A01100000CAED /* 支付宝 */,
 				18E2C48A2004632900120042 /* address.json */,
 				18E2C4892004632900120042 /* hotelcity.json */,
@@ -2898,6 +2916,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
+					"$(PROJECT_DIR)/SanSongIntegralMall/资源/微信支付",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.SanSongIntegralMall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2927,6 +2946,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SanSongIntegralMall/Class/框架/JPush",
+					"$(PROJECT_DIR)/SanSongIntegralMall/资源/微信支付",
 				);
 				OTHER_CODE_SIGN_FLAGS = /Users/apple/Downloads/gongzhugou.mobileprovision;
 				"OTHER_CODE_SIGN_FLAGS[sdk=*]" = /Users/apple/Downloads/gongzhugou.mobileprovision;

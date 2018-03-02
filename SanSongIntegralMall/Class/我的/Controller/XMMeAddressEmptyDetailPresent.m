@@ -48,8 +48,9 @@
     
     UIButton *resavBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 30, 44)];
     [resavBtn setTitle:@"保存" forState:UIControlStateNormal];
-    [resavBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     resavBtn.titleLabel.font = [UIFont fontWithName:@"Helvetica-Bold" size:14];
+    resavBtn.titleLabel.textColor = [UIColor blackColor];
+    [resavBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [resavBtn addTarget:self action:@selector(resaveBtnClick) forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *rightViewItem = [[UIBarButtonItem alloc]initWithCustomView:resavBtn];

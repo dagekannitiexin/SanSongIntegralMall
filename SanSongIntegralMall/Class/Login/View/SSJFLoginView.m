@@ -121,8 +121,8 @@
         [_wechatButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _wechatButton.titleLabel.font = [UIFont systemFontOfSize:12];
         [_wechatButton setImage:[UIImage imageNamed:@"auth_wechat"] forState:UIControlStateNormal];
-        _weiboButton.tag = 101;
-        [_weiboButton addTarget:self action:@selector(loginBtnChoose:) forControlEvents:UIControlEventTouchUpInside];
+        _wechatButton.tag = 101;
+        [_wechatButton addTarget:self action:@selector(loginBtnChoose:) forControlEvents:UIControlEventTouchUpInside];
         _wechatButton.titleEdgeInsets = UIEdgeInsetsMake(0, 4, 0, 0);
     }
     return _wechatButton;
